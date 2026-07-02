@@ -48,7 +48,7 @@ Google Business Profile checklist with copy-ready sharing starters:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
 ```
 
-Scorecard directory for warm referrals and allowed community replies. It includes copy-ready referral text and direct scorecard links:
+Resource directory for warm referrals and allowed community replies. It includes copy-ready referral text, direct scorecard links, and checklist links:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
@@ -137,7 +137,7 @@ http://localhost:4173/index.html
 7. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
 8. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
 9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for a category-specific prefilled scorecard before showing the paid audit.
-10. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate. Use the conversion checklist or Google Business Profile checklist and their built-in copy starters when a lower-friction educational link fits better than the scorecard, and use the public scorecard directory when you need one shareable page with all scorecard links and a copy-ready referral blurb.
+10. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate. Use the conversion checklist or Google Business Profile checklist and their built-in copy starters when a lower-friction educational link fits better than the scorecard, and use the public resource directory when you need one shareable page with all free links and a copy-ready referral blurb.
 11. Ask interested prospects to use the homepage self-check handoff or the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
 12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
 13. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.

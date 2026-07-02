@@ -24,7 +24,7 @@ Google Business Profile checklist:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
 ```
 
-Scorecard directory with copy-ready referral text:
+Resource directory with copy-ready referral text:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
