@@ -66,11 +66,11 @@ Use these notes for manual review, warm referrals, permitted community replies, 
 | 8 | Belle Vie Aesthetic Medicine | Source review completed; mobile pending | Book Now, phone, service categories, memberships, payment plans, specials, testimonials | Check whether service proof and consultation path stay clear around shopping/membership links | Score mobile booking and routing |
 | 9 | Lexington Prime Aesthetics & Wellness | Source review completed; mobile pending | Book appointment, before-and-after gallery, gift card path, reviews, treatment categories | Check whether appointment path and proof sit close enough to treatment decisions | Score appointment and treatment-page path |
 | 10 | Beautiful You Medical Spa | Source review completed; mobile pending | Book appointment, quick menu, gift cards, specials, financial options, proof counters, reviews | Check whether specials, proof, and booking work together instead of splitting attention | Score booking and specials capture |
-| 11 | Big Blue Roofing | Source review completed; mobile pending | Quote/free-estimate paths, phone/email, storm-damage positioning, testimonials, third-party proof links | Check whether urgent roof-repair and storm-damage visitors reach one clear quote path | Score estimate prominence and proof placement |
-| 12 | Big League Roofers | Source review completed; mobile pending | Instant quote, certified inspections, repair/replacement/storm services, financing, insurance support, certifications, reviews | Check whether quote, inspection, insurance, and financing paths support rather than split conversion intent | Score quote and insurance/financing routing |
-| 13 | Reliable Residential Roofing | Source review completed; mobile pending | Call/text, request-quote form, roofing/gutter/skylight services, certifications, warranty, financing, insurance help, chat | Check whether form, phone, chat, and proof assets produce a simple first-time homeowner path | Score form and call/text hierarchy |
-| 14 | Barrier Roofs | Source review completed; mobile pending | Quote/free-estimate paths, roofing and exterior services, insurance claims, projects, testimonials, certifications, service areas | Check whether broad service offerings and consent-heavy form still preserve clear roofing quote momentum | Score quote form and proof placement |
-| 15 | Mighty Dog Roofing Lexington | Source review completed; mobile pending | Free inspection, workmanship-warranty positioning, financing, emergency repair, insurance-claim help, roof material options, service areas | Check whether free inspection, emergency repair, and replacement options guide different homeowner intents cleanly | Score free-inspection and service-area routing |
+| 11 | Big Blue Roofing | Source and mobile check completed | Quote/free-estimate paths, phone/email, storm-damage positioning, testimonials, third-party proof links | Mobile showed estimate paths, storm-damage copy, testimonial/BBB proof, and no page-level overflow; confirm tap-to-call, tracking, and follow-up | Use only in warm or permitted scorecard-first channels |
+| 12 | Big League Roofers | Source and mobile check completed | Instant quote, certified inspections, repair/replacement/storm services, financing, insurance support, certifications, reviews | Mobile first screen showed phone/logo/menu; quote and certified-inspection paths existed in navigation but were not obvious first-screen actions | Recheck first-screen CTA hierarchy before any contact |
+| 13 | Reliable Residential Roofing | Source and mobile check completed | Call/text, request-quote form, roofing/gutter/skylight services, certifications, warranty, financing, insurance help, chat | Mobile showed major horizontal overflow plus offscreen nav/form elements; visible call/text action needs clearer proof and quote hierarchy | Use only in warm or permitted scorecard-first channels |
+| 14 | Barrier Roofs | Source/html fetch completed; mobile visual check blocked | Quote/free-estimate paths, roofing and exterior services, insurance claims, projects, testimonials, certifications, service areas | HTTP source returned successfully, but the in-app browser did not produce a usable mobile viewport | Recheck in a normal browser before scoring |
+| 15 | Mighty Dog Roofing Lexington | Source and mobile check completed | Free inspection, workmanship-warranty positioning, financing, emergency repair, insurance-claim help, roof material options, service areas | Mobile showed cookie banner, phone icon, free-inspection path, and no first-screen proof; cookie banner competes with the first action | Use only in warm or permitted scorecard-first channels |
 
 ## Cooper Family Dentistry
 
@@ -624,7 +624,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no quote buttons were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no quote links were clicked, and no outreach was sent.
+- Mobile showed phone/email, `GET A QUOTE` and `GET AN ESTIMATE` paths, storm/hail/wind repair copy, testimonials and BBB proof, and no page-level horizontal overflow. In the observed pass, the phone number appeared as text rather than a `tel:` link.
 
 Observable strengths:
 
@@ -643,10 +644,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: quote/free-estimate paths, phone/email, roofing service positioning, testimonials
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, proof placement
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 50/100 internal scorecard estimate
+Checked as handled in source/mobile: quote/free-estimate paths, phone/email, storm-damage positioning, testimonials and BBB proof
+Visible mobile gaps to inspect: phone text may not be a tappable call link, proof and quote action should be checked against the actual first decision point
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: medium-priority audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
@@ -679,7 +681,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no quote or inspection buttons were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no quote or inspection links were clicked, and no outreach was sent.
+- Mobile first screen showed phone, logo, and menu. Quote and certified-inspection paths exist in navigation, but were not an obvious first-screen action in the observed mobile pass. No first-screen proof was observed; no page-level horizontal overflow was observed.
 
 Observable strengths:
 
@@ -698,10 +701,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: quote/inspection paths, service categories, financing, insurance support, certification and review proof
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, form friction
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 33/100 internal scorecard estimate; first-screen CTA hierarchy recheck advised
+Checked as handled in source/mobile: phone path, quote/inspection paths in navigation, service categories, financing, insurance support, certification and review proof
+Visible mobile gaps to inspect: quote and certified-inspection paths were not an obvious first-screen action; proof was not visible in the first screen
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate after confirming first-screen CTA hierarchy
 ```
 
 Channel-safe first touch:
@@ -734,7 +738,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no chat was opened, no quote links were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no chat was opened, no quote links were clicked, and no outreach was sent.
+- Mobile render showed major horizontal overflow, offscreen navigation and request-quote form elements, visible `Call or Text` and menu actions, and trust proof in the source that did not resolve cleanly in the first-screen layout.
 
 Observable strengths:
 
@@ -753,10 +758,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: request-quote form, call/text path, service breadth, trust proof, financing, insurance help
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, chat/form friction
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 17/100 internal scorecard estimate
+Checked as handled in source/mobile: call/text path, broad service menu, trust proof, financing and insurance-help assets
+Visible mobile gaps to inspect: major horizontal overflow, offscreen navigation and request-quote form, unclear first-screen hierarchy, proof not reliably placed near the first action
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate if a permitted conversation opens
 ```
 
 Channel-safe first touch:
@@ -789,7 +795,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no quote buttons were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Browser mobile visual check was attempted on 2026-07-02. No forms were submitted, no quote links were clicked, and no outreach was sent.
+- HTTP fetch returned status 200 with the official page source, title, and description, but the in-app browser timed out or stayed blank before producing a usable mobile viewport. Keep this as source/html-verified until a clean-browser visual check confirms the first screen.
 
 Observable strengths:
 
@@ -808,10 +815,10 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: quote/free-estimate paths, insurance-claims support, service breadth, testimonials, projects, certification proof
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, quote-form friction
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: not scored; clean-browser visual check required
+Checked as handled in source/html: quote/free-estimate paths, insurance-claims support, service breadth, testimonials, projects, certification proof, BBB/military-discount/satisfaction-guarantee positioning in page metadata
+Left unchecked until visual confirmation: mobile CTA hierarchy, first-screen proof placement, tracking, follow-up, quote-form friction
+Likely scorecard band: hold as research-only until the first mobile screen can be verified
 ```
 
 Channel-safe first touch:
@@ -844,7 +851,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no inspection or booking buttons were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no inspection or booking links were clicked, and no outreach was sent.
+- Mobile first screen showed a cookie banner, phone icon, `SCHEDULE FREE INSPECTION`, and inspection/emergency path assets. No first-screen proof was observed, and the cookie banner competed with the first action.
 
 Observable strengths:
 
@@ -863,10 +871,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: free-inspection path, warranty positioning, financing, emergency repair, insurance help, material options, service areas
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, service-area routing
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 33/100 internal scorecard estimate
+Checked as handled in source/mobile: phone path, schedule-free-inspection path, inspection/emergency path assets, service breadth
+Visible mobile gaps to inspect: cookie banner competes with the first action, proof was not visible in the first screen, and warranty/financing/insurance support appears to need better first-screen support
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
@@ -885,4 +894,4 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing
 
 ## Next Batch Action
 
-Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry, AMS Dental, Williams Family Dentistry, the four med spa leads, and the five roofing leads as reviewed leads, then complete mobile visual checks for every source-only row before prospect-specific contact. Do not send direct outreach from these drafts.
+Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. The four med spa leads and four roofing leads now have read-only mobile checks; Barrier Roofs still needs a clean-browser visual recheck. Next, score the remaining source-only dentist rows and complete visual checks for every source-only row before prospect-specific contact. Do not send direct outreach from these drafts.
