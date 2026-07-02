@@ -58,18 +58,18 @@ Use these notes for manual review, warm referrals, permitted community replies, 
 | --- | --- | --- | --- | --- | --- |
 | 1 | Park Hills Family Dentistry | Full draft in `FIRST_PROSPECT_REVIEW.md` | Click-to-call, online scheduling, comfort messaging, multilingual cues, savings plan | Confirm review-widget/profile state and whether proof supports the appointment path | Confirm Google profile and decide channel |
 | 2 | Cooper Family Dentistry | Source and mobile check completed | Schedule button, 150+ 5-star review proof, family-dentistry positioning, service categories | Check whether review proof and service-page clarity are close enough to the appointment action | Score in dashboard before any contact |
-| 3 | Tates Creek Dental | Source-only draft | Appointment request links, review-request page, new-patient page, doctor/service content | Browser render returned blank, so visual mobile path needs confirmation before scoring | Recheck visually in a normal browser |
+| 3 | Tates Creek Dental | Source/html fetch completed; clean-browser render blocked | Appointment request links, review-request page, new-patient page, doctor/service content | HTTP source returns 200, but clean-browser mobile render shows `Not authorized` instead of the public first screen | Keep research-only until a user-controlled browser confirms the page |
 | 4 | AMS Dental | Source and mobile check completed | Request Appointment, Contact Us, two locations, new-patient phone, broad service menu | Cookie banner and location routing may compete with appointment clarity on mobile | Score the mobile first screen and location path |
-| 5 | Complete Dentistry for All Ages | Source-only draft | New-patient phone, Request Appointment, Leave a Review, service pages, patient resources, testimonials | Automation render returned blank; visual first-screen appointment clarity needs confirmation | Recheck visually in a normal browser |
+| 5 | Complete Dentistry for All Ages | Source and mobile check completed | New-patient phone, Request Appointment, Leave a Review, service pages, patient resources, testimonials | Mobile shows a clear request-appointment path above the fold, no overflow, and proof assets below the first decision point | Use only in warm or permitted scorecard-first channels |
 | 6 | Williams Family Dentistry | Source and mobile check completed | Request appointment, new/existing patient phone paths, service pages, insurance cues, testimonials | Social/review links and appointment path need scoring for mobile prominence and proof placement | Score in dashboard before any contact |
-| 7 | Luxe Lounge Medspa | Source review completed; mobile pending | Schedule Now, call/text, treatment menu, Beauty Bank, financing/promotions, testimonials | Check whether booking, membership, and proof are arranged around consultation intent | Score mobile booking and proof placement |
-| 8 | Belle Vie Aesthetic Medicine | Source review completed; mobile pending | Book Now, phone, service categories, memberships, payment plans, specials, testimonials | Check whether service proof and consultation path stay clear around shopping/membership links | Score mobile booking and routing |
-| 9 | Lexington Prime Aesthetics & Wellness | Source review completed; mobile pending | Book appointment, before-and-after gallery, gift card path, reviews, treatment categories | Check whether appointment path and proof sit close enough to treatment decisions | Score appointment and treatment-page path |
-| 10 | Beautiful You Medical Spa | Source review completed; mobile pending | Book appointment, quick menu, gift cards, specials, financial options, proof counters, reviews | Check whether specials, proof, and booking work together instead of splitting attention | Score booking and specials capture |
+| 7 | Luxe Lounge Medspa | Source and mobile check completed | Schedule Now, call/text, treatment menu, Beauty Bank, financing/promotions, testimonials | Mobile showed phone/Schedule Now, promotion/gift-card paths, chat competition, slight overflow, and no first-screen proof | Use only in warm or permitted scorecard-first channels |
+| 8 | Belle Vie Aesthetic Medicine | Source and mobile check completed; clean-browser recheck advised | Book Now, phone, service categories, memberships, payment plans, specials, testimonials | Mobile showed Book Now/phone plus membership/shop paths; accessibility panel state in automation needs clean-browser confirmation | Recheck accessibility-panel state before any prospect-specific contact |
+| 9 | Lexington Prime Aesthetics & Wellness | Source and mobile check completed | Book appointment, before-and-after gallery, gift card path, reviews, treatment categories | Mobile showed phone, appointment, gift-card, and contact-widget paths without overflow; no first-screen proof observed | Use only in warm or permitted scorecard-first channels |
+| 10 | Beautiful You Medical Spa | Source and mobile check completed | Book appointment, quick menu, gift cards, specials, financial options, proof counters, reviews | Mobile showed major horizontal overflow, cluttered nav text, cookie friction, booking link, and no first-screen proof | Use only in warm or permitted scorecard-first channels |
 | 11 | Big Blue Roofing | Source and mobile check completed | Quote/free-estimate paths, phone/email, storm-damage positioning, testimonials, third-party proof links | Mobile showed estimate paths, storm-damage copy, testimonial/BBB proof, and no page-level overflow; confirm tap-to-call, tracking, and follow-up | Use only in warm or permitted scorecard-first channels |
 | 12 | Big League Roofers | Source and mobile check completed | Instant quote, certified inspections, repair/replacement/storm services, financing, insurance support, certifications, reviews | Mobile first screen showed phone/logo/menu; quote and certified-inspection paths existed in navigation but were not obvious first-screen actions | Recheck first-screen CTA hierarchy before any contact |
 | 13 | Reliable Residential Roofing | Source and mobile check completed | Call/text, request-quote form, roofing/gutter/skylight services, certifications, warranty, financing, insurance help, chat | Mobile showed major horizontal overflow plus offscreen nav/form elements; visible call/text action needs clearer proof and quote hierarchy | Use only in warm or permitted scorecard-first channels |
-| 14 | Barrier Roofs | Source/html fetch completed; mobile visual check blocked | Quote/free-estimate paths, roofing and exterior services, insurance claims, projects, testimonials, certifications, service areas | HTTP source returned successfully, but the in-app browser did not produce a usable mobile viewport | Recheck in a normal browser before scoring |
+| 14 | Barrier Roofs | Source and mobile check completed | Quote/free-estimate paths, roofing and exterior services, insurance claims, projects, testimonials, certifications, service areas | Mobile showed request-quote and sticky call actions, no overflow, and a cookie consent panel covering much of the first decision area | Use only in warm or permitted scorecard-first channels |
 | 15 | Mighty Dog Roofing Lexington | Source and mobile check completed | Free inspection, workmanship-warranty positioning, financing, emergency repair, insurance-claim help, roof material options, service areas | Mobile showed cookie banner, phone icon, free-inspection path, and no first-screen proof; cookie banner competes with the first action | Use only in warm or permitted scorecard-first channels |
 
 ## Cooper Family Dentistry
@@ -148,9 +148,9 @@ Sources checked:
 
 Render note:
 
-- Direct source fetch returned usable official page text.
-- Read-only browser rendering returned an empty body/title in the automation surface on 2026-07-02.
-- Treat this as source-only until a normal browser/mobile visual check confirms the actual first screen.
+- Direct source fetch returned usable official page text for the homepage, reviews page, and new-patients page on 2026-07-02.
+- Clean-browser mobile rendering was rechecked on 2026-07-02. No forms were submitted, no appointment links were clicked, and no outreach was sent.
+- The mobile screenshot rendered a mostly blank page with `Not authorized` text instead of the public first screen. Keep this as source/html-verified and research-only until a user-controlled browser confirms the page.
 
 Observable strengths:
 
@@ -162,19 +162,19 @@ Observable strengths:
 
 Review hypotheses to confirm:
 
-1. Confirm whether the live mobile homepage visibly presents phone and appointment request actions above the fold.
+1. Confirm in a user-controlled browser whether the live mobile homepage visibly presents phone and appointment request actions above the fold.
 2. The review-request page may help reputation generation, but the audit should check whether public review proof is visible before a new patient books.
 3. The new-patient page has useful information, but the patient forms section appears to need confirmation because it may not expose actual forms in the fetched source.
 4. Service breadth is strong. The audit should check whether high-value services have conversion-focused pages rather than primarily educational content.
-5. The rendered blank result in automation may indicate a technical issue, a bot/JS behavior, or only an automation limitation. Confirm manually before treating it as a prospect-facing issue.
+5. The clean-browser `Not authorized` result may indicate a bot/JS behavior or access-control behavior, not necessarily a prospect-facing issue. Confirm manually before treating it as a public conversion problem.
 
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
+Estimated score: not scored; clean-browser render blocked
 Checked as handled: appointment path exists in source, new-patient content exists, review-request page exists
 Left unchecked until confirmed: mobile first screen, visible public proof, tracking, follow-up, rendered page behavior
-Likely scorecard band: needs manual visual check before rating
+Likely scorecard band: keep research-only until a user-controlled browser confirms the public page
 ```
 
 Channel-safe first touch:
@@ -263,11 +263,12 @@ Sources checked:
 
 - Official homepage: https://www.completedentistrylexington.com/
 
-Render note:
+Read-only mobile check:
 
-- Direct source fetch returned usable official page text.
-- Read-only browser rendering returned an empty body/title in the automation surface on 2026-07-02.
-- Treat this as source-only until a normal browser/mobile visual check confirms the actual first screen.
+- Checked at mobile width on 2026-07-02.
+- No forms were submitted, no appointment links were clicked, and no outreach was sent.
+- Mobile first screen showed the logo, menu, `CONTACT US`, hero copy, and a clear `REQUEST APPOINTMENT` action above the fold.
+- No page-level horizontal overflow was detected.
 
 Observable strengths:
 
@@ -280,25 +281,26 @@ Observable strengths:
 
 Review hypotheses to confirm:
 
-1. Confirm whether the mobile first screen makes one new-patient action obvious before service, review, and resource links compete for attention.
-2. The site appears to have strong testimonial and review assets. Confirm whether that proof is visible near appointment and high-value service decisions.
+1. The mobile first screen makes `REQUEST APPOINTMENT` obvious; the audit should check whether `CONTACT US`, menu, and patient portal paths compete later in the journey.
+2. The site appears to have strong testimonial and review assets. Confirm whether that proof is visible near appointment and high-value service decisions rather than mostly below the first decision point.
 3. The dental implant content looks deep. The audit should check whether these pages include fit, process, proof, objections, and the next step in the right order.
 4. Payment/insurance and first-visit resources are present. Confirm whether they reduce booking friction before the appointment request.
-5. The blank automation render may be a technical limitation, not a prospect-facing issue. Do not score visual clarity until a normal browser check confirms it.
+5. Tracking hints are present in source, but source alone does not confirm whether calls, forms, appointment clicks, and follow-up are measured by source.
 
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: new-patient phone path, request appointment path, review/testimonial assets, service depth, patient resources
-Left unchecked until confirmed: mobile first screen, proof placement near appointment decisions, tracking, follow-up
-Likely scorecard band: needs manual visual check before rating
+Estimated score: 50/100 internal scorecard estimate
+Checked as handled in source/mobile: clear request-appointment action, new-patient phone path, service depth, patient resources, review/testimonial assets below the first screen
+Visible mobile gaps to inspect: proof is not obvious in the first screen, menu/contact/patient-portal paths may compete after the hero, tracking and follow-up are not visible from outside
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: useful audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
 
 ```text
-I took a source-level look at Complete Dentistry for All Ages' buyer path. The site has useful assets: new-patient phone paths, Request Appointment, Leave a Review, patient resources, testimonials, and deep service content around implants, Invisalign, cosmetic dentistry, restorative care, and general dentistry.
+I took a quick outside-in look at Complete Dentistry for All Ages' buyer path. The site has useful assets: a visible Request Appointment path, new-patient phone paths, Leave a Review, patient resources, testimonials, and deep service content around implants, Invisalign, cosmetic dentistry, restorative care, and general dentistry.
 
 The part worth checking is whether those assets show up in the order a new patient needs on mobile: one clear appointment path, proof near the decision point, and service pages that support the next step before comparison shopping.
 
@@ -795,8 +797,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no quote buttons were clicked, and no outreach was sent.
-- Browser mobile visual check was attempted on 2026-07-02. No forms were submitted, no quote links were clicked, and no outreach was sent.
-- HTTP fetch returned status 200 with the official page source, title, and description, but the in-app browser timed out or stayed blank before producing a usable mobile viewport. Keep this as source/html-verified until a clean-browser visual check confirms the first screen.
+- Clean-browser mobile visual check was completed on 2026-07-02. No forms were submitted, no quote links were clicked, no cookie buttons were clicked, and no outreach was sent.
+- Mobile first screen showed logo/menu, `REQUEST A QUOTE`, service-area copy, a roof-protection hero headline, and sticky `CALL NOW`. No page-level horizontal overflow was detected. A cookie consent panel covered much of the first decision area.
 
 Observable strengths:
 
@@ -806,27 +808,28 @@ Observable strengths:
 
 Review hypotheses to confirm:
 
-1. Confirm whether roofing buyers can find the quote path quickly despite the broader exterior-services menu.
+1. Roofing buyers can see `REQUEST A QUOTE` and sticky `CALL NOW` quickly, but the cookie panel competes with the first decision.
 2. Insurance-claims support can be valuable. Score whether it is close enough to storm or damage intent.
 3. Testimonials and project proof can reduce risk. Confirm whether they appear near request-quote decisions.
-4. The quote form includes consent language. Confirm whether the form feels appropriately clear without adding unnecessary friction.
+4. The quote form includes consent language. Confirm whether the form feels appropriately clear without adding unnecessary friction after the first-screen cookie hurdle.
 5. Tracking and follow-up are not visible from source alone. Confirm whether quote, call, and form-start interest are measurable.
 
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: not scored; clean-browser visual check required
-Checked as handled in source/html: quote/free-estimate paths, insurance-claims support, service breadth, testimonials, projects, certification proof, BBB/military-discount/satisfaction-guarantee positioning in page metadata
-Left unchecked until visual confirmation: mobile CTA hierarchy, first-screen proof placement, tracking, follow-up, quote-form friction
-Likely scorecard band: hold as research-only until the first mobile screen can be verified
+Estimated score: 50/100 internal scorecard estimate; cookie-friction recheck advised
+Checked as handled in source/mobile: request-quote path, sticky call path, service-area positioning, insurance-claims support, service breadth, testimonials/projects/certification assets in source
+Visible mobile gaps to inspect: cookie consent covers much of the first decision area, proof is not obvious in the first screen, tracking and follow-up are not visible from outside
+Left unchecked until confirmed by the business: tracking, follow-up, and quote-form handling
+Likely scorecard band: useful audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
 
 ```text
-I took a source-level look at Barrier Roofs' buyer path. The site already has useful assets: quote/free-estimate paths, roofing and exterior-service pages, insurance-claims support, project proof, testimonials, service-area content, certifications, and a detailed quote form.
+I took a quick outside-in look at Barrier Roofs' buyer path. The site already has useful assets: visible quote and call paths, roofing and exterior-service pages, insurance-claims support, project proof, testimonials, service-area content, certifications, and a detailed quote form.
 
-The part worth checking is whether those assets keep roofing buyers moving toward a quote without broad service options or form friction slowing the path.
+The part worth checking is whether those assets keep roofing buyers moving toward a quote without cookie friction, broad service options, or form friction slowing the path.
 
 I built a free roofing scorecard for that buyer path:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
@@ -894,4 +897,4 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing
 
 ## Next Batch Action
 
-Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. The four med spa leads and four roofing leads now have read-only mobile checks; Barrier Roofs still needs a clean-browser visual recheck. Next, score the remaining source-only dentist rows and complete visual checks for every source-only row before prospect-specific contact. Do not send direct outreach from these drafts.
+Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. The four med spa leads, five roofing leads, and all dentist rows except Tates Creek Dental now have read-only mobile checks. Tates Creek Dental remains research-only because clean-browser rendering returned `Not authorized`; do not use visual claims for that prospect until a user-controlled browser confirms the public first screen. Next, use only warm or permitted scorecard-first channels for reviewed leads, and do not send direct outreach from these drafts.

@@ -69,9 +69,9 @@
       avgCustomerValue: 650,
       leadsNeeded: 8,
       reviewAngle: "Review request flow, new-patient action, review-to-booking path",
-      reviewStatus: "Source-only draft; automation render returned blank",
+      reviewStatus: "Source/html fetch completed; clean-browser render returned Not authorized; no outreach sent",
       reviewedOn: "2026-07-02",
-      safeNextAction: "Recheck visually in a normal browser before scoring.",
+      safeNextAction: "Only recheck manually in a user-controlled normal browser; do not use visual claims until the public first screen renders.",
       status: "Research only",
       sourceLinks: [
         "PROSPECT_REVIEW_PACKET.md",
@@ -106,10 +106,10 @@
       avgCustomerValue: 650,
       leadsNeeded: 8,
       reviewAngle: "Testimonial proof, appointment action, mobile first-screen clarity",
-      reviewStatus: "Source-only draft; automation render returned blank",
+      reviewStatus: "Source and mobile check completed; no outreach sent",
       reviewedOn: "2026-07-02",
-      safeNextAction: "Recheck visually in a normal browser before scoring.",
-      status: "Research only",
+      safeNextAction: "Use only in warm or permitted scorecard-first channels; anchor on visible appointment clarity, proof placement below the fold, tracking, and follow-up.",
+      status: "Lead",
       sourceLinks: [
         "PROSPECT_REVIEW_PACKET.md",
         "https://www.completedentistrylexington.com/"
@@ -286,10 +286,10 @@
       avgCustomerValue: 4500,
       leadsNeeded: 2,
       reviewAngle: "Inspection request path, warranty proof, financing and trust signals",
-      reviewStatus: "Source/html fetch completed; browser mobile visual check blocked; no outreach sent",
+      reviewStatus: "Source and mobile check completed; no outreach sent",
       reviewedOn: "2026-07-02",
-      safeNextAction: "Recheck in a normal browser before scoring; HTTP 200 returned page source, but the in-app browser did not render a usable mobile viewport.",
-      status: "Research only",
+      safeNextAction: "Use only in warm or permitted scorecard-first channels; anchor on quote/call visibility, cookie-banner friction, proof placement, tracking, and follow-up.",
+      status: "Lead",
       sourceLinks: [
         "PROSPECT_REVIEW_PACKET.md",
         "https://barrierroofs.com/"

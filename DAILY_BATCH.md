@@ -110,5 +110,6 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Scorecard post queue: `SCORECARD_POST_QUEUE.md`
 - Reviewed prospects: 15 total internal drafts, 0 contacted
 - Med spa mobile checks: completed read-only for Luxe Lounge, Belle Vie, Lexington Prime, and Beautiful You; no outreach sent
-- Roofing mobile checks: completed read-only for Big Blue, Big League, Reliable Residential, and Mighty Dog; Barrier returned HTTP 200 source but still needs a clean-browser mobile visual recheck; no outreach sent
-- Next required action: use the prefilled scorecard URLs for any permitted scorecard-first conversation, load or refresh the starter list in the dashboard, score the remaining source-only dentist rows, then recheck Barrier Roofs visually before any prospect-specific contact
+- Roofing mobile checks: completed read-only for Big Blue, Big League, Reliable Residential, Barrier, and Mighty Dog; no outreach sent
+- Remaining research-only row: Tates Creek Dental has HTTP/source content but clean-browser mobile render returned `Not authorized`; do not use visual claims until a user-controlled browser confirms the public first screen
+- Next required action: use the prefilled scorecard URLs only for warm referrals, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address/PO box/CMRA is available
