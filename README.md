@@ -9,6 +9,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
 - `REVIEWED_PIPELINE.csv`: current reviewed lead queue with status, source notes, scorecard estimates, and next safe actions.
+- `SCORECARD_POST_QUEUE.md`: scorecard-first public post, warm referral, community reply, and score-result reply copy.
 - `assets/audit-preview-v2.jpg`: product visual used by the offer page.
 
 No revenue is guaranteed. The app is designed to make a real offer easy to sell, deliver, and track.

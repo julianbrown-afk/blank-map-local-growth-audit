@@ -81,6 +81,7 @@ The best prospects are local service businesses that already have customer value
 22. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
 23. Use the dashboard report as the first draft of the deliverable.
 24. Offer the implementation sprint only after the audit is delivered.
+25. Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral asks, community replies, and score-result replies where posting or replying is permitted.
 
 ## Public Offer Links
 
@@ -206,6 +207,12 @@ The current reviewed working queue is:
 
 ```text
 REVIEWED_PIPELINE.csv
+```
+
+The current scorecard-first post and reply queue is:
+
+```text
+SCORECARD_POST_QUEUE.md
 ```
 
 At `$399` per audit:

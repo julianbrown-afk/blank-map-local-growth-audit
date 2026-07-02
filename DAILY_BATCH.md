@@ -28,6 +28,8 @@ The public mailing address is intentionally blank. Do not send cold commercial e
 
 Use this batch for manual review, warm referrals, permitted community replies, and scorecard-first conversations. Every review angle below is a hypothesis to inspect, not a claim about the business.
 
+Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, community replies, and score-result replies. No post has been made from that file.
+
 ## Today's Review Queue
 
 Machine-readable reviewed queue:
@@ -93,5 +95,6 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - First mobile check: completed read-only, no outreach sent
 - Review packet: `PROSPECT_REVIEW_PACKET.md`
 - Reviewed pipeline queue: `REVIEWED_PIPELINE.csv`
-- Reviewed prospects: 6 total internal drafts, 0 contacted
-- Next required action: load or refresh the starter list in the dashboard, score Cooper Family Dentistry, AMS Dental, and Williams Family Dentistry, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually before scoring
+- Scorecard post queue: `SCORECARD_POST_QUEUE.md`
+- Reviewed prospects: 10 total internal drafts, 0 contacted
+- Next required action: load or refresh the starter list in the dashboard, score the reviewed dentist and med spa leads, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually before scoring

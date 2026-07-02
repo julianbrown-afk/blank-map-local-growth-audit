@@ -22,6 +22,18 @@ Dentist offer:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
 ```
 
+Med spa scorecard:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+```
+
+Med spa offer:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+```
+
 ## Compliance Boundary
 
 The public mailing address is intentionally blank. Do not send cold commercial email from these drafts until a valid public mailing address, PO box, or compliant commercial mail receiving address is added to the outreach footer.
@@ -38,6 +50,10 @@ Use these notes for manual review, warm referrals, permitted community replies, 
 | 4 | AMS Dental | Source and mobile check completed | Request Appointment, Contact Us, two locations, new-patient phone, broad service menu | Cookie banner and location routing may compete with appointment clarity on mobile | Score the mobile first screen and location path |
 | 5 | Complete Dentistry for All Ages | Source-only draft | New-patient phone, Request Appointment, Leave a Review, service pages, patient resources, testimonials | Automation render returned blank; visual first-screen appointment clarity needs confirmation | Recheck visually in a normal browser |
 | 6 | Williams Family Dentistry | Source and mobile check completed | Request appointment, new/existing patient phone paths, service pages, insurance cues, testimonials | Social/review links and appointment path need scoring for mobile prominence and proof placement | Score in dashboard before any contact |
+| 7 | Luxe Lounge Medspa | Source review completed; mobile pending | Schedule Now, call/text, treatment menu, Beauty Bank, financing/promotions, testimonials | Check whether booking, membership, and proof are arranged around consultation intent | Score mobile booking and proof placement |
+| 8 | Belle Vie Aesthetic Medicine | Source review completed; mobile pending | Book Now, phone, service categories, memberships, payment plans, specials, testimonials | Check whether service proof and consultation path stay clear around shopping/membership links | Score mobile booking and routing |
+| 9 | Lexington Prime Aesthetics & Wellness | Source review completed; mobile pending | Book appointment, before-and-after gallery, gift card path, reviews, treatment categories | Check whether appointment path and proof sit close enough to treatment decisions | Score appointment and treatment-page path |
+| 10 | Beautiful You Medical Spa | Source review completed; mobile pending | Book appointment, quick menu, gift cards, specials, financial options, proof counters, reviews | Check whether specials, proof, and booking work together instead of splitting attention | Score booking and specials capture |
 
 ## Cooper Family Dentistry
 
@@ -335,6 +351,238 @@ If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visib
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
 ```
 
+## Luxe Lounge Medspa
+
+Public website:
+
+```text
+https://www.luxeloungemedspa.com/
+```
+
+Sources checked:
+
+- Official homepage: https://www.luxeloungemedspa.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes `Schedule Now`, phone, and text contact paths.
+- The service menu covers injectables, fillers, laser/energy treatments, skin treatments, facials, hair removal, PRP, lashes/brows, waxing, and men-focused paths.
+- The site includes resource and conversion assets such as Beauty Bank, financing, promotions, gift cards, client portal, testimonials, gallery, and blog.
+- The homepage positions the med spa around luxury, professional care, top-line products, experienced medical staff, and results.
+- The source includes several named testimonials and a `5.0 from 493+ Reviews` reference.
+- The page includes a service-interest form path and another `Schedule Now` call near the lower page.
+
+Review hypotheses to confirm:
+
+1. Confirm whether the mobile first screen gives one obvious booking path before menu, promotions, social, and membership paths compete for attention.
+2. The testimonial and review proof appears strong. Check whether that proof supports booking and high-value treatment decisions, not just general credibility.
+3. The Beauty Bank, promotions, gift cards, and financing are useful conversion assets. Score whether they help buying confidence or distract from consultation booking.
+4. Treatment breadth is deep. The audit should check whether injectables, laser, facials, and membership paths have clear fit, proof, process, and next step.
+5. Tracking and follow-up are not visible from source alone. Confirm whether schedule clicks, forms, calls, and text inquiries can be attributed and recovered.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: booking path, phone/text paths, service depth, testimonials, membership/promotion assets
+Left unchecked until confirmed: mobile first screen, proof placement, tracking, follow-up, form friction
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Luxe Lounge Medspa's buyer path. The site already has useful assets: Schedule Now, call/text paths, a broad treatment menu, Beauty Bank, financing, promotions, gift cards, testimonials, and review proof.
+
+The part worth checking is whether those assets are arranged around one clear consultation or booking path on mobile, especially for high-intent treatments like injectables, laser, facials, and membership-driven repeat care.
+
+I built a free med spa scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+```
+
+## Belle Vie Aesthetic Medicine
+
+Public website:
+
+```text
+https://bellevietoday.com/
+```
+
+Sources checked:
+
+- Official homepage: https://bellevietoday.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes `BOOK NOW` and phone paths.
+- The service menu covers injectables, skin rejuvenation, wellness, laser/energy, products, specials/events, memberships, payment plans, and rewards.
+- The homepage positions the business around clinical expertise, personal touch, natural-looking results, and meaningful beauty.
+- The source includes treatment categories for Botox, fillers, Dysport, Sculptra, PRF, chemical peels, facial treatments, microneedling, weight loss, NAD+, HRT, RF microneedling, CO2 laser, laser hair removal, and related offers.
+- The site includes patient testimonials and a `More Patient Testimonials` link.
+- The source includes complimentary consultation language and flexible payment/membership positioning.
+
+Review hypotheses to confirm:
+
+1. Confirm whether `Book Now` is the clear primary mobile action before shop, membership, specials, and social paths split attention.
+2. The service menu is deep. Score whether high-value treatments explain fit, proof, process, downtime, and booking next step close to the decision.
+3. Membership, loyalty, specials, and payment plans are useful buyer assets. Confirm whether they support consultation confidence rather than creating too many paths.
+4. Testimonials are present. Check whether proof appears near treatment and booking decisions.
+5. Tracking and follow-up are not visible from source alone. Confirm whether booking clicks, calls, shop interest, and consultation inquiries are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: book-now path, phone path, service depth, testimonials, membership/payment assets
+Left unchecked until confirmed: mobile first screen, CTA hierarchy, tracking, follow-up, service-page conversion depth
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Belle Vie Aesthetic Medicine's buyer path. The site already has useful assets: Book Now, phone access, injectables, laser/energy, skin rejuvenation, wellness services, memberships, payment plans, specials, and patient testimonials.
+
+The part worth checking is whether a first-time mobile visitor sees one clear consultation or booking path, enough treatment proof, and the right reassurance before choosing between shop, specials, memberships, and services.
+
+I built a free med spa scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+```
+
+## Lexington Prime Aesthetics & Wellness
+
+Public website:
+
+```text
+https://lexprimeaesthetics.com/
+```
+
+Sources checked:
+
+- Official homepage: https://lexprimeaesthetics.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes appointment-booking and gift-card paths.
+- The source includes treatment categories such as injectables and fillers, skin rejuvenation, body treatments, wellness treatments, and wellness injections.
+- The homepage emphasizes personal consultations, nonsurgical treatments, holistic beauty/wellness, advanced medical-grade treatments, and state-of-the-art technologies.
+- The source includes before-and-after gallery content.
+- The source includes a `View All Reviews` link and multiple client review excerpts.
+- The page includes owner/mission messaging and video/experience content.
+
+Review hypotheses to confirm:
+
+1. Confirm whether the appointment path is obvious on mobile and repeated near treatment proof.
+2. Before-and-after content is valuable. Score whether it appears close enough to treatment and booking decisions.
+3. Gift cards can be useful, but the audit should check whether the gift-card path competes with consultation booking for first-time buyers.
+4. The treatment menu includes multiple high-value paths. Score whether each priority path explains fit, process, proof, and next step.
+5. Tracking and follow-up are not visible from source alone. Confirm whether booking clicks, calls, forms, and gift-card interest are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: appointment path, gift-card path, treatment categories, before-and-after proof, review proof
+Left unchecked until confirmed: mobile CTA prominence, tracking, follow-up, proof placement
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Lexington Prime Aesthetics & Wellness' buyer path. The site already has useful assets: appointment booking, treatment categories, a before-and-after gallery, client reviews, gift cards, and strong consultation positioning.
+
+The part worth checking is whether those proof assets and treatment pages lead a first-time mobile visitor toward one clear appointment path before they compare another med spa.
+
+I built a free med spa scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+```
+
+## Beautiful You Medical Spa
+
+Public website:
+
+```text
+https://www.beautifulyoumedspa.com/
+```
+
+Sources checked:
+
+- Official homepage: https://www.beautifulyoumedspa.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes phone, address, and appointment-booking paths.
+- The navigation includes quick menu, advanced, injectables, facials, services, liquid facelift, PRP hair restoration, weight loss, products, specials, gift cards, financial options, and contact.
+- The homepage positions the business around premier aesthetic treatments in Lexington and lists treatments such as Morpheus8, Botox, Dysport, fillers, VI Peel, exosomes, Plasma Pen, skin care, hair restoration, PRP, and more.
+- The page states that online booking lets visitors browse services, view real-time availability, and book in a few clicks.
+- The source includes specials/events, podcast content, proof counters, and a reviews section.
+- The proof counters include patients serviced, services performed, years in business, and services offered.
+
+Review hypotheses to confirm:
+
+1. Confirm whether the booking path is visually prominent on mobile before quick menu, specials, gift cards, and social links split attention.
+2. The site has strong proof counters. Score whether those counters support the appointment decision or sit too far from the booking path.
+3. Specials and financial options can reduce friction. Confirm whether they support booking rather than becoming separate dead ends.
+4. The treatment menu is broad. The audit should check whether priority treatments have clear fit, proof, process, price/financing cues, and next step.
+5. Tracking and follow-up are not visible from source alone. Confirm whether booking clicks, calls, specials requests, and monthly-specials capture are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: booking path, phone/address, broad treatment menu, specials, financial options, proof counters, reviews
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, proof placement, specials capture
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Beautiful You Medical Spa's buyer path. The site already has useful assets: appointment booking, a quick treatment menu, specials, gift cards, financial options, proof counters, reviews, and a broad set of aesthetic treatments.
+
+The part worth checking is whether those assets guide a first-time mobile visitor toward one clear booking path, especially when specials, proof, financing, and treatment choices all compete for attention.
+
+I built a free med spa scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+```
+
 ## Next Batch Action
 
-Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry, AMS Dental, and Williams Family Dentistry as reviewed leads, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually in a normal browser before scoring. Do not send direct outreach from these drafts.
+Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry, AMS Dental, Williams Family Dentistry, and the four med spa leads as reviewed leads, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually in a normal browser before scoring. Do not send direct outreach from these drafts.

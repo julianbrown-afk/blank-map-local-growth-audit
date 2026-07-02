@@ -139,7 +139,15 @@
       city: "Lexington",
       avgCustomerValue: 500,
       leadsNeeded: 10,
-      reviewAngle: "Treatment pages, consultation CTA, social proof, booking friction"
+      reviewAngle: "Treatment pages, consultation CTA, social proof, booking friction",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score schedule-button prominence, testimonial placement, membership path, and form friction before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.luxeloungemedspa.com/"
+      ]
     },
     {
       businessName: "Belle Vie Aesthetic Medicine",
@@ -148,7 +156,15 @@
       city: "Lexington",
       avgCustomerValue: 500,
       leadsNeeded: 10,
-      reviewAngle: "Treatment proof, booking action, service-area clarity"
+      reviewAngle: "Treatment proof, booking action, service-area clarity",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score Book Now prominence, consultation path, service proof, and specials/membership routing before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://bellevietoday.com/"
+      ]
     },
     {
       businessName: "Lexington Prime Aesthetics & Wellness",
@@ -157,7 +173,15 @@
       city: "Lexington",
       avgCustomerValue: 500,
       leadsNeeded: 10,
-      reviewAngle: "Testimonial proof, treatment-page conversion, booking flow"
+      reviewAngle: "Testimonial proof, treatment-page conversion, booking flow",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score appointment path, before-and-after proof, gift-card path, and treatment-page clarity before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://lexprimeaesthetics.com/"
+      ]
     },
     {
       businessName: "Beautiful You Medical Spa",
@@ -166,7 +190,15 @@
       city: "Lexington",
       avgCustomerValue: 500,
       leadsNeeded: 10,
-      reviewAngle: "Review proof, specials capture, appointment CTA"
+      reviewAngle: "Review proof, specials capture, appointment CTA",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score booking prominence, specials capture, proof counters, and treatment menu depth before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.beautifulyoumedspa.com/"
+      ]
     },
     {
       businessName: "Prive Medical Spa",

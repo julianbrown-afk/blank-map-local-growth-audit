@@ -2,7 +2,7 @@
 
 Research date: 2026-07-02
 
-Status: research only. No outreach has been sent. The first six dentist prospects have internal review notes in `REVIEWED_PIPELINE.csv`.
+Status: research only. No outreach has been sent. The first ten dentist and med spa prospects have internal review notes in `REVIEWED_PIPELINE.csv`.
 
 Use this list to seed the operator dashboard. Do not claim a specific issue until you inspect the business directly in the dashboard. The angle column is a hypothesis for what to review, not a factual defect.
 
