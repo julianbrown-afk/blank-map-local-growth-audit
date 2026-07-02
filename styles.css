@@ -4250,6 +4250,57 @@ td select {
   display: none;
 }
 
+.referral-script-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.referral-script-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.referral-script-grid article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 238px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 16px 42px rgba(24, 32, 29, 0.08);
+}
+
+.referral-script-grid span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.referral-script-grid strong {
+  display: block;
+  margin-top: 9px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.referral-script-grid p {
+  margin: 10px 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.referral-script-grid .ghost-button {
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+}
+
 .scorecard-link-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -4808,6 +4859,7 @@ td select {
   }
 
   .scorecard-link-grid,
+  .referral-script-grid,
   .referral-track-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4894,6 +4946,7 @@ td select {
     .scorecard-track-grid,
     .scorecard-link-grid,
     .referral-copy-panel,
+    .referral-script-grid,
     .referral-track-list,
     .referral-use-section,
     .scorecard-decision-section,
@@ -5425,6 +5478,10 @@ td select {
 
   .referral-copy-actions {
     grid-template-columns: 1fr;
+  }
+
+  .referral-script-grid article {
+    min-height: 0;
   }
 
   .quick-track-links a {

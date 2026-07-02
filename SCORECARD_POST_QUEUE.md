@@ -30,6 +30,8 @@ Resource directory with copy-ready referral text:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 ```
 
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, and score-result replies.
+
 Dentist scorecard:
 
 ```text
@@ -182,6 +184,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 The current internal reviewed queue is `REVIEWED_PIPELINE.csv`.
 
 - Reviewed prospects: 15
+- Reviewed leads ready for warm/permitted scorecard-first channels: 14
+- Research-only rows: 1
 - Prospects contacted: 0
 - Paid audits sold from this queue: 0
-- Next action before any prospect-specific contact: score the reviewed rows in the dashboard, complete mobile visual checks for source-only rows, and keep the channel compliant.
+- Next action before any prospect-specific contact: use only warm referrals, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
