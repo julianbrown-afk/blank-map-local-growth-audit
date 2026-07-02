@@ -846,11 +846,18 @@ Use this line if they ask about results: the audit is planning work based on obs
         focus: "treatment-page clarity, consultation booking, proof, and follow-up friction"
       };
     }
-    if (text.includes("roof") || text.includes("remodel") || text.includes("contractor") || text.includes("construction")) {
+    if (text.includes("roof")) {
       return {
-        label: "Roofing/remodeling track",
+        label: "Roofing track",
         path: "lexington-roofing-remodeling-growth-audit.html",
-        focus: "quote-request friction, trust proof, service clarity, and follow-up gaps"
+        focus: "roofing quote-request friction, warranty proof, urgency cues, and follow-up gaps"
+      };
+    }
+    if (text.includes("remodel") || text.includes("contractor") || text.includes("construction")) {
+      return {
+        label: "Remodeling track",
+        path: "lexington-remodeling-growth-audit.html",
+        focus: "project-fit clarity, galleries and proof, estimate flow, and follow-up gaps"
       };
     }
     return {

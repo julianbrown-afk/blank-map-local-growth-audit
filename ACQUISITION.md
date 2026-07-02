@@ -96,6 +96,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
 
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-remodeling-growth-audit.html
+
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-plumbing-growth-audit.html
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-plumbing-growth-audit.html
