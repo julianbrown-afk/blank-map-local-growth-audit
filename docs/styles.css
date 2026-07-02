@@ -2261,6 +2261,82 @@ td select {
   font-size: 18px;
 }
 
+.sample-assurance {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.sample-assurance div {
+  min-height: 142px;
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(223, 234, 242, 0.5), rgba(255, 255, 255, 0)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.sample-assurance span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sample-assurance strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 19px;
+  line-height: 1.12;
+}
+
+.sample-assurance p {
+  margin: 9px 0 0;
+  color: var(--muted);
+}
+
+.sample-decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+  border: 1px solid rgba(19, 94, 75, 0.18);
+  border-radius: 8px;
+  padding: 24px;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(12, 63, 51, 0.98), rgba(19, 94, 75, 0.92), rgba(52, 105, 154, 0.8)),
+    var(--green-dark);
+  box-shadow: var(--shadow-strong);
+}
+
+.sample-decision h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.sample-decision p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.sample-decision-actions {
+  display: grid;
+  gap: 10px;
+  justify-items: stretch;
+}
+
+.sample-decision-actions .primary-button,
+.sample-decision-actions .secondary-link {
+  width: 100%;
+}
+
 .sample-report {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -2422,6 +2498,8 @@ td select {
     .track-grid,
     .buyer-note,
     .sample-section,
+    .sample-assurance,
+    .sample-decision,
     .scorecard-section,
     .scorecard-panel,
     .value-math-section .section-head,
@@ -2659,6 +2737,14 @@ td select {
 
   .sample-report {
     padding: 18px;
+  }
+
+  .sample-decision {
+    padding: 20px;
+  }
+
+  .sample-decision h2 {
+    font-size: 25px;
   }
 
   .sample-report-head,
