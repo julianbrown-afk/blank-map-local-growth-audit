@@ -708,6 +708,10 @@ td select {
     var(--paper);
 }
 
+.offer-body.has-purchase-bar {
+  padding-bottom: 112px;
+}
+
 .offer-nav {
   position: fixed;
   width: 100%;
@@ -2649,6 +2653,74 @@ td select {
   margin-top: 20px;
 }
 
+.purchase-bar {
+  position: fixed;
+  z-index: 60;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+  border: 1px solid rgba(217, 222, 212, 0.92);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 22px 60px rgba(24, 32, 29, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.purchase-bar-copy {
+  min-width: 0;
+}
+
+.purchase-bar-copy span {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.purchase-bar-copy strong {
+  display: block;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.18;
+}
+
+.purchase-bar-copy p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.purchase-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.purchase-bar-actions .primary-button,
+.purchase-bar-actions .secondary-link {
+  min-height: 44px;
+  white-space: normal;
+  text-align: center;
+}
+
+.purchase-bar-actions .secondary-link.dark {
+  border: 1px solid rgba(19, 94, 75, 0.22);
+  border-radius: 8px;
+  padding: 0 14px;
+  background: rgba(240, 246, 241, 0.86);
+}
+
 .intake-body {
   background:
     linear-gradient(180deg, #fbfcf8, #edf4f1 42%, #ffffff 100%),
@@ -3576,6 +3648,46 @@ td select {
     display: none;
   }
 
+  .offer-body.has-purchase-bar {
+    padding-bottom: 154px;
+  }
+
+  .purchase-bar {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 12px 12px;
+  }
+
+  .purchase-bar-copy strong {
+    font-size: 15px;
+  }
+
+  .purchase-bar-copy p {
+    display: none;
+  }
+
+  .purchase-bar-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .purchase-bar-actions .primary-button,
+  .purchase-bar-actions .secondary-link {
+    width: 100%;
+    min-height: 42px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
   .offer-hero {
     min-height: 0;
     align-items: flex-start;
@@ -3938,6 +4050,14 @@ td select {
 }
 
 @media print {
+  .offer-body.has-purchase-bar {
+    padding-bottom: 0;
+  }
+
+  .purchase-bar {
+    display: none;
+  }
+
   body > :not(#printView) {
     display: none !important;
   }
