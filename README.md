@@ -4,6 +4,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 
 - `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page with a self-check scorecard, value calculator, and links to Stripe Payment Links, booking, or email.
+- `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit.
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
@@ -23,6 +24,12 @@ Sample report:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+```
+
+Free scorecard:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 
 Audit intake:
@@ -65,9 +72,10 @@ http://localhost:4173/index.html
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
 4. Send prospects the generated offer link, or use the closest niche offer page when it matches the prospect.
-5. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
-6. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
-7. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+5. For colder prospects, use `Copy scorecard link` first so they can run the free scorecard before seeing the paid audit.
+6. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
+7. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+8. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
 

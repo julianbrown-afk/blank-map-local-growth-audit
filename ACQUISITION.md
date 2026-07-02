@@ -12,6 +12,12 @@ Public sample report:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 ```
 
+Public free scorecard:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
+```
+
 Public audit intake:
 
 ```text
@@ -56,19 +62,24 @@ The best prospects are local service businesses that already have customer value
 7. Add or update qualified leads in the pipeline.
 8. Use the report text as the basis for a paid audit preview.
 9. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
-10. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-11. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
-12. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-13. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-14. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
-15. Use the dashboard report as the first draft of the deliverable.
-16. Offer the implementation sprint only after the audit is delivered.
+10. For a lower-friction first touch, use `Copy scorecard link` and send the public free scorecard before the paid offer.
+11. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+12. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+13. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+14. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+15. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+16. Use the dashboard report as the first draft of the deliverable.
+17. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 
 Use the broad offer when the category is unclear:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+
+Use the free scorecard for colder prospects:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 
 Use a niche page when it matches the prospect:
 

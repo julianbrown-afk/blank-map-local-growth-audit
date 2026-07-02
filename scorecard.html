@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Local Growth Scorecard</title>
+    <meta name="description" content="A free local business scorecard for checking booking, review, tracking, and follow-up gaps before buying a Local Growth Audit.">
+    <link rel="canonical" href="https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html">
+    <meta property="og:title" content="Free Local Growth Scorecard">
+    <meta property="og:description" content="Check whether a local service business has obvious buyer-path gaps before buying an audit.">
+    <meta property="og:image" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/assets/audit-preview.png">
+    <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css?v=20260702n">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Local Growth Scorecard",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "url": "https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html",
+        "provider": {
+          "@type": "Organization",
+          "name": "Blank Map Group LLC",
+          "email": "JulianBrown@blankmapgroup.com"
+        }
+      }
+    </script>
+    <script src="config.js?v=20260702n"></script>
+    <script defer src="offer.js?v=20260702n"></script>
+    <script defer src="scorecard.js?v=20260702n"></script>
+  </head>
+  <body class="offer-body free-scorecard-body">
+    <header class="offer-nav">
+      <a class="brand light" href="offer.html" aria-label="Offer home">
+        <span class="brand-mark">LA</span>
+        <span>
+          <strong data-offer="businessName">Your Growth Studio</strong>
+          <small>Free scorecard</small>
+        </span>
+      </a>
+      <div class="offer-nav-actions">
+        <a class="secondary-link" href="offer.html">Paid audit</a>
+        <a class="primary-button" data-offer-link="cta" href="#">Buy audit</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="free-scorecard-hero">
+        <div class="free-scorecard-inner">
+          <div class="free-scorecard-copy">
+            <p class="offer-kicker"><span data-offer="marketCity">Your City</span> service businesses</p>
+            <h1>Free Local Growth Scorecard</h1>
+            <p class="hero-copy">Check the visible buyer path before you buy an audit. The scorecard looks at the same trust, booking, review, tracking, and follow-up basics a local buyer sees.</p>
+            <div class="hero-actions">
+              <a class="primary-button large" href="#scorecardTool">Run the scorecard</a>
+              <a class="secondary-link" href="sample-audit.html">View sample audit</a>
+            </div>
+            <p class="hero-note">No form. No login. No guarantee claims. Just a quick way to see whether the paid audit has a clear job to do.</p>
+          </div>
+
+          <aside class="free-scorecard-result" aria-live="polite">
+            <span>Current score</span>
+            <strong data-free-score-output="score">17/100</strong>
+            <p data-free-score-output="priority">High-priority audit</p>
+            <small data-free-score-output="note">Several buyer-path basics are missing. Start with a focused audit before paying for more traffic or a larger redesign.</small>
+            <div class="free-scorecard-value">
+              <span>Rough opportunity</span>
+              <strong data-free-score-output="monthlyValue">$683/mo</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="free-scorecard-tool" id="scorecardTool">
+        <div class="free-scorecard-panel">
+          <div class="section-head">
+            <p class="eyebrow">Scorecard</p>
+            <h2>Check what is already handled</h2>
+            <p>Leave anything unchecked if it is missing, unclear, outdated, or not consistently used.</p>
+          </div>
+          <div class="free-scorecard-options">
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="Mobile visitors do not get one obvious call, booking, or quote action" checked>
+              <span>Mobile visitors get one obvious call, booking, or quote action.</span>
+            </label>
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="The Google Business Profile needs current services, photos, Q&A, or conversion cues">
+              <span>Google Business Profile has current services, photos, Q&A, and conversion cues.</span>
+            </label>
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="Reviews are not recent, visible, or consistently requested">
+              <span>Reviews are recent, visible, and requested after completed work.</span>
+            </label>
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="Calls, forms, and booking clicks are not tracked by source">
+              <span>Calls, forms, and booking clicks are tracked by source.</span>
+            </label>
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="Unbooked inquiries do not get a reliable follow-up within 24 hours">
+              <span>Unbooked inquiries get a reliable follow-up within 24 hours.</span>
+            </label>
+            <label>
+              <input type="checkbox" data-free-score-item data-free-score-label="High-value service pages do not explain fit, proof, process, and next step">
+              <span>High-value service pages explain fit, proof, process, and next step.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="free-scorecard-panel value-panel">
+          <div class="section-head">
+            <p class="eyebrow">Planning math</p>
+            <h2>Estimate the size of the leak</h2>
+            <p>This is a rough planning estimate, not a revenue promise.</p>
+          </div>
+          <div class="free-scorecard-inputs">
+            <label>
+              Average booked customer value
+              <input type="number" min="100" max="5000" step="50" value="650" inputmode="decimal" data-free-score-input="customerValue">
+              <strong data-free-score-output="customerValue">$650</strong>
+            </label>
+            <label>
+              Missed qualified inquiries per month
+              <input type="number" min="1" max="20" step="1" value="3" inputmode="numeric" data-free-score-input="missedInquiries">
+              <strong data-free-score-output="missedInquiries">3</strong>
+            </label>
+            <label>
+              Likely close rate on recovered inquiries
+              <input type="number" min="5" max="80" step="5" value="35" inputmode="numeric" data-free-score-input="closeRate">
+              <strong data-free-score-output="closeRate">35%</strong>
+            </label>
+          </div>
+        </div>
+
+        <aside class="free-scorecard-summary" aria-live="polite">
+          <span data-free-score-output="gaps">5 gaps</span>
+          <h2 data-free-score-output="priority">High-priority audit</h2>
+          <p data-free-score-output="note">Several buyer-path basics are missing. Start with a focused audit before paying for more traffic or a larger redesign.</p>
+          <div class="summary-value">
+            <span>Estimated recoverable opportunity</span>
+            <strong data-free-score-output="monthlyValue">$683/mo</strong>
+          </div>
+          <div>
+            <strong class="summary-label">Top gaps</strong>
+            <ul data-free-score-output="missingList"></ul>
+          </div>
+          <div class="hero-actions closing-actions">
+            <a class="primary-button large" data-offer-link="cta" href="#">Buy audit</a>
+            <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
+            <a class="secondary-link dark" href="offer.html">See paid audit</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="offer-section scorecard-next-step">
+        <div>
+          <p class="eyebrow">Next step</p>
+          <h2>Use the paid audit when the gaps are specific enough to act on</h2>
+          <p>The paid audit turns the outside-in review into prioritized findings, tracking notes, and a 30-day plan. Implementation is optional after the plan is delivered.</p>
+        </div>
+        <a class="sample-card sample-report-preview" href="sample-audit.html">
+          <span>Sample deliverable</span>
+          <strong>See the report structure</strong>
+          <p>Open the sample audit before buying.</p>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

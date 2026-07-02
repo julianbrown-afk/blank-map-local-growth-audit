@@ -675,6 +675,13 @@ td select {
   flex: 0 0 auto;
 }
 
+.offer-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .offer-hero {
   min-height: 86vh;
   display: flex;
@@ -1298,6 +1305,241 @@ td select {
   color: #ffffff;
 }
 
+.free-scorecard-body {
+  background:
+    linear-gradient(180deg, #f7fbf8, #eef5f1 46%, #ffffff 100%),
+    var(--paper);
+}
+
+.free-scorecard-hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(19, 94, 75, 0.9) 44%, rgba(24, 32, 29, 0.28)),
+    url("assets/audit-preview.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.free-scorecard-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.46fr);
+  gap: 28px;
+  align-items: end;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 132px 0 56px;
+}
+
+.free-scorecard-copy h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.03;
+}
+
+.free-scorecard-result,
+.free-scorecard-summary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.07)),
+    rgba(24, 32, 29, 0.62);
+  box-shadow: var(--shadow-strong);
+  backdrop-filter: blur(14px);
+}
+
+.free-scorecard-result > span,
+.free-scorecard-value span,
+.summary-value span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.free-scorecard-result > strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 54px;
+  line-height: 1;
+}
+
+.free-scorecard-result p {
+  margin: 10px 0 0;
+  font-size: 20px;
+  font-weight: 850;
+}
+
+.free-scorecard-result small {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.free-scorecard-value {
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 18px;
+}
+
+.free-scorecard-value strong,
+.summary-value strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.free-scorecard-tool {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.68fr) minmax(300px, 0.62fr);
+  gap: 16px;
+  align-items: start;
+  width: min(1240px, calc(100% - 32px));
+  margin: -34px auto 0;
+  padding-bottom: 56px;
+}
+
+.free-scorecard-panel,
+.free-scorecard-summary {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.free-scorecard-panel .section-head p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.free-scorecard-options,
+.free-scorecard-inputs {
+  display: grid;
+  gap: 10px;
+}
+
+.free-scorecard-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 58px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--field);
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.free-scorecard-options input {
+  width: 20px;
+  min-height: 20px;
+  margin: 1px 0 0;
+  accent-color: var(--green);
+}
+
+.free-scorecard-inputs label {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--field);
+}
+
+.free-scorecard-inputs input {
+  margin: 0;
+  background: #ffffff;
+}
+
+.free-scorecard-inputs strong {
+  color: var(--green-dark);
+  font-size: 18px;
+}
+
+.free-scorecard-summary {
+  position: sticky;
+  top: 92px;
+  color: var(--ink);
+  background:
+    linear-gradient(145deg, rgba(240, 180, 41, 0.18), rgba(223, 234, 242, 0.58)),
+    #ffffff;
+}
+
+.free-scorecard-summary > span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.free-scorecard-summary h2 {
+  margin: 8px 0 0;
+  font-size: 28px;
+  line-height: 1.12;
+}
+
+.free-scorecard-summary p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.summary-value {
+  margin-top: 18px;
+  border-radius: 8px;
+  padding: 16px;
+  color: #ffffff;
+  background: var(--green-dark);
+}
+
+.summary-label {
+  display: block;
+  margin-top: 18px;
+}
+
+.free-scorecard-summary ul {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.free-scorecard-summary li {
+  border-left: 4px solid var(--blue);
+  padding: 9px 11px;
+  color: var(--muted);
+  background: #ffffff;
+}
+
+.scorecard-next-step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+  gap: 24px;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.scorecard-next-step h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.scorecard-next-step p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
 .buyer-note {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -1909,6 +2151,9 @@ td select {
     .value-math-section .section-head,
     .value-math-panel,
     .value-control,
+    .free-scorecard-inner,
+    .free-scorecard-tool,
+    .scorecard-next-step,
     .after-payment-grid,
     .intake-grid,
     .intake-strip,
@@ -1947,6 +2192,15 @@ td select {
   }
 
   .offer-nav .brand small {
+    display: none;
+  }
+
+  .offer-nav-actions {
+    flex: 0 0 auto;
+    gap: 8px;
+  }
+
+  .offer-nav-actions .secondary-link {
     display: none;
   }
 
@@ -2148,6 +2402,46 @@ td select {
 
   .value-result strong {
     font-size: 30px;
+  }
+
+  .free-scorecard-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background:
+      linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(19, 94, 75, 0.94)),
+      url("assets/audit-preview.png");
+    background-position: 70% center;
+    background-size: cover;
+  }
+
+  .free-scorecard-inner {
+    width: min(100% - 20px, 720px);
+    gap: 18px;
+    padding-top: 112px;
+    padding-bottom: 28px;
+  }
+
+  .free-scorecard-copy h1 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .free-scorecard-result > strong {
+    font-size: 42px;
+  }
+
+  .free-scorecard-tool {
+    width: min(100% - 20px, 720px);
+    margin-top: -20px;
+    padding-bottom: 38px;
+  }
+
+  .free-scorecard-summary {
+    position: static;
+  }
+
+  .scorecard-next-step {
+    gap: 18px;
   }
 
   .closing-band {

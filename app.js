@@ -527,6 +527,7 @@
     const settings = state.settings;
     const track = getProspectTrack(prospect);
     const offerUrl = getProspectOfferUrl(prospect);
+    const scorecardUrl = getOfferUrl("scorecard.html");
     const businessType = prospect.businessType || "local service business";
     const city = prospect.city || settings.marketCity;
     const mailingAddress = String(settings.mailingAddress || "").trim();
@@ -537,7 +538,7 @@
       ? ` The review angle I would start with is ${prospect.reviewAngle.toLowerCase()}.`
       : "";
 
-    return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If this is not relevant, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
+    return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIf you want to sanity-check the basics first, the free scorecard is here:\n${scorecardUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If this is not relevant, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
   }
 
   function buildProspectFollowUp(prospect) {
@@ -601,6 +602,7 @@ ${settings.contactEmail}`;
       "website",
       "offer_track",
       "offer_url",
+      "scorecard_url",
       "status",
       "estimated_monthly_value",
       "review_angle",
@@ -621,6 +623,7 @@ ${settings.contactEmail}`;
         prospect.website || "",
         track.label,
         getProspectOfferUrl(prospect),
+        getOfferUrl("scorecard.html"),
         prospect.status || "Lead",
         toNumber(prospect.value) > 0 ? Math.round(toNumber(prospect.value)) : "",
         prospect.reviewAngle || "",
@@ -660,6 +663,7 @@ ${settings.contactEmail}`;
       `${state.settings.serviceName} daily outreach batch`,
       `Prepared for ${state.settings.businessName}`,
       `Prospects: ${prospects.length}`,
+      `Free scorecard: ${getOfferUrl("scorecard.html")}`,
       `Compliance: ${complianceNote}`,
       ""
     ];
@@ -673,6 +677,7 @@ ${settings.contactEmail}`;
         `Website: ${prospect.website || "Not listed"}`,
         `Offer track: ${track.label}`,
         `Offer URL: ${getProspectOfferUrl(prospect)}`,
+        `Scorecard URL: ${getOfferUrl("scorecard.html")}`,
         `Review angle: ${prospect.reviewAngle || "Inspect website, local proof, booking path, and follow-up cues."}`,
         "",
         buildProspectIntro(prospect),
@@ -990,6 +995,7 @@ ${settings.contactEmail}`;
     if (action === "copy-dm") copyText(buildDm(), "DM copied");
     if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
+    if (action === "copy-scorecard-link") copyText(getOfferUrl("scorecard.html"), "Scorecard link copied");
     if (action === "open-offer") window.open(getOfferUrl(), "_blank", "noopener,noreferrer");
     if (action === "download-config") downloadFile("config.js", buildConfigText(), "text/javascript");
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");
