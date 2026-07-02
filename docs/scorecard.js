@@ -13,7 +13,7 @@
       label: "Dentist",
       audience: "Lexington dental offices",
       audienceNoun: "new patients",
-      title: "Free Dentist Growth Scorecard",
+      title: "Free Lexington Dentist Growth Scorecard",
       offerPath: "lexington-dentist-growth-audit.html",
       averageValue: 650,
       placeholder: "Dental office",
@@ -27,7 +27,7 @@
       label: "Orthodontist",
       audience: "Lexington orthodontic practices",
       audienceNoun: "new patients",
-      title: "Free Orthodontist Growth Scorecard",
+      title: "Free Lexington Orthodontist Growth Scorecard",
       offerPath: "lexington-orthodontist-growth-audit.html",
       averageValue: 5500,
       placeholder: "Orthodontic practice",
@@ -41,7 +41,7 @@
       label: "Med spa",
       audience: "Lexington med spas",
       audienceNoun: "new clients",
-      title: "Free Med Spa Growth Scorecard",
+      title: "Free Lexington Med Spa Growth Scorecard",
       offerPath: "lexington-med-spa-growth-audit.html",
       averageValue: 500,
       placeholder: "Med spa",
@@ -55,7 +55,7 @@
       label: "Roofing",
       audience: "Lexington roofing companies",
       audienceNoun: "homeowners",
-      title: "Free Roofing Growth Scorecard",
+      title: "Free Lexington Roofing Growth Scorecard",
       offerPath: "lexington-roofing-growth-audit.html",
       averageValue: 4500,
       placeholder: "Roofing company",
@@ -69,7 +69,7 @@
       label: "Remodeling",
       audience: "Lexington remodelers and contractors",
       audienceNoun: "project buyers",
-      title: "Free Remodeling Growth Scorecard",
+      title: "Free Lexington Remodeling Growth Scorecard",
       offerPath: "lexington-remodeling-growth-audit.html",
       averageValue: 8000,
       placeholder: "Remodeling company",
@@ -83,7 +83,7 @@
       label: "HVAC",
       audience: "Lexington HVAC companies",
       audienceNoun: "homeowners",
-      title: "Free HVAC Growth Scorecard",
+      title: "Free Lexington HVAC Growth Scorecard",
       offerPath: "lexington-hvac-growth-audit.html",
       averageValue: 5500,
       placeholder: "HVAC company",
@@ -97,7 +97,7 @@
       label: "Home service",
       audience: "Lexington multi-trade home service companies",
       audienceNoun: "homeowners",
-      title: "Free Home Service Growth Scorecard",
+      title: "Free Lexington Home Service Growth Scorecard",
       offerPath: "lexington-hvac-plumbing-growth-audit.html",
       averageValue: 5500,
       placeholder: "HVAC, plumbing, or electrical company",
@@ -111,7 +111,7 @@
       label: "Plumbing",
       audience: "Lexington plumbing companies",
       audienceNoun: "homeowners",
-      title: "Free Plumbing Growth Scorecard",
+      title: "Free Lexington Plumbing Growth Scorecard",
       offerPath: "lexington-plumbing-growth-audit.html",
       averageValue: 1500,
       placeholder: "Plumbing company",
@@ -125,7 +125,7 @@
       label: "Personal injury law",
       audience: "Lexington personal injury law firms",
       audienceNoun: "potential clients",
-      title: "Free Personal Injury Law Growth Scorecard",
+      title: "Free Lexington Personal Injury Law Growth Scorecard",
       offerPath: "lexington-personal-injury-law-growth-audit.html",
       averageValue: 7500,
       placeholder: "Personal injury law firm",
@@ -139,7 +139,7 @@
       label: "Chiropractor",
       audience: "Lexington chiropractic clinics",
       audienceNoun: "new patients",
-      title: "Free Chiropractor Growth Scorecard",
+      title: "Free Lexington Chiropractor Growth Scorecard",
       offerPath: "lexington-chiropractor-growth-audit.html",
       averageValue: 850,
       placeholder: "Chiropractic clinic",
@@ -153,7 +153,7 @@
       label: "Veterinary",
       audience: "Lexington veterinary clinics",
       audienceNoun: "pet owners",
-      title: "Free Veterinary Growth Scorecard",
+      title: "Free Lexington Veterinary Growth Scorecard",
       offerPath: "lexington-veterinary-growth-audit.html",
       averageValue: 500,
       placeholder: "Veterinary clinic",
@@ -167,7 +167,7 @@
       label: "Pest control",
       audience: "Lexington pest control companies",
       audienceNoun: "property owners",
-      title: "Free Pest Control Growth Scorecard",
+      title: "Free Lexington Pest Control Growth Scorecard",
       offerPath: "lexington-pest-control-growth-audit.html",
       averageValue: 1200,
       placeholder: "Pest control company",
@@ -181,7 +181,7 @@
       label: "Garage door",
       audience: "Lexington garage door companies",
       audienceNoun: "homeowners",
-      title: "Free Garage Door Growth Scorecard",
+      title: "Free Lexington Garage Door Growth Scorecard",
       offerPath: "lexington-garage-door-growth-audit.html",
       averageValue: 1200,
       placeholder: "Garage door company",
@@ -195,7 +195,7 @@
       label: "Tree service",
       audience: "Lexington tree service companies",
       audienceNoun: "property owners",
-      title: "Free Tree Service Growth Scorecard",
+      title: "Free Lexington Tree Service Growth Scorecard",
       offerPath: "lexington-tree-service-growth-audit.html",
       averageValue: 1800,
       placeholder: "Tree service company",
@@ -209,7 +209,7 @@
       label: "Landscaping",
       audience: "Lexington landscaping and lawn care companies",
       audienceNoun: "property owners",
-      title: "Free Landscaping Growth Scorecard",
+      title: "Free Lexington Landscaping Growth Scorecard",
       offerPath: "lexington-landscaping-growth-audit.html",
       averageValue: 3500,
       placeholder: "Landscaping or lawn care company",
@@ -223,7 +223,7 @@
       label: "Restoration",
       audience: "Lexington restoration companies",
       audienceNoun: "emergency buyers",
-      title: "Free Restoration Growth Scorecard",
+      title: "Free Lexington Restoration Growth Scorecard",
       offerPath: "lexington-restoration-growth-audit.html",
       averageValue: 5000,
       placeholder: "Restoration company",
@@ -237,7 +237,7 @@
       label: "Physical therapy",
       audience: "Lexington physical therapy clinics",
       audienceNoun: "patients",
-      title: "Free Physical Therapy Growth Scorecard",
+      title: "Free Lexington Physical Therapy Growth Scorecard",
       offerPath: "lexington-physical-therapy-growth-audit.html",
       averageValue: 700,
       placeholder: "Physical therapy clinic",
@@ -251,7 +251,7 @@
       label: "Home improvement",
       audience: "Lexington home improvement companies",
       audienceNoun: "project buyers",
-      title: "Free Home Improvement Growth Scorecard",
+      title: "Free Lexington Home Improvement Growth Scorecard",
       offerPath: "lexington-home-improvement-growth-audit.html",
       averageValue: 4500,
       placeholder: "Fence, window, flooring, or home improvement company",
@@ -655,7 +655,7 @@
         ? `Track: ${activeTrack.label}\nFocus: ${activeTrack.buyerPath}\n\n`
         : "";
 
-      return `Free Local Growth Scorecard
+      return `Free Lexington Local Growth Scorecard
 
 ${leadBlock}${trackBlock}Score: Not scored yet
 Result path: Start with the visible buyer path
@@ -684,7 +684,7 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
       ? `Track: ${activeTrack.label}\nFocus: ${activeTrack.buyerPath}\n\n`
       : "";
 
-    return `Free Local Growth Scorecard result
+    return `Free Lexington Local Growth Scorecard result
 
 ${leadBlock}${trackBlock}Score: ${state.score}/100
 Priority: ${state.priority}
