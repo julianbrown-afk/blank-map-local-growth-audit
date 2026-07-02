@@ -51,6 +51,16 @@ REVIEWED_PIPELINE.csv
 | 9 | Lexington Prime Aesthetics & Wellness | Med spa | https://lexprimeaesthetics.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html | Testimonial proof, treatment-page conversion, booking flow |
 | 10 | Beautiful You Medical Spa | Med spa | https://beautifulyoumedspa.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html | Review proof, specials capture, appointment CTA |
 
+## High-Ticket Roofing Extension
+
+| Priority | Business | Category | Website | Scorecard | Offer | Review focus |
+| --- | --- | --- | --- | --- | --- | --- |
+| 11 | Big Blue Roofing | Roofing | https://bigblueroofing.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html | Quote/estimate prominence, storm-damage path, testimonials, tracking assumptions |
+| 12 | Big League Roofers | Roofing | https://bigleagueroofers.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html | Instant quote, certified inspection, insurance/financing routing, review proof |
+| 13 | Reliable Residential Roofing | Roofing | https://www.reliableresidentialroofing.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html | Request form, call/text action, financing/insurance proof, chat/form friction |
+| 14 | Barrier Roofs | Roofing | https://barrierroofs.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html | Quote form, insurance-claims path, service breadth, testimonials, consent language |
+| 15 | Mighty Dog Roofing Lexington | Roofing | https://www.mightydogroofing.com/lexington-ky/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html | Free inspection, emergency repair proof, financing path, service-area routing |
+
 ## Scorecard-First Public Post
 
 Use where posting is allowed:
@@ -96,5 +106,5 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Review packet: `PROSPECT_REVIEW_PACKET.md`
 - Reviewed pipeline queue: `REVIEWED_PIPELINE.csv`
 - Scorecard post queue: `SCORECARD_POST_QUEUE.md`
-- Reviewed prospects: 10 total internal drafts, 0 contacted
-- Next required action: load or refresh the starter list in the dashboard, score the reviewed dentist and med spa leads, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually before scoring
+- Reviewed prospects: 15 total internal drafts, 0 contacted
+- Next required action: load or refresh the starter list in the dashboard, score the reviewed dentist, med spa, and roofing leads, then complete mobile visual checks for all source-only rows before contact

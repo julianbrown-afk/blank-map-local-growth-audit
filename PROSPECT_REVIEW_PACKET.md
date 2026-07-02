@@ -34,6 +34,18 @@ Med spa offer:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
 ```
 
+Roofing scorecard:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+```
+
+Roofing offer:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
 ## Compliance Boundary
 
 The public mailing address is intentionally blank. Do not send cold commercial email from these drafts until a valid public mailing address, PO box, or compliant commercial mail receiving address is added to the outreach footer.
@@ -54,6 +66,11 @@ Use these notes for manual review, warm referrals, permitted community replies, 
 | 8 | Belle Vie Aesthetic Medicine | Source review completed; mobile pending | Book Now, phone, service categories, memberships, payment plans, specials, testimonials | Check whether service proof and consultation path stay clear around shopping/membership links | Score mobile booking and routing |
 | 9 | Lexington Prime Aesthetics & Wellness | Source review completed; mobile pending | Book appointment, before-and-after gallery, gift card path, reviews, treatment categories | Check whether appointment path and proof sit close enough to treatment decisions | Score appointment and treatment-page path |
 | 10 | Beautiful You Medical Spa | Source review completed; mobile pending | Book appointment, quick menu, gift cards, specials, financial options, proof counters, reviews | Check whether specials, proof, and booking work together instead of splitting attention | Score booking and specials capture |
+| 11 | Big Blue Roofing | Source review completed; mobile pending | Quote/free-estimate paths, phone/email, storm-damage positioning, testimonials, third-party proof links | Check whether urgent roof-repair and storm-damage visitors reach one clear quote path | Score estimate prominence and proof placement |
+| 12 | Big League Roofers | Source review completed; mobile pending | Instant quote, certified inspections, repair/replacement/storm services, financing, insurance support, certifications, reviews | Check whether quote, inspection, insurance, and financing paths support rather than split conversion intent | Score quote and insurance/financing routing |
+| 13 | Reliable Residential Roofing | Source review completed; mobile pending | Call/text, request-quote form, roofing/gutter/skylight services, certifications, warranty, financing, insurance help, chat | Check whether form, phone, chat, and proof assets produce a simple first-time homeowner path | Score form and call/text hierarchy |
+| 14 | Barrier Roofs | Source review completed; mobile pending | Quote/free-estimate paths, roofing and exterior services, insurance claims, projects, testimonials, certifications, service areas | Check whether broad service offerings and consent-heavy form still preserve clear roofing quote momentum | Score quote form and proof placement |
+| 15 | Mighty Dog Roofing Lexington | Source review completed; mobile pending | Free inspection, workmanship-warranty positioning, financing, emergency repair, insurance-claim help, roof material options, service areas | Check whether free inspection, emergency repair, and replacement options guide different homeowner intents cleanly | Score free-inspection and service-area routing |
 
 ## Cooper Family Dentistry
 
@@ -583,6 +600,281 @@ If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visib
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
 ```
 
+## Big Blue Roofing
+
+Public website:
+
+```text
+https://bigblueroofing.com/
+```
+
+Sources checked:
+
+- Official homepage: https://bigblueroofing.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no quote buttons were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes phone and email contact paths.
+- The source presents quote and free-estimate actions.
+- The source positions the company around residential roofing, storm damage, hail damage, wind damage, and nearby Lexington-area markets.
+- The source includes testimonials and links to third-party proof channels.
+
+Review hypotheses to confirm:
+
+1. Confirm whether the quote or estimate action is the obvious first action for mobile visitors with urgent roof concerns.
+2. Storm-damage and repair intent can be high urgency. Score whether those visitors are routed quickly toward inspection or quote next steps.
+3. Testimonials and proof links are useful. Confirm whether they sit close enough to the quote path.
+4. Tracking and follow-up are not visible from source alone. Confirm whether calls, emails, and quote interest are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: quote/free-estimate paths, phone/email, roofing service positioning, testimonials
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, proof placement
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Big Blue Roofing's buyer path. The site already has useful assets: phone and email contact, quote/free-estimate actions, storm-damage positioning, testimonials, and third-party proof links.
+
+The part worth checking is whether a homeowner with urgent roof damage can see one clear next step on mobile before comparing another roofer.
+
+I built a free roofing scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
+## Big League Roofers
+
+Public website:
+
+```text
+https://bigleagueroofers.com/
+```
+
+Sources checked:
+
+- Official homepage: https://bigleagueroofers.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no quote or inspection buttons were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes instant-quote and certified-inspection paths.
+- The source lists roof repair, roof replacement, storm damage, gutter, and siding services.
+- The source includes financing and insurance-claim support.
+- The source presents strong certification and review proof.
+
+Review hypotheses to confirm:
+
+1. Confirm whether instant quote and certified inspection are clearly differentiated for homeowners with different intent.
+2. Insurance and financing can reduce friction. Score whether those paths support quote conversion or create extra decisions.
+3. Review proof and certification proof are strong assets. Confirm whether they appear near the quote/inspection path.
+4. Tracking and follow-up are not visible from source alone. Confirm whether quote, inspection, call, and financing interest are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: quote/inspection paths, service categories, financing, insurance support, certification and review proof
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, form friction
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Big League Roofers' buyer path. The site already has useful assets: instant quote, certified inspection, storm-damage services, financing, insurance-claim support, certification proof, and review proof.
+
+The part worth checking is whether those assets route a homeowner toward the right quote or inspection path without creating too many first-screen choices.
+
+I built a free roofing scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
+## Reliable Residential Roofing
+
+Public website:
+
+```text
+https://www.reliableresidentialroofing.com/
+```
+
+Sources checked:
+
+- Official homepage: https://www.reliableresidentialroofing.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no chat was opened, no quote links were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes call/text and request-quote paths.
+- The source includes a visible request form in the page structure.
+- The source lists roofing, gutter, barn, skylight, maintenance, repair, replacement, and new-roofing services.
+- The source includes warranty, certification, licensing/insurance, financing, insurance-claim help, review, and chat assets.
+
+Review hypotheses to confirm:
+
+1. Confirm whether call/text, form, and chat actions create a clear hierarchy on mobile.
+2. Certification, warranty, and licensing proof can be strong trust assets. Score whether they appear before the request form or too late.
+3. Financing and insurance help can reduce quote friction. Confirm whether those paths support the homeowner's next step.
+4. Tracking and follow-up are not visible from source alone. Confirm whether form, call/text, chat, and quote interest are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: request-quote form, call/text path, service breadth, trust proof, financing, insurance help
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, chat/form friction
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Reliable Residential Roofing's buyer path. The site already has useful assets: call/text, a request-quote form, a broad service menu, warranty and certification proof, financing, insurance-claim help, reviews, and chat.
+
+The part worth checking is whether the form, phone, chat, and proof assets create a simple path for a first-time homeowner on mobile.
+
+I built a free roofing scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
+## Barrier Roofs
+
+Public website:
+
+```text
+https://barrierroofs.com/
+```
+
+Sources checked:
+
+- Official homepage: https://barrierroofs.com/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no quote buttons were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes request-quote and free-estimate paths.
+- The source lists roofing plus exterior services such as doors, windows, siding, gutters, and masonry.
+- The source includes insurance-claims support, projects, testimonials, service-area content, certification proof, and a quote form.
+
+Review hypotheses to confirm:
+
+1. Confirm whether roofing buyers can find the quote path quickly despite the broader exterior-services menu.
+2. Insurance-claims support can be valuable. Score whether it is close enough to storm or damage intent.
+3. Testimonials and project proof can reduce risk. Confirm whether they appear near request-quote decisions.
+4. The quote form includes consent language. Confirm whether the form feels appropriately clear without adding unnecessary friction.
+5. Tracking and follow-up are not visible from source alone. Confirm whether quote, call, and form-start interest are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: quote/free-estimate paths, insurance-claims support, service breadth, testimonials, projects, certification proof
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, quote-form friction
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Barrier Roofs' buyer path. The site already has useful assets: quote/free-estimate paths, roofing and exterior-service pages, insurance-claims support, project proof, testimonials, service-area content, certifications, and a detailed quote form.
+
+The part worth checking is whether those assets keep roofing buyers moving toward a quote without broad service options or form friction slowing the path.
+
+I built a free roofing scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
+## Mighty Dog Roofing Lexington
+
+Public website:
+
+```text
+https://www.mightydogroofing.com/lexington-ky/
+```
+
+Sources checked:
+
+- Official Lexington page: https://www.mightydogroofing.com/lexington-ky/
+
+Source review note:
+
+- Official source text was reviewed on 2026-07-02.
+- No forms were submitted, no inspection or booking buttons were clicked, and no outreach was sent.
+- Treat the review as source-level until a mobile visual check confirms the first screen.
+
+Observable strengths:
+
+- The source includes a free-inspection path.
+- The source positions service around workmanship warranty, financing, emergency repair, and insurance-claim help.
+- The source includes multiple roofing material options and service-area routing.
+- The source provides pricing guidance for roof-replacement planning.
+
+Review hypotheses to confirm:
+
+1. Confirm whether free inspection, emergency repair, and replacement paths are clear for different homeowner intents.
+2. Financing, warranty, and insurance help can reduce buyer risk. Score whether those proof points support the inspection path.
+3. Service-area routing can be useful. Confirm whether it supports local confidence instead of adding navigation friction.
+4. Tracking and follow-up are not visible from source alone. Confirm whether inspection requests, emergency calls, financing interest, and service-area clicks are measurable.
+
+Preliminary scorecard estimate:
+
+```text
+Estimated score: source-only, not scored
+Checked as handled in source: free-inspection path, warranty positioning, financing, emergency repair, insurance help, material options, service areas
+Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, service-area routing
+Likely scorecard band: useful audit candidate after mobile check
+```
+
+Channel-safe first touch:
+
+```text
+I took a source-level look at Mighty Dog Roofing Lexington's buyer path. The site already has useful assets: free inspection, warranty positioning, financing, emergency repair, insurance-claim help, material options, service-area routing, and pricing guidance.
+
+The part worth checking is whether a mobile visitor can quickly pick the right path for inspection, emergency repair, or replacement before comparing another roofer.
+
+I built a free roofing scorecard for that buyer path:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+
+If the scorecard shows enough gaps, the fixed Local Growth Audit turns the visible issues into a prioritized 30-day plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
+```
+
 ## Next Batch Action
 
-Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry, AMS Dental, Williams Family Dentistry, and the four med spa leads as reviewed leads, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually in a normal browser before scoring. Do not send direct outreach from these drafts.
+Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry, AMS Dental, Williams Family Dentistry, the four med spa leads, and the five roofing leads as reviewed leads, then complete mobile visual checks for every source-only row before prospect-specific contact. Do not send direct outreach from these drafts.

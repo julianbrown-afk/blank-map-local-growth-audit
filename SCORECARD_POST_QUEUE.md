@@ -24,6 +24,12 @@ Med spa scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
 ```
 
+Roofing scorecard:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+```
+
 Paid audit:
 
 ```text
@@ -65,6 +71,19 @@ It checks whether a first-time visitor can see one clear booking path, enough tr
 
 Med spa scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+
+If the score shows enough gaps, the fixed Local Growth Audit turns those visible issues into a prioritized 30-day plan.
+```
+
+## Roofing Track Post
+
+```text
+Lexington roofing companies: I built a free roof-replacement and inspection buyer-path scorecard.
+
+It checks whether homeowners can quickly see the right quote or inspection path, storm-damage and insurance-claim guidance, review proof, financing cues, tracking, and follow-up basics before calling another roofer.
+
+Roofing scorecard:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
 
 If the score shows enough gaps, the fixed Local Growth Audit turns those visible issues into a prioritized 30-day plan.
 ```
@@ -118,7 +137,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 
 The current internal reviewed queue is `REVIEWED_PIPELINE.csv`.
 
-- Reviewed prospects: 10
+- Reviewed prospects: 15
 - Prospects contacted: 0
 - Paid audits sold from this queue: 0
-- Next action before any prospect-specific contact: score the reviewed rows in the dashboard and keep the channel compliant.
+- Next action before any prospect-specific contact: score the reviewed rows in the dashboard, complete mobile visual checks for source-only rows, and keep the channel compliant.

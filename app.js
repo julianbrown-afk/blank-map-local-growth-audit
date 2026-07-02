@@ -234,7 +234,15 @@
       city: "Lexington",
       avgCustomerValue: 4500,
       leadsNeeded: 2,
-      reviewAngle: "Quote flow, trust proof, review presentation, urgency handling"
+      reviewAngle: "Quote flow, trust proof, review presentation, urgency handling",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score quote/estimate prominence, storm-damage path, testimonial placement, and tracking assumptions before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://bigblueroofing.com/"
+      ]
     },
     {
       businessName: "Big League Roofers",
@@ -243,7 +251,15 @@
       city: "Lexington",
       avgCustomerValue: 4500,
       leadsNeeded: 2,
-      reviewAngle: "Quote CTA, insurance-claim messaging, proof structure"
+      reviewAngle: "Quote CTA, insurance-claim messaging, proof structure",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score instant-quote path, certified inspection path, insurance/financing routing, and review proof before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://bigleagueroofers.com/"
+      ]
     },
     {
       businessName: "Reliable Residential Roofing",
@@ -252,7 +268,15 @@
       city: "Lexington",
       avgCustomerValue: 4500,
       leadsNeeded: 2,
-      reviewAngle: "Quote path, warranty/trust presentation, mobile CTA clarity"
+      reviewAngle: "Quote path, warranty/trust presentation, mobile CTA clarity",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score hero request form, call/text prominence, financing/insurance proof, and chat/form friction before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.reliableresidentialroofing.com/"
+      ]
     },
     {
       businessName: "Barrier Roofs",
@@ -261,7 +285,15 @@
       city: "Lexington",
       avgCustomerValue: 4500,
       leadsNeeded: 2,
-      reviewAngle: "Inspection request path, warranty proof, financing and trust signals"
+      reviewAngle: "Inspection request path, warranty proof, financing and trust signals",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score quote form, insurance-claims path, service breadth, testimonial placement, and consent language before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://barrierroofs.com/"
+      ]
     },
     {
       businessName: "Mighty Dog Roofing Lexington",
@@ -270,7 +302,15 @@
       city: "Lexington",
       avgCustomerValue: 4500,
       leadsNeeded: 2,
-      reviewAngle: "Roof inspection CTA, repair versus replacement clarity, service proof"
+      reviewAngle: "Roof inspection CTA, repair versus replacement clarity, service proof",
+      reviewStatus: "Source review completed; mobile visual check pending",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score free-inspection path, emergency repair proof, financing path, and service-area routing before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.mightydogroofing.com/lexington-ky/"
+      ]
     },
     {
       businessName: "BACK Construction",
