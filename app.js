@@ -1825,7 +1825,12 @@ ${settings.contactEmail}`;
         : "";
       const track = getProspectTrack(prospect);
       const offerUrl = getProspectOfferUrl(prospect);
-      const trackLine = `<small class="pipeline-note">Offer: <a class="pipeline-link" href="${escapeHtml(offerUrl)}" target="_blank" rel="noreferrer">${escapeHtml(track.label)}</a></small>`;
+      const scorecardUrl = getProspectScorecardUrl(prospect);
+      const scorecardLabel = track.scorecardTrack ? `${track.label} scorecard` : "General scorecard";
+      const trackLine = [
+        `<small class="pipeline-note">Offer: <a class="pipeline-link" href="${escapeHtml(offerUrl)}" target="_blank" rel="noreferrer">${escapeHtml(track.label)}</a></small>`,
+        `<small class="pipeline-note">Scorecard: <a class="pipeline-link" href="${escapeHtml(scorecardUrl)}" target="_blank" rel="noreferrer">${escapeHtml(scorecardLabel)}</a></small>`
+      ].join("");
       const valueLabel = toNumber(prospect.value) > 0 ? `${currency(prospect.value)} est.` : "Estimate pending";
 
       return `
@@ -1844,8 +1849,10 @@ ${settings.contactEmail}`;
               <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
               <button class="ghost-button" type="button" data-copy-score-lead-reply="${escapeHtml(prospect.id)}">Copy score reply</button>
               <button class="ghost-button" type="button" data-copy-prospect-intake="${escapeHtml(prospect.id)}">Copy intake</button>
-              <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy link</button>
-              <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open</button>
+              <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy offer</button>
+              <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open offer</button>
+              <button class="ghost-button" type="button" data-copy-prospect-scorecard="${escapeHtml(prospect.id)}">Copy scorecard</button>
+              <button class="ghost-button" type="button" data-open-prospect-scorecard="${escapeHtml(prospect.id)}">Open scorecard</button>
               <button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button>
             </div>
           </td>
@@ -2185,6 +2192,18 @@ ${settings.contactEmail}`;
       if (openOfferButton) {
         const prospect = state.prospects.find((item) => item.id === openOfferButton.dataset.openProspectOffer);
         if (prospect) window.open(getProspectOfferUrl(prospect), "_blank", "noopener,noreferrer");
+      }
+
+      const copyScorecardButton = event.target.closest("[data-copy-prospect-scorecard]");
+      if (copyScorecardButton) {
+        const prospect = state.prospects.find((item) => item.id === copyScorecardButton.dataset.copyProspectScorecard);
+        if (prospect) copyText(getProspectScorecardUrl(prospect), "Scorecard link copied");
+      }
+
+      const openScorecardButton = event.target.closest("[data-open-prospect-scorecard]");
+      if (openScorecardButton) {
+        const prospect = state.prospects.find((item) => item.id === openScorecardButton.dataset.openProspectScorecard);
+        if (prospect) window.open(getProspectScorecardUrl(prospect), "_blank", "noopener,noreferrer");
       }
 
       const closeManualCopyButton = event.target.closest("[data-close-manual-copy]");

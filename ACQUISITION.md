@@ -63,8 +63,8 @@ The best prospects are local service businesses that already have customer value
 6. Open one prospect website at a time and enter the review count, rating, average customer value, and visible gaps.
 7. Add or update qualified leads in the pipeline.
 8. Use the report text as the basis for a paid audit preview.
-9. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
-10. For a lower-friction first touch, use `Copy scorecard link` and send the public free scorecard before the paid offer.
+9. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
+10. For a lower-friction first touch, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
 11. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed.
 12. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
 13. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
