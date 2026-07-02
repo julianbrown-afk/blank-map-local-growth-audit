@@ -77,6 +77,21 @@
     ]);
   }
 
+  function updatePurchaseBarVisibility() {
+    const bar = $(".purchase-bar");
+    if (!bar) return;
+
+    const threshold = Math.min(560, Math.round(window.innerHeight * 0.68));
+    document.body.classList.toggle("purchase-bar-visible", window.scrollY > threshold);
+  }
+
+  function setupPurchaseBar() {
+    if (!$(".purchase-bar")) return;
+    window.addEventListener("scroll", updatePurchaseBarVisibility, { passive: true });
+    window.addEventListener("resize", updatePurchaseBarVisibility);
+    updatePurchaseBarVisibility();
+  }
+
   async function copyIntakeTemplate() {
     const status = $("[data-intake-copy-status]");
     const manual = $("[data-intake-manual]");
@@ -223,6 +238,7 @@
       item.addEventListener("input", updateValueMath);
     });
     updateValueMath();
+    setupPurchaseBar();
   }
 
   render();

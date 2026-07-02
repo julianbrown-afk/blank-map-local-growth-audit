@@ -794,6 +794,10 @@ td select {
 }
 
 .offer-body.has-purchase-bar {
+  padding-bottom: 0;
+}
+
+.offer-body.has-purchase-bar.purchase-bar-visible {
   padding-bottom: 112px;
 }
 
@@ -879,6 +883,40 @@ td select {
   color: rgba(255, 255, 255, 0.78);
   font-size: 15px;
   font-weight: 750;
+}
+
+.hero-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 720px;
+  margin-top: 18px;
+}
+
+.hero-proof-row span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 0 14px 0 34px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(24, 32, 29, 0.32);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.hero-proof-row span::before {
+  position: absolute;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  content: "";
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(240, 180, 41, 0.16);
 }
 
 .hero-facts {
@@ -3117,6 +3155,16 @@ td select {
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 22px 60px rgba(24, 32, 29, 0.22);
   backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(calc(100% + 24px));
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.purchase-bar-visible .purchase-bar {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .purchase-bar-copy {
@@ -4143,6 +4191,10 @@ td select {
   }
 
   .offer-body.has-purchase-bar {
+    padding-bottom: 0;
+  }
+
+  .offer-body.has-purchase-bar.purchase-bar-visible {
     padding-bottom: 154px;
   }
 
@@ -4239,6 +4291,22 @@ td select {
   .hero-note {
     margin-top: 12px;
     font-size: 14px;
+  }
+
+  .hero-proof-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .hero-proof-row span {
+    justify-content: flex-start;
+    min-height: 42px;
+    border-radius: 8px;
+    padding-right: 10px;
+    font-size: 12px;
+    line-height: 1.2;
   }
 
   .niche-hero {
