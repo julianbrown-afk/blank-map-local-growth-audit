@@ -44,13 +44,14 @@ The best prospects are local service businesses that already have customer value
 1. Start with `PROSPECTS.md` and `prospects.csv`, or find 10 local businesses in one category and city.
 2. Open the operator dashboard at `http://127.0.0.1:4173/index.html`.
 3. Click `Load starter list` to preload the researched Lexington prospects into the pipeline.
-4. Open one prospect website at a time and enter the review count, rating, average customer value, and visible gaps.
-5. Add or update qualified leads in the pipeline.
-6. Use the report text as the basis for a paid audit preview.
-7. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
-8. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-9. When a payment arrives, use the dashboard report as the first draft of the deliverable.
-10. Offer the implementation sprint only after the audit is delivered.
+4. Click `Download outreach CSV` or `Copy outreach CSV` if you want a work queue with the prospect website, matched offer page, intro copy, and compliance note.
+5. Open one prospect website at a time and enter the review count, rating, average customer value, and visible gaps.
+6. Add or update qualified leads in the pipeline.
+7. Use the report text as the basis for a paid audit preview.
+8. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
+9. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+10. When a payment arrives, use the dashboard report as the first draft of the deliverable.
+11. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 

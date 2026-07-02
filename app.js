@@ -529,11 +529,57 @@
     const offerUrl = getProspectOfferUrl(prospect);
     const businessType = prospect.businessType || "local service business";
     const city = prospect.city || settings.marketCity;
+    const mailingAddress = String(settings.mailingAddress || "").trim();
+    const complianceLine = mailingAddress
+      ? mailingAddress
+      : "[Add a valid physical mailing address before sending as commercial email.]";
     const reviewAngle = prospect.reviewAngle
       ? ` The review angle I would start with is ${prospect.reviewAngle.toLowerCase()}.`
       : "";
 
-    return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If not, no action needed.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}`;
+    return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If this is not relevant, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
+  }
+
+  function csvCell(value) {
+    const text = String(value ?? "");
+    return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+  }
+
+  function buildOutreachCsv() {
+    const headers = [
+      "business_name",
+      "category",
+      "city",
+      "website",
+      "offer_track",
+      "offer_url",
+      "status",
+      "estimated_monthly_value",
+      "review_angle",
+      "intro_copy",
+      "compliance_note"
+    ];
+    const mailingAddress = String(state.settings.mailingAddress || "").trim();
+    const complianceNote = mailingAddress
+      ? "Commercial email footer has a physical mailing address."
+      : "Do not send as cold commercial email until a valid physical mailing address is added.";
+    const rows = state.prospects.map((prospect) => {
+      const track = getProspectTrack(prospect);
+      return [
+        prospect.businessName || "",
+        prospect.businessType || "",
+        prospect.city || state.settings.marketCity,
+        prospect.website || "",
+        track.label,
+        getProspectOfferUrl(prospect),
+        prospect.status || "Lead",
+        toNumber(prospect.value) > 0 ? Math.round(toNumber(prospect.value)) : "",
+        prospect.reviewAngle || "",
+        buildProspectIntro(prospect),
+        complianceNote
+      ].map(csvCell).join(",");
+    });
+    return [headers.join(","), ...rows].join("\n");
   }
 
   function renderFindings(findings) {
@@ -685,7 +731,7 @@
     document.body.appendChild(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(url);
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
   function addProspect() {
@@ -757,6 +803,21 @@
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");
     if (action === "add-prospect") addProspect();
     if (action === "load-seed-prospects") loadSeedProspects();
+    if (action === "download-outreach-csv") {
+      if (!state.prospects.length) {
+        showToast("Load or add prospects first");
+      } else {
+        downloadFile("local-growth-audit-outreach.csv", buildOutreachCsv(), "text/csv");
+        showToast("Outreach CSV downloaded");
+      }
+    }
+    if (action === "copy-outreach-csv") {
+      if (!state.prospects.length) {
+        showToast("Load or add prospects first");
+      } else {
+        copyText(buildOutreachCsv(), "Outreach CSV copied");
+      }
+    }
     if (action === "clear-pipeline") {
       state.prospects = [];
       saveState();

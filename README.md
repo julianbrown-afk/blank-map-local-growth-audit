@@ -2,7 +2,7 @@
 
 This is a static, dependency-free sales kit for selling paid local business growth audits. It gives you:
 
-- `index.html`: operator dashboard for pricing, prospect audits, outreach copy, pipeline tracking, report export, and config export.
+- `index.html`: operator dashboard for pricing, prospect audits, outreach copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page that can link to Stripe Payment Links, a booking page, or email.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
