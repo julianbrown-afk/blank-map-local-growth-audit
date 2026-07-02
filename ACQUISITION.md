@@ -86,6 +86,14 @@ Use the free scorecard for colder prospects:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 
+Use a track-specific scorecard for colder niche prospects. The dashboard generates these automatically in prospect intros, daily batches, and outreach CSV rows:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=restoration
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=chiropractor
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=home-improvement
+```
+
 Use a niche page when it matches the prospect:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html

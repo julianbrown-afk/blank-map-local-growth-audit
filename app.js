@@ -1244,7 +1244,7 @@ It will not guarantee revenue, but it can show whether a focused audit is worth 
     const businessName = prospect.businessName || "your business";
     const track = getProspectTrack(prospect);
     const offerUrl = getProspectOfferUrl(prospect);
-    const scorecardUrl = getOfferUrl("scorecard.html");
+    const scorecardUrl = getProspectScorecardUrl(prospect);
     const sampleUrl = getOfferUrl("sample-audit.html");
     const paymentUrl = settings.paymentLink || offerUrl;
     const bookingUrl = settings.bookingLink || offerUrl;
@@ -1341,6 +1341,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Personal injury law track",
         path: "lexington-personal-injury-law-growth-audit.html",
+        scorecardTrack: "personal-injury-law",
         focus: "consultation clarity, trust proof, practice-area pages, and intake follow-up friction"
       };
     }
@@ -1348,6 +1349,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Plumbing track",
         path: "lexington-plumbing-growth-audit.html",
+        scorecardTrack: "plumbing",
         focus: "emergency-call clarity, repair booking, trust proof, service-page conversion, and follow-up gaps"
       };
     }
@@ -1355,6 +1357,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "HVAC track",
         path: "lexington-hvac-growth-audit.html",
+        scorecardTrack: "hvac",
         focus: "repair booking, replacement quote clarity, maintenance offers, trust proof, and follow-up gaps"
       };
     }
@@ -1362,6 +1365,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "HVAC/plumbing track",
         path: "lexington-hvac-plumbing-growth-audit.html",
+        scorecardTrack: "hvac-plumbing",
         focus: "service-call booking, quote clarity, trust proof, and follow-up gaps"
       };
     }
@@ -1369,6 +1373,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Orthodontist track",
         path: "lexington-orthodontist-growth-audit.html",
+        scorecardTrack: "orthodontist",
         focus: "consultation requests, braces and Invisalign proof, review trust, and follow-up friction"
       };
     }
@@ -1376,6 +1381,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Dentist track",
         path: "lexington-dentist-growth-audit.html",
+        scorecardTrack: "dentist",
         focus: "new-patient booking, review trust, and follow-up friction"
       };
     }
@@ -1383,6 +1389,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Med spa track",
         path: "lexington-med-spa-growth-audit.html",
+        scorecardTrack: "med-spa",
         focus: "treatment-page clarity, consultation booking, proof, and follow-up friction"
       };
     }
@@ -1390,6 +1397,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Chiropractor track",
         path: "lexington-chiropractor-growth-audit.html",
+        scorecardTrack: "chiropractor",
         focus: "new-patient appointment clarity, condition-page proof, review trust, and follow-up friction"
       };
     }
@@ -1397,6 +1405,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Veterinary clinic track",
         path: "lexington-veterinary-growth-audit.html",
+        scorecardTrack: "veterinary",
         focus: "appointment clarity, service-menu routing, pet-owner trust proof, and follow-up cues"
       };
     }
@@ -1404,6 +1413,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Pest control track",
         path: "lexington-pest-control-growth-audit.html",
+        scorecardTrack: "pest-control",
         focus: "urgent inspection requests, recurring plan clarity, pest-specific service pages, and trust proof"
       };
     }
@@ -1411,6 +1421,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Garage door track",
         path: "lexington-garage-door-growth-audit.html",
+        scorecardTrack: "garage-door",
         focus: "repair booking, emergency call clarity, replacement quote paths, and review trust"
       };
     }
@@ -1418,6 +1429,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Tree service track",
         path: "lexington-tree-service-growth-audit.html",
+        scorecardTrack: "tree-service",
         focus: "tree removal quote paths, emergency calls, arborist proof, and service-area clarity"
       };
     }
@@ -1425,6 +1437,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Landscaping track",
         path: "lexington-landscaping-growth-audit.html",
+        scorecardTrack: "landscaping",
         focus: "estimate requests, design-build proof, maintenance plan clarity, and project galleries"
       };
     }
@@ -1432,6 +1445,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Restoration track",
         path: "lexington-restoration-growth-audit.html",
+        scorecardTrack: "restoration",
         focus: "24/7 emergency call clarity, insurance proof, service category routing, and response confidence"
       };
     }
@@ -1439,6 +1453,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Physical therapy track",
         path: "lexington-physical-therapy-growth-audit.html",
+        scorecardTrack: "physical-therapy",
         focus: "appointment request clarity, condition-page proof, location routing, and patient trust cues"
       };
     }
@@ -1446,6 +1461,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Home improvement track",
         path: "lexington-home-improvement-growth-audit.html",
+        scorecardTrack: "home-improvement",
         focus: "free-estimate flow, product/service segmentation, project proof, and quote follow-up"
       };
     }
@@ -1453,6 +1469,7 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Roofing track",
         path: "lexington-roofing-growth-audit.html",
+        scorecardTrack: "roofing",
         focus: "inspection requests, repair and replacement quote clarity, warranty proof, financing cues, and follow-up gaps"
       };
     }
@@ -1460,12 +1477,14 @@ Use this line if they ask about results: the audit is planning work based on obs
       return {
         label: "Remodeling track",
         path: "lexington-remodeling-growth-audit.html",
+        scorecardTrack: "remodeling",
         focus: "project-fit clarity, galleries and proof, estimate flow, and follow-up gaps"
       };
     }
     return {
       label: "General offer",
       path: "offer.html",
+      scorecardTrack: "",
       focus: "booking, review, website, and follow-up gaps"
     };
   }
@@ -1514,11 +1533,19 @@ Use this line if they ask about results: the audit is planning work based on obs
     return getOfferUrl(getProspectTrack(prospect).path);
   }
 
+  function getProspectScorecardUrl(prospect) {
+    const track = getProspectTrack(prospect);
+    const path = track.scorecardTrack
+      ? `scorecard.html?track=${encodeURIComponent(track.scorecardTrack)}`
+      : "scorecard.html";
+    return getOfferUrl(path);
+  }
+
   function buildProspectIntro(prospect) {
     const settings = state.settings;
     const track = getProspectTrack(prospect);
     const offerUrl = getProspectOfferUrl(prospect);
-    const scorecardUrl = getOfferUrl("scorecard.html");
+    const scorecardUrl = getProspectScorecardUrl(prospect);
     const businessType = prospect.businessType || "local service business";
     const city = prospect.city || settings.marketCity;
     const mailingAddress = String(settings.mailingAddress || "").trim();
@@ -1614,7 +1641,7 @@ ${settings.contactEmail}`;
         prospect.website || "",
         track.label,
         getProspectOfferUrl(prospect),
-        getOfferUrl("scorecard.html"),
+        getProspectScorecardUrl(prospect),
         prospect.status || "Lead",
         toNumber(prospect.value) > 0 ? Math.round(toNumber(prospect.value)) : "",
         prospect.reviewAngle || "",
@@ -1668,7 +1695,7 @@ ${settings.contactEmail}`;
         `Website: ${prospect.website || "Not listed"}`,
         `Offer track: ${track.label}`,
         `Offer URL: ${getProspectOfferUrl(prospect)}`,
-        `Scorecard URL: ${getOfferUrl("scorecard.html")}`,
+        `Scorecard URL: ${getProspectScorecardUrl(prospect)}`,
         `Review angle: ${prospect.reviewAngle || "Inspect website, local proof, booking path, and follow-up cues."}`,
         "",
         buildProspectIntro(prospect),

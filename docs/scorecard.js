@@ -2,9 +2,354 @@
   "use strict";
 
   const config = window.MONEY_MAKER_CONFIG || {};
+  const params = new URLSearchParams(window.location.search);
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   let copyTimer = 0;
+
+  const TRACK_DATA = {
+    dentist: {
+      label: "Dentist",
+      audience: "Lexington dental offices",
+      audienceNoun: "new patients",
+      title: "Free Dentist Growth Scorecard",
+      offerPath: "lexington-dentist-growth-audit.html",
+      averageValue: 650,
+      placeholder: "Dental office",
+      buyerPath: "new-patient booking, review trust, and follow-up",
+      actionHandled: "New patients get one obvious appointment request or call action on mobile.",
+      actionMissing: "New patients do not get one obvious appointment request or call action on mobile",
+      pageHandled: "High-value treatment and service pages explain fit, proof, process, and next step.",
+      pageMissing: "High-value treatment and service pages do not explain fit, proof, process, and next step"
+    },
+    orthodontist: {
+      label: "Orthodontist",
+      audience: "Lexington orthodontic practices",
+      audienceNoun: "new patients",
+      title: "Free Orthodontist Growth Scorecard",
+      offerPath: "lexington-orthodontist-growth-audit.html",
+      averageValue: 5500,
+      placeholder: "Orthodontic practice",
+      buyerPath: "consultation requests, treatment proof, and follow-up",
+      actionHandled: "New patients get one obvious consultation request or call action on mobile.",
+      actionMissing: "New patients do not get one obvious consultation request or call action on mobile",
+      pageHandled: "Braces, Invisalign, and treatment pages explain fit, proof, process, and next step.",
+      pageMissing: "Braces, Invisalign, or treatment pages do not explain fit, proof, process, and next step"
+    },
+    "med-spa": {
+      label: "Med spa",
+      audience: "Lexington med spas",
+      audienceNoun: "new clients",
+      title: "Free Med Spa Growth Scorecard",
+      offerPath: "lexington-med-spa-growth-audit.html",
+      averageValue: 500,
+      placeholder: "Med spa",
+      buyerPath: "treatment-page clarity, consultation booking, proof, and follow-up",
+      actionHandled: "New clients get one obvious consultation or booking action on mobile.",
+      actionMissing: "New clients do not get one obvious consultation or booking action on mobile",
+      pageHandled: "Treatment pages explain fit, proof, process, pricing cues, and next step.",
+      pageMissing: "Treatment pages do not explain fit, proof, process, pricing cues, and next step"
+    },
+    roofing: {
+      label: "Roofing",
+      audience: "Lexington roofing companies",
+      audienceNoun: "homeowners",
+      title: "Free Roofing Growth Scorecard",
+      offerPath: "lexington-roofing-growth-audit.html",
+      averageValue: 4500,
+      placeholder: "Roofing company",
+      buyerPath: "inspection requests, quote clarity, warranty proof, and follow-up",
+      actionHandled: "Homeowners get one obvious inspection, repair, or quote action on mobile.",
+      actionMissing: "Homeowners do not get one obvious inspection, repair, or quote action on mobile",
+      pageHandled: "Repair, replacement, storm, and financing pages explain fit, proof, process, and next step.",
+      pageMissing: "Repair, replacement, storm, or financing pages do not explain fit, proof, process, and next step"
+    },
+    remodeling: {
+      label: "Remodeling",
+      audience: "Lexington remodelers and contractors",
+      audienceNoun: "project buyers",
+      title: "Free Remodeling Growth Scorecard",
+      offerPath: "lexington-remodeling-growth-audit.html",
+      averageValue: 8000,
+      placeholder: "Remodeling company",
+      buyerPath: "project-fit clarity, galleries, estimate flow, and follow-up",
+      actionHandled: "Project buyers get one obvious consultation or estimate action on mobile.",
+      actionMissing: "Project buyers do not get one obvious consultation or estimate action on mobile",
+      pageHandled: "Project, gallery, and service pages explain fit, proof, process, and next step.",
+      pageMissing: "Project, gallery, or service pages do not explain fit, proof, process, and next step"
+    },
+    hvac: {
+      label: "HVAC",
+      audience: "Lexington HVAC companies",
+      audienceNoun: "homeowners",
+      title: "Free HVAC Growth Scorecard",
+      offerPath: "lexington-hvac-growth-audit.html",
+      averageValue: 5500,
+      placeholder: "HVAC company",
+      buyerPath: "repair booking, replacement quotes, maintenance offers, and follow-up",
+      actionHandled: "Homeowners get one obvious repair, replacement, or maintenance action on mobile.",
+      actionMissing: "Homeowners do not get one obvious repair, replacement, or maintenance action on mobile",
+      pageHandled: "Repair, replacement, maintenance, and financing pages explain fit, proof, process, and next step.",
+      pageMissing: "Repair, replacement, maintenance, or financing pages do not explain fit, proof, process, and next step"
+    },
+    "hvac-plumbing": {
+      label: "Home service",
+      audience: "Lexington multi-trade home service companies",
+      audienceNoun: "homeowners",
+      title: "Free Home Service Growth Scorecard",
+      offerPath: "lexington-hvac-plumbing-growth-audit.html",
+      averageValue: 5500,
+      placeholder: "HVAC, plumbing, or electrical company",
+      buyerPath: "service-call booking, quote clarity, proof, and follow-up",
+      actionHandled: "Homeowners get one obvious service-call, emergency, or quote action on mobile.",
+      actionMissing: "Homeowners do not get one obvious service-call, emergency, or quote action on mobile",
+      pageHandled: "HVAC, plumbing, electrical, and emergency pages explain fit, proof, process, and next step.",
+      pageMissing: "HVAC, plumbing, electrical, or emergency pages do not explain fit, proof, process, and next step"
+    },
+    plumbing: {
+      label: "Plumbing",
+      audience: "Lexington plumbing companies",
+      audienceNoun: "homeowners",
+      title: "Free Plumbing Growth Scorecard",
+      offerPath: "lexington-plumbing-growth-audit.html",
+      averageValue: 1500,
+      placeholder: "Plumbing company",
+      buyerPath: "emergency calls, repair booking, drain service paths, and follow-up",
+      actionHandled: "Homeowners get one obvious emergency, repair, or drain service action on mobile.",
+      actionMissing: "Homeowners do not get one obvious emergency, repair, or drain service action on mobile",
+      pageHandled: "Leak, drain, emergency, repair, and replacement pages explain fit, proof, process, and next step.",
+      pageMissing: "Leak, drain, emergency, repair, or replacement pages do not explain fit, proof, process, and next step"
+    },
+    "personal-injury-law": {
+      label: "Personal injury law",
+      audience: "Lexington personal injury law firms",
+      audienceNoun: "potential clients",
+      title: "Free Personal Injury Law Growth Scorecard",
+      offerPath: "lexington-personal-injury-law-growth-audit.html",
+      averageValue: 7500,
+      placeholder: "Personal injury law firm",
+      buyerPath: "consultation clarity, practice-area proof, trust, and intake follow-up",
+      actionHandled: "Potential clients get one obvious consultation or case-review action on mobile.",
+      actionMissing: "Potential clients do not get one obvious consultation or case-review action on mobile",
+      pageHandled: "Practice-area and case-type pages explain fit, proof, process, and next step.",
+      pageMissing: "Practice-area or case-type pages do not explain fit, proof, process, and next step"
+    },
+    chiropractor: {
+      label: "Chiropractor",
+      audience: "Lexington chiropractic clinics",
+      audienceNoun: "new patients",
+      title: "Free Chiropractor Growth Scorecard",
+      offerPath: "lexington-chiropractor-growth-audit.html",
+      averageValue: 850,
+      placeholder: "Chiropractic clinic",
+      buyerPath: "new-patient appointment clarity, condition-page proof, review trust, and follow-up",
+      actionHandled: "New patients get one obvious first-visit, consultation, or call action on mobile.",
+      actionMissing: "New patients do not get one obvious first-visit, consultation, or call action on mobile",
+      pageHandled: "Condition, pain, injury, family, and wellness pages explain fit, proof, process, and next step.",
+      pageMissing: "Condition, pain, injury, family, or wellness pages do not explain fit, proof, process, and next step"
+    },
+    veterinary: {
+      label: "Veterinary",
+      audience: "Lexington veterinary clinics",
+      audienceNoun: "pet owners",
+      title: "Free Veterinary Growth Scorecard",
+      offerPath: "lexington-veterinary-growth-audit.html",
+      averageValue: 500,
+      placeholder: "Veterinary clinic",
+      buyerPath: "appointment clarity, service routing, pet-owner trust, and follow-up",
+      actionHandled: "Pet owners get one obvious appointment, urgent care, or call action on mobile.",
+      actionMissing: "Pet owners do not get one obvious appointment, urgent care, or call action on mobile",
+      pageHandled: "Wellness, dental, urgent, emergency, and specialty pages explain fit, proof, process, and next step.",
+      pageMissing: "Wellness, dental, urgent, emergency, or specialty pages do not explain fit, proof, process, and next step"
+    },
+    "pest-control": {
+      label: "Pest control",
+      audience: "Lexington pest control companies",
+      audienceNoun: "property owners",
+      title: "Free Pest Control Growth Scorecard",
+      offerPath: "lexington-pest-control-growth-audit.html",
+      averageValue: 1200,
+      placeholder: "Pest control company",
+      buyerPath: "inspection requests, plan clarity, pest-specific pages, and trust proof",
+      actionHandled: "Property owners get one obvious inspection, quote, or urgent-call action on mobile.",
+      actionMissing: "Property owners do not get one obvious inspection, quote, or urgent-call action on mobile",
+      pageHandled: "Termite, bed bug, rodent, ant, and recurring-plan pages explain fit, proof, process, and next step.",
+      pageMissing: "Termite, bed bug, rodent, ant, or recurring-plan pages do not explain fit, proof, process, and next step"
+    },
+    "garage-door": {
+      label: "Garage door",
+      audience: "Lexington garage door companies",
+      audienceNoun: "homeowners",
+      title: "Free Garage Door Growth Scorecard",
+      offerPath: "lexington-garage-door-growth-audit.html",
+      averageValue: 1200,
+      placeholder: "Garage door company",
+      buyerPath: "repair booking, emergency calls, replacement quotes, and review trust",
+      actionHandled: "Homeowners get one obvious repair, emergency, or replacement quote action on mobile.",
+      actionMissing: "Homeowners do not get one obvious repair, emergency, or replacement quote action on mobile",
+      pageHandled: "Repair, spring, opener, installation, and commercial pages explain fit, proof, process, and next step.",
+      pageMissing: "Repair, spring, opener, installation, or commercial pages do not explain fit, proof, process, and next step"
+    },
+    "tree-service": {
+      label: "Tree service",
+      audience: "Lexington tree service companies",
+      audienceNoun: "property owners",
+      title: "Free Tree Service Growth Scorecard",
+      offerPath: "lexington-tree-service-growth-audit.html",
+      averageValue: 1800,
+      placeholder: "Tree service company",
+      buyerPath: "tree removal quote paths, emergency calls, arborist proof, and service-area clarity",
+      actionHandled: "Property owners get one obvious removal, trimming, emergency, or estimate action on mobile.",
+      actionMissing: "Property owners do not get one obvious removal, trimming, emergency, or estimate action on mobile",
+      pageHandled: "Removal, trimming, pruning, emergency, and stump pages explain fit, proof, process, and next step.",
+      pageMissing: "Removal, trimming, pruning, emergency, or stump pages do not explain fit, proof, process, and next step"
+    },
+    landscaping: {
+      label: "Landscaping",
+      audience: "Lexington landscaping and lawn care companies",
+      audienceNoun: "property owners",
+      title: "Free Landscaping Growth Scorecard",
+      offerPath: "lexington-landscaping-growth-audit.html",
+      averageValue: 3500,
+      placeholder: "Landscaping or lawn care company",
+      buyerPath: "estimate requests, project proof, maintenance plan clarity, and quote follow-up",
+      actionHandled: "Property owners get one obvious estimate, consultation, or maintenance-plan action on mobile.",
+      actionMissing: "Property owners do not get one obvious estimate, consultation, or maintenance-plan action on mobile",
+      pageHandled: "Design-build, lawn care, irrigation, maintenance, and gallery pages explain fit, proof, process, and next step.",
+      pageMissing: "Design-build, lawn care, irrigation, maintenance, or gallery pages do not explain fit, proof, process, and next step"
+    },
+    restoration: {
+      label: "Restoration",
+      audience: "Lexington restoration companies",
+      audienceNoun: "emergency buyers",
+      title: "Free Restoration Growth Scorecard",
+      offerPath: "lexington-restoration-growth-audit.html",
+      averageValue: 5000,
+      placeholder: "Restoration company",
+      buyerPath: "24/7 emergency calls, insurance proof, service routing, and response confidence",
+      actionHandled: "Emergency buyers get one obvious 24/7 phone, dispatch, or request-help action on mobile.",
+      actionMissing: "Emergency buyers do not get one obvious 24/7 phone, dispatch, or request-help action on mobile",
+      pageHandled: "Water, fire, mold, storm, and emergency pages explain fit, proof, process, and next step.",
+      pageMissing: "Water, fire, mold, storm, or emergency pages do not explain fit, proof, process, and next step"
+    },
+    "physical-therapy": {
+      label: "Physical therapy",
+      audience: "Lexington physical therapy clinics",
+      audienceNoun: "patients",
+      title: "Free Physical Therapy Growth Scorecard",
+      offerPath: "lexington-physical-therapy-growth-audit.html",
+      averageValue: 700,
+      placeholder: "Physical therapy clinic",
+      buyerPath: "appointment requests, condition-page proof, location routing, and patient trust",
+      actionHandled: "Patients get one obvious appointment, call, or request-care action on mobile.",
+      actionMissing: "Patients do not get one obvious appointment, call, or request-care action on mobile",
+      pageHandled: "Pain, injury, rehab, specialty, and location pages explain fit, proof, process, and next step.",
+      pageMissing: "Pain, injury, rehab, specialty, or location pages do not explain fit, proof, process, and next step"
+    },
+    "home-improvement": {
+      label: "Home improvement",
+      audience: "Lexington home improvement companies",
+      audienceNoun: "project buyers",
+      title: "Free Home Improvement Growth Scorecard",
+      offerPath: "lexington-home-improvement-growth-audit.html",
+      averageValue: 4500,
+      placeholder: "Fence, window, flooring, or home improvement company",
+      buyerPath: "free-estimate flow, product segmentation, project proof, and quote follow-up",
+      actionHandled: "Project buyers get one obvious free-estimate, consultation, or quote action on mobile.",
+      actionMissing: "Project buyers do not get one obvious free-estimate, consultation, or quote action on mobile",
+      pageHandled: "Product, repair, installation, gallery, and warranty pages explain fit, proof, process, and next step.",
+      pageMissing: "Product, repair, installation, gallery, or warranty pages do not explain fit, proof, process, and next step"
+    }
+  };
+
+  const TRACK_ALIASES = {
+    dental: "dentist",
+    dentist: "dentist",
+    orthodontics: "orthodontist",
+    orthodontist: "orthodontist",
+    medspa: "med-spa",
+    "med-spa": "med-spa",
+    "med spa": "med-spa",
+    roofing: "roofing",
+    roofers: "roofing",
+    remodeling: "remodeling",
+    remodeler: "remodeling",
+    contractor: "remodeling",
+    hvac: "hvac",
+    "hvac-plumbing": "hvac-plumbing",
+    plumbing: "plumbing",
+    plumber: "plumbing",
+    law: "personal-injury-law",
+    "personal-injury": "personal-injury-law",
+    "personal-injury-law": "personal-injury-law",
+    chiropractor: "chiropractor",
+    chiropractic: "chiropractor",
+    vet: "veterinary",
+    veterinary: "veterinary",
+    "pest-control": "pest-control",
+    pest: "pest-control",
+    "garage-door": "garage-door",
+    garage: "garage-door",
+    "tree-service": "tree-service",
+    tree: "tree-service",
+    landscaping: "landscaping",
+    lawn: "landscaping",
+    restoration: "restoration",
+    "physical-therapy": "physical-therapy",
+    physiotherapy: "physical-therapy",
+    "home-improvement": "home-improvement",
+    flooring: "home-improvement",
+    fence: "home-improvement",
+    windows: "home-improvement"
+  };
+
+  function makeTrackProfile(slug, data) {
+    return {
+      ...data,
+      slug,
+      kicker: data.audience,
+      headline: `Tuned for ${data.buyerPath}`,
+      heroCopy: `Check the visible ${data.buyerPath} before you buy an audit. This scorecard uses the same buyer-path logic with wording for ${data.audience.toLowerCase()}.`,
+      options: {
+        primaryAction: {
+          checked: data.actionHandled,
+          missing: data.actionMissing
+        },
+        googleProfile: {
+          checked: `Google Business Profile has current services, photos, Q&A, and conversion cues for ${data.audienceNoun}.`,
+          missing: `The Google Business Profile needs current services, photos, Q&A, or conversion cues for ${data.audienceNoun}`
+        },
+        reviews: {
+          checked: `Reviews are recent, visible, and connected to the next step for ${data.audienceNoun}.`,
+          missing: `Reviews are not recent, visible, or connected to the next step for ${data.audienceNoun}`
+        },
+        tracking: {
+          checked: "Calls, forms, booking clicks, quote requests, and source are tracked.",
+          missing: "Calls, forms, booking clicks, quote requests, or source are not tracked"
+        },
+        followUp: {
+          checked: `Unbooked ${data.audienceNoun} get a reliable follow-up within 24 hours.`,
+          missing: `Unbooked ${data.audienceNoun} do not get a reliable follow-up within 24 hours`
+        },
+        servicePages: {
+          checked: data.pageHandled,
+          missing: data.pageMissing
+        }
+      }
+    };
+  }
+
+  const TRACK_PROFILES = Object.fromEntries(
+    Object.entries(TRACK_DATA).map(([slug, data]) => [slug, makeTrackProfile(slug, data)])
+  );
+
+  function activeTrackProfile() {
+    const raw = String(params.get("track") || params.get("category") || "").trim().toLowerCase();
+    const slug = TRACK_ALIASES[raw] || raw;
+    return TRACK_PROFILES[slug] || null;
+  }
+
+  const activeTrack = activeTrackProfile();
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -38,6 +383,47 @@
     const configured = String(config.offerBaseUrl || "https://julianbrown-afk.github.io/blank-map-local-growth-audit/").trim();
     const base = configured.endsWith("/") ? configured : `${configured}/`;
     return new URL(path, base).toString();
+  }
+
+  function scorecardPath() {
+    return activeTrack ? `scorecard.html?track=${encodeURIComponent(activeTrack.slug)}` : "scorecard.html";
+  }
+
+  function paidAuditPath() {
+    return activeTrack?.offerPath || "";
+  }
+
+  function applyTrackProfile() {
+    if (!activeTrack) return;
+
+    document.title = activeTrack.title;
+    setText("[data-score-track-output='kicker']", activeTrack.kicker);
+    setText("[data-score-track-output='title']", activeTrack.title);
+    setText("[data-score-track-output='heroCopy']", activeTrack.heroCopy);
+    setText("[data-score-track-output='trackLabel']", `${activeTrack.label} scorecard`);
+    setText("[data-score-track-output='trackHeadline']", activeTrack.headline);
+    setText("[data-score-track-output='trackFocus']", `Audit focus: ${activeTrack.buyerPath}.`);
+
+    const context = $("[data-score-track-context]");
+    if (context) context.hidden = false;
+
+    Object.entries(activeTrack.options).forEach(([key, option]) => {
+      const input = $(`[data-score-option='${key}']`);
+      if (!input) return;
+      input.dataset.freeScoreLabel = option.missing;
+      const text = input.closest("label")?.querySelector("span");
+      if (text) text.textContent = option.checked;
+    });
+
+    const customerValue = $("[data-free-score-input='customerValue']");
+    if (customerValue) customerValue.value = String(activeTrack.averageValue);
+
+    const businessType = $("[data-free-lead='businessType']");
+    if (businessType) businessType.placeholder = activeTrack.placeholder;
+
+    $$("[data-score-paid-link]").forEach((link) => {
+      link.href = offerUrl(paidAuditPath());
+    });
   }
 
   function leadDetails() {
@@ -119,7 +505,7 @@
   }
 
   function scorecardRecommendation(state) {
-    const firstGap = state.missingLabels[0] || "outside validation of the visible buyer path";
+    const firstGap = state.missingLabels[0] || activeTrack?.buyerPath || "outside validation of the visible buyer path";
     if (state.gaps >= 4) {
       return {
         kicker: "Recommended next move",
@@ -158,10 +544,13 @@
       : "No urgent gap from this quick pass.";
     const leadBlock = buildLeadBlock(details);
     const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+    const trackBlock = activeTrack
+      ? `Track: ${activeTrack.label}\nFocus: ${activeTrack.buyerPath}\n\n`
+      : "";
 
     return `Free Local Growth Scorecard result
 
-${leadBlock}Score: ${state.score}/100
+${leadBlock}${trackBlock}Score: ${state.score}/100
 Priority: ${state.priority}
 Gaps found: ${state.gaps}
 Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo
@@ -182,8 +571,8 @@ ${topGaps}
 
 This is planning math, not a revenue guarantee.
 
-Scorecard: ${offerUrl("scorecard.html")}
-Paid audit: ${offerUrl("")}
+Scorecard: ${offerUrl(scorecardPath())}
+Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   }
 
@@ -299,5 +688,6 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     updateFreeScorecard();
   }
 
+  applyTrackProfile();
   bindFreeScorecard();
 })();

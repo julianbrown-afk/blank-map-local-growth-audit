@@ -32,6 +32,12 @@ Free scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 
+Track-specific scorecards use the same URL with a `track` query parameter, for example:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=restoration
+```
+
 Audit intake:
 
 ```text
@@ -88,7 +94,7 @@ http://localhost:4173/index.html
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
 4. Send prospects the generated offer link, or use the closest niche offer page when it matches the prospect.
-5. For colder prospects, use `Copy scorecard link` first so they can run the free scorecard before seeing the paid audit.
+5. For colder prospects, use `Copy scorecard link` first, or use the category-specific scorecard link generated in the daily batch so they can run the free scorecard before seeing the paid audit.
 6. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
 7. Ask interested prospects to use `Email my score` or `Copy score summary` on the scorecard page so the sales conversation starts from their actual gaps.
 8. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.

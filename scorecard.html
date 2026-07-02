@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702af">
+    <link rel="stylesheet" href="styles.css?v=20260702al">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -30,7 +30,7 @@
     </script>
     <script src="config.js?v=20260702af"></script>
     <script defer src="offer.js?v=20260702af"></script>
-    <script defer src="scorecard.js?v=20260702aj"></script>
+    <script defer src="scorecard.js?v=20260702al"></script>
   </head>
   <body class="offer-body free-scorecard-body">
     <header class="offer-nav">
@@ -42,7 +42,7 @@
         </span>
       </a>
       <div class="offer-nav-actions">
-        <a class="secondary-link" href="offer.html">Paid audit</a>
+        <a class="secondary-link" href="offer.html" data-score-paid-link>Paid audit</a>
         <a class="primary-button" data-offer-link="cta" href="#">Buy audit</a>
       </div>
     </header>
@@ -51,14 +51,19 @@
       <section class="free-scorecard-hero">
         <div class="free-scorecard-inner">
           <div class="free-scorecard-copy">
-            <p class="offer-kicker"><span data-offer="marketCity">Your City</span> service businesses</p>
-            <h1>Free Local Growth Scorecard</h1>
-            <p class="hero-copy">Check the visible buyer path before you buy an audit. The scorecard looks at the same trust, booking, review, tracking, and follow-up basics a local buyer sees.</p>
+            <p class="offer-kicker" data-score-track-output="kicker"><span data-offer="marketCity">Your City</span> service businesses</p>
+            <h1 data-score-track-output="title">Free Local Growth Scorecard</h1>
+            <p class="hero-copy" data-score-track-output="heroCopy">Check the visible buyer path before you buy an audit. The scorecard looks at the same trust, booking, review, tracking, and follow-up basics a local buyer sees.</p>
             <div class="hero-actions">
               <a class="primary-button large" href="#scorecardTool">Run the scorecard</a>
               <a class="secondary-link" href="sample-audit.html">View sample audit</a>
             </div>
             <p class="hero-note">No form. No login. No guarantee claims. Just a quick way to see whether the paid audit has a clear job to do.</p>
+            <div class="scorecard-track-context" data-score-track-context hidden>
+              <span data-score-track-output="trackLabel">Category scorecard</span>
+              <strong data-score-track-output="trackHeadline">Tuned to this buyer path</strong>
+              <p data-score-track-output="trackFocus">The checks below use the same scoring logic with category-specific wording.</p>
+            </div>
           </div>
 
           <aside class="free-scorecard-result" aria-live="polite">
@@ -113,27 +118,27 @@
           </div>
           <div class="free-scorecard-options">
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="Mobile visitors do not get one obvious call, booking, or quote action" checked>
+              <input type="checkbox" data-free-score-item data-score-option="primaryAction" data-free-score-label="Mobile visitors do not get one obvious call, booking, or quote action" checked>
               <span>Mobile visitors get one obvious call, booking, or quote action.</span>
             </label>
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="The Google Business Profile needs current services, photos, Q&A, or conversion cues">
+              <input type="checkbox" data-free-score-item data-score-option="googleProfile" data-free-score-label="The Google Business Profile needs current services, photos, Q&A, or conversion cues">
               <span>Google Business Profile has current services, photos, Q&A, and conversion cues.</span>
             </label>
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="Reviews are not recent, visible, or consistently requested">
+              <input type="checkbox" data-free-score-item data-score-option="reviews" data-free-score-label="Reviews are not recent, visible, or consistently requested">
               <span>Reviews are recent, visible, and requested after completed work.</span>
             </label>
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="Calls, forms, and booking clicks are not tracked by source">
+              <input type="checkbox" data-free-score-item data-score-option="tracking" data-free-score-label="Calls, forms, and booking clicks are not tracked by source">
               <span>Calls, forms, and booking clicks are tracked by source.</span>
             </label>
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="Unbooked inquiries do not get a reliable follow-up within 24 hours">
+              <input type="checkbox" data-free-score-item data-score-option="followUp" data-free-score-label="Unbooked inquiries do not get a reliable follow-up within 24 hours">
               <span>Unbooked inquiries get a reliable follow-up within 24 hours.</span>
             </label>
             <label>
-              <input type="checkbox" data-free-score-item data-free-score-label="High-value service pages do not explain fit, proof, process, and next step">
+              <input type="checkbox" data-free-score-item data-score-option="servicePages" data-free-score-label="High-value service pages do not explain fit, proof, process, and next step">
               <span>High-value service pages explain fit, proof, process, and next step.</span>
             </label>
           </div>
@@ -205,7 +210,7 @@
           <div class="hero-actions closing-actions">
             <a class="primary-button large" data-offer-link="cta" href="#">Buy audit</a>
             <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
-            <a class="secondary-link dark" href="offer.html">See paid audit</a>
+            <a class="secondary-link dark" href="offer.html" data-score-paid-link>See paid audit</a>
           </div>
           <div class="scorecard-result-actions">
             <a class="ghost-button" data-free-score-email href="mailto:JulianBrown@blankmapgroup.com">Email score and details</a>
