@@ -939,8 +939,8 @@ Use this line if they ask about results: the audit is planning work based on obs
     if (text.includes("roof")) {
       return {
         label: "Roofing track",
-        path: "lexington-roofing-remodeling-growth-audit.html",
-        focus: "roofing quote-request friction, warranty proof, urgency cues, and follow-up gaps"
+        path: "lexington-roofing-growth-audit.html",
+        focus: "inspection requests, repair and replacement quote clarity, warranty proof, financing cues, and follow-up gaps"
       };
     }
     if (text.includes("remodel") || text.includes("contractor") || text.includes("construction")) {

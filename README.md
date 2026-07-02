@@ -44,6 +44,7 @@ Niche offer pages:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-orthodontist-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-remodeling-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-growth-audit.html
