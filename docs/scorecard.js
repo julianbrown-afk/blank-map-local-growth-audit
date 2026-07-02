@@ -475,6 +475,20 @@
     if (params.has("close")) {
       setInputValue("[data-free-score-input='closeRate']", boundedParamNumber("close", 35, 5, 80));
     }
+
+    const handledParam = params.get("handled") || params.get("checks");
+    const missingParam = params.get("gaps") || params.get("missing");
+    if (handledParam || missingParam || params.get("result") === "1") {
+      const handled = new Set(String(handledParam || "").split(",").map((item) => item.trim()).filter(Boolean));
+      const missing = new Set(String(missingParam || "").split(",").map((item) => item.trim()).filter(Boolean));
+      $$("[data-free-score-item]").forEach((item) => {
+        const key = item.dataset.scoreOption;
+        if (!key) return;
+        if (handledParam) item.checked = handled.has(key);
+        else if (missingParam) item.checked = !missing.has(key);
+      });
+      scorecardTouched = true;
+    }
   }
 
   function renderTrackPicker() {
@@ -526,6 +540,42 @@
     return lines.length
       ? `Business details\n${lines.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\n`
       : "";
+  }
+
+  function boundedInputValue(selector, fallback, min, max) {
+    const input = $(selector);
+    const value = toNumber(input?.value, fallback);
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function checkedScoreOptions() {
+    return $$("[data-free-score-item]")
+      .filter((item) => item.checked)
+      .map((item) => item.dataset.scoreOption)
+      .filter(Boolean);
+  }
+
+  function scorecardResultPath(details = leadDetails()) {
+    const resultParams = new URLSearchParams();
+    if (activeTrack?.slug) resultParams.set("track", activeTrack.slug);
+    if (details.businessName) resultParams.set("lead", details.businessName);
+    if (details.website) resultParams.set("site", details.website);
+    if (details.businessType) resultParams.set("type", details.businessType);
+
+    resultParams.set("value", String(Math.round(boundedInputValue("[data-free-score-input='customerValue']", 650, 100, 5000))));
+    resultParams.set("missed", String(Math.round(boundedInputValue("[data-free-score-input='missedInquiries']", 3, 1, 20))));
+    resultParams.set("close", String(Math.round(boundedInputValue("[data-free-score-input='closeRate']", 35, 5, 80))));
+
+    const handled = checkedScoreOptions();
+    if (handled.length) resultParams.set("handled", handled.join(","));
+    if (scorecardTouched || handled.length) resultParams.set("result", "1");
+
+    const query = resultParams.toString();
+    return query ? `scorecard.html?${query}#scorecard-result` : "scorecard.html#scorecard-result";
+  }
+
+  function scorecardResultUrl(details = leadDetails()) {
+    return offerUrl(scorecardResultPath(details));
   }
 
   function unscoredState(base) {
@@ -671,6 +721,7 @@ Likely close rate on recovered inquiries: ${state.closeRate}%
 This is planning math, not a revenue guarantee.
 
 Scorecard: ${offerUrl(scorecardPath())}
+Result link: ${scorecardResultUrl(details)}
 Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     }
@@ -708,6 +759,7 @@ ${topGaps}
 This is planning math, not a revenue guarantee.
 
 Scorecard: ${offerUrl(scorecardPath())}
+Result link: ${scorecardResultUrl(details)}
 Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   }
@@ -736,6 +788,25 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
       navigator.clipboard.writeText(text).then(() => true).catch(() => false),
       new Promise((resolve) => setTimeout(() => resolve(false), 900))
     ]);
+  }
+
+  async function copyTextWithFallback(text) {
+    let copied = await writeClipboardText(text);
+
+    if (!copied) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-999px";
+      document.body.appendChild(area);
+      area.focus();
+      area.select();
+      copied = document.execCommand("copy");
+      area.remove();
+    }
+
+    return copied;
   }
 
   function updateFreeScorecard() {
@@ -777,21 +848,7 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     const manual = $("[data-free-score-manual]");
     const summary = buildScoreSummary(scorecardState({ neutral: true }));
     try {
-      let copied = await writeClipboardText(summary);
-
-      if (!copied) {
-        const area = document.createElement("textarea");
-        area.value = summary;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed";
-        area.style.left = "-999px";
-        document.body.appendChild(area);
-        area.focus();
-        area.select();
-        copied = document.execCommand("copy");
-        area.remove();
-      }
-
+      const copied = await copyTextWithFallback(summary);
       if (!copied) throw new Error("Copy failed.");
       if (status) status.textContent = "Score summary copied.";
       if (manual) {
@@ -802,6 +859,34 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
       if (status) status.textContent = "Copy blocked. The score summary is open below.";
       if (manual) {
         manual.value = summary;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3200);
+  }
+
+  async function copyScoreResultLink() {
+    const status = $("[data-free-score-copy-status]");
+    const manual = $("[data-free-score-manual]");
+    const url = scorecardResultUrl();
+    try {
+      const copied = await copyTextWithFallback(url);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Score result link copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The score result link is open below.";
+      if (manual) {
+        manual.value = url;
         manual.hidden = false;
         manual.focus();
         manual.select();
@@ -829,6 +914,9 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     });
     $$("[data-free-score-copy]").forEach((item) => {
       item.addEventListener("click", copyScoreSummary);
+    });
+    $$("[data-free-score-copy-link]").forEach((item) => {
+      item.addEventListener("click", copyScoreResultLink);
     });
     updateFreeScorecard();
   }
