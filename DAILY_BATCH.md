@@ -28,7 +28,7 @@ The public mailing address is intentionally blank. Do not send cold commercial e
 
 Use this batch for manual review, warm referrals, permitted community replies, and scorecard-first conversations. Every review angle below is a hypothesis to inspect, not a claim about the business.
 
-Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, referral partner copy, one-sheet handoffs, community replies, and score-result replies. No post has been made from that file.
+Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, referral partner copy, one-sheet handoffs, decision-quiz handoffs, community replies, and score-result replies. No post has been made from that file.
 
 ## Today's Review Queue
 
@@ -109,6 +109,15 @@ Here is the one-sheet for the Lexington Local Growth Audit. It starts with the f
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-one-sheet.html
 ```
 
+## Decision Quiz
+
+Use when a warm owner is unsure whether the next step should be free, paid, sample-first, or a fit call:
+
+```text
+If you are not sure whether to buy the audit yet, use the decision quiz first. It routes you to the free scorecard, sample report, fit call, or paid audit based on what is already clear:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
+```
+
 ## Manual Review Steps
 
 1. Open the prospect website.
@@ -132,4 +141,4 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-g
 - Med spa mobile checks: completed read-only for Luxe Lounge, Belle Vie, Lexington Prime, and Beautiful You; no outreach sent
 - Roofing mobile checks: completed read-only for Big Blue, Big League, Reliable Residential, Barrier, and Mighty Dog; no outreach sent
 - Remaining research-only row: Tates Creek Dental has HTTP/source content but clean-browser mobile render returned `Not authorized`; do not use visual claims until a user-controlled browser confirms the public first screen
-- Next required action: use the prefilled scorecard URLs, referral partner page, and one-sheet only for warm referrals, permitted community replies, partner conversations, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address/PO box/CMRA is available
+- Next required action: use the prefilled scorecard URLs, referral partner page, one-sheet, and decision quiz only for warm referrals, permitted community replies, partner conversations, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address/PO box/CMRA is available

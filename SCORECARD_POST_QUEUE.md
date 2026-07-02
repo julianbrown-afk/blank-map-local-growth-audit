@@ -42,6 +42,12 @@ Printable one-sheet:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-one-sheet.html
 ```
 
+Decision quiz:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
+```
+
 Website conversion audit page:
 
 ```text
@@ -60,7 +66,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit.
 
 Score result handoff:
 
@@ -187,6 +193,19 @@ One-sheet:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-one-sheet.html
 ```
 
+## Decision Quiz Handoff
+
+Use when a warm owner is unsure whether to buy, start free, inspect the sample, or book a fit call.
+
+```text
+If you are not sure whether the paid audit is the right next step, start with this decision quiz.
+
+It routes you to the free scorecard, sample report, fit call, or fixed-scope paid audit based on whether demand already exists, whether the buyer-path gap is visible, and whether bigger spend is being considered.
+
+Decision quiz:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
+```
+
 ## Relevant Community Reply
 
 Use only when someone has already asked about improving calls, bookings, quote requests, reviews, local service marketing, or website conversion.
@@ -251,4 +270,4 @@ The current internal reviewed queue is `REVIEWED_PIPELINE.csv`.
 - Research-only rows: 1
 - Prospects contacted: 0
 - Paid audits sold from this queue: 0
-- Next action before any prospect-specific contact: use only warm referrals, referral partner introductions, one-sheet handoffs, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
+- Next action before any prospect-specific contact: use only warm referrals, referral partner introductions, one-sheet handoffs, decision-quiz handoffs, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.

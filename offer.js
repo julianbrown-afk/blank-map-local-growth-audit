@@ -30,6 +30,7 @@
   let intakeCopyTimer = 0;
   let referralCopyTimer = 0;
   let scoreCopyTimer = 0;
+  let decisionCopyTimer = 0;
   let homepageScoreTouched = false;
 
   function currency(value) {
@@ -409,6 +410,213 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     }, 3600);
   }
 
+  function decisionAnswers() {
+    const answers = {};
+    $$("[data-decision-question]:checked").forEach((input) => {
+      answers[input.dataset.decisionQuestion] = input.value;
+    });
+    return answers;
+  }
+
+  function decisionRoute() {
+    const answers = decisionAnswers();
+    const answered = Object.keys(answers).length;
+    const activeDemand = answers.demand === "active";
+    const visibleGap = answers.gap === "yes";
+    const unclearGap = answers.gap === "unsure";
+    const biggerSpend = answers.spend === "yes";
+    const soon = answers.timeline === "soon";
+    const messy = answers.complexity === "messy";
+    const wantsProof = answers.proof === "yes";
+    const auditScore = [
+      activeDemand,
+      visibleGap,
+      biggerSpend,
+      soon
+    ].filter(Boolean).length + (visibleGap ? 1 : 0);
+
+    if (answered < 3) {
+      return {
+        key: "neutral",
+        kicker: "Decision route",
+        title: "Answer a few checks to get the lowest-friction next step.",
+        body: "The quiz routes you to the free scorecard, sample report, fit call, or paid audit based on what is already clear.",
+        primaryText: "Run free scorecard",
+        primaryHref: publicUrl("scorecard.html"),
+        secondaryText: "View sample",
+        secondaryHref: publicUrl("sample-audit.html"),
+        tertiaryText: "Buy audit",
+        tertiaryHref: ctaHref(),
+        reason: "Not enough answers yet."
+      };
+    }
+
+    if (messy && (unclearGap || !visibleGap)) {
+      return {
+        key: "call",
+        kicker: "Best route",
+        title: "Book a fit call before paying.",
+        body: "The buyer path sounds too complex to route from a quick quiz alone. Use a short call to decide whether the fixed audit is the right first move.",
+        primaryText: config.bookingLink ? "Book a call" : "Email to book",
+        primaryHref: config.bookingLink || ctaHref(),
+        secondaryText: "Run free scorecard",
+        secondaryHref: publicUrl("scorecard.html"),
+        tertiaryText: "View method",
+        tertiaryHref: publicUrl("lexington-local-growth-audit-method.html"),
+        reason: "Multiple services, locations, or unclear gaps need a fit check before checkout."
+      };
+    }
+
+    if (auditScore >= 4) {
+      return {
+        key: "buy",
+        kicker: "Best route",
+        title: "Buy the fixed-scope audit.",
+        body: "You already have demand and a visible buyer-path problem. The audit is the lowest-commitment way to rank fixes before a larger spend.",
+        primaryText: `Buy audit ${currency(config.auditPrice)}`,
+        primaryHref: ctaHref(),
+        secondaryText: "View sample",
+        secondaryHref: publicUrl("sample-audit.html"),
+        tertiaryText: "Start intake after payment",
+        tertiaryHref: publicUrl("audit-intake.html"),
+        reason: "Demand, visible friction, timing, and bigger-spend risk are all present."
+      };
+    }
+
+    if (wantsProof) {
+      return {
+        key: "sample",
+        kicker: "Best route",
+        title: "Inspect the sample report first.",
+        body: "If the audit sounds useful but the deliverable is not clear yet, inspect the sample before deciding whether the paid review is worth it.",
+        primaryText: "View sample",
+        primaryHref: publicUrl("sample-audit.html"),
+        secondaryText: "See method",
+        secondaryHref: publicUrl("lexington-local-growth-audit-method.html"),
+        tertiaryText: "Buy audit",
+        tertiaryHref: ctaHref(),
+        reason: "The next concern is confidence in the deliverable."
+      };
+    }
+
+    if (activeDemand || unclearGap || visibleGap) {
+      return {
+        key: "scorecard",
+        kicker: "Best route",
+        title: "Run the free scorecard and copy the result link.",
+        body: "There may be a useful audit case, but the visible gaps need sharper definition first. The scorecard gives the next reply a concrete starting point.",
+        primaryText: "Run free scorecard",
+        primaryHref: publicUrl("scorecard.html"),
+        secondaryText: "Check audit fit",
+        secondaryHref: publicUrl("lexington-local-growth-audit-fit-check.html"),
+        tertiaryText: "View one-sheet",
+        tertiaryHref: publicUrl("lexington-local-growth-audit-one-sheet.html"),
+        reason: "The buyer-path gap is not specific enough yet for a confident paid-audit decision."
+      };
+    }
+
+    return {
+      key: "wait",
+      kicker: "Best route",
+      title: "Use free resources before buying.",
+      body: "The paid audit is strongest when there is already traffic, calls, bookings, quotes, or a visible buyer-path leak to diagnose.",
+      primaryText: "Open resource directory",
+      primaryHref: publicUrl("lexington-growth-scorecards.html"),
+      secondaryText: "Run free scorecard",
+      secondaryHref: publicUrl("scorecard.html"),
+      tertiaryText: "View one-sheet",
+      tertiaryHref: publicUrl("lexington-local-growth-audit-one-sheet.html"),
+      reason: "Current answers do not show enough buyer-path friction for the paid audit to be the first step."
+    };
+  }
+
+  function decisionSummary(route = decisionRoute()) {
+    const answers = decisionAnswers();
+    const lines = [
+      "Local Growth Audit decision quiz",
+      "",
+      `Recommendation: ${route.title}`,
+      `Reason: ${route.reason}`,
+      "",
+      "Answers:",
+      `Existing demand: ${answers.demand || "Not answered"}`,
+      `Visible buyer-path gap: ${answers.gap || "Not answered"}`,
+      `Considering bigger spend: ${answers.spend || "Not answered"}`,
+      `Timeline: ${answers.timeline || "Not answered"}`,
+      `Buyer path complexity: ${answers.complexity || "Not answered"}`,
+      `Need proof first: ${answers.proof || "Not answered"}`,
+      "",
+      "Next links:",
+      `${route.primaryText}: ${route.primaryHref}`,
+      `${route.secondaryText}: ${route.secondaryHref}`,
+      `${route.tertiaryText}: ${route.tertiaryHref}`,
+      "",
+      "This is a routing guide, not a revenue guarantee."
+    ];
+    return lines.join("\n");
+  }
+
+  function updateDecisionQuiz() {
+    const result = $("[data-decision-result]");
+    if (!result) return;
+
+    const route = decisionRoute();
+    const kicker = $("[data-decision-kicker]", result);
+    const title = $("[data-decision-title]", result);
+    const body = $("[data-decision-body]", result);
+    const reason = $("[data-decision-reason]", result);
+    const primary = $("[data-decision-primary]", result);
+    const secondary = $("[data-decision-secondary]", result);
+    const tertiary = $("[data-decision-tertiary]", result);
+
+    result.dataset.decisionState = route.key;
+    if (kicker) kicker.textContent = route.kicker;
+    if (title) title.textContent = route.title;
+    if (body) body.textContent = route.body;
+    if (reason) reason.textContent = route.reason;
+    if (primary) {
+      primary.textContent = route.primaryText;
+      primary.href = route.primaryHref;
+    }
+    if (secondary) {
+      secondary.textContent = route.secondaryText;
+      secondary.href = route.secondaryHref;
+    }
+    if (tertiary) {
+      tertiary.textContent = route.tertiaryText;
+      tertiary.href = route.tertiaryHref;
+    }
+  }
+
+  async function copyDecisionSummary() {
+    const status = $("[data-decision-copy-status]");
+    const manual = $("[data-decision-manual]");
+    const text = decisionSummary();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Decision summary copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The decision summary is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(decisionCopyTimer);
+    decisionCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
   function updateScorecard() {
     const state = homepageScoreState({ neutral: true });
     const label = $("[data-score-label]");
@@ -502,6 +710,14 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
       button.addEventListener("click", copyHomepageScoreSummary);
     });
     updateScorecard();
+
+    $$("[data-decision-question]").forEach((input) => {
+      input.addEventListener("change", updateDecisionQuiz);
+    });
+    $$("[data-decision-copy]").forEach((button) => {
+      button.addEventListener("click", copyDecisionSummary);
+    });
+    updateDecisionQuiz();
 
     $$("[data-value-input]").forEach((item) => {
       item.addEventListener("input", updateValueMath);

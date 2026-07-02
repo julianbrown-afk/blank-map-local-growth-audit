@@ -4242,6 +4242,159 @@ td select {
   background: linear-gradient(135deg, #115a48, #1f7a63);
 }
 
+.decision-quiz-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.52fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 92px;
+}
+
+.decision-quiz-copy {
+  position: sticky;
+  top: 96px;
+}
+
+.decision-quiz-copy h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.08;
+}
+
+.decision-quiz-copy p:not(.eyebrow) {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.decision-quiz-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.66fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.decision-question-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.decision-question-grid fieldset {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(150deg, rgba(223, 234, 242, 0.58), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.decision-question-grid legend {
+  float: left;
+  width: 100%;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.decision-question-grid legend + label {
+  clear: both;
+}
+
+.decision-question-grid label {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.decision-question-grid input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--green);
+}
+
+.decision-result-card {
+  position: sticky;
+  top: 96px;
+  min-width: 0;
+  border: 1px solid rgba(19, 94, 75, 0.26);
+  border-radius: 8px;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 248, 244, 0.92), rgba(223, 234, 242, 0.72)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.decision-result-card[data-decision-state="buy"] {
+  border-color: rgba(19, 94, 75, 0.42);
+  background:
+    linear-gradient(145deg, rgba(19, 94, 75, 0.12), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+}
+
+.decision-result-card[data-decision-state="call"],
+.decision-result-card[data-decision-state="sample"] {
+  border-color: rgba(52, 105, 154, 0.34);
+}
+
+.decision-result-card > span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.decision-result-card h3 {
+  margin: 10px 0 0;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.decision-result-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.decision-result-card small {
+  display: block;
+  margin-top: 12px;
+  border-left: 3px solid var(--gold);
+  padding-left: 10px;
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.decision-result-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.decision-result-actions .primary-button,
+.decision-result-actions .secondary-link {
+  width: 100%;
+  justify-content: center;
+}
+
+.decision-copy-button {
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+}
+
 .niche-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
@@ -5103,6 +5256,9 @@ td select {
     .comparison-head,
     .comparison-grid,
     .comparison-callout,
+    .decision-quiz-section,
+    .decision-quiz-panel,
+    .decision-question-grid,
     .next-step-head,
     .next-step-grid,
     .deliverable-inner,
@@ -5156,6 +5312,15 @@ td select {
 
   .problem-path-grid article {
     min-height: 0;
+  }
+
+  .decision-quiz-copy,
+  .decision-result-card {
+    position: static;
+  }
+
+  .decision-result-card h3 {
+    font-size: 24px;
   }
 
   .delivery-timeline-section {
