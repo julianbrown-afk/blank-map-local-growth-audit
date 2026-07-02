@@ -582,6 +582,53 @@
     return [headers.join(","), ...rows].join("\n");
   }
 
+  function getActionableProspects() {
+    const activeStatuses = new Set(["Research only", "Lead", "Contacted"]);
+    return state.prospects
+      .filter((prospect) => activeStatuses.has(prospect.status || "Lead"))
+      .sort((a, b) => toNumber(b.value) - toNumber(a.value));
+  }
+
+  function buildDailyBatchText(limit = 10) {
+    const prospects = getActionableProspects().slice(0, limit);
+    const mailingAddress = String(state.settings.mailingAddress || "").trim();
+    const complianceNote = mailingAddress
+      ? "Commercial email footer has a physical mailing address."
+      : "Do not send as cold commercial email until a valid physical mailing address is added.";
+
+    if (!prospects.length) {
+      return "No actionable prospects are currently in Research only, Lead, or Contacted status.";
+    }
+
+    const lines = [
+      `${state.settings.serviceName} daily outreach batch`,
+      `Prepared for ${state.settings.businessName}`,
+      `Prospects: ${prospects.length}`,
+      `Compliance: ${complianceNote}`,
+      ""
+    ];
+
+    prospects.forEach((prospect, index) => {
+      const track = getProspectTrack(prospect);
+      lines.push(
+        `${index + 1}. ${prospect.businessName || "Unnamed prospect"} (${prospect.businessType || "Local business"} - ${prospect.city || state.settings.marketCity})`,
+        `Status: ${prospect.status || "Lead"}`,
+        `Estimated monthly value: ${toNumber(prospect.value) > 0 ? currency(prospect.value) : "Estimate pending"}`,
+        `Website: ${prospect.website || "Not listed"}`,
+        `Offer track: ${track.label}`,
+        `Offer URL: ${getProspectOfferUrl(prospect)}`,
+        `Review angle: ${prospect.reviewAngle || "Inspect website, local proof, booking path, and follow-up cues."}`,
+        "",
+        buildProspectIntro(prospect),
+        "",
+        "---",
+        ""
+      );
+    });
+
+    return lines.join("\n");
+  }
+
   function renderFindings(findings) {
     const list = $("[data-output='findings']");
     list.innerHTML = findings.map((finding) => `
@@ -590,6 +637,52 @@
         <span>${finding.fix}</span>
       </li>
     `).join("");
+  }
+
+  function renderPipelineSummary() {
+    const container = $("[data-output='pipelineSummary']");
+    if (!container) return;
+
+    const prospects = state.prospects;
+    const actionable = getActionableProspects();
+    const estimatedValue = actionable.reduce((sum, prospect) => sum + toNumber(prospect.value), 0);
+    const contacted = prospects.filter((prospect) => prospect.status === "Contacted").length;
+    const paid = prospects.filter((prospect) => prospect.status === "Paid audit" || prospect.status === "Implementation" || prospect.status === "Won").length;
+    const tracks = new Set(prospects.map((prospect) => getProspectTrack(prospect).label));
+
+    if (!prospects.length) {
+      container.innerHTML = `
+        <div>
+          <span>Queue</span>
+          <strong>Empty</strong>
+          <p>Load the starter list or add prospects from the audit form.</p>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = `
+      <div>
+        <span>Total prospects</span>
+        <strong>${prospects.length}</strong>
+        <p>${tracks.size} matched offer ${tracks.size === 1 ? "track" : "tracks"}</p>
+      </div>
+      <div>
+        <span>Actionable</span>
+        <strong>${actionable.length}</strong>
+        <p>Research, lead, and contacted statuses</p>
+      </div>
+      <div>
+        <span>Open value</span>
+        <strong>${currency(estimatedValue)}</strong>
+        <p>Estimated from active prospects</p>
+      </div>
+      <div>
+        <span>Progress</span>
+        <strong>${contacted}/${paid}</strong>
+        <p>Contacted / paid or implementation</p>
+      </div>
+    `;
   }
 
   function renderPipeline() {
@@ -667,6 +760,7 @@
     $("[data-output='emailText']").textContent = buildEmail();
     $("[data-output='dmText']").textContent = buildDm();
     renderFindings(analysis.findings);
+    renderPipelineSummary();
     renderPipeline();
   }
 
@@ -803,6 +897,14 @@
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");
     if (action === "add-prospect") addProspect();
     if (action === "load-seed-prospects") loadSeedProspects();
+    if (action === "copy-daily-batch") {
+      const actionable = getActionableProspects();
+      if (!actionable.length) {
+        showToast("No actionable prospects");
+      } else {
+        copyText(buildDailyBatchText(10), "Daily batch copied");
+      }
+    }
     if (action === "download-outreach-csv") {
       if (!state.prospects.length) {
         showToast("Load or add prospects first");

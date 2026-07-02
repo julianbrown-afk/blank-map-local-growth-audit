@@ -495,6 +495,43 @@ select:focus {
   margin-top: 16px;
 }
 
+.pipeline-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.pipeline-summary div {
+  min-height: 96px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.pipeline-summary span {
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pipeline-summary strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+  line-height: 1.12;
+}
+
+.pipeline-summary p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
 .table-wrap {
   max-width: 100%;
   min-width: 0;
@@ -1584,13 +1621,14 @@ td select {
     padding-top: 16px;
   }
 
-  .metric-grid,
-  .workspace-grid,
-  .output-grid,
-  .field-grid.two,
-  .checkbox-grid,
-  .score-strip,
-  .calculator-readout,
+    .metric-grid,
+    .workspace-grid,
+    .output-grid,
+    .field-grid.two,
+    .checkbox-grid,
+    .score-strip,
+    .calculator-readout,
+    .pipeline-summary,
     .offer-card-grid,
     .split-section,
     .proof-list,
