@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Local Audit Cashflow Kit</title>
     <meta name="description" content="A static operator dashboard for selling local growth audits.">
-    <link rel="stylesheet" href="styles.css?v=20260702motion">
+    <link rel="stylesheet" href="styles.css?v=20260702review">
     <script src="config.js?v=20260702t"></script>
-    <script defer src="app.js?v=20260702motion"></script>
+    <script defer src="app.js?v=20260702review"></script>
   </head>
   <body>
     <header class="topbar">
@@ -132,8 +132,12 @@
               <p class="eyebrow">Prospect</p>
               <h2>Business audit</h2>
             </div>
-            <button class="text-button" type="button" data-action="add-prospect">Add lead</button>
+            <div class="button-row compact">
+              <button class="text-button" type="button" data-action="update-selected-prospect">Update loaded lead</button>
+              <button class="text-button" type="button" data-action="add-prospect">Add lead</button>
+            </div>
           </div>
+          <p class="selection-note" data-output="selectedProspectNote">No pipeline prospect loaded.</p>
 
           <div class="field-grid two">
             <label>

@@ -1017,6 +1017,7 @@
       status: "active",
       track: ""
     },
+    selectedProspectId: "",
     prospects: []
   };
 
@@ -1036,6 +1037,7 @@
         prospect: { ...DEFAULT_STATE.prospect, ...(saved.prospect || {}) },
         calculator: { ...DEFAULT_STATE.calculator, ...(saved.calculator || {}) },
         pipelineFilters: { ...DEFAULT_STATE.pipelineFilters, ...(saved.pipelineFilters || {}) },
+        selectedProspectId: saved.selectedProspectId || "",
         prospects: Array.isArray(saved.prospects) ? saved.prospects : []
       };
     } catch (error) {
@@ -2010,8 +2012,10 @@ ${settings.contactEmail}`;
       ].join("");
       const valueLabel = toNumber(prospect.value) > 0 ? `${currency(prospect.value)} est.` : "Estimate pending";
 
+      const rowClass = prospect.id === state.selectedProspectId ? ` class="selected-row"` : "";
+
       return `
-        <tr>
+        <tr${rowClass}>
           <td>
             <strong>${escapeHtml(prospect.businessName || "Unnamed prospect")}</strong>
             <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${trackLine}${angleLine}
@@ -2022,6 +2026,7 @@ ${settings.contactEmail}`;
           <td><select data-pipeline-status="${escapeHtml(prospect.id)}">${options}</select></td>
           <td>
             <div class="pipeline-actions">
+              <button class="primary-button" type="button" data-load-prospect-review="${escapeHtml(prospect.id)}">Review</button>
               <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
               <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
               <button class="ghost-button" type="button" data-copy-score-lead-reply="${escapeHtml(prospect.id)}">Copy score reply</button>
@@ -2036,6 +2041,83 @@ ${settings.contactEmail}`;
         </tr>
       `;
     }).join("");
+  }
+
+  function renderSelectedProspectNote() {
+    const note = $("[data-output='selectedProspectNote']");
+    const button = $("[data-action='update-selected-prospect']");
+    if (!note) return;
+
+    const prospect = state.prospects.find((item) => item.id === state.selectedProspectId);
+    if (!prospect) {
+      note.textContent = "No pipeline prospect loaded. Use Review on a row to score it here.";
+      if (button) button.disabled = true;
+      return;
+    }
+
+    note.textContent = `Loaded: ${prospect.businessName || "Unnamed prospect"}. Update loaded lead saves the current score, value, and visible gaps to this row.`;
+    if (button) button.disabled = false;
+  }
+
+  function prospectFormFromRow(prospect) {
+    return {
+      ...DEFAULT_STATE.prospect,
+      businessName: prospect.businessName || "",
+      businessType: prospect.businessType || "",
+      city: prospect.city || state.settings.marketCity,
+      website: prospect.website || "",
+      rating: prospect.rating ?? "",
+      reviewCount: prospect.reviewCount ?? "",
+      avgCustomerValue: prospect.avgCustomerValue ?? DEFAULT_STATE.prospect.avgCustomerValue,
+      leadsNeeded: prospect.leadsNeeded ?? DEFAULT_STATE.prospect.leadsNeeded,
+      issues: Array.isArray(prospect.issues) ? [...prospect.issues] : []
+    };
+  }
+
+  function loadProspectForReview(id) {
+    const prospect = state.prospects.find((item) => item.id === id);
+    if (!prospect) {
+      showToast("Prospect not found");
+      return;
+    }
+
+    state.selectedProspectId = id;
+    state.prospect = prospectFormFromRow(prospect);
+    saveState();
+    syncInputs();
+    renderIssueControls();
+    render();
+    $("#prospectForm")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    showToast("Prospect loaded for review");
+  }
+
+  function updateSelectedProspectReview() {
+    const id = state.selectedProspectId;
+    const prospect = state.prospects.find((item) => item.id === id);
+    if (!prospect) {
+      showToast("Load a pipeline prospect first");
+      return;
+    }
+
+    const analysis = getAnalysis();
+    Object.assign(prospect, {
+      businessName: state.prospect.businessName || prospect.businessName,
+      businessType: state.prospect.businessType || prospect.businessType,
+      city: state.prospect.city || prospect.city,
+      website: state.prospect.website || prospect.website,
+      rating: state.prospect.rating,
+      reviewCount: state.prospect.reviewCount,
+      avgCustomerValue: state.prospect.avgCustomerValue,
+      leadsNeeded: state.prospect.leadsNeeded,
+      issues: Array.isArray(state.prospect.issues) ? [...state.prospect.issues] : [],
+      score: analysis.score,
+      value: analysis.monthlyUpside,
+      status: prospect.status === "Research only" ? "Lead" : prospect.status || "Lead"
+    });
+
+    saveState();
+    render();
+    showToast("Loaded lead updated");
   }
 
   function render() {
@@ -2074,6 +2156,7 @@ ${settings.contactEmail}`;
     renderPipelineSummary();
     renderPipelineFilters();
     renderPipeline();
+    renderSelectedProspectNote();
   }
 
   function showToast(message) {
@@ -2142,16 +2225,23 @@ ${settings.contactEmail}`;
 
   function addProspect() {
     const analysis = getAnalysis();
+    const id = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     state.prospects.unshift({
-      id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      id,
       businessName: state.prospect.businessName,
       businessType: state.prospect.businessType,
       city: state.prospect.city,
       website: state.prospect.website,
+      rating: state.prospect.rating,
+      reviewCount: state.prospect.reviewCount,
+      avgCustomerValue: state.prospect.avgCustomerValue,
+      leadsNeeded: state.prospect.leadsNeeded,
+      issues: Array.isArray(state.prospect.issues) ? [...state.prospect.issues] : [],
       score: analysis.score,
       value: analysis.monthlyUpside,
       status: "Lead"
     });
+    state.selectedProspectId = id;
     saveState();
     render();
     showToast("Prospect added");
@@ -2215,6 +2305,7 @@ ${settings.contactEmail}`;
     if (action === "download-config") downloadFile("config.js", buildConfigText(), "text/javascript");
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");
     if (action === "add-prospect") addProspect();
+    if (action === "update-selected-prospect") updateSelectedProspectReview();
     if (action === "load-seed-prospects") loadSeedProspects();
     if (action === "copy-daily-batch") {
       const actionable = getActionableProspects();
@@ -2249,6 +2340,7 @@ ${settings.contactEmail}`;
     }
     if (action === "clear-pipeline") {
       state.prospects = [];
+      state.selectedProspectId = "";
       saveState();
       render();
       showToast("Pipeline cleared");
@@ -2345,10 +2437,16 @@ ${settings.contactEmail}`;
         handleAction(actionButton.dataset.action);
       }
 
+      const loadReviewButton = event.target.closest("[data-load-prospect-review]");
+      if (loadReviewButton) {
+        loadProspectForReview(loadReviewButton.dataset.loadProspectReview);
+      }
+
       const removeButton = event.target.closest("[data-remove-prospect]");
       if (removeButton) {
         const id = removeButton.dataset.removeProspect;
         state.prospects = state.prospects.filter((item) => item.id !== id);
+        if (state.selectedProspectId === id) state.selectedProspectId = "";
         saveState();
         render();
         showToast("Prospect removed");

@@ -203,6 +203,14 @@ a {
   background: var(--green-dark);
 }
 
+.ghost-button:disabled,
+.text-button:disabled,
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  transform: none;
+}
+
 .app-shell {
   width: min(1480px, calc(100% - 32px));
   margin: 0 auto;
@@ -494,6 +502,18 @@ select:focus {
   margin-top: 0;
 }
 
+.selection-note {
+  margin: -4px 0 14px;
+  border: 1px solid rgba(19, 94, 75, 0.16);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--muted);
+  background: rgba(223, 234, 242, 0.42);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
 .calculator-readout,
 .score-strip,
 .hero-facts {
@@ -692,6 +712,10 @@ td select {
   margin: 0;
 }
 
+.selected-row td {
+  background: rgba(223, 234, 242, 0.34);
+}
+
 .pipeline-link {
   color: var(--green);
   font-size: 13px;
@@ -722,6 +746,12 @@ td select {
 .pipeline-actions .ghost-button {
   min-height: 34px;
   padding: 6px 8px;
+  font-size: 12px;
+}
+
+.pipeline-actions .primary-button {
+  min-height: 34px;
+  padding: 8px 10px;
   font-size: 12px;
 }
 
