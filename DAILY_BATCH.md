@@ -38,7 +38,7 @@ Machine-readable reviewed queue:
 REVIEWED_PIPELINE.csv
 ```
 
-The scorecard URLs in this batch are prefilled with public prospect details and category-specific assumptions so they can be copied directly during permitted scorecard-first conversations. After a score is answered, use `Copy result link` on the scorecard to preserve the selected checks, planning math, and buyer-path result in the next handoff. After payment or booking, use `Start intake after payment` so the intake template carries that scorecard context into fulfillment.
+The scorecard URLs in this batch are prefilled with public prospect details and category-specific assumptions so they can be copied directly during permitted scorecard-first conversations. After a score is answered, use `Copy audit brief` for a short buyer-ready handoff or `Copy result link` to preserve the selected checks, planning math, and buyer-path result in the next handoff. After payment or booking, use `Start intake after payment` so the intake template carries that scorecard context into fulfillment.
 
 | Priority | Business | Category | Website | Scorecard | Offer | Review focus |
 | --- | --- | --- | --- | --- | --- | --- |

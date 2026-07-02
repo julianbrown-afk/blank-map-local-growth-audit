@@ -83,7 +83,7 @@ The public directory now includes copy buttons for broad posts, dentist posts, m
 Score result handoff:
 
 ```text
-After you answer the free scorecard, click Copy result link. That keeps the selected checks, score, planning math, and buyer-path result in one link without including your email. Send that link back and the next reply can focus on what to fix first:
+After you answer the free scorecard, click Copy audit brief if you want the short checkout-ready version, or Copy result link if you want to preserve the selected checks, score, planning math, and buyer-path result in one link without including your email. Send either one back and the next reply can focus on what to fix first:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 

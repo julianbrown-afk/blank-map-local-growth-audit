@@ -776,6 +776,44 @@ Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   }
 
+  function buildAuditBrief(state = scorecardState({ neutral: true }), details = leadDetails()) {
+    const leadBlock = buildLeadBlock(details);
+    const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+    const topGaps = state.isScored && state.missingLabels.length
+      ? state.missingLabels.slice(0, 3).map((label, index) => `${index + 1}. ${label}`).join("\n")
+      : state.isScored
+      ? "No urgent gap from this quick pass."
+      : "Answer the scorecard before buying so the audit starts with the right context.";
+    const scoreLine = state.isScored
+      ? `Score: ${state.score}/100 (${state.priority})`
+      : "Score: Not scored yet";
+    const valueLine = state.isScored
+      ? `Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo`
+      : "Estimated recoverable opportunity: not calculated yet";
+    const routeLine = state.isScored
+      ? `${state.recommendation.title}\n${state.recommendation.body}\n${state.recommendation.focus}`
+      : "Run the scorecard first. If the result shows clear buyer-path friction, use the paid audit to rank what to fix before larger marketing spend.";
+
+    return `Local Growth Audit checkout brief
+
+${leadBlock}${scoreLine}
+${valueLine}
+
+Why buy the audit
+${routeLine}
+
+Top audit focus
+${topGaps}
+
+Next links
+Buy audit: ${offerUrl(paidAuditPath())}
+Audit intake after payment: ${scorecardIntakeUrl(details)}
+Score result link: ${scorecardResultUrl(details)}
+${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}
+
+This is planning input, not a revenue guarantee.`;
+  }
+
   function updateScorecardActions(state) {
     const details = leadDetails();
     const summary = buildScoreSummary(state, details);
@@ -887,6 +925,34 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     }, 3200);
   }
 
+  async function copyAuditBrief() {
+    const status = $("[data-free-score-copy-status]");
+    const manual = $("[data-free-score-manual]");
+    const brief = buildAuditBrief(scorecardState({ neutral: true }));
+    try {
+      const copied = await copyTextWithFallback(brief);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Audit brief copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The audit brief is open below.";
+      if (manual) {
+        manual.value = brief;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3200);
+  }
+
   async function copyScoreResultLink() {
     const status = $("[data-free-score-copy-status]");
     const manual = $("[data-free-score-manual]");
@@ -930,6 +996,9 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     });
     $$("[data-free-score-copy]").forEach((item) => {
       item.addEventListener("click", copyScoreSummary);
+    });
+    $$("[data-free-score-copy-brief]").forEach((item) => {
+      item.addEventListener("click", copyAuditBrief);
     });
     $$("[data-free-score-copy-link]").forEach((item) => {
       item.addEventListener("click", copyScoreResultLink);
