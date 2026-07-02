@@ -103,6 +103,14 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?tr
 
 The public scorecard also has a category chooser, so a visitor who starts from the broad URL can switch into the closest track before checking their gaps.
 
+Use the clean track scorecard pages for public posts and share previews:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-scorecard.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-scorecard.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
+```
+
 Row-level scorecard links in the dashboard now prefill public prospect details with lead-safe query parameters:
 
 ```text

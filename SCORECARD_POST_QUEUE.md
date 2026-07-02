@@ -15,19 +15,19 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 Dentist scorecard:
 
 ```text
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=dentist
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-scorecard.html
 ```
 
 Med spa scorecard:
 
 ```text
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-scorecard.html
 ```
 
 Roofing scorecard:
 
 ```text
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
 ```
 
 Paid audit:
@@ -57,7 +57,7 @@ Lexington dental offices: I built a free new-patient buyer-path scorecard.
 It checks whether a patient can quickly understand the appointment path, review proof, treatment-page clarity, trust cues, tracking, and follow-up basics before comparing another office.
 
 Dentist scorecard:
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=dentist
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-scorecard.html
 
 If the score shows enough gaps, the fixed Local Growth Audit turns those visible issues into a prioritized 30-day plan.
 ```
@@ -70,7 +70,7 @@ Lexington med spas and aesthetic clinics: I built a free buyer-path scorecard fo
 It checks whether a first-time visitor can see one clear booking path, enough treatment proof, service-page clarity, pricing/payment cues, tracking, and follow-up basics before they compare another med spa.
 
 Med spa scorecard:
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=med-spa
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-scorecard.html
 
 If the score shows enough gaps, the fixed Local Growth Audit turns those visible issues into a prioritized 30-day plan.
 ```
@@ -83,7 +83,7 @@ Lexington roofing companies: I built a free roof-replacement and inspection buye
 It checks whether homeowners can quickly see the right quote or inspection path, storm-damage and insurance-claim guidance, review proof, financing cues, tracking, and follow-up basics before calling another roofer.
 
 Roofing scorecard:
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
 
 If the score shows enough gaps, the fixed Local Growth Audit turns those visible issues into a prioritized 30-day plan.
 ```

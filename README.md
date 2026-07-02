@@ -44,6 +44,14 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?tr
 
 The public scorecard page also includes a category chooser so visitors can switch from the broad scorecard to the closest industry version.
 
+Clean scorecard landing pages for public sharing and previews:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-scorecard.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-scorecard.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
+```
+
 Scorecard links can be prefilled for a specific public prospect with lead-safe query parameters. The dashboard's row-level scorecard actions generate these automatically:
 
 ```text
