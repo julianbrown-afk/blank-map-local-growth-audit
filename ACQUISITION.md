@@ -57,7 +57,7 @@ The best prospects are local service businesses that already have customer value
 
 ## Daily Workflow
 
-1. Start with `REVIEWED_PIPELINE.csv` for the current reviewed queue, then fall back to `PROSPECTS.md` and `prospects.csv` when expanding the batch.
+1. Start with `REVIEWED_PIPELINE.csv` for the current reviewed queue and its prefilled scorecard links, then fall back to `PROSPECTS.md` and `prospects.csv` when expanding the batch.
 2. Open the operator dashboard at `http://127.0.0.1:4173/index.html`.
 3. Click `Load starter list` to preload the researched Lexington prospects and refresh reviewed status notes into the pipeline.
 4. Check the `Money motion` panel to confirm the next action for the current queue and compliance state.
@@ -111,7 +111,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
 ```
 
-Row-level scorecard links in the dashboard now prefill public prospect details with lead-safe query parameters:
+Row-level scorecard links in the reviewed CSV and dashboard now prefill public prospect details with lead-safe query parameters:
 
 ```text
 scorecard.html?track=roofing&lead=Example%20Roofing&site=https%3A%2F%2Fexample.com&type=Roofing&value=4500&missed=2&close=35

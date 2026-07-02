@@ -8,7 +8,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
-- `REVIEWED_PIPELINE.csv`: current reviewed lead queue with status, source notes, scorecard estimates, and next safe actions.
+- `REVIEWED_PIPELINE.csv`: current reviewed lead queue with status, source notes, scorecard estimates, prefilled scorecard URLs, and next safe actions.
 - `SCORECARD_POST_QUEUE.md`: scorecard-first public post, warm referral, community reply, and score-result reply copy.
 - `assets/audit-preview-v2.jpg`: product visual used by the offer page.
 
@@ -52,7 +52,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-scorecard.html
 ```
 
-Scorecard links can be prefilled for a specific public prospect with lead-safe query parameters. The dashboard's row-level scorecard actions generate these automatically:
+Scorecard links can be prefilled for a specific public prospect with lead-safe query parameters. The reviewed queue in `REVIEWED_PIPELINE.csv` includes ready-to-copy versions, and the dashboard's row-level scorecard actions generate them automatically:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing&lead=Example%20Roofing&site=https%3A%2F%2Fexample.com&type=Roofing&value=4500&missed=2&close=35
@@ -113,7 +113,7 @@ http://localhost:4173/index.html
 1. Create a Stripe Payment Link for the audit price.
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
-4. Start from `REVIEWED_PIPELINE.csv` for the current reviewed queue, then use the dashboard's `Load starter list` button to pull the same reviewed notes into the local pipeline.
+4. Start from `REVIEWED_PIPELINE.csv` for the current reviewed queue, including its prefilled scorecard links, then use the dashboard's `Load starter list` button to pull the same reviewed notes into the local pipeline.
 5. Use a row-level `Review` button to load a prospect into the audit form, score visible gaps, then click `Update loaded lead` to save the score and estimated value back to that row.
 6. Send prospects the generated offer link, or use the row-level `Copy offer` / `Open offer` actions when the pipeline has matched a niche page.
 7. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
