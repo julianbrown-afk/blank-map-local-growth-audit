@@ -1709,6 +1709,131 @@ td select {
   color: #ffffff;
 }
 
+.comparison-section {
+  border-top: 1px solid var(--line);
+}
+
+.comparison-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.comparison-head h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.comparison-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 370px;
+  border: 1px solid rgba(217, 222, 212, 0.94);
+  border-radius: 8px;
+  padding: 20px;
+  background:
+    linear-gradient(160deg, rgba(223, 234, 242, 0.5), rgba(255, 255, 255, 0) 54%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.comparison-card.featured {
+  border-color: rgba(19, 94, 75, 0.38);
+  background:
+    linear-gradient(160deg, rgba(19, 94, 75, 0.14), rgba(240, 180, 41, 0.18) 54%, rgba(255, 255, 255, 0)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.comparison-label {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.comparison-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.comparison-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.comparison-card dl {
+  display: grid;
+  gap: 10px;
+  margin: auto 0 0;
+  padding-top: 18px;
+}
+
+.comparison-card dl div {
+  border-top: 1px solid rgba(217, 222, 212, 0.95);
+  padding-top: 10px;
+}
+
+.comparison-card dt {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.comparison-card dd {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.24;
+}
+
+.comparison-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+  border: 1px solid rgba(217, 222, 212, 0.94);
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, rgba(223, 234, 242, 0.58), rgba(255, 255, 255, 0)),
+    rgba(255, 255, 255, 0.84);
+}
+
+.comparison-callout p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.comparison-callout strong {
+  color: var(--ink);
+}
+
+.comparison-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
 .next-step-section {
   border-top: 1px solid var(--line);
 }
@@ -3110,6 +3235,10 @@ td select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .comparison-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .offer-card-grid,
   .proof-list,
   .process-grid,
@@ -3177,6 +3306,9 @@ td select {
     .value-math-section .section-head,
     .value-math-panel,
     .value-control,
+    .comparison-head,
+    .comparison-grid,
+    .comparison-callout,
     .next-step-head,
     .next-step-grid,
     .deliverable-inner,
@@ -3229,6 +3361,11 @@ td select {
 
   .offer-nav .brand small {
     display: none;
+  }
+
+  .offer-nav .brand strong {
+    white-space: normal;
+    line-height: 1.12;
   }
 
   .offer-nav-actions {
@@ -3502,6 +3639,22 @@ td select {
 
   .value-result strong {
     font-size: 30px;
+  }
+
+  .comparison-head {
+    align-items: start;
+  }
+
+  .comparison-head h2 {
+    font-size: 25px;
+  }
+
+  .comparison-card {
+    min-height: 0;
+  }
+
+  .comparison-actions {
+    justify-content: flex-start;
   }
 
   .next-step-head {
