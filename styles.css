@@ -1546,6 +1546,99 @@ td select {
   color: #ffffff;
 }
 
+.next-step-section {
+  border-top: 1px solid var(--line);
+}
+
+.next-step-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.next-step-head h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.next-step-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.next-step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.next-step-grid article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 292px;
+  border: 1px solid rgba(217, 222, 212, 0.92);
+  border-radius: 8px;
+  padding: 22px;
+  background:
+    linear-gradient(160deg, rgba(223, 234, 242, 0.62), rgba(255, 255, 255, 0) 50%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.next-step-grid article:nth-child(1) {
+  background:
+    linear-gradient(160deg, rgba(19, 94, 75, 0.12), rgba(240, 180, 41, 0.14) 55%, rgba(255, 255, 255, 0)),
+    #ffffff;
+}
+
+.next-step-grid article:nth-child(2) {
+  background:
+    linear-gradient(160deg, rgba(52, 105, 154, 0.13), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+}
+
+.next-step-grid article:nth-child(3) {
+  background:
+    linear-gradient(160deg, rgba(216, 92, 58, 0.11), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+}
+
+.next-step-grid span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.next-step-grid strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 21px;
+  line-height: 1.15;
+}
+
+.next-step-grid p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.next-step-grid a {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.next-step-footnote {
+  margin: 16px 0 0;
+  border-left: 4px solid var(--gold);
+  padding: 12px 14px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.74);
+}
+
 .free-scorecard-body {
   background:
     linear-gradient(180deg, #f7fbf8, #eef5f1 46%, #ffffff 100%),
@@ -2615,6 +2708,8 @@ td select {
     .value-math-section .section-head,
     .value-math-panel,
     .value-control,
+    .next-step-head,
+    .next-step-grid,
     .deliverable-inner,
     .free-scorecard-inner,
     .free-scorecard-tool,
@@ -2922,6 +3017,18 @@ td select {
 
   .value-result strong {
     font-size: 30px;
+  }
+
+  .next-step-head {
+    align-items: start;
+  }
+
+  .next-step-head h2 {
+    font-size: 25px;
+  }
+
+  .next-step-grid article {
+    min-height: 0;
   }
 
   .free-scorecard-hero {
