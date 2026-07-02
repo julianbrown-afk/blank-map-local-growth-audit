@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Audit Cashflow Kit</title>
+    <meta name="description" content="A static operator dashboard for selling local growth audits.">
+    <link rel="stylesheet" href="styles.css?v=20260702c">
+    <script src="config.js?v=20260702c"></script>
+    <script defer src="app.js?v=20260702c"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Local Audit Cashflow Kit home">
+        <span class="brand-mark">LA</span>
+        <span>
+          <strong>Local Audit Cashflow Kit</strong>
+          <small>Operator dashboard</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="offer.html" target="_blank" rel="noreferrer">Offer page</a>
+        <button class="ghost-button" type="button" data-action="copy-offer-link">Copy offer link</button>
+        <button class="ghost-button" type="button" data-action="download-config">Download config</button>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="metric-grid" aria-label="Cashflow metrics">
+        <article class="metric">
+          <span>Audit price</span>
+          <strong data-output="auditPrice">$399</strong>
+        </article>
+        <article class="metric">
+          <span>Monthly audits</span>
+          <strong data-output="monthlyAudits">0</strong>
+        </article>
+        <article class="metric">
+          <span>Projected month</span>
+          <strong data-output="projectedRevenue">$0</strong>
+        </article>
+        <article class="metric">
+          <span>Next target</span>
+          <strong data-output="nextTarget">Send 0 messages</strong>
+        </article>
+      </section>
+
+      <section class="workspace-grid" aria-label="Operator inputs">
+        <form class="tool-panel" id="offerForm">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Offer</p>
+              <h1>Paid audit package</h1>
+            </div>
+            <button class="text-button" type="button" data-action="open-offer">Preview</button>
+          </div>
+
+          <div class="field-grid two">
+            <label>
+              Owner name
+              <input type="text" data-setting="ownerName" autocomplete="name">
+            </label>
+            <label>
+              Business name
+              <input type="text" data-setting="businessName" autocomplete="organization">
+            </label>
+            <label>
+              Contact email
+              <input type="email" data-setting="contactEmail" autocomplete="email">
+            </label>
+            <label>
+              Market
+              <input type="text" data-setting="marketCity" autocomplete="address-level2">
+            </label>
+            <label>
+              Audit price
+              <input type="number" data-setting="auditPrice" min="0" step="25">
+            </label>
+            <label>
+              Implementation price
+              <input type="number" data-setting="implementationPrice" min="0" step="100">
+            </label>
+          </div>
+
+          <label>
+            Service name
+            <input type="text" data-setting="serviceName">
+          </label>
+          <label>
+            Stripe Payment Link
+            <input type="url" data-setting="paymentLink" placeholder="https://buy.stripe.com/...">
+          </label>
+          <label>
+            Booking link
+            <input type="url" data-setting="bookingLink" placeholder="https://cal.com/your-name/audit">
+          </label>
+          <label>
+            Mailing address for outreach footer
+            <input type="text" data-setting="mailingAddress" autocomplete="street-address">
+          </label>
+
+          <div class="button-row">
+            <button class="primary-button" type="button" data-action="copy-config">Copy config</button>
+            <button class="ghost-button" type="button" data-action="reset-demo">Reset demo</button>
+          </div>
+        </form>
+
+        <form class="tool-panel" id="prospectForm">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Prospect</p>
+              <h2>Business audit</h2>
+            </div>
+            <button class="text-button" type="button" data-action="add-prospect">Add lead</button>
+          </div>
+
+          <div class="field-grid two">
+            <label>
+              Business
+              <input type="text" data-prospect="businessName" autocomplete="organization">
+            </label>
+            <label>
+              Category
+              <input type="text" data-prospect="businessType">
+            </label>
+            <label>
+              City
+              <input type="text" data-prospect="city" autocomplete="address-level2">
+            </label>
+            <label>
+              Website
+              <input type="url" data-prospect="website" placeholder="https://example.com">
+            </label>
+            <label>
+              Rating
+              <input type="number" data-prospect="rating" min="1" max="5" step="0.1">
+            </label>
+            <label>
+              Reviews
+              <input type="number" data-prospect="reviewCount" min="0" step="1">
+            </label>
+            <label>
+              Average customer value
+              <input type="number" data-prospect="avgCustomerValue" min="0" step="25">
+            </label>
+            <label>
+              Extra customers wanted
+              <input type="number" data-prospect="leadsNeeded" min="1" step="1">
+            </label>
+          </div>
+
+          <fieldset class="checkbox-field">
+            <legend>Visible gaps</legend>
+            <div class="checkbox-grid" data-issue-list></div>
+          </fieldset>
+        </form>
+
+        <form class="tool-panel" id="calculatorForm">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Math</p>
+              <h2>Outreach target</h2>
+            </div>
+          </div>
+
+          <div class="field-grid two">
+            <label>
+              Prospects per day
+              <input type="number" data-calc="prospectsPerDay" min="1" step="1">
+            </label>
+            <label>
+              Workdays
+              <input type="number" data-calc="workdays" min="1" max="31" step="1">
+            </label>
+            <label>
+              Audit close rate %
+              <input type="number" data-calc="closeRate" min="1" max="100" step="1">
+            </label>
+            <label>
+              Implementation close %
+              <input type="number" data-calc="implementationRate" min="0" max="100" step="1">
+            </label>
+          </div>
+
+          <div class="calculator-readout">
+            <div>
+              <span>Audit revenue</span>
+              <strong data-output="auditRevenue">$0</strong>
+            </div>
+            <div>
+              <span>Implementation revenue</span>
+              <strong data-output="implementationRevenue">$0</strong>
+            </div>
+            <div>
+              <span>Messages per paid audit</span>
+              <strong data-output="messagesPerAudit">0</strong>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="output-grid" aria-label="Generated selling assets">
+        <article class="tool-panel report-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Deliverable</p>
+              <h2>Client report</h2>
+            </div>
+            <div class="button-row compact">
+              <button class="ghost-button" type="button" data-action="copy-report">Copy</button>
+              <button class="ghost-button" type="button" data-action="download-report">Download</button>
+              <button class="ghost-button" type="button" data-action="print-report">Print</button>
+            </div>
+          </div>
+
+          <div class="score-strip">
+            <div>
+              <span>Opportunity score</span>
+              <strong data-output="score">0/100</strong>
+            </div>
+            <div>
+              <span>Estimated monthly upside</span>
+              <strong data-output="monthlyUpside">$0</strong>
+            </div>
+            <div>
+              <span>Priority</span>
+              <strong data-output="priority">Medium</strong>
+            </div>
+          </div>
+
+          <ol class="finding-list" data-output="findings"></ol>
+          <pre class="copy-box" data-output="reportText"></pre>
+        </article>
+
+        <article class="tool-panel outreach-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Outreach</p>
+              <h2>Close copy</h2>
+            </div>
+          </div>
+
+          <div class="copy-stack">
+            <section>
+              <div class="copy-head">
+                <h3>Email</h3>
+                <button class="ghost-button" type="button" data-action="copy-email">Copy</button>
+              </div>
+              <pre class="copy-box short" data-output="emailText"></pre>
+            </section>
+            <section>
+              <div class="copy-head">
+                <h3>DM</h3>
+                <button class="ghost-button" type="button" data-action="copy-dm">Copy</button>
+              </div>
+              <pre class="copy-box short" data-output="dmText"></pre>
+            </section>
+          </div>
+        </article>
+      </section>
+
+      <section class="tool-panel pipeline-panel" aria-labelledby="pipelineTitle">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Pipeline</p>
+            <h2 id="pipelineTitle">Prospects</h2>
+          </div>
+          <button class="ghost-button" type="button" data-action="clear-pipeline">Clear</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Business</th>
+                <th>Market</th>
+                <th>Score</th>
+                <th>Value</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody data-output="pipelineRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <section id="printView" aria-hidden="true"></section>
+    <div class="toast" role="status" aria-live="polite" data-output="toast"></div>
+  </body>
+</html>

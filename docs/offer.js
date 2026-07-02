@@ -1,0 +1,72 @@
+(function () {
+  "use strict";
+
+  const baseConfig = window.MONEY_MAKER_CONFIG || {};
+  const params = new URLSearchParams(window.location.search);
+  const config = {
+    ...baseConfig,
+    serviceName: params.get("service") || baseConfig.serviceName || "Local Growth Audit",
+    marketCity: params.get("city") || baseConfig.marketCity || "Your City",
+    businessName: params.get("business") || baseConfig.businessName || "Your Growth Studio",
+    contactEmail: params.get("email") || baseConfig.contactEmail || "you@example.com",
+    paymentLink: params.get("pay") || baseConfig.paymentLink || "",
+    bookingLink: params.get("booking") || baseConfig.bookingLink || "",
+    auditPrice: Number(params.get("audit") || baseConfig.auditPrice || 399),
+    implementationPrice: Number(params.get("sprint") || baseConfig.implementationPrice || 1500),
+    guaranteeLine: baseConfig.guaranteeLine || "A clear 30-day action plan, built from observable fixes.",
+    included: Array.isArray(baseConfig.included) ? baseConfig.included : [],
+    proofPoints: Array.isArray(baseConfig.proofPoints) ? baseConfig.proofPoints : []
+  };
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+  function currency(value) {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0
+    }).format(Math.round(Number(value) || 0));
+  }
+
+  function ctaHref() {
+    if (config.paymentLink) return config.paymentLink;
+    if (config.bookingLink) return config.bookingLink;
+    const subject = encodeURIComponent(`${config.serviceName} for my business`);
+    return `mailto:${config.contactEmail}?subject=${subject}`;
+  }
+
+  function renderCards(target, items) {
+    target.innerHTML = items.map((item, index) => `
+      <article>
+        <strong>${String(index + 1).padStart(2, "0")}</strong>
+        <p>${item}</p>
+      </article>
+    `).join("");
+  }
+
+  function render() {
+    document.title = config.serviceName;
+    $$("[data-offer]").forEach((node) => {
+      const key = node.dataset.offer;
+      if (key === "auditPrice") node.textContent = currency(config.auditPrice);
+      else if (key === "implementationPrice") node.textContent = `${currency(config.implementationPrice)} sprint`;
+      else if (key === "contactLine") node.textContent = `Questions go to ${config.contactEmail}.`;
+      else if (key === "included") renderCards(node, config.included);
+      else if (key === "proofPoints") renderCards(node, config.proofPoints);
+      else node.textContent = config[key] || "";
+    });
+
+    $$("[data-offer-link='cta']").forEach((link) => {
+      link.href = ctaHref();
+      link.textContent = config.paymentLink ? `Buy audit ${currency(config.auditPrice)}` : "Book audit";
+    });
+
+    $$("[data-offer-link='booking']").forEach((link) => {
+      link.href = config.bookingLink || ctaHref();
+      link.textContent = config.bookingLink ? "Book a call" : "Email to book";
+    });
+  }
+
+  render();
+})();

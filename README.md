@@ -1,0 +1,45 @@
+# Local Audit Cashflow Kit
+
+This is a static, dependency-free sales kit for selling paid local business growth audits. It gives you:
+
+- `index.html`: operator dashboard for pricing, prospect audits, outreach copy, pipeline tracking, report export, and config export.
+- `offer.html`: buyer-facing offer page that can link to Stripe Payment Links, a booking page, or email.
+- `config.js`: public offer settings for deployed pages.
+- `assets/audit-preview.png`: product visual used by the offer page.
+
+No revenue is guaranteed. The app is designed to make a real offer easy to sell, deliver, and track.
+
+## Run locally
+
+From this folder:
+
+```powershell
+python -m http.server 4173
+```
+
+Open:
+
+```text
+http://localhost:4173/index.html
+```
+
+## Monetize it
+
+1. Create a Stripe Payment Link for the audit price.
+2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
+3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
+4. Send prospects the generated offer link or deploy the folder to any static host.
+5. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+
+Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
+
+## Outreach compliance notes
+
+The generated email includes sender identity, contact information, a mailing address field, and an opt-out sentence. Keep those accurate. FTC CAN-SPAM guidance says commercial email should not use misleading header information or deceptive subject lines, must include a valid physical postal address, and must provide a way to opt out.
+
+## Suggested starting offer
+
+- Audit: `$399`
+- Implementation sprint: `$1,500`
+- Target: local service businesses with weak booking flow, review gaps, thin Google Business Profile content, or no lead tracking.
+- Daily motion: 10 to 15 researched prospects, personalized email, then one follow-up with the generated audit preview.
