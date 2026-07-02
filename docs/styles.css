@@ -2540,6 +2540,71 @@ td select {
   width: 100%;
 }
 
+.sample-scope {
+  display: grid;
+  grid-template-columns: minmax(0, 0.74fr) minmax(0, 1.08fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.sample-scope-copy {
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 24px;
+  background:
+    linear-gradient(145deg, rgba(223, 234, 242, 0.64), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.sample-scope-copy h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.sample-scope-copy p:not(.eyebrow) {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.sample-scope-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sample-scope-grid article {
+  min-height: 172px;
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.sample-scope-grid span,
+.sample-context span,
+.sample-tracking-grid span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sample-scope-grid strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.sample-scope-grid p {
+  margin: 9px 0 0;
+  color: var(--muted);
+}
+
 .sample-report {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -2594,6 +2659,34 @@ td select {
   margin-bottom: 20px;
 }
 
+.sample-context {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sample-context div {
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(240, 180, 41, 0.14), rgba(255, 255, 255, 0) 50%),
+    #ffffff;
+}
+
+.sample-context strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.sample-context p {
+  margin: 9px 0 0;
+  color: var(--muted);
+}
+
 .sample-finding {
   border-left: 4px solid var(--coral);
   padding: 18px;
@@ -2619,6 +2712,41 @@ td select {
 .sample-finding strong {
   display: block;
   margin-top: 10px;
+}
+
+.sample-tracking-notes {
+  margin-top: 20px;
+  border: 1px solid rgba(19, 94, 75, 0.16);
+  border-radius: 8px;
+  padding: 20px;
+  background:
+    linear-gradient(135deg, rgba(19, 94, 75, 0.08), rgba(223, 234, 242, 0.46)),
+    #ffffff;
+}
+
+.sample-tracking-notes h3 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.18;
+}
+
+.sample-tracking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.sample-tracking-grid article {
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.sample-tracking-grid p {
+  margin: 8px 0 0;
+  color: var(--muted);
 }
 
 .sample-plan {
@@ -2703,6 +2831,10 @@ td select {
     .sample-section,
     .sample-assurance,
     .sample-decision,
+    .sample-scope,
+    .sample-scope-grid,
+    .sample-context,
+    .sample-tracking-grid,
     .scorecard-section,
     .scorecard-panel,
     .value-math-section .section-head,
@@ -2966,6 +3098,18 @@ td select {
 
   .sample-decision h2 {
     font-size: 25px;
+  }
+
+  .sample-scope-copy {
+    padding: 20px;
+  }
+
+  .sample-scope-copy h2 {
+    font-size: 25px;
+  }
+
+  .sample-scope-grid article {
+    min-height: 0;
   }
 
   .sample-report-head,
