@@ -189,6 +189,204 @@
       avgCustomerValue: 8000,
       leadsNeeded: 1,
       reviewAngle: "Review proof, service conversion, lead capture"
+    },
+    {
+      businessName: "Air Control Company",
+      businessType: "HVAC",
+      website: "https://www.aircontrolco.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Service booking path, repair versus replacement clarity, trust proof"
+    },
+    {
+      businessName: "Fayette Heating & Air",
+      businessType: "HVAC, plumbing, and electrical",
+      website: "https://fayetteheating.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Online scheduling, membership offer clarity, service-page conversion"
+    },
+    {
+      businessName: "Comfort Heating & Air",
+      businessType: "HVAC",
+      website: "https://callthecomfortman.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Emergency service path, repair booking, review and proof structure"
+    },
+    {
+      businessName: "Donnie Rowe Heating & Air Conditioning",
+      businessType: "HVAC",
+      website: "https://www.donnierowe.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Replacement financing clarity, service-area proof, mobile call path"
+    },
+    {
+      businessName: "Synergy Home HVAC",
+      businessType: "HVAC",
+      website: "https://www.mysynergyhome.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Home-efficiency offer clarity, consultation path, proof structure"
+    },
+    {
+      businessName: "Comfort Technologies Heating and Cooling",
+      businessType: "HVAC",
+      website: "https://www.mycomforttechnologies.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Repair and maintenance path, trust proof, service-call conversion"
+    },
+    {
+      businessName: "PROfetick Plumbing",
+      businessType: "Plumbing",
+      website: "https://www.pro-fetick.com/",
+      city: "Lexington",
+      avgCustomerValue: 1500,
+      leadsNeeded: 4,
+      reviewAngle: "Repair request path, service category clarity, mobile call action"
+    },
+    {
+      businessName: "Pipe Surgeon Plumbing",
+      businessType: "Plumbing",
+      website: "https://pipesurgeonplumbing.com/",
+      city: "Lexington",
+      avgCustomerValue: 1500,
+      leadsNeeded: 4,
+      reviewAngle: "Leak repair CTA, emergency intent, review and trust proof"
+    },
+    {
+      businessName: "Mr. Rooter Plumbing of Greater Lexington",
+      businessType: "Plumbing",
+      website: "https://www.mrrooter.com/greater-lexington/",
+      city: "Lexington",
+      avgCustomerValue: 1500,
+      leadsNeeded: 4,
+      reviewAngle: "Service menu path, online booking, emergency-call clarity"
+    },
+    {
+      businessName: "Roto-Rooter Lexington",
+      businessType: "Plumbing",
+      website: "https://www.rotorooter.com/lexington/",
+      city: "Lexington",
+      avgCustomerValue: 1500,
+      leadsNeeded: 4,
+      reviewAngle: "24/7 service path, drain service segmentation, conversion tracking"
+    },
+    {
+      businessName: "KWC Orthodontics",
+      businessType: "Orthodontist",
+      website: "https://www.kwcorthodontics.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Consultation request path, treatment proof, Invisalign and braces pages"
+    },
+    {
+      businessName: "Buchart + Wachs Orthodontics",
+      businessType: "Orthodontist",
+      website: "https://buchartwachs.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Appointment request path, doctor proof, treatment-page conversion"
+    },
+    {
+      businessName: "GLO Orthodontics",
+      businessType: "Orthodontist",
+      website: "https://glo-ortho.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Consultation CTA, smile proof, patient journey clarity"
+    },
+    {
+      businessName: "White Greer & Maggard Orthodontics",
+      businessType: "Orthodontist",
+      website: "https://wgmortho.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Location path, braces and Invisalign offer clarity, review proof"
+    },
+    {
+      businessName: "Webster Orthodontics",
+      businessType: "Orthodontist",
+      website: "https://bracesbywebster.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "New-patient path, treatment proof, mobile appointment clarity"
+    },
+    {
+      businessName: "Spencer Law Group",
+      businessType: "Personal injury law",
+      website: "https://www.spencerlawgroup.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Consultation path, practice-area clarity, trust proof and intake follow-up"
+    },
+    {
+      businessName: "Hicks & Funfsinn PLLC",
+      businessType: "Personal injury law",
+      website: "https://www.hfkylawyers.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Free consultation CTA, attorney proof, case-type page clarity"
+    },
+    {
+      businessName: "Rosenbaum & Thompson",
+      businessType: "Personal injury law",
+      website: "https://www.lexingtonkylawyers.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Contact path, practice-area segmentation, trust proof"
+    },
+    {
+      businessName: "Peterson Law Office",
+      businessType: "Personal injury law",
+      website: "https://www.justinpetersonlaw.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Practice-area pages, consultation request, proof and follow-up cues"
+    },
+    {
+      businessName: "Ross Mann Law",
+      businessType: "Personal injury law",
+      website: "https://www.rossmannlaw.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Medical negligence positioning, consultation flow, client review proof"
+    },
+    {
+      businessName: "Minner Vines Injury Lawyers",
+      businessType: "Personal injury law",
+      website: "https://www.mvmlaw.com/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Injury claim category path, consultation CTA, trust proof"
+    },
+    {
+      businessName: "Hughes & Coleman Injury Lawyers",
+      businessType: "Personal injury law",
+      website: "https://www.hughesandcoleman.com/locations/kentucky/lexington/",
+      city: "Lexington",
+      avgCustomerValue: 7500,
+      leadsNeeded: 2,
+      reviewAngle: "Local office page path, free consultation CTA, trust proof"
     }
   ];
 
@@ -512,6 +710,27 @@ It will not guarantee revenue, but it can show whether a focused audit is worth 
 
   function getProspectTrack(prospect = {}) {
     const text = `${prospect.businessType || ""} ${prospect.businessName || ""}`.toLowerCase();
+    if (text.includes("law") || text.includes("attorney") || text.includes("injury") || text.includes("legal")) {
+      return {
+        label: "Personal injury law track",
+        path: "lexington-personal-injury-law-growth-audit.html",
+        focus: "consultation clarity, trust proof, practice-area pages, and intake follow-up friction"
+      };
+    }
+    if (text.includes("hvac") || text.includes("heating") || text.includes("air conditioning") || text.includes("plumb") || text.includes("electric")) {
+      return {
+        label: "HVAC/plumbing track",
+        path: "lexington-hvac-plumbing-growth-audit.html",
+        focus: "service-call booking, quote clarity, trust proof, and follow-up gaps"
+      };
+    }
+    if (text.includes("orthodont")) {
+      return {
+        label: "Dental/orthodontic track",
+        path: "lexington-dentist-growth-audit.html",
+        focus: "new-patient consultation flow, review trust, treatment-page clarity, and follow-up friction"
+      };
+    }
     if (text.includes("dent")) {
       return {
         label: "Dentist track",

@@ -91,6 +91,10 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
 
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-plumbing-growth-audit.html
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-personal-injury-law-growth-audit.html
+
 Use the intake page after payment or booking:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/audit-intake.html
@@ -144,7 +148,7 @@ Paid audit details: https://julianbrown-afk.github.io/blank-map-local-growth-aud
 
 Start with 100 researched prospects.
 
-The first 19 research candidates are in:
+The first 41 research candidates are in:
 
 ```text
 PROSPECTS.md

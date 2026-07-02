@@ -14,6 +14,9 @@ These categories are good fits because a single new customer can be valuable eno
 - med spas and aesthetic medicine
 - roofing
 - remodeling and general contracting
+- HVAC, plumbing, and home services
+- orthodontics
+- personal injury law firms
 - other high-ticket local services
 
 ## Candidate Prospects
@@ -39,6 +42,28 @@ These categories are good fits because a single new customer can be valuable eno
 | Handy Manny's | General contractor | https://handymannysky.com/ | Review free-estimate flow, service segmentation, and mobile first-screen clarity. |
 | Moore Custom Remodeling | Remodeling | https://www.moorebuildersky.com/reviews | Review review proof, project gallery path, and quote action. |
 | ASB Remodeling | Remodeling | https://asbuildersllc.com/reviews/ | Review review proof, service conversion, and lead capture. |
+| Air Control Company | HVAC | https://www.aircontrolco.com/ | Review service booking path, repair versus replacement clarity, and trust proof. |
+| Fayette Heating & Air | HVAC, plumbing, and electrical | https://fayetteheating.com/ | Review online scheduling, membership offer clarity, and service-page conversion. |
+| Comfort Heating & Air | HVAC | https://callthecomfortman.com/ | Review emergency service path, repair booking, and review/proof structure. |
+| Donnie Rowe Heating & Air Conditioning | HVAC | https://www.donnierowe.com/ | Review replacement financing clarity, service-area proof, and mobile call path. |
+| Synergy Home HVAC | HVAC | https://www.mysynergyhome.com/ | Review home-efficiency offer clarity, consultation path, and proof structure. |
+| Comfort Technologies Heating and Cooling | HVAC | https://www.mycomforttechnologies.com/ | Review repair and maintenance path, trust proof, and service-call conversion. |
+| PROfetick Plumbing | Plumbing | https://www.pro-fetick.com/ | Review repair request path, service category clarity, and mobile call action. |
+| Pipe Surgeon Plumbing | Plumbing | https://pipesurgeonplumbing.com/ | Review leak repair CTA, emergency intent, and review/trust proof. |
+| Mr. Rooter Plumbing of Greater Lexington | Plumbing | https://www.mrrooter.com/greater-lexington/ | Review service menu path, online booking, and emergency-call clarity. |
+| Roto-Rooter Lexington | Plumbing | https://www.rotorooter.com/lexington/ | Review 24/7 service path, drain service segmentation, and conversion tracking. |
+| KWC Orthodontics | Orthodontist | https://www.kwcorthodontics.com/ | Review consultation request path, treatment proof, Invisalign and braces pages. |
+| Buchart + Wachs Orthodontics | Orthodontist | https://buchartwachs.com/ | Review appointment request path, doctor proof, and treatment-page conversion. |
+| GLO Orthodontics | Orthodontist | https://glo-ortho.com/ | Review consultation CTA, smile proof, and patient journey clarity. |
+| White Greer & Maggard Orthodontics | Orthodontist | https://wgmortho.com/ | Review location path, braces/Invisalign offer clarity, and review proof. |
+| Webster Orthodontics | Orthodontist | https://bracesbywebster.com/ | Review new-patient path, treatment proof, and mobile appointment clarity. |
+| Spencer Law Group | Personal injury law | https://www.spencerlawgroup.com/ | Review consultation path, practice-area clarity, trust proof, and intake follow-up. |
+| Hicks & Funfsinn PLLC | Personal injury law | https://www.hfkylawyers.com/ | Review free consultation CTA, attorney proof, and case-type page clarity. |
+| Rosenbaum & Thompson | Personal injury law | https://www.lexingtonkylawyers.com/ | Review contact path, practice-area segmentation, and trust proof. |
+| Peterson Law Office | Personal injury law | https://www.justinpetersonlaw.com/ | Review practice-area pages, consultation request, proof, and follow-up cues. |
+| Ross Mann Law | Personal injury law | https://www.rossmannlaw.com/ | Review medical negligence positioning, consultation flow, and client review proof. |
+| Minner Vines Injury Lawyers | Personal injury law | https://www.mvmlaw.com/ | Review injury claim category path, consultation CTA, and trust proof. |
+| Hughes & Coleman Injury Lawyers | Personal injury law | https://www.hughesandcoleman.com/locations/kentucky/lexington/ | Review local office page path, free consultation CTA, and trust proof. |
 
 ## Dashboard Entry Defaults
 
@@ -51,6 +76,10 @@ Use these defaults when adding a prospect unless the website clearly suggests be
 | Roofing | 4500 | 2 |
 | Remodeling | 8000 | 1 |
 | General contractor | 6000 | 2 |
+| HVAC | 5500 | 2 |
+| Plumbing | 1500 | 4 |
+| Orthodontist | 5500 | 2 |
+| Personal injury law | 7500 | 2 |
 
 ## Review Checklist
 
@@ -86,3 +115,25 @@ The initial list was compiled from public search results and company websites, i
 - https://handymannysky.com/
 - https://www.moorebuildersky.com/reviews
 - https://asbuildersllc.com/reviews/
+- https://www.aircontrolco.com/
+- https://fayetteheating.com/
+- https://callthecomfortman.com/
+- https://www.donnierowe.com/
+- https://www.mysynergyhome.com/
+- https://www.mycomforttechnologies.com/
+- https://www.pro-fetick.com/
+- https://pipesurgeonplumbing.com/
+- https://www.mrrooter.com/greater-lexington/
+- https://www.rotorooter.com/lexington/
+- https://www.kwcorthodontics.com/
+- https://buchartwachs.com/
+- https://glo-ortho.com/
+- https://wgmortho.com/
+- https://bracesbywebster.com/
+- https://www.spencerlawgroup.com/
+- https://www.hfkylawyers.com/
+- https://www.lexingtonkylawyers.com/
+- https://www.justinpetersonlaw.com/
+- https://www.rossmannlaw.com/
+- https://www.mvmlaw.com/
+- https://www.hughesandcoleman.com/locations/kentucky/lexington/
