@@ -36,6 +36,12 @@ Referral partner page:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
 ```
 
+Warm intro builder:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html#intro-builder
+```
+
 Printable one-sheet:
 
 ```text
@@ -72,7 +78,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
 
 Score result handoff:
 
@@ -184,6 +190,17 @@ The first step is free: the scorecard checks visible call, booking, quote, revie
 
 Partner page:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
+```
+
+## Warm Intro Builder Handoff
+
+Use only when a warm connector or relevant conversation has enough context to personalize the intro without making unsupported claims.
+
+```text
+If you already know the owner, business category, or main buyer-path concern, use the warm intro builder on the partner page. It creates one scorecard-first message and lets you choose whether the first link should be the free scorecard, value calculator, decision quiz, or sample report.
+
+Warm intro builder:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html#intro-builder
 ```
 
 ## One-Sheet Handoff

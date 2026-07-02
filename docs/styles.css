@@ -4552,6 +4552,101 @@ td select {
   display: none;
 }
 
+.referral-builder-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.referral-builder-section .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.referral-builder-section .section-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.referral-builder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.referral-builder-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(150deg, rgba(223, 234, 242, 0.56), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.referral-builder-fields label {
+  min-width: 0;
+  margin: 0;
+}
+
+.referral-builder-fields label:last-child {
+  grid-column: 1 / -1;
+}
+
+.referral-builder-output-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid rgba(19, 94, 75, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  background:
+    linear-gradient(150deg, rgba(19, 94, 75, 0.12), rgba(240, 180, 41, 0.16) 52%, rgba(255, 255, 255, 0)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.referral-builder-output-card > span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.referral-builder-output-card h3 {
+  margin: 8px 0 12px;
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.referral-builder-output-card pre {
+  overflow: auto;
+  min-height: 236px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.48;
+  white-space: pre-wrap;
+}
+
+.referral-builder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
 .referral-script-section {
   border-bottom: 1px solid var(--line);
 }
@@ -5248,6 +5343,9 @@ td select {
     .scorecard-track-grid,
     .scorecard-link-grid,
     .referral-copy-panel,
+    .referral-builder-section .section-head,
+    .referral-builder,
+    .referral-builder-fields,
     .referral-script-grid,
     .referral-track-list,
     .referral-use-section,

@@ -2520,6 +2520,7 @@ ${settings.contactEmail}`;
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
     if (action === "copy-scorecard-link") copyText(getOfferUrl("scorecard.html"), "Scorecard link copied");
     if (action === "copy-value-calculator-link") copyText(getOfferUrl("lexington-local-growth-audit-value-calculator.html"), "Value calculator link copied");
+    if (action === "copy-intro-builder-link") copyText(getOfferUrl("lexington-local-growth-audit-referral-partners.html#intro-builder"), "Intro builder link copied");
     if (action === "open-offer") window.open(getOfferUrl(), "_blank", "noopener,noreferrer");
     if (action === "download-config") downloadFile("config.js", buildConfigText(), "text/javascript");
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");

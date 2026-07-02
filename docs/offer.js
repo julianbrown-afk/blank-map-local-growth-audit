@@ -29,6 +29,7 @@
   const initialTitle = document.title;
   let intakeCopyTimer = 0;
   let referralCopyTimer = 0;
+  let referralBuilderCopyTimer = 0;
   let scoreCopyTimer = 0;
   let decisionCopyTimer = 0;
   let valueCopyTimer = 0;
@@ -268,6 +269,134 @@
 
     clearTimeout(referralCopyTimer);
     referralCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
+  function referralBuilderDetails() {
+    const route = $("[data-referral-builder='route']");
+    const type = $("[data-referral-builder='type']");
+    const concern = $("[data-referral-builder='concern']");
+    const business = $("[data-referral-builder='business']");
+    const recipient = $("[data-referral-builder='recipient']");
+
+    const selectedType = type?.selectedOptions?.[0];
+    const selectedConcern = concern?.selectedOptions?.[0];
+    const track = type?.value || "";
+    const typeLabel = selectedType?.textContent.trim() || "local service business";
+
+    return {
+      route: route?.value || "scorecard",
+      track,
+      typeLabel,
+      concern: selectedConcern?.textContent.trim() || "calls, bookings, reviews, tracking, or follow-up",
+      businessName: business?.value.trim() || "",
+      recipientName: recipient?.value.trim() || "there"
+    };
+  }
+
+  function referralBuilderRoute(details = referralBuilderDetails()) {
+    const scorecardPath = details.track
+      ? `scorecard.html?track=${encodeURIComponent(details.track)}`
+      : "scorecard.html";
+
+    const routes = {
+      scorecard: {
+        label: "Free scorecard first",
+        title: "Warm intro draft",
+        linkLabel: "Free buyer-path scorecard",
+        href: publicUrl(scorecardPath),
+        setup: "A useful first step is to check the visible buyer path before spending more on ads, SEO, or a redesign."
+      },
+      calculator: {
+        label: "Planning math first",
+        title: "Value calculator intro",
+        linkLabel: "Value calculator",
+        href: publicUrl("lexington-local-growth-audit-value-calculator.html"),
+        setup: "A useful first step is to size the possible buyer-path leak before deciding whether a paid audit is worth it."
+      },
+      quiz: {
+        label: "Decision route first",
+        title: "Decision quiz intro",
+        linkLabel: "Decision quiz",
+        href: publicUrl("lexington-local-growth-audit-decision-quiz.html"),
+        setup: "A useful first step is to route the next move before buying anything."
+      },
+      sample: {
+        label: "Proof first",
+        title: "Sample-report intro",
+        linkLabel: "Sample audit report",
+        href: publicUrl("sample-audit.html"),
+        setup: "A useful first step is to inspect the kind of deliverable before deciding whether the fixed-scope audit is worth buying."
+      }
+    };
+
+    return routes[details.route] || routes.scorecard;
+  }
+
+  function referralBuilderText(details = referralBuilderDetails()) {
+    const route = referralBuilderRoute(details);
+    const businessLine = details.businessName
+      ? `I thought of ${details.businessName} because the buyer path for a ${details.typeLabel.toLowerCase()} often depends on ${details.concern.toLowerCase()}.\n\n`
+      : `I thought this may fit because the buyer path for a ${details.typeLabel.toLowerCase()} often depends on ${details.concern.toLowerCase()}.\n\n`;
+
+    return `Hi ${details.recipientName},
+
+${businessLine}${route.setup}
+
+${route.linkLabel}:
+${route.href}
+
+If it shows clear gaps, the fixed-scope ${config.serviceName} turns the result into ranked findings, tracking notes, and a 30-day action plan for ${currency(config.auditPrice)}:
+${publicUrl("")}
+
+No pressure to buy first. The free result or sample should make the next step obvious. This is planning input, not a revenue guarantee.`;
+  }
+
+  function updateReferralBuilder() {
+    const output = $("[data-referral-builder-output]");
+    if (!output) return;
+
+    const details = referralBuilderDetails();
+    const route = referralBuilderRoute(details);
+    const label = $("[data-referral-builder-route]");
+    const title = $("[data-referral-builder-title]");
+    const link = $("[data-referral-builder-link]");
+
+    if (label) label.textContent = route.label;
+    if (title) title.textContent = route.title;
+    if (link) {
+      link.href = route.href;
+      link.textContent = route.linkLabel;
+    }
+    output.textContent = referralBuilderText(details);
+  }
+
+  async function copyReferralBuilderText() {
+    const status = $("[data-referral-builder-status]");
+    const manual = $("[data-referral-builder-manual]");
+    const text = referralBuilderText();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Warm intro copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The intro is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(referralBuilderCopyTimer);
+    referralBuilderCopyTimer = setTimeout(() => {
       if (status) status.textContent = "";
     }, 3600);
   }
@@ -775,6 +904,14 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     $$("[data-referral-copy]").forEach((button) => {
       button.addEventListener("click", copyReferralText);
     });
+    $$("[data-referral-builder]").forEach((field) => {
+      field.addEventListener("input", updateReferralBuilder);
+      field.addEventListener("change", updateReferralBuilder);
+    });
+    $$("[data-referral-builder-copy]").forEach((button) => {
+      button.addEventListener("click", copyReferralBuilderText);
+    });
+    updateReferralBuilder();
 
     $$("[data-score-item]").forEach((item) => {
       item.addEventListener("change", () => {

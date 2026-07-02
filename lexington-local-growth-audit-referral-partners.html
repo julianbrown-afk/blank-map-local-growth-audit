@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702partners">
+    <link rel="stylesheet" href="styles.css?v=20260702introbuilder">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,7 +47,7 @@
       }
     </script>
     <script src="config.js?v=20260702pages"></script>
-    <script defer src="offer.js?v=20260702partners"></script>
+    <script defer src="offer.js?v=20260702introbuilder"></script>
   </head>
   <body class="offer-body niche-body">
     <header class="offer-nav">
@@ -72,6 +72,7 @@
           <p class="niche-hero-copy">This page is for accountants, web teams, photographers, consultants, IT providers, chamber contacts, and local connectors who want to send a practical resource without making a hard pitch. Start with the free scorecard, then bridge to the fixed-scope audit only when the result shows clear buyer-path gaps.</p>
           <div class="hero-actions">
             <a class="primary-button large" href="#partner-copy">Share partner page</a>
+            <a class="secondary-link" href="#intro-builder">Build warm intro</a>
             <a class="secondary-link" href="scorecard.html">Free scorecard</a>
             <a class="secondary-link" href="lexington-local-growth-audit-one-sheet.html">One-sheet</a>
             <a class="secondary-link" href="lexington-local-growth-audit-decision-quiz.html">Decision quiz</a>
@@ -124,6 +125,75 @@
           </div>
           <p class="referral-copy-status" data-referral-copy-status aria-live="polite"></p>
           <textarea class="referral-manual-copy" data-referral-manual readonly hidden aria-label="Referral partner text"></textarea>
+        </div>
+      </section>
+
+      <section class="offer-section referral-builder-section" id="intro-builder" aria-label="Build a warm referral intro">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Warm intro builder</p>
+            <h2>Turn a referral hint into one clean message.</h2>
+          </div>
+          <p>Pick the context, copy the generated intro, and send it only where there is a real relationship, permission, or relevant conversation already underway.</p>
+        </div>
+        <div class="referral-builder">
+          <div class="referral-builder-fields">
+            <label>
+              Recipient name
+              <input type="text" data-referral-builder="recipient" placeholder="there">
+            </label>
+            <label>
+              Business name
+              <input type="text" data-referral-builder="business" placeholder="Optional">
+            </label>
+            <label>
+              Business type
+              <select data-referral-builder="type">
+                <option value="">Local service business</option>
+                <option value="dentist">Dental office</option>
+                <option value="med-spa">Med spa or aesthetic clinic</option>
+                <option value="roofing">Roofing company</option>
+                <option value="hvac">HVAC company</option>
+                <option value="plumbing">Plumbing company</option>
+                <option value="chiropractor">Chiropractor</option>
+                <option value="physical-therapy">Physical therapy clinic</option>
+                <option value="home-improvement">Home improvement company</option>
+                <option value="remodeling">Remodeling company</option>
+                <option value="personal-injury-law">Personal injury law firm</option>
+              </select>
+            </label>
+            <label>
+              Main concern
+              <select data-referral-builder="concern">
+                <option>calls, bookings, reviews, tracking, or follow-up</option>
+                <option>one obvious mobile call, booking, or quote action</option>
+                <option>review proof and local trust before the next click</option>
+                <option>Google profile visibility, photos, services, and Q&amp;A</option>
+                <option>tracking calls, forms, booking clicks, and source</option>
+                <option>deciding whether a paid audit is worth buying</option>
+              </select>
+            </label>
+            <label>
+              First link
+              <select data-referral-builder="route">
+                <option value="scorecard">Free scorecard first</option>
+                <option value="calculator">Value calculator first</option>
+                <option value="quiz">Decision quiz first</option>
+                <option value="sample">Sample report first</option>
+              </select>
+            </label>
+          </div>
+          <aside class="referral-builder-output-card">
+            <span data-referral-builder-route>Free scorecard first</span>
+            <h3 data-referral-builder-title>Warm intro draft</h3>
+            <pre data-referral-builder-output></pre>
+            <div class="referral-builder-actions">
+              <button class="primary-button" type="button" data-referral-builder-copy>Copy warm intro</button>
+              <a class="secondary-link dark" data-referral-builder-link href="scorecard.html">Free buyer-path scorecard</a>
+            </div>
+            <p class="referral-copy-status" data-referral-builder-status aria-live="polite"></p>
+            <textarea class="referral-manual-copy" data-referral-builder-manual readonly hidden aria-label="Warm intro text"></textarea>
+          </aside>
         </div>
       </section>
 
