@@ -3,7 +3,7 @@
 This is a static, dependency-free sales kit for selling paid local business growth audits. It gives you:
 
 - `index.html`: operator dashboard for pricing, today's money-motion queue, prospect audits, daily outreach batches, scorecard-first acquisition copy, scorecard lead close copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
-- `offer.html`: buyer-facing offer page with a self-check scorecard, value calculator, and links to Stripe Payment Links, booking, or email.
+- `offer.html`: buyer-facing offer page with a self-check scorecard, score handoff, value calculator, and links to Stripe Payment Links, booking, or email.
 - `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit, with a dynamic next-step recommendation and email/copy actions for sending the result.
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
@@ -132,7 +132,7 @@ http://localhost:4173/index.html
 8. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
 9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for a category-specific prefilled scorecard before showing the paid audit.
 10. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate. Use the conversion checklist and its built-in copy starters when a lower-friction educational link fits better than the scorecard, and use the public scorecard directory when you need one shareable page with all scorecard links and a copy-ready referral blurb.
-11. Ask interested prospects to use the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
+11. Ask interested prospects to use the homepage self-check handoff or the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
 12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
 13. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
 14. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.

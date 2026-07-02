@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702receipt">
+    <link rel="stylesheet" href="styles.css?v=20260702scorelead">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,7 +39,7 @@
       }
     </script>
     <script src="config.js?v=20260702pages"></script>
-    <script defer src="offer.js?v=20260702priceguard"></script>
+    <script defer src="offer.js?v=20260702scorelead"></script>
   </head>
   <body class="offer-body has-purchase-bar">
     <header class="offer-nav">
@@ -628,6 +628,30 @@
               <a class="primary-button" data-offer-link="cta" href="#">Buy audit</a>
               <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
               <a class="secondary-link dark" href="scorecard.html">Open free scorecard</a>
+            </div>
+            <div class="score-lead-panel" aria-label="Send score result">
+              <strong>Send the quick score before you buy.</strong>
+              <p>Add the business context, then email or copy the score summary so the next reply can focus on the visible gaps.</p>
+              <div class="score-lead-fields">
+                <label>
+                  <span>Business</span>
+                  <input type="text" autocomplete="organization" data-score-lead="businessName" placeholder="Business name">
+                </label>
+                <label>
+                  <span>Website</span>
+                  <input type="url" inputmode="url" autocomplete="url" data-score-lead="website" placeholder="https://example.com">
+                </label>
+                <label>
+                  <span>Contact</span>
+                  <input type="email" inputmode="email" autocomplete="email" data-score-lead="contactEmail" placeholder="you@example.com">
+                </label>
+              </div>
+              <div class="score-lead-actions">
+                <a class="primary-button" data-score-email href="#">Email my score</a>
+                <button class="ghost-button" type="button" data-score-copy>Copy score summary</button>
+              </div>
+              <p class="score-copy-status" data-score-copy-status aria-live="polite"></p>
+              <textarea class="score-manual-copy" data-score-manual readonly hidden aria-label="Score summary text"></textarea>
             </div>
           </div>
         </div>

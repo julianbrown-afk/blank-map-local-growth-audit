@@ -83,7 +83,7 @@ The best prospects are local service businesses that already have customer value
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
 13. For a lower-friction first touch, use the public conversion checklist and its copy-ready starters, `Copy scorecard link` for the general scorecard, or the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
 14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, and use the public scorecard directory when one link should show all category choices or when you want to copy the built-in referral blurb.
-15. If a prospect engages with the scorecard, point them to the `Score handoff` section, then ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
+15. If a prospect engages with the homepage self-check or scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
 18. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.

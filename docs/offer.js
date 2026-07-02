@@ -29,6 +29,7 @@
   const initialTitle = document.title;
   let intakeCopyTimer = 0;
   let referralCopyTimer = 0;
+  let scoreCopyTimer = 0;
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -71,6 +72,15 @@
     const subject = encodeURIComponent(`${config.serviceName} intake`);
     const body = encodeURIComponent(intakeText());
     return `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+  }
+
+  function publicUrl(path = "") {
+    const base = config.offerBaseUrl || window.location.href;
+    try {
+      return new URL(path, base).href;
+    } catch (error) {
+      return path || base;
+    }
   }
 
   function writeClipboardText(text) {
@@ -190,27 +200,126 @@
     `).join("");
   }
 
-  function updateScorecard() {
+  function scoreLeadDetails() {
+    const details = {};
+    $$("[data-score-lead]").forEach((input) => {
+      details[input.dataset.scoreLead] = input.value.trim();
+    });
+    return details;
+  }
+
+  function homepageScoreState() {
     const items = $$("[data-score-item]");
     const checked = items.filter((item) => item.checked).length;
     const gaps = Math.max(items.length - checked, 0);
+    const missingLabels = items
+      .filter((item) => !item.checked)
+      .map((item) => {
+        const label = item.closest("label");
+        return label?.querySelector("span")?.textContent.trim() || "Unchecked buyer-path item";
+      });
+    let result = "Lower audit priority";
+    let note = "You may still use an audit for validation, but urgent gaps are not obvious from this quick check.";
+
+    if (gaps >= 3) {
+      result = "High audit priority";
+      note = "Start with an audit before committing to implementation work.";
+    } else if (gaps >= 1) {
+      result = "Useful audit candidate";
+      note = "A short audit can clarify which fixes are worth doing first.";
+    }
+
+    return {
+      checked,
+      gaps,
+      missingLabels,
+      note,
+      result,
+      total: items.length
+    };
+  }
+
+  function buildHomepageScoreSummary(state = homepageScoreState(), details = scoreLeadDetails()) {
+    const missingList = state.missingLabels.length
+      ? state.missingLabels.map((label, index) => `${index + 1}. ${label}`).join("\n")
+      : "No urgent gap from this quick pass.";
+    const businessLine = details.businessName ? `Business: ${details.businessName}\n` : "";
+    const websiteLine = details.website ? `Website: ${details.website}\n` : "";
+    const contactLine = details.contactEmail ? `Contact email: ${details.contactEmail}\n` : "";
+    const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+    const paidAuditLine = config.paymentLink ? config.paymentLink : publicUrl("");
+
+    return `Local Growth Audit quick self-check
+
+${businessLine}${websiteLine}${contactLine}Result: ${state.result}
+Gaps found: ${state.gaps} of ${state.total}
+Recommendation: ${state.note}
+
+Missing buyer-path basics
+${missingList}
+
+Useful next step
+If these gaps match what is happening in calls, bookings, quote requests, or follow-up, the paid audit turns the visible issues into ranked fixes, tracking notes, and a 30-day action plan.
+
+This is planning input, not a revenue guarantee.
+
+Paid audit: ${paidAuditLine}
+${bookingLine}Full scorecard: ${publicUrl("scorecard.html")}
+Sample audit: ${publicUrl("sample-audit.html")}`;
+  }
+
+  function updateHomepageScoreActions(state = homepageScoreState()) {
+    const emailLink = $("[data-score-email]");
+    if (!emailLink) return;
+
+    const details = scoreLeadDetails();
+    const subjectLead = details.businessName ? `${details.businessName}: ` : "";
+    const subject = encodeURIComponent(`${subjectLead}${config.serviceName} self-check result`);
+    const body = encodeURIComponent(`${buildHomepageScoreSummary(state, details)}\n\nI would like to understand what to fix first.`);
+    emailLink.href = `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+  }
+
+  async function copyHomepageScoreSummary() {
+    const status = $("[data-score-copy-status]");
+    const manual = $("[data-score-manual]");
+    const text = buildHomepageScoreSummary();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Score summary copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The score summary is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(scoreCopyTimer);
+    scoreCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
+  function updateScorecard() {
+    const state = homepageScoreState();
     const label = $("[data-score-label]");
     const result = $("[data-score-result]");
     const note = $("[data-score-note]");
 
     if (!label || !result || !note) return;
 
-    label.textContent = `${gaps} ${gaps === 1 ? "gap" : "gaps"} found`;
-    if (gaps >= 3) {
-      result.textContent = "High audit priority";
-      note.textContent = "Start with an audit before committing to implementation work.";
-    } else if (gaps >= 1) {
-      result.textContent = "Useful audit candidate";
-      note.textContent = "A short audit can clarify which fixes are worth doing first.";
-    } else {
-      result.textContent = "Lower audit priority";
-      note.textContent = "You may still use an audit for validation, but urgent gaps are not obvious from this quick check.";
-    }
+    label.textContent = `${state.gaps} ${state.gaps === 1 ? "gap" : "gaps"} found`;
+    result.textContent = state.result;
+    note.textContent = state.note;
+    updateHomepageScoreActions(state);
   }
 
   function updateValueMath() {
@@ -281,6 +390,12 @@
 
     $$("[data-score-item]").forEach((item) => {
       item.addEventListener("change", updateScorecard);
+    });
+    $$("[data-score-lead]").forEach((item) => {
+      item.addEventListener("input", () => updateHomepageScoreActions());
+    });
+    $$("[data-score-copy]").forEach((button) => {
+      button.addEventListener("click", copyHomepageScoreSummary);
     });
     updateScorecard();
 
