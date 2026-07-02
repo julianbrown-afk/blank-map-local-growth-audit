@@ -30,6 +30,7 @@
   let intakeCopyTimer = 0;
   let referralCopyTimer = 0;
   let scoreCopyTimer = 0;
+  let homepageScoreTouched = false;
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -208,7 +209,7 @@
     return details;
   }
 
-  function homepageScoreState() {
+  function homepageScoreState(options = {}) {
     const items = $$("[data-score-item]");
     const checked = items.filter((item) => item.checked).length;
     const gaps = Math.max(items.length - checked, 0);
@@ -218,6 +219,24 @@
         const label = item.closest("label");
         return label?.querySelector("span")?.textContent.trim() || "Unchecked buyer-path item";
       });
+    const base = {
+      checked,
+      gaps,
+      missingLabels,
+      total: items.length
+    };
+
+    if (options.neutral && !homepageScoreTouched) {
+      return {
+        ...base,
+        isScored: false,
+        gaps: null,
+        missingLabels: [],
+        result: "Answer the five checks first",
+        note: "Select what is already handled. Anything left unchecked becomes a visible gap to review."
+      };
+    }
+
     let result = "Lower audit priority";
     let note = "You may still use an audit for validation, but urgent gaps are not obvious from this quick check.";
 
@@ -230,19 +249,23 @@
     }
 
     return {
-      checked,
-      gaps,
-      missingLabels,
+      ...base,
+      isScored: true,
       note,
-      result,
-      total: items.length
+      result
     };
   }
 
-  function buildHomepageScoreSummary(state = homepageScoreState(), details = scoreLeadDetails()) {
-    const missingList = state.missingLabels.length
+  function buildHomepageScoreSummary(state = homepageScoreState({ neutral: true }), details = scoreLeadDetails()) {
+    const missingList = !state.isScored
+      ? "Answer the quick check to see visible gaps."
+      : state.missingLabels.length
       ? state.missingLabels.map((label, index) => `${index + 1}. ${label}`).join("\n")
       : "No urgent gap from this quick pass.";
+    const gapLine = state.isScored ? `${state.gaps} of ${state.total}` : "Not scored yet";
+    const usefulNextStep = state.isScored
+      ? "If these gaps match what is happening in calls, bookings, quote requests, or follow-up, the paid audit turns the visible issues into ranked fixes, tracking notes, and a 30-day action plan."
+      : "Answer the five visible buyer-path checks first. The result will show whether the paid audit has a clear job to do before larger marketing spend.";
     const businessLine = details.businessName ? `Business: ${details.businessName}\n` : "";
     const websiteLine = details.website ? `Website: ${details.website}\n` : "";
     const contactLine = details.contactEmail ? `Contact email: ${details.contactEmail}\n` : "";
@@ -252,14 +275,14 @@
     return `Local Growth Audit quick self-check
 
 ${businessLine}${websiteLine}${contactLine}Result: ${state.result}
-Gaps found: ${state.gaps} of ${state.total}
+Gaps found: ${gapLine}
 Recommendation: ${state.note}
 
 Missing buyer-path basics
 ${missingList}
 
 Useful next step
-If these gaps match what is happening in calls, bookings, quote requests, or follow-up, the paid audit turns the visible issues into ranked fixes, tracking notes, and a 30-day action plan.
+${usefulNextStep}
 
 This is planning input, not a revenue guarantee.
 
@@ -268,7 +291,7 @@ ${bookingLine}Full scorecard: ${publicUrl("scorecard.html")}
 Sample audit: ${publicUrl("sample-audit.html")}`;
   }
 
-  function updateHomepageScoreActions(state = homepageScoreState()) {
+  function updateHomepageScoreActions(state = homepageScoreState({ neutral: true })) {
     const emailLink = $("[data-score-email]");
     if (!emailLink) return;
 
@@ -282,7 +305,7 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
   async function copyHomepageScoreSummary() {
     const status = $("[data-score-copy-status]");
     const manual = $("[data-score-manual]");
-    const text = buildHomepageScoreSummary();
+    const text = buildHomepageScoreSummary(homepageScoreState({ neutral: true }));
 
     try {
       const copied = await copyTextWithFallback(text);
@@ -309,14 +332,14 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
   }
 
   function updateScorecard() {
-    const state = homepageScoreState();
+    const state = homepageScoreState({ neutral: true });
     const label = $("[data-score-label]");
     const result = $("[data-score-result]");
     const note = $("[data-score-note]");
 
     if (!label || !result || !note) return;
 
-    label.textContent = `${state.gaps} ${state.gaps === 1 ? "gap" : "gaps"} found`;
+    label.textContent = state.isScored ? `${state.gaps} ${state.gaps === 1 ? "gap" : "gaps"} found` : "Not scored yet";
     result.textContent = state.result;
     note.textContent = state.note;
     updateHomepageScoreActions(state);
@@ -389,10 +412,13 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     });
 
     $$("[data-score-item]").forEach((item) => {
-      item.addEventListener("change", updateScorecard);
+      item.addEventListener("change", () => {
+        homepageScoreTouched = true;
+        updateScorecard();
+      });
     });
     $$("[data-score-lead]").forEach((item) => {
-      item.addEventListener("input", () => updateHomepageScoreActions());
+      item.addEventListener("input", () => updateHomepageScoreActions(homepageScoreState({ neutral: true })));
     });
     $$("[data-score-copy]").forEach((button) => {
       button.addEventListener("click", copyHomepageScoreSummary);
