@@ -119,6 +119,24 @@
       reviewAngle: "Premium positioning, consultation path, proof structure"
     },
     {
+      businessName: "Hourglass Aesthetics & Wellness",
+      businessType: "Med spa",
+      website: "https://hourglassmedspa.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Treatment menu clarity, consultation booking, proof and membership path"
+    },
+    {
+      businessName: "The Spa at Marshall",
+      businessType: "Med spa",
+      website: "https://www.thespaatmarshall.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Multi-location booking path, treatment proof, consultation CTA clarity"
+    },
+    {
       businessName: "Big Blue Roofing",
       businessType: "Roofing",
       website: "https://bigblueroofing.com/",
@@ -144,6 +162,24 @@
       avgCustomerValue: 4500,
       leadsNeeded: 2,
       reviewAngle: "Quote path, warranty/trust presentation, mobile CTA clarity"
+    },
+    {
+      businessName: "Barrier Roofs",
+      businessType: "Roofing",
+      website: "https://barrierroofs.com/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Inspection request path, warranty proof, financing and trust signals"
+    },
+    {
+      businessName: "Mighty Dog Roofing Lexington",
+      businessType: "Roofing",
+      website: "https://www.mightydogroofing.com/lexington-ky/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Roof inspection CTA, repair versus replacement clarity, service proof"
     },
     {
       businessName: "BACK Construction",
@@ -189,6 +225,33 @@
       avgCustomerValue: 8000,
       leadsNeeded: 1,
       reviewAngle: "Review proof, service conversion, lead capture"
+    },
+    {
+      businessName: "J&R Construction Services",
+      businessType: "Remodeling",
+      website: "https://jrcsi.com/",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Remodeling service pages, estimate request path, project proof"
+    },
+    {
+      businessName: "Gulley Remodeling and Home Improvement",
+      businessType: "Remodeling",
+      website: "https://sites.google.com/view/gulleyremodeling/home",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Residential remodeling positioning, service segmentation, quote path"
+    },
+    {
+      businessName: "Improveit Home Remodeling Lexington",
+      businessType: "Remodeling",
+      website: "https://www.improveitusa.com/locations/lexington/",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Bath and window offer clarity, consultation path, trust proof"
     },
     {
       businessName: "Air Control Company",
@@ -279,6 +342,24 @@
       avgCustomerValue: 1500,
       leadsNeeded: 4,
       reviewAngle: "24/7 service path, drain service segmentation, conversion tracking"
+    },
+    {
+      businessName: "Plumbing Systems Inc.",
+      businessType: "Plumbing",
+      website: "https://plumbingsystemslex.net/index.html",
+      city: "Lexington",
+      avgCustomerValue: 1500,
+      leadsNeeded: 4,
+      reviewAngle: "Repair scheduling path, drain service clarity, financing and trust proof"
+    },
+    {
+      businessName: "Peterman Brothers",
+      businessType: "HVAC plumbing electrical",
+      website: "https://petermanhvac.com/lexington/plumbing-services/plumbing-repair/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Plumbing repair page path, cross-service booking, membership and trust proof"
     },
     {
       businessName: "KWC Orthodontics",

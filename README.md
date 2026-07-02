@@ -99,5 +99,5 @@ The public config intentionally does not expose the private business address. Th
 - Audit: `$399`
 - Implementation sprint: `$1,500`
 - Target: local service businesses with weak booking flow, review gaps, thin Google Business Profile content, or no lead tracking.
-- Daily motion: load the 41-prospect starter list, work 10 to 15 researched prospects, personalize the allowed outreach, send scorecard leads the close copy, then follow up with the generated audit preview.
+- Daily motion: load the 50-prospect starter list, work 10 to 15 researched prospects, personalize the allowed outreach, send scorecard leads the close copy, then follow up with the generated audit preview.
 - Fulfillment motion: send the intake page after payment, collect website/service-area details, deliver the audit, then quote implementation only after the action plan is clear.

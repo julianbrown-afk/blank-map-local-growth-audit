@@ -34,14 +34,21 @@ These categories are good fits because a single new customer can be valuable eno
 | Lexington Prime Aesthetics & Wellness | Med spa | https://lexprimeaesthetics.com/ | Review testimonial proof, treatment-page conversion, and booking flow. |
 | Beautiful You Medical Spa | Med spa | https://beautifulyoumedspa.com/ | Review review proof, specials capture, and appointment CTA. |
 | Privé Medical Spa | Med spa | https://privemedicalspa.com/ | Review premium positioning, consultation path, and proof structure. |
+| Hourglass Aesthetics & Wellness | Med spa | https://hourglassmedspa.com/ | Review treatment menu clarity, consultation booking, proof, and membership path. |
+| The Spa at Marshall | Med spa | https://www.thespaatmarshall.com/ | Review multi-location booking path, treatment proof, and consultation CTA clarity. |
 | Big Blue Roofing | Roofing | https://bigblueroofing.com/ | Review quote flow, trust proof, review presentation, and urgency handling. |
 | Big League Roofers | Roofing | https://bigleagueroofers.com/ | Review quote CTA, insurance-claim messaging, and proof structure. |
 | Reliable Residential Roofing | Roofing | https://www.reliableresidentialroofing.com/ | Review quote path, warranty/trust presentation, and mobile CTA clarity. |
+| Barrier Roofs | Roofing | https://barrierroofs.com/ | Review inspection request path, warranty proof, financing, and trust signals. |
+| Mighty Dog Roofing Lexington | Roofing | https://www.mightydogroofing.com/lexington-ky/ | Review roof inspection CTA, repair versus replacement clarity, and service proof. |
 | BACK Construction | Remodeling | https://backconstruction.com/ | Review consultation path, project categories, proof, and estimate flow. |
 | Right Angle Home Services | Remodeling | https://www.rightangleky.com/ | Review service pages, testimonial proof, and quote action. |
 | Handy Manny's | General contractor | https://handymannysky.com/ | Review free-estimate flow, service segmentation, and mobile first-screen clarity. |
 | Moore Custom Remodeling | Remodeling | https://www.moorebuildersky.com/reviews | Review review proof, project gallery path, and quote action. |
 | ASB Remodeling | Remodeling | https://asbuildersllc.com/reviews/ | Review review proof, service conversion, and lead capture. |
+| J&R Construction Services | Remodeling | https://jrcsi.com/ | Review remodeling service pages, estimate request path, and project proof. |
+| Gulley Remodeling and Home Improvement | Remodeling | https://sites.google.com/view/gulleyremodeling/home | Review residential remodeling positioning, service segmentation, and quote path. |
+| Improveit Home Remodeling Lexington | Remodeling | https://www.improveitusa.com/locations/lexington/ | Review bath and window offer clarity, consultation path, and trust proof. |
 | Air Control Company | HVAC | https://www.aircontrolco.com/ | Review service booking path, repair versus replacement clarity, and trust proof. |
 | Fayette Heating & Air | HVAC, plumbing, and electrical | https://fayetteheating.com/ | Review online scheduling, membership offer clarity, and service-page conversion. |
 | Comfort Heating & Air | HVAC | https://callthecomfortman.com/ | Review emergency service path, repair booking, and review/proof structure. |
@@ -52,6 +59,8 @@ These categories are good fits because a single new customer can be valuable eno
 | Pipe Surgeon Plumbing | Plumbing | https://pipesurgeonplumbing.com/ | Review leak repair CTA, emergency intent, and review/trust proof. |
 | Mr. Rooter Plumbing of Greater Lexington | Plumbing | https://www.mrrooter.com/greater-lexington/ | Review service menu path, online booking, and emergency-call clarity. |
 | Roto-Rooter Lexington | Plumbing | https://www.rotorooter.com/lexington/ | Review 24/7 service path, drain service segmentation, and conversion tracking. |
+| Plumbing Systems Inc. | Plumbing | https://plumbingsystemslex.net/index.html | Review repair scheduling path, drain service clarity, financing, and trust proof. |
+| Peterman Brothers | HVAC, plumbing, and electrical | https://petermanhvac.com/lexington/plumbing-services/plumbing-repair/ | Review plumbing repair page path, cross-service booking, membership, and trust proof. |
 | KWC Orthodontics | Orthodontist | https://www.kwcorthodontics.com/ | Review consultation request path, treatment proof, Invisalign and braces pages. |
 | Buchart + Wachs Orthodontics | Orthodontist | https://buchartwachs.com/ | Review appointment request path, doctor proof, and treatment-page conversion. |
 | GLO Orthodontics | Orthodontist | https://glo-ortho.com/ | Review consultation CTA, smile proof, and patient journey clarity. |
@@ -107,14 +116,21 @@ The initial list was compiled from public search results and company websites, i
 - https://lexprimeaesthetics.com/
 - https://beautifulyoumedspa.com/
 - https://privemedicalspa.com/
+- https://hourglassmedspa.com/
+- https://www.thespaatmarshall.com/
 - https://bigblueroofing.com/
 - https://bigleagueroofers.com/
 - https://www.reliableresidentialroofing.com/
+- https://barrierroofs.com/
+- https://www.mightydogroofing.com/lexington-ky/
 - https://backconstruction.com/
 - https://www.rightangleky.com/
 - https://handymannysky.com/
 - https://www.moorebuildersky.com/reviews
 - https://asbuildersllc.com/reviews/
+- https://jrcsi.com/
+- https://sites.google.com/view/gulleyremodeling/home
+- https://www.improveitusa.com/locations/lexington/
 - https://www.aircontrolco.com/
 - https://fayetteheating.com/
 - https://callthecomfortman.com/
@@ -125,6 +141,8 @@ The initial list was compiled from public search results and company websites, i
 - https://pipesurgeonplumbing.com/
 - https://www.mrrooter.com/greater-lexington/
 - https://www.rotorooter.com/lexington/
+- https://plumbingsystemslex.net/index.html
+- https://petermanhvac.com/lexington/plumbing-services/plumbing-repair/
 - https://www.kwcorthodontics.com/
 - https://buchartwachs.com/
 - https://glo-ortho.com/
