@@ -4,10 +4,25 @@ This is a static, dependency-free sales kit for selling paid local business grow
 
 - `index.html`: operator dashboard for pricing, prospect audits, outreach copy, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page that can link to Stripe Payment Links, a booking page, or email.
+- `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
 - `assets/audit-preview.png`: product visual used by the offer page.
 
 No revenue is guaranteed. The app is designed to make a real offer easy to sell, deliver, and track.
+
+## Live site
+
+Public offer page:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+```
+
+Source repo:
+
+```text
+https://github.com/julianbrown-afk/blank-map-local-growth-audit
+```
 
 ## Run locally
 
@@ -36,6 +51,8 @@ Stripe's current Payment Links documentation says payment links can be shared on
 ## Outreach compliance notes
 
 The generated email includes sender identity, contact information, a mailing address field, and an opt-out sentence. Keep those accurate. FTC CAN-SPAM guidance says commercial email should not use misleading header information or deceptive subject lines, must include a valid physical postal address, and must provide a way to opt out.
+
+The public config intentionally does not expose the private business address. The address is stored only in `.private/business-address.txt`, which is excluded by `.gitignore`. Do not send cold commercial outreach from the generated email until a valid public mailing address, PO box, or compliant commercial mail receiving address is added to the email footer.
 
 ## Suggested starting offer
 
