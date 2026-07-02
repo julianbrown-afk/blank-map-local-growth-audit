@@ -12,6 +12,7 @@
     serviceName: CONFIG.serviceName,
     auditPrice: CONFIG.auditPrice,
     implementationPrice: CONFIG.implementationPrice,
+    offerBaseUrl: CONFIG.offerBaseUrl,
     paymentLink: CONFIG.paymentLink,
     bookingLink: CONFIG.bookingLink
   });
@@ -252,6 +253,7 @@
       serviceName: CONFIG.serviceName || "Local Growth Audit",
       auditPrice: Number(CONFIG.auditPrice) || 399,
       implementationPrice: Number(CONFIG.implementationPrice) || 1500,
+      offerBaseUrl: CONFIG.offerBaseUrl || "https://julianbrown-afk.github.io/blank-map-local-growth-audit/",
       paymentLink: CONFIG.paymentLink || "",
       bookingLink: CONFIG.bookingLink || "",
       guaranteeLine: CONFIG.guaranteeLine || "A clear 30-day action plan, built from observable fixes.",
@@ -452,6 +454,36 @@
     return `Hi ${prospect.businessName}, I noticed ${issue} while checking ${prospect.businessType} options in ${prospect.city}. I sell a short ${settings.serviceName} for ${currency(settings.auditPrice)} with a 30-day action plan. Should I send the details?`;
   }
 
+  function getProspectTrack(prospect = {}) {
+    const text = `${prospect.businessType || ""} ${prospect.businessName || ""}`.toLowerCase();
+    if (text.includes("dent")) {
+      return {
+        label: "Dentist track",
+        path: "lexington-dentist-growth-audit.html",
+        focus: "new-patient booking, review trust, and follow-up friction"
+      };
+    }
+    if (text.includes("med spa") || text.includes("medspa") || text.includes("aesthetic")) {
+      return {
+        label: "Med spa track",
+        path: "lexington-med-spa-growth-audit.html",
+        focus: "treatment-page clarity, consultation booking, proof, and follow-up friction"
+      };
+    }
+    if (text.includes("roof") || text.includes("remodel") || text.includes("contractor") || text.includes("construction")) {
+      return {
+        label: "Roofing/remodeling track",
+        path: "lexington-roofing-remodeling-growth-audit.html",
+        focus: "quote-request friction, trust proof, service clarity, and follow-up gaps"
+      };
+    }
+    return {
+      label: "General offer",
+      path: "offer.html",
+      focus: "booking, review, website, and follow-up gaps"
+    };
+  }
+
   function buildConfigText() {
     const publicConfig = {
       ...state.settings,
@@ -461,8 +493,15 @@
     return `window.MONEY_MAKER_CONFIG = ${JSON.stringify(publicConfig, null, 2)};\n`;
   }
 
-  function getOfferUrl() {
-    const url = new URL("offer.html", window.location.href);
+  function getOfferBaseUrl() {
+    const configured = plainUrl(state.settings.offerBaseUrl || CONFIG.offerBaseUrl);
+    if (configured) return configured.endsWith("/") ? configured : `${configured}/`;
+    return new URL("./", window.location.href).toString();
+  }
+
+  function getOfferUrl(path = "offer.html") {
+    const offerPath = path === "offer.html" ? "" : path;
+    const url = new URL(offerPath, getOfferBaseUrl());
     const settings = state.settings;
     const params = {
       service: settings.serviceName,
@@ -478,6 +517,23 @@
       if (plainUrl(value)) url.searchParams.set(key, value);
     });
     return url.toString();
+  }
+
+  function getProspectOfferUrl(prospect) {
+    return getOfferUrl(getProspectTrack(prospect).path);
+  }
+
+  function buildProspectIntro(prospect) {
+    const settings = state.settings;
+    const track = getProspectTrack(prospect);
+    const offerUrl = getProspectOfferUrl(prospect);
+    const businessType = prospect.businessType || "local service business";
+    const city = prospect.city || settings.marketCity;
+    const reviewAngle = prospect.reviewAngle
+      ? ` The review angle I would start with is ${prospect.reviewAngle.toLowerCase()}.`
+      : "";
+
+    return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If not, no action needed.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}`;
   }
 
   function renderFindings(findings) {
@@ -511,19 +567,29 @@
       const angleLine = prospect.reviewAngle
         ? `<small class="pipeline-note">${escapeHtml(prospect.reviewAngle)}</small>`
         : "";
+      const track = getProspectTrack(prospect);
+      const offerUrl = getProspectOfferUrl(prospect);
+      const trackLine = `<small class="pipeline-note">Offer: <a class="pipeline-link" href="${escapeHtml(offerUrl)}" target="_blank" rel="noreferrer">${escapeHtml(track.label)}</a></small>`;
       const valueLabel = toNumber(prospect.value) > 0 ? `${currency(prospect.value)} est.` : "Estimate pending";
 
       return `
         <tr>
           <td>
             <strong>${escapeHtml(prospect.businessName || "Unnamed prospect")}</strong>
-            <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${angleLine}
+            <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${trackLine}${angleLine}
           </td>
           <td>${escapeHtml(prospect.city || state.settings.marketCity)}</td>
           <td>${formatScore(prospect)}</td>
           <td>${valueLabel}</td>
           <td><select data-pipeline-status="${escapeHtml(prospect.id)}">${options}</select></td>
-          <td><button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button></td>
+          <td>
+            <div class="pipeline-actions">
+              <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
+              <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy link</button>
+              <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open</button>
+              <button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button>
+            </div>
+          </td>
         </tr>
       `;
     }).join("");
@@ -566,24 +632,47 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
   }
 
+  function showManualCopy(text) {
+    const panel = $("[data-output='manualCopy']");
+    const textarea = $("[data-output='manualCopyText']");
+    if (!panel || !textarea) return;
+    textarea.value = text;
+    panel.hidden = false;
+    textarea.focus();
+    textarea.select();
+  }
+
   async function copyText(text, message) {
     try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-      } else {
+      let copied = false;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(text);
+          copied = true;
+        } catch (error) {
+          copied = false;
+        }
+      }
+
+      if (!copied) {
         const area = document.createElement("textarea");
         area.value = text;
         area.setAttribute("readonly", "");
         area.style.position = "fixed";
         area.style.left = "-999px";
         document.body.appendChild(area);
+        area.focus();
         area.select();
-        document.execCommand("copy");
+        area.setSelectionRange(0, area.value.length);
+        copied = document.execCommand("copy");
         area.remove();
       }
+
+      if (!copied) throw new Error("Copy command failed.");
       showToast(message);
     } catch (error) {
-      showToast("Copy failed. Select the text manually.");
+      showManualCopy(text);
+      showToast("Copy blocked. Text opened below.");
     }
   }
 
@@ -743,6 +832,30 @@
         saveState();
         render();
         showToast("Prospect removed");
+      }
+
+      const copyIntroButton = event.target.closest("[data-copy-prospect-intro]");
+      if (copyIntroButton) {
+        const prospect = state.prospects.find((item) => item.id === copyIntroButton.dataset.copyProspectIntro);
+        if (prospect) copyText(buildProspectIntro(prospect), "Intro copied");
+      }
+
+      const copyOfferButton = event.target.closest("[data-copy-prospect-offer]");
+      if (copyOfferButton) {
+        const prospect = state.prospects.find((item) => item.id === copyOfferButton.dataset.copyProspectOffer);
+        if (prospect) copyText(getProspectOfferUrl(prospect), "Offer link copied");
+      }
+
+      const openOfferButton = event.target.closest("[data-open-prospect-offer]");
+      if (openOfferButton) {
+        const prospect = state.prospects.find((item) => item.id === openOfferButton.dataset.openProspectOffer);
+        if (prospect) window.open(getProspectOfferUrl(prospect), "_blank", "noopener,noreferrer");
+      }
+
+      const closeManualCopyButton = event.target.closest("[data-close-manual-copy]");
+      if (closeManualCopyButton) {
+        const panel = $("[data-output='manualCopy']");
+        if (panel) panel.hidden = true;
       }
     });
   }

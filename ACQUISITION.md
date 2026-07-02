@@ -47,9 +47,10 @@ The best prospects are local service businesses that already have customer value
 4. Open one prospect website at a time and enter the review count, rating, average customer value, and visible gaps.
 5. Add or update qualified leads in the pipeline.
 6. Use the report text as the basis for a paid audit preview.
-7. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-8. When a payment arrives, use the dashboard report as the first draft of the deliverable.
-9. Offer the implementation sprint only after the audit is delivered.
+7. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
+8. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+9. When a payment arrives, use the dashboard report as the first draft of the deliverable.
+10. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 

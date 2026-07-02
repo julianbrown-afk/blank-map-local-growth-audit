@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Local Audit Cashflow Kit</title>
     <meta name="description" content="A static operator dashboard for selling local growth audits.">
-    <link rel="stylesheet" href="styles.css?v=20260702g">
-    <script src="config.js?v=20260702g"></script>
-    <script defer src="app.js?v=20260702g"></script>
+    <link rel="stylesheet" href="styles.css?v=20260702k">
+    <script src="config.js?v=20260702k"></script>
+    <script defer src="app.js?v=20260702k"></script>
   </head>
   <body>
     <header class="topbar">
@@ -290,5 +290,12 @@
 
     <section id="printView" aria-hidden="true"></section>
     <div class="toast" role="status" aria-live="polite" data-output="toast"></div>
+    <div class="manual-copy" data-output="manualCopy" hidden>
+      <div class="manual-copy-head">
+        <strong>Copy manually</strong>
+        <button class="ghost-button" type="button" data-close-manual-copy>Close</button>
+      </div>
+      <textarea readonly data-output="manualCopyText" aria-label="Manual copy text"></textarea>
+    </div>
   </body>
 </html>

@@ -503,7 +503,7 @@ select:focus {
 
 table {
   width: 100%;
-  min-width: 760px;
+  min-width: 980px;
   border-collapse: collapse;
 }
 
@@ -546,6 +546,19 @@ td select {
   line-height: 1.35;
 }
 
+.pipeline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 190px;
+}
+
+.pipeline-actions .ghost-button {
+  min-height: 34px;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
 .empty-row {
   color: var(--muted);
 }
@@ -570,6 +583,41 @@ td select {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.manual-copy {
+  position: fixed;
+  right: 18px;
+  bottom: 78px;
+  z-index: 29;
+  width: min(520px, calc(100% - 36px));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.manual-copy[hidden] {
+  display: none;
+}
+
+.manual-copy-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.manual-copy-head strong {
+  font-size: 14px;
+}
+
+.manual-copy textarea {
+  min-height: 180px;
+  margin: 0;
+  font-size: 13px;
 }
 
 .offer-body {
