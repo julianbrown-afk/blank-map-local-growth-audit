@@ -47,20 +47,98 @@
     return `mailto:${config.contactEmail}?subject=${subject}`;
   }
 
+  function scorecardResultContext() {
+    const handled = params.get("handled") || params.get("checks") || "";
+    const missing = params.get("gaps") || params.get("missing") || "";
+    const hasScoreContext = [
+      "track",
+      "lead",
+      "prospect",
+      "site",
+      "website",
+      "type",
+      "value",
+      "missed",
+      "close",
+      "handled",
+      "checks",
+      "gaps",
+      "missing",
+      "result"
+    ].some((key) => params.has(key));
+
+    if (!hasScoreContext) return null;
+
+    const resultParams = new URLSearchParams();
+    [
+      "track",
+      "lead",
+      "prospect",
+      "site",
+      "website",
+      "type",
+      "value",
+      "missed",
+      "close",
+      "handled",
+      "checks",
+      "gaps",
+      "missing",
+      "result"
+    ].forEach((key) => {
+      if (params.has(key)) resultParams.set(key, params.get(key));
+    });
+
+    if (params.get("result") !== "1" && (handled || missing)) {
+      resultParams.set("result", "1");
+    }
+
+    return {
+      businessName: params.get("lead") || params.get("prospect") || "",
+      website: params.get("site") || params.get("website") || "",
+      businessType: params.get("type") || params.get("track") || "",
+      customerValue: params.get("value") || "",
+      missedInquiries: params.get("missed") || "",
+      closeRate: params.get("close") || "",
+      handled,
+      missing,
+      resultLink: publicUrl(`scorecard.html?${resultParams.toString()}#scorecard-result`)
+    };
+  }
+
   function intakeText() {
+    const scoreContext = scorecardResultContext();
+    const scoreLines = scoreContext
+      ? [
+          "",
+          "Scorecard context:",
+          `Scorecard result link: ${scoreContext.resultLink}`,
+          `Business type or track: ${scoreContext.businessType || ""}`,
+          `Average booked customer value: ${scoreContext.customerValue || ""}`,
+          `Missed qualified inquiries per month: ${scoreContext.missedInquiries || ""}`,
+          `Likely close rate on recovered inquiries: ${scoreContext.closeRate || ""}`,
+          `Handled checks: ${scoreContext.handled || ""}`,
+          `Missing checks: ${scoreContext.missing || ""}`
+        ]
+      : [
+          "",
+          "Scorecard result link, if you have one:"
+        ];
+
     return [
       `Hi ${config.businessName},`,
       "",
       "I purchased or booked the audit and want to start intake.",
       "",
-      "Business name:",
-      "Website:",
+      `Business name: ${scoreContext?.businessName || ""}`,
+      `Website: ${scoreContext?.website || ""}`,
       "Service area:",
       "Highest-value service or offer:",
       "Current booking/contact path:",
       "Goal for this audit:",
       "Competitors or priority notes:",
       "Known booking, review, tracking, or follow-up bottlenecks:",
+      ...scoreLines,
       "",
       "Payment name or email used at checkout:",
       "",

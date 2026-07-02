@@ -141,7 +141,7 @@ http://localhost:4173/index.html
 11. Ask interested prospects to use the homepage self-check handoff or the scorecard's `Score handoff` section, then `Email my score`, `Copy score summary`, or `Copy result link`, so the sales conversation starts from their actual gaps.
 12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
 13. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
-14. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+14. After payment or booking, use the scorecard's result-preserving intake link, `Copy intake email`, or the row-level `Copy intake` action to collect the business details needed to start the audit.
 15. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.

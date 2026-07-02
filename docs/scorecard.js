@@ -574,8 +574,18 @@
     return query ? `scorecard.html?${query}#scorecard-result` : "scorecard.html#scorecard-result";
   }
 
+  function scorecardIntakePath(details = leadDetails()) {
+    const resultPath = scorecardResultPath(details);
+    const resultUrl = new URL(resultPath, window.location.href);
+    return `audit-intake.html${resultUrl.search}`;
+  }
+
   function scorecardResultUrl(details = leadDetails()) {
     return offerUrl(scorecardResultPath(details));
+  }
+
+  function scorecardIntakeUrl(details = leadDetails()) {
+    return offerUrl(scorecardIntakePath(details));
   }
 
   function unscoredState(base) {
@@ -722,6 +732,7 @@ This is planning math, not a revenue guarantee.
 
 Scorecard: ${offerUrl(scorecardPath())}
 Result link: ${scorecardResultUrl(details)}
+Audit intake: ${scorecardIntakeUrl(details)}
 Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     }
@@ -760,6 +771,7 @@ This is planning math, not a revenue guarantee.
 
 Scorecard: ${offerUrl(scorecardPath())}
 Result link: ${scorecardResultUrl(details)}
+Audit intake: ${scorecardIntakeUrl(details)}
 Paid audit: ${offerUrl(paidAuditPath())}
 ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   }
@@ -777,6 +789,10 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
       const body = encodeURIComponent(`${summary}\n\nI would like to understand what to fix first.`);
       emailLink.href = `mailto:${config.contactEmail || "JulianBrown@blankmapgroup.com"}?subject=${subject}&body=${body}`;
     }
+
+    $$("[data-score-intake-link]").forEach((link) => {
+      link.href = scorecardIntakeUrl(details);
+    });
   }
 
   function writeClipboardText(text) {

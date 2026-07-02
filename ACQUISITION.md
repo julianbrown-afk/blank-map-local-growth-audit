@@ -96,7 +96,7 @@ The best prospects are local service businesses that already have customer value
 19. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
 20. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
 21. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-22. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+22. When a payment arrives or a buyer books, use the scorecard's result-preserving intake link, `Copy intake email`, or the row-level `Copy intake` action to request the business details.
 23. Use the dashboard report as the first draft of the deliverable.
 24. Offer the implementation sprint only after the audit is delivered.
 25. Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral asks, community replies, and score-result replies where posting or replying is permitted.
@@ -192,6 +192,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-home-im
 Use the intake page after payment or booking:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/audit-intake.html
+
+When a buyer has a scorecard result, use the `Start intake after payment` link on the scorecard result panel so the intake template carries the public scorecard context into fulfillment.
 
 ## Compliance Boundary
 
