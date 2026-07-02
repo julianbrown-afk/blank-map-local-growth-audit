@@ -904,6 +904,47 @@ td select {
   background: #ffffff;
 }
 
+.after-payment-section {
+  border-top: 1px solid var(--line);
+}
+
+.after-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.after-payment-grid article {
+  min-height: 178px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(223, 234, 242, 0.5), rgba(255, 255, 255, 0) 48%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.after-payment-grid span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.after-payment-grid strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 19px;
+}
+
+.after-payment-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .faq-section {
   border-bottom: 1px solid var(--line);
 }
@@ -1005,6 +1046,7 @@ td select {
     .buyer-note,
     .scorecard-section,
     .scorecard-panel,
+    .after-payment-grid,
     .outcome-strip,
     .hero-facts {
     grid-template-columns: 1fr;

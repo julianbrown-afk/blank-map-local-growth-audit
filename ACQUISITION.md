@@ -35,7 +35,7 @@ The best prospects are local service businesses that already have customer value
 
 ## Daily Workflow
 
-1. Find 10 local businesses in one category and city.
+1. Start with `PROSPECTS.md` and `prospects.csv`, or find 10 local businesses in one category and city.
 2. Open the operator dashboard at `http://127.0.0.1:4173/index.html`.
 3. Enter the business name, category, city, website, review count, rating, average customer value, and visible gaps.
 4. Add the lead to the pipeline.
@@ -89,6 +89,13 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ## Practical Target
 
 Start with 100 researched prospects.
+
+The first 19 research candidates are in:
+
+```text
+PROSPECTS.md
+prospects.csv
+```
 
 At `$399` per audit:
 
