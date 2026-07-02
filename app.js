@@ -1677,7 +1677,19 @@ Use this line if they ask about results: the audit is planning work based on obs
     const path = track.scorecardTrack
       ? `scorecard.html?track=${encodeURIComponent(track.scorecardTrack)}`
       : "scorecard.html";
-    return getOfferUrl(path);
+    const url = new URL(getOfferUrl(path));
+    const leadParams = {
+      lead: prospect.businessName,
+      site: safeExternalUrl(prospect.website),
+      type: prospect.businessType,
+      value: toNumber(prospect.avgCustomerValue, 0) > 0 ? prospect.avgCustomerValue : "",
+      missed: toNumber(prospect.leadsNeeded, 0) > 0 ? prospect.leadsNeeded : "",
+      close: 35
+    };
+    Object.entries(leadParams).forEach(([key, value]) => {
+      if (plainUrl(value)) url.searchParams.set(key, value);
+    });
+    return url.toString();
   }
 
   function buildProspectIntro(prospect) {

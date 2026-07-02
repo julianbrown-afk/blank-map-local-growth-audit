@@ -103,6 +103,14 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?tr
 
 The public scorecard also has a category chooser, so a visitor who starts from the broad URL can switch into the closest track before checking their gaps.
 
+Row-level scorecard links in the dashboard now prefill public prospect details with lead-safe query parameters:
+
+```text
+scorecard.html?track=roofing&lead=Example%20Roofing&site=https%3A%2F%2Fexample.com&type=Roofing&value=4500&missed=2&close=35
+```
+
+Use these prefilled links for warm referrals, permitted replies, and scorecard-first conversations where a specific prospect has already been identified. Do not treat a prefilled link as permission to send cold commercial email.
+
 Use a niche page when it matches the prospect:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html

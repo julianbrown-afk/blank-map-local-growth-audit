@@ -44,6 +44,12 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?tr
 
 The public scorecard page also includes a category chooser so visitors can switch from the broad scorecard to the closest industry version.
 
+Scorecard links can be prefilled for a specific public prospect with lead-safe query parameters. The dashboard's row-level scorecard actions generate these automatically:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=roofing&lead=Example%20Roofing&site=https%3A%2F%2Fexample.com&type=Roofing&value=4500&missed=2&close=35
+```
+
 Audit intake:
 
 ```text
@@ -104,7 +110,7 @@ http://localhost:4173/index.html
 6. Send prospects the generated offer link, or use the row-level `Copy offer` / `Open offer` actions when the pipeline has matched a niche page.
 7. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
 8. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
-9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the category-specific scorecard before showing the paid audit.
+9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for a category-specific prefilled scorecard before showing the paid audit.
 10. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
 11. Ask interested prospects to use the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
 12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.

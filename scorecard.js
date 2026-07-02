@@ -415,6 +415,17 @@
     return activeTrack?.offerPath || "";
   }
 
+  function boundedParamNumber(name, fallback, min, max) {
+    const value = toNumber(params.get(name), fallback);
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function setInputValue(selector, value) {
+    const input = $(selector);
+    if (!input || value === null || value === undefined || value === "") return;
+    input.value = String(value);
+  }
+
   function applyTrackProfile() {
     if (!activeTrack) return;
 
@@ -446,6 +457,23 @@
     $$("[data-score-paid-link]").forEach((link) => {
       link.href = offerUrl(paidAuditPath());
     });
+  }
+
+  function applyQueryPrefill() {
+    setInputValue("[data-free-lead='businessName']", params.get("lead") || params.get("prospect"));
+    setInputValue("[data-free-lead='website']", params.get("site") || params.get("website"));
+    setInputValue("[data-free-lead='businessType']", params.get("type"));
+    setInputValue("[data-free-lead='contactEmail']", params.get("leadEmail") || params.get("contact"));
+
+    if (params.has("value")) {
+      setInputValue("[data-free-score-input='customerValue']", boundedParamNumber("value", 650, 100, 5000));
+    }
+    if (params.has("missed")) {
+      setInputValue("[data-free-score-input='missedInquiries']", boundedParamNumber("missed", 3, 1, 20));
+    }
+    if (params.has("close")) {
+      setInputValue("[data-free-score-input='closeRate']", boundedParamNumber("close", 35, 5, 80));
+    }
   }
 
   function renderTrackPicker() {
@@ -742,5 +770,6 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
 
   renderTrackPicker();
   applyTrackProfile();
+  applyQueryPrefill();
   bindFreeScorecard();
 })();
