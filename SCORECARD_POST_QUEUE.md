@@ -48,7 +48,14 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, audit-fit checks, the audit method page, the website conversion audit page, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the audit method page, the website conversion audit page, and the warm referral kit.
+
+Score result handoff:
+
+```text
+After you answer the free scorecard, click Copy result link. That keeps the selected checks, score, planning math, and buyer-path result in one link without including your email. Send that link back and the next reply can focus on what to fix first:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
+```
 
 Dentist scorecard:
 
