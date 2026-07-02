@@ -12,6 +12,12 @@ Public scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 
+Conversion checklist:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
+```
+
 Scorecard directory with copy-ready referral text:
 
 ```text
@@ -121,6 +127,19 @@ I built a free local growth scorecard that checks mobile action clarity, review 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 
 It is meant to show whether a paid audit has a clear job to do. It does not guarantee revenue.
+```
+
+## Checklist-First Reply
+
+Use only when the conversation is educational and a scorecard link would feel too direct.
+
+```text
+Before paying for more ads or a redesign, I would check the visible buyer path first: mobile action clarity, local proof, review placement, service-page clarity, tracking, and follow-up.
+
+I built a practical Lexington service-business checklist for that:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
+
+If two or more areas look weak, the free scorecard is the next step before deciding whether a paid audit is worth it.
 ```
 
 ## Score Reply Template
