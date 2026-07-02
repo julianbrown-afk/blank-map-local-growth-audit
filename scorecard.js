@@ -385,8 +385,16 @@
     return new URL(path, base).toString();
   }
 
-  function scorecardPath() {
-    return activeTrack ? `scorecard.html?track=${encodeURIComponent(activeTrack.slug)}` : "scorecard.html";
+  function scorecardPath(slug = activeTrack?.slug || "") {
+    const nextParams = new URLSearchParams(params.toString());
+    nextParams.delete("category");
+    if (slug) {
+      nextParams.set("track", slug);
+    } else {
+      nextParams.delete("track");
+    }
+    const query = nextParams.toString();
+    return query ? `scorecard.html?${query}` : "scorecard.html";
   }
 
   function paidAuditPath() {
@@ -424,6 +432,36 @@
     $$("[data-score-paid-link]").forEach((link) => {
       link.href = offerUrl(paidAuditPath());
     });
+  }
+
+  function renderTrackPicker() {
+    const grid = $("[data-score-track-grid]");
+    if (!grid) return;
+
+    const generalCard = {
+      slug: "",
+      label: "General",
+      title: "Local service business",
+      buyerPath: "booking, reviews, tracking, and follow-up"
+    };
+    const cards = [
+      generalCard,
+      ...Object.values(TRACK_PROFILES).sort((a, b) => a.label.localeCompare(b.label))
+    ];
+
+    grid.innerHTML = cards.map((track) => {
+      const isActive = track.slug ? activeTrack?.slug === track.slug : !activeTrack;
+      const activeClass = isActive ? " active" : "";
+      const current = isActive ? ` aria-current="page"` : "";
+      const label = track.slug ? `${track.label} scorecard` : "Broad scorecard";
+      return `
+        <a class="scorecard-track-card${activeClass}" href="${escapeHtml(scorecardPath(track.slug))}"${current}>
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(track.title)}</strong>
+          <p>${escapeHtml(track.buyerPath)}</p>
+        </a>
+      `;
+    }).join("");
   }
 
   function leadDetails() {
@@ -688,6 +726,7 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     updateFreeScorecard();
   }
 
+  renderTrackPicker();
   applyTrackProfile();
   bindFreeScorecard();
 })();

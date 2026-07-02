@@ -95,6 +95,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?tr
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=home-improvement
 ```
 
+The public scorecard also has a category chooser, so a visitor who starts from the broad URL can switch into the closest track before checking their gaps.
+
 Use a niche page when it matches the prospect:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html

@@ -38,6 +38,8 @@ Track-specific scorecards use the same URL with a `track` query parameter, for e
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=restoration
 ```
 
+The public scorecard page also includes a category chooser so visitors can switch from the broad scorecard to the closest industry version.
+
 Audit intake:
 
 ```text

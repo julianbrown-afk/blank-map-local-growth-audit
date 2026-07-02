@@ -2094,6 +2094,85 @@ td select {
   line-height: 1.1;
 }
 
+.scorecard-track-picker {
+  border-bottom: 1px solid var(--line);
+}
+
+.scorecard-track-picker-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.scorecard-track-picker-head h2 {
+  margin: 0;
+  font-size: 31px;
+  line-height: 1.12;
+}
+
+.scorecard-track-picker-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.scorecard-track-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scorecard-track-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 178px;
+  border: 1px solid rgba(217, 222, 212, 0.94);
+  border-radius: 8px;
+  padding: 17px;
+  color: var(--ink);
+  text-decoration: none;
+  background:
+    linear-gradient(155deg, rgba(223, 234, 242, 0.6), rgba(255, 255, 255, 0) 54%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.scorecard-track-card:hover {
+  border-color: rgba(19, 94, 75, 0.34);
+  transform: translateY(-2px);
+}
+
+.scorecard-track-card.active {
+  border-color: rgba(19, 94, 75, 0.58);
+  background:
+    linear-gradient(155deg, rgba(19, 94, 75, 0.14), rgba(240, 180, 41, 0.16) 58%, rgba(255, 255, 255, 0)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.scorecard-track-card span {
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.scorecard-track-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.scorecard-track-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
 .scorecard-decision-section {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
@@ -3287,6 +3366,10 @@ td select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .scorecard-track-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .offer-card-grid,
   .proof-list,
   .process-grid,
@@ -3349,6 +3432,8 @@ td select {
     .sample-tracking-grid,
     .scorecard-section,
     .scorecard-panel,
+    .scorecard-track-picker-head,
+    .scorecard-track-grid,
     .scorecard-decision-section,
     .scorecard-band-grid,
     .scorecard-buyer-path,
@@ -3667,6 +3752,18 @@ td select {
 
   .scorecard-copy h2 {
     font-size: 25px;
+  }
+
+  .scorecard-track-picker-head {
+    align-items: start;
+  }
+
+  .scorecard-track-picker-head h2 {
+    font-size: 25px;
+  }
+
+  .scorecard-track-card {
+    min-height: 0;
   }
 
   .score-actions .primary-button,
