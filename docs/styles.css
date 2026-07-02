@@ -858,6 +858,83 @@ td select {
   font-size: 16px;
 }
 
+.checkout-confidence {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 22px;
+  align-items: stretch;
+  width: min(1120px, calc(100% - 32px));
+  margin: 34px auto 0;
+  border: 1px solid rgba(217, 222, 212, 0.92);
+  border-radius: 8px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(223, 234, 242, 0.72), rgba(255, 255, 255, 0.92) 48%, rgba(240, 180, 41, 0.14)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.checkout-confidence-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.checkout-confidence h2 {
+  max-width: 560px;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.checkout-confidence-copy p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.checkout-confidence-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.checkout-confidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.checkout-confidence-grid article {
+  min-width: 0;
+  border: 1px solid rgba(217, 222, 212, 0.92);
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.checkout-confidence-grid span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.checkout-confidence-grid strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.16;
+}
+
+.checkout-confidence-grid p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .section-head {
   margin-bottom: 18px;
 }
@@ -2547,6 +2624,8 @@ td select {
     .intake-strip,
     .intake-note,
     .assurance-band,
+    .checkout-confidence,
+    .checkout-confidence-grid,
     .niche-proof-bar,
     .niche-layout,
     .niche-decision-band,
@@ -2717,6 +2796,15 @@ td select {
   .niche-proof-bar div + div {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .checkout-confidence {
+    margin-top: 20px;
+    padding: 18px;
+  }
+
+  .checkout-confidence h2 {
+    font-size: 25px;
   }
 
   .niche-decision-band h2 {
