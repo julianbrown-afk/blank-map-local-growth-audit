@@ -3648,6 +3648,73 @@ td select {
   max-width: 760px;
 }
 
+.referral-copy-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(320px, 1fr);
+  gap: 24px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.referral-copy-panel h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.referral-copy-panel p:not(.eyebrow) {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.referral-copy-box {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(150deg, rgba(223, 234, 242, 0.62), rgba(255, 255, 255, 0) 58%),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.referral-copy-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.referral-copy-actions .ghost-button {
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  text-align: center;
+}
+
+.referral-copy-status {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.referral-manual-copy {
+  width: 100%;
+  min-height: 110px;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--ink);
+  background: var(--field);
+  font: inherit;
+  resize: vertical;
+}
+
+.referral-manual-copy[hidden] {
+  display: none;
+}
+
 .scorecard-link-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -4285,6 +4352,7 @@ td select {
     .scorecard-track-picker-head,
     .scorecard-track-grid,
     .scorecard-link-grid,
+    .referral-copy-panel,
     .referral-track-list,
     .referral-use-section,
     .scorecard-decision-section,
@@ -4728,6 +4796,14 @@ td select {
 
   .quick-track-copy strong {
     font-size: 23px;
+  }
+
+  .referral-copy-panel h2 {
+    font-size: 25px;
+  }
+
+  .referral-copy-actions {
+    grid-template-columns: 1fr;
   }
 
   .quick-track-links a {

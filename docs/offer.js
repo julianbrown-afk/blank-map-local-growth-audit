@@ -22,6 +22,7 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const initialTitle = document.title;
   let intakeCopyTimer = 0;
+  let referralCopyTimer = 0;
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -77,6 +78,25 @@
     ]);
   }
 
+  async function copyTextWithFallback(text) {
+    let copied = await writeClipboardText(text);
+
+    if (!copied) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-999px";
+      document.body.appendChild(area);
+      area.focus();
+      area.select();
+      copied = document.execCommand("copy");
+      area.remove();
+    }
+
+    return copied;
+  }
+
   function updatePurchaseBarVisibility() {
     const bar = $(".purchase-bar");
     if (!bar) return;
@@ -98,20 +118,7 @@
     const text = intakeText();
 
     try {
-      let copied = await writeClipboardText(text);
-
-      if (!copied) {
-        const area = document.createElement("textarea");
-        area.value = text;
-        area.setAttribute("readonly", "");
-        area.style.position = "fixed";
-        area.style.left = "-999px";
-        document.body.appendChild(area);
-        area.focus();
-        area.select();
-        copied = document.execCommand("copy");
-        area.remove();
-      }
+      const copied = await copyTextWithFallback(text);
 
       if (!copied) throw new Error("Copy failed.");
       if (status) status.textContent = "Intake template copied.";
@@ -131,6 +138,39 @@
 
     clearTimeout(intakeCopyTimer);
     intakeCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
+  async function copyReferralText(event) {
+    const button = event.currentTarget;
+    const status = $("[data-referral-copy-status]");
+    const manual = $("[data-referral-manual]");
+    const text = button.dataset.copyText || button.dataset.copyUrl || "";
+    const label = button.dataset.copyLabel || "Referral text";
+
+    if (!text) return;
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = `${label} copied.`;
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The text is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(referralCopyTimer);
+    referralCopyTimer = setTimeout(() => {
       if (status) status.textContent = "";
     }, 3600);
   }
@@ -227,6 +267,10 @@
 
     $$("[data-intake-copy]").forEach((button) => {
       button.addEventListener("click", copyIntakeTemplate);
+    });
+
+    $$("[data-referral-copy]").forEach((button) => {
+      button.addEventListener("click", copyReferralText);
     });
 
     $$("[data-score-item]").forEach((item) => {

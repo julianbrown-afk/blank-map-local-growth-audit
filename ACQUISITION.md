@@ -20,7 +20,7 @@ Public free scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 
-Public scorecard directory:
+Public scorecard directory with copy-ready referral text:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
@@ -76,7 +76,7 @@ The best prospects are local service businesses that already have customer value
 11. Use the report text as the basis for a paid audit preview.
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
 13. For a lower-friction first touch, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
-14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public scorecard directory when one link should show all category choices.
+14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public scorecard directory when one link should show all category choices or when you want to copy the built-in referral blurb.
 15. If a prospect engages with the scorecard, point them to the `Score handoff` section, then ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
@@ -99,7 +99,7 @@ Use the free scorecard for colder prospects:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 
-Use the scorecard directory when you need one public page for warm referrals, permitted community replies, or a category chooser with clean share links:
+Use the scorecard directory when you need one public page for warm referrals, permitted community replies, a category chooser with clean share links, or a copy-ready referral starter:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 

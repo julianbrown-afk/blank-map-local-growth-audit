@@ -12,7 +12,7 @@ Public scorecard:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 ```
 
-Scorecard directory:
+Scorecard directory with copy-ready referral text:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
