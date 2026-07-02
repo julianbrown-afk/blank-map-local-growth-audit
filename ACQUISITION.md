@@ -48,6 +48,7 @@ The best prospects are local service businesses that already have customer value
 - remodelers
 - roofers
 - HVAC companies
+- plumbing companies
 - private clinics
 - law firms
 - high-ticket home services
@@ -96,6 +97,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-plumbing-growth-audit.html
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-plumbing-growth-audit.html
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-personal-injury-law-growth-audit.html
 
