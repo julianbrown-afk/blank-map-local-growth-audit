@@ -1,0 +1,99 @@
+# Client Acquisition Workflow
+
+Public offer:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+```
+
+Payment:
+
+```text
+https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00
+```
+
+Booking:
+
+```text
+https://calendar.app.google/BNvrQFs12JA1Z4839
+```
+
+## What to Sell
+
+Sell a fixed-scope `Local Growth Audit` for `$399`.
+
+The best prospects are local service businesses that already have customer value high enough to justify the audit:
+
+- dentists
+- med spas
+- remodelers
+- roofers
+- HVAC companies
+- private clinics
+- law firms
+- high-ticket home services
+
+## Daily Workflow
+
+1. Find 10 local businesses in one category and city.
+2. Open the operator dashboard at `http://127.0.0.1:4173/index.html`.
+3. Enter the business name, category, city, website, review count, rating, average customer value, and visible gaps.
+4. Add the lead to the pipeline.
+5. Use the report text as the basis for a paid audit preview.
+6. Send the public offer link only through compliant channels where you are allowed to contact the business.
+7. When a payment arrives, use the dashboard report as the first draft of the deliverable.
+8. Offer the implementation sprint only after the audit is delivered.
+
+## Compliance Boundary
+
+The private business address is intentionally not deployed publicly.
+
+Do not send cold commercial email from the generated copy until the footer includes a valid physical mailing address, PO box, or compliant commercial mail receiving address. The app will show a warning in the generated email footer when the public mailing address is blank.
+
+Do not buy contact lists or use misleading subject lines. Keep outreach specific, accurate, and easy to opt out of.
+
+## Short Outreach Copy
+
+Use this only where outreach is permitted:
+
+```text
+Hi, I reviewed a few local service websites in Lexington and noticed common booking and review gaps that can quietly cost good leads.
+
+I put together a fixed-scope Local Growth Audit for service businesses. It is $399 and produces a 30-day action plan.
+
+Details: https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+```
+
+## Social Post
+
+```text
+Local service businesses in Lexington: I built a short Local Growth Audit that checks booking flow, review friction, Google profile basics, website clarity, and follow-up gaps.
+
+It is a fixed $399 audit with a 30-day action plan. No retainer required.
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+```
+
+## Fulfillment Checklist
+
+- Confirm business name, website, service area, and best contact.
+- Review website on desktop and mobile.
+- Review Google Business Profile basics.
+- Review review count, recency, rating, and review request friction.
+- Check booking, quote, or call CTA clarity.
+- Check whether leads can be tracked by source.
+- Write 5 prioritized findings.
+- Write a 30-day action plan.
+- Include an optional implementation quote.
+
+## Practical Target
+
+Start with 100 researched prospects.
+
+At `$399` per audit:
+
+- 1 sale = `$399`
+- 3 sales = `$1,197`
+- 5 sales = `$1,995`
+
+If one audit converts to a `$1,500` implementation sprint, the first campaign can pay for itself quickly.
