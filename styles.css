@@ -858,6 +858,98 @@ td select {
   font-size: 16px;
 }
 
+.problem-path-section {
+  padding-top: 44px;
+  padding-bottom: 24px;
+}
+
+.problem-path-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 0.72fr);
+  gap: 22px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.problem-path-head h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.problem-path-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.problem-path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.problem-path-grid article {
+  display: flex;
+  flex-direction: column;
+  min-height: 286px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 251, 248, 0.92)),
+    #ffffff;
+  box-shadow: 0 15px 28px rgba(24, 32, 29, 0.08);
+}
+
+.problem-path-grid article:first-child {
+  color: #ffffff;
+  background:
+    linear-gradient(145deg, rgba(19, 94, 75, 0.98), rgba(44, 111, 124, 0.88)),
+    var(--green-dark);
+}
+
+.problem-path-grid span {
+  display: inline-flex;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.problem-path-grid article:first-child span {
+  color: var(--gold);
+}
+
+.problem-path-grid strong {
+  display: block;
+  margin-top: 14px;
+  color: var(--green-dark);
+  font-size: 19px;
+  line-height: 1.14;
+}
+
+.problem-path-grid article:first-child strong {
+  color: #ffffff;
+}
+
+.problem-path-grid p {
+  margin: 12px 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.48;
+}
+
+.problem-path-grid article:first-child p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.problem-path-grid a {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 .checkout-confidence {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
@@ -2889,6 +2981,10 @@ td select {
   .outcome-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .problem-path-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 820px) {
@@ -2925,6 +3021,8 @@ td select {
     .proof-list,
     .process-grid,
     .track-grid,
+    .problem-path-head,
+    .problem-path-grid,
     .buyer-note,
     .sample-section,
     .sample-assurance,
@@ -2964,6 +3062,10 @@ td select {
 
   .metric {
     min-height: 92px;
+  }
+
+  .problem-path-grid article {
+    min-height: 0;
   }
 
   .panel-head {
