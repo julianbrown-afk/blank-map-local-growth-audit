@@ -51,6 +51,15 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-gr
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-hvac-plumbing-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-plumbing-growth-audit.html
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-personal-injury-law-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-chiropractor-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-veterinary-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-pest-control-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-garage-door-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-tree-service-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-landscaping-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-restoration-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-physical-therapy-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-home-improvement-growth-audit.html
 ```
 
 Source repo:

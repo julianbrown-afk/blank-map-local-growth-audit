@@ -1389,63 +1389,63 @@ Use this line if they ask about results: the audit is planning work based on obs
     if (text.includes("chiro")) {
       return {
         label: "Chiropractor track",
-        path: "offer.html",
+        path: "lexington-chiropractor-growth-audit.html",
         focus: "new-patient appointment clarity, condition-page proof, review trust, and follow-up friction"
       };
     }
     if (text.includes("veterinary") || text.includes("animal") || text.includes("vet ")) {
       return {
         label: "Veterinary clinic track",
-        path: "offer.html",
+        path: "lexington-veterinary-growth-audit.html",
         focus: "appointment clarity, service-menu routing, pet-owner trust proof, and follow-up cues"
       };
     }
     if (text.includes("pest") || text.includes("termite") || text.includes("bed bug")) {
       return {
         label: "Pest control track",
-        path: "offer.html",
+        path: "lexington-pest-control-growth-audit.html",
         focus: "urgent inspection requests, recurring plan clarity, pest-specific service pages, and trust proof"
       };
     }
     if (text.includes("garage") || text.includes("overhead door")) {
       return {
         label: "Garage door track",
-        path: "offer.html",
+        path: "lexington-garage-door-growth-audit.html",
         focus: "repair booking, emergency call clarity, replacement quote paths, and review trust"
       };
     }
     if (text.includes("tree") || text.includes("arborist")) {
       return {
         label: "Tree service track",
-        path: "offer.html",
+        path: "lexington-tree-service-growth-audit.html",
         focus: "tree removal quote paths, emergency calls, arborist proof, and service-area clarity"
       };
     }
     if (text.includes("landscap") || text.includes("lawn")) {
       return {
         label: "Landscaping track",
-        path: "offer.html",
+        path: "lexington-landscaping-growth-audit.html",
         focus: "estimate requests, design-build proof, maintenance plan clarity, and project galleries"
       };
     }
     if (text.includes("restoration") || text.includes("water damage") || text.includes("fire damage") || text.includes("mold")) {
       return {
         label: "Restoration track",
-        path: "offer.html",
+        path: "lexington-restoration-growth-audit.html",
         focus: "24/7 emergency call clarity, insurance proof, service category routing, and response confidence"
       };
     }
     if (text.includes("physical therapy") || text.includes("physiotherapy") || text.includes("hand therapy")) {
       return {
         label: "Physical therapy track",
-        path: "offer.html",
+        path: "lexington-physical-therapy-growth-audit.html",
         focus: "appointment request clarity, condition-page proof, location routing, and patient trust cues"
       };
     }
     if (text.includes("fence") || text.includes("window") || text.includes("flooring") || text.includes("carpet")) {
       return {
         label: "Home improvement track",
-        path: "offer.html",
+        path: "lexington-home-improvement-growth-audit.html",
         focus: "free-estimate flow, product/service segmentation, project proof, and quote follow-up"
       };
     }
