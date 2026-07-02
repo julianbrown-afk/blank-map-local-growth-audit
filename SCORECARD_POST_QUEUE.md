@@ -48,6 +48,12 @@ Decision quiz:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
 ```
 
+Value calculator:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-value-calculator.html
+```
+
 Website conversion audit page:
 
 ```text
@@ -66,7 +72,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit.
 
 Score result handoff:
 
@@ -204,6 +210,19 @@ It routes you to the free scorecard, sample report, fit call, or fixed-scope pai
 
 Decision quiz:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
+```
+
+## Value Calculator Handoff
+
+Use when a warm owner understands there may be a buyer-path leak but wants simple planning math before paying for the audit.
+
+```text
+If the gap is visible but you are not sure whether a $399 audit is worth buying, use this value calculator first.
+
+It estimates the size of one missed call, booking, or quote path using average customer value, missed qualified inquiries, and likely close rate. It is planning math, not a revenue guarantee.
+
+Value calculator:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-value-calculator.html
 ```
 
 ## Relevant Community Reply

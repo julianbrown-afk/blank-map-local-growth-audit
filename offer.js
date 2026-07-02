@@ -31,6 +31,7 @@
   let referralCopyTimer = 0;
   let scoreCopyTimer = 0;
   let decisionCopyTimer = 0;
+  let valueCopyTimer = 0;
   let homepageScoreTouched = false;
 
   function currency(value) {
@@ -631,13 +632,13 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     updateHomepageScoreActions(state);
   }
 
-  function updateValueMath() {
+  function valueMathState() {
     const inputs = {
       customerValue: $("[data-value-input='customerValue']"),
       missedInquiries: $("[data-value-input='missedInquiries']"),
       closeRate: $("[data-value-input='closeRate']")
     };
-    if (!inputs.customerValue || !inputs.missedInquiries || !inputs.closeRate) return;
+    if (!inputs.customerValue || !inputs.missedInquiries || !inputs.closeRate) return null;
 
     const customerValue = Number(inputs.customerValue.value) || 0;
     const missedInquiries = Number(inputs.missedInquiries.value) || 0;
@@ -646,21 +647,99 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     const auditPrice = Math.max(Number(config.auditPrice) || 399, 1);
     const payback = monthlyValue / auditPrice;
 
+    return {
+      customerValue,
+      missedInquiries,
+      closeRate,
+      monthlyValue,
+      auditPrice,
+      payback
+    };
+  }
+
+  function updateValueMath() {
+    const state = valueMathState();
+    if (!state) return;
+
     const outputCustomerValue = $("[data-value-output='customerValue']");
     const outputMissedInquiries = $("[data-value-output='missedInquiries']");
     const outputCloseRate = $("[data-value-output='closeRate']");
     const outputMonthlyValue = $("[data-value-output='monthlyValue']");
     const outputPaybackNote = $("[data-value-output='paybackNote']");
 
-    if (outputCustomerValue) outputCustomerValue.textContent = currency(customerValue);
-    if (outputMissedInquiries) outputMissedInquiries.textContent = String(missedInquiries);
-    if (outputCloseRate) outputCloseRate.textContent = `${closeRate}%`;
-    if (outputMonthlyValue) outputMonthlyValue.textContent = `${currency(monthlyValue)}/mo`;
+    if (outputCustomerValue) outputCustomerValue.textContent = currency(state.customerValue);
+    if (outputMissedInquiries) outputMissedInquiries.textContent = String(state.missedInquiries);
+    if (outputCloseRate) outputCloseRate.textContent = `${state.closeRate}%`;
+    if (outputMonthlyValue) outputMonthlyValue.textContent = `${currency(state.monthlyValue)}/mo`;
     if (outputPaybackNote) {
-      outputPaybackNote.textContent = payback >= 1
-        ? `At ${currency(auditPrice)}, this is about ${payback.toFixed(1)}x the audit price in one month if the recovered path converts as estimated.`
-        : `At ${currency(auditPrice)}, this shows why the audit should focus only on fixes with a realistic path to payback.`;
+      outputPaybackNote.textContent = state.payback >= 1
+        ? `At ${currency(state.auditPrice)}, this is about ${state.payback.toFixed(1)}x the audit price in one month if the recovered path converts as estimated.`
+        : `At ${currency(state.auditPrice)}, this shows why the audit should focus only on fixes with a realistic path to payback.`;
     }
+  }
+
+  function valueMathSummary(state = valueMathState()) {
+    if (!state) return "";
+
+    const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+    const paidAuditLine = config.paymentLink ? config.paymentLink : publicUrl("");
+    const paybackLine = state.payback >= 1
+      ? `The one-month planning estimate is about ${state.payback.toFixed(1)}x the audit price if the recovered path converts as estimated.`
+      : "The one-month planning estimate is below the audit price, so the first step should be free scoring or a fit check before buying.";
+    const recommendedRoute = state.payback >= 1
+      ? "If the business already has demand and the buyer-path gap is visible, buy the fixed-scope audit or book a fit call."
+      : "Start with the free scorecard or decision quiz before buying.";
+
+    return `Local Growth Audit value calculator
+
+Planning inputs
+Average booked customer value: ${currency(state.customerValue)}
+Missed qualified inquiries per month: ${state.missedInquiries}
+Likely close rate on recovered inquiries: ${state.closeRate}%
+
+Planning estimate
+Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo
+Audit price: ${currency(state.auditPrice)}
+${paybackLine}
+
+Recommended next step
+${recommendedRoute}
+
+This is planning math, not a revenue guarantee.
+
+Paid audit: ${paidAuditLine}
+${bookingLine}Decision quiz: ${publicUrl("lexington-local-growth-audit-decision-quiz.html")}
+Free scorecard: ${publicUrl("scorecard.html")}
+Sample audit: ${publicUrl("sample-audit.html")}`;
+  }
+
+  async function copyValueMathSummary() {
+    const status = $("[data-value-copy-status]");
+    const manual = $("[data-value-manual]");
+    const text = valueMathSummary();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Calculator summary copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The calculator summary is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(valueCopyTimer);
+    valueCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
   }
 
   function render() {
@@ -721,6 +800,9 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
 
     $$("[data-value-input]").forEach((item) => {
       item.addEventListener("input", updateValueMath);
+    });
+    $$("[data-value-copy]").forEach((button) => {
+      button.addEventListener("click", copyValueMathSummary);
     });
     updateValueMath();
     setupPurchaseBar();

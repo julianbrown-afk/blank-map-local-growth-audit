@@ -56,6 +56,12 @@ Public decision quiz:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
 ```
 
+Public value calculator:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-value-calculator.html
+```
+
 Public audit intake:
 
 ```text
@@ -106,7 +112,7 @@ The best prospects are local service businesses that already have customer value
 11. Use the report text as the basis for a paid audit preview.
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
 13. For a lower-friction first touch, use the public conversion checklist or Google Business Profile checklist and their copy-ready starters, `Copy scorecard link` for the general scorecard, or the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
-14. Use `Scorecard post`, `Warm referral`, `Referral partner`, `One-sheet`, `Decision quiz`, or `Community reply` for public posts, warm referrals, partner introductions, printable handoffs, buyer routing, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, use the Google Business Profile checklist when local search, maps visibility, reviews, photos, or profile conversion is the topic, use the public resource directory when one link should show all free choices, use the referral partner page when an accountant, web provider, consultant, chamber contact, or local connector needs a scorecard-first handoff, use the one-sheet when someone needs the short printable version, and use the decision quiz when a warm owner is deciding between free scorecard, sample report, fit call, or paid audit.
+14. Use `Scorecard post`, `Warm referral`, `Referral partner`, `One-sheet`, `Decision quiz`, `Value calculator`, or `Community reply` for public posts, warm referrals, partner introductions, printable handoffs, buyer routing, buying-math conversations, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, use the Google Business Profile checklist when local search, maps visibility, reviews, photos, or profile conversion is the topic, use the public resource directory when one link should show all free choices, use the referral partner page when an accountant, web provider, consultant, chamber contact, or local connector needs a scorecard-first handoff, use the one-sheet when someone needs the short printable version, use the decision quiz when a warm owner is deciding between free scorecard, sample report, fit call, or paid audit, and use the value calculator when the owner sees a possible leak but wants to size whether the audit is worth buying.
 15. If a prospect engages with the homepage self-check or scorecard, ask them to use `Email my score`, `Copy score summary`, or `Copy result link` so the next message can focus on their visible gaps.
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, a copied result link, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
@@ -152,6 +158,10 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-g
 Use the decision quiz when a warm owner needs help choosing the lowest-friction next step:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
+
+Use the value calculator when a warm owner wants simple planning math before buying:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-value-calculator.html
 
 Use a track-specific scorecard for colder niche prospects. The dashboard generates these automatically in prospect intros, daily batches, and outreach CSV rows:
 

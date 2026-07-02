@@ -2675,6 +2675,10 @@ td select {
   font-weight: 750;
 }
 
+.value-result .score-copy-status {
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .value-actions {
   margin-top: 18px;
 }
