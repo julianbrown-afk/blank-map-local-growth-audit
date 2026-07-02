@@ -65,13 +65,14 @@ The best prospects are local service businesses that already have customer value
 10. For a lower-friction first touch, use `Copy scorecard link` and send the public free scorecard before the paid offer.
 11. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed.
 12. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
-13. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-14. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
-15. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-16. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-17. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
-18. Use the dashboard report as the first draft of the deliverable.
-19. Offer the implementation sprint only after the audit is delivered.
+13. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
+14. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+15. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+16. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+17. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+18. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+19. Use the dashboard report as the first draft of the deliverable.
+20. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 

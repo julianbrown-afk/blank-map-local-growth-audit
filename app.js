@@ -708,6 +708,99 @@ ${scorecardUrl}
 It will not guarantee revenue, but it can show whether a focused audit is worth doing before a bigger marketing spend.`;
   }
 
+  function buildScoreLeadReply(prospect = state.prospect, analysis = prospect === state.prospect ? getAnalysis() : null) {
+    const settings = state.settings;
+    const businessName = prospect.businessName || "your business";
+    const track = getProspectTrack(prospect);
+    const offerUrl = getProspectOfferUrl(prospect);
+    const scorecardUrl = getOfferUrl("scorecard.html");
+    const sampleUrl = getOfferUrl("sample-audit.html");
+    const paymentUrl = settings.paymentLink || offerUrl;
+    const bookingUrl = settings.bookingLink || offerUrl;
+    const prospectScore = toNumber(prospect.score, NaN);
+    const score = analysis?.score || (Number.isFinite(prospectScore) && prospectScore > 0 ? Math.round(prospectScore) : null);
+    const scoreLine = score ? `\nScorecard signal: ${score}/100.` : "";
+    const findingLine = analysis?.findings?.[0]
+      ? `\nPrimary visible gap: ${analysis.findings[0].label} - ${analysis.findings[0].fix}`
+      : prospect.reviewAngle
+        ? `\nReview angle: ${prospect.reviewAngle}`
+        : "";
+    const upsideLine = analysis?.monthlyUpside
+      ? `Planning upside estimate: ${currency(analysis.monthlyUpside)} per month. This is not a revenue guarantee.`
+      : "The scorecard is planning input, not a revenue guarantee.";
+
+    return `Subject: Re: ${businessName} Local Growth Scorecard
+
+Hi ${businessName} team,
+
+Thanks for sending over the scorecard details. Based on the gaps it surfaced, I would not jump straight into a redesign, ad spend, or a retainer.
+
+The useful next step is the fixed-scope ${settings.serviceName}. I review the visible buyer path for ${businessName}, especially ${track.focus}, then send back a prioritized 30-day action plan and an optional implementation quote.${scoreLine}${findingLine}
+
+Paid audit (${currency(settings.auditPrice)}): ${paymentUrl}
+Book a call: ${bookingUrl}
+Relevant audit page: ${offerUrl}
+Free scorecard: ${scorecardUrl}
+Sample report: ${sampleUrl}
+
+If you want me to do the review, use the audit link or book a call and I will confirm the intake details.
+
+${settings.ownerName}
+${settings.businessName}
+${settings.contactEmail}
+
+${upsideLine}`;
+  }
+
+  function buildScoreLeadCallOutline(prospect = state.prospect) {
+    const settings = state.settings;
+    const businessName = prospect.businessName || "the business";
+    const category = prospect.businessType || "local service business";
+    const city = prospect.city || settings.marketCity;
+    const track = getProspectTrack(prospect);
+    const analysis = prospect === state.prospect ? getAnalysis() : null;
+    const offerUrl = getProspectOfferUrl(prospect);
+    const intakeUrl = getOfferUrl("audit-intake.html");
+    const sampleUrl = getOfferUrl("sample-audit.html");
+    const paymentUrl = settings.paymentLink || offerUrl;
+    const bookingUrl = settings.bookingLink || offerUrl;
+    const scoreLine = analysis ? `Current dashboard score: ${analysis.score}/100 (${analysis.priority}).` : "Use the scorecard details they sent as the starting point.";
+    const findingLine = analysis?.findings?.[0]
+      ? `First gap to discuss: ${analysis.findings[0].label} - ${analysis.findings[0].impact}`
+      : prospect.reviewAngle
+        ? `First gap to discuss: ${prospect.reviewAngle}`
+        : `First gap to discuss: ${track.focus}.`;
+
+    return `Scorecard lead call outline: ${businessName}
+
+Goal: decide whether a ${currency(settings.auditPrice)} ${settings.serviceName} is warranted. Do not promise revenue.
+
+1. Confirm context
+- Category: ${category}
+- Market: ${city}
+- Website: ${prospect.website || "[ask for website]"}
+- Highest-value service, case, appointment, or job type: [ask]
+
+2. Anchor the scorecard
+- ${scoreLine}
+- ${findingLine}
+- Ask which gap already matches what they see in their leads, bookings, calls, or quote requests.
+
+3. Explain the paid audit
+- Fixed scope: visible buyer path, ${track.focus}.
+- Output: prioritized 30-day plan, tracking notes, and an implementation quote only after the fixes are clear.
+- Price: ${currency(settings.auditPrice)}.
+
+4. Close the next step
+- Paid audit: ${paymentUrl}
+- Book a call: ${bookingUrl}
+- Intake page after payment: ${intakeUrl}
+- Relevant audit page: ${offerUrl}
+- Sample report: ${sampleUrl}
+
+Use this line if they ask about results: the audit is planning work based on observable fixes, not a revenue guarantee.`;
+  }
+
   function getProspectTrack(prospect = {}) {
     const text = `${prospect.businessType || ""} ${prospect.businessName || ""}`.toLowerCase();
     if (text.includes("law") || text.includes("attorney") || text.includes("injury") || text.includes("legal")) {
@@ -1104,6 +1197,7 @@ ${settings.contactEmail}`;
             <div class="pipeline-actions">
               <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
               <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
+              <button class="ghost-button" type="button" data-copy-score-lead-reply="${escapeHtml(prospect.id)}">Copy score reply</button>
               <button class="ghost-button" type="button" data-copy-prospect-intake="${escapeHtml(prospect.id)}">Copy intake</button>
               <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy link</button>
               <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open</button>
@@ -1142,6 +1236,8 @@ ${settings.contactEmail}`;
     $("[data-output='dmText']").textContent = buildDm();
     $("[data-output='intakeText']").textContent = buildIntakeEmail();
     $("[data-output='scorecardPostText']").textContent = buildScorecardPost();
+    $("[data-output='scoreLeadReplyText']").textContent = buildScoreLeadReply();
+    $("[data-output='scoreLeadCallText']").textContent = buildScoreLeadCallOutline();
     $("[data-output='warmReferralText']").textContent = buildWarmReferralNote();
     $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
@@ -1278,6 +1374,8 @@ ${settings.contactEmail}`;
     if (action === "copy-dm") copyText(buildDm(), "DM copied");
     if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
     if (action === "copy-scorecard-post") copyText(buildScorecardPost(), "Scorecard post copied");
+    if (action === "copy-score-lead-reply") copyText(buildScoreLeadReply(), "Score lead reply copied");
+    if (action === "copy-score-lead-call") copyText(buildScoreLeadCallOutline(), "Score lead call copied");
     if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
     if (action === "copy-community-reply") copyText(buildCommunityReply(), "Community reply copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
@@ -1418,6 +1516,12 @@ ${settings.contactEmail}`;
       if (copyFollowUpButton) {
         const prospect = state.prospects.find((item) => item.id === copyFollowUpButton.dataset.copyProspectFollowUp);
         if (prospect) copyText(buildProspectFollowUp(prospect), "Follow-up copied");
+      }
+
+      const copyScoreLeadReplyButton = event.target.closest("[data-copy-score-lead-reply]");
+      if (copyScoreLeadReplyButton) {
+        const prospect = state.prospects.find((item) => item.id === copyScoreLeadReplyButton.dataset.copyScoreLeadReply);
+        if (prospect) copyText(buildScoreLeadReply(prospect), "Score lead reply copied");
       }
 
       const copyIntakeButton = event.target.closest("[data-copy-prospect-intake]");

@@ -2,7 +2,7 @@
 
 This is a static, dependency-free sales kit for selling paid local business growth audits. It gives you:
 
-- `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, scorecard-first acquisition copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
+- `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, scorecard-first acquisition copy, scorecard lead close copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page with a self-check scorecard, value calculator, and links to Stripe Payment Links, booking, or email.
 - `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit, with email/copy actions for sending the result.
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
@@ -77,9 +77,10 @@ http://localhost:4173/index.html
 5. For colder prospects, use `Copy scorecard link` first so they can run the free scorecard before seeing the paid audit.
 6. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
 7. Ask interested prospects to use `Email my score` or `Copy score summary` on the scorecard page so the sales conversation starts from their actual gaps.
-8. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
-9. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
-10. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+8. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
+9. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
+10. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+11. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
 
@@ -94,5 +95,5 @@ The public config intentionally does not expose the private business address. Th
 - Audit: `$399`
 - Implementation sprint: `$1,500`
 - Target: local service businesses with weak booking flow, review gaps, thin Google Business Profile content, or no lead tracking.
-- Daily motion: load the 41-prospect starter list, work 10 to 15 researched prospects, personalize the allowed outreach, then follow up with the generated audit preview.
+- Daily motion: load the 41-prospect starter list, work 10 to 15 researched prospects, personalize the allowed outreach, send scorecard leads the close copy, then follow up with the generated audit preview.
 - Fulfillment motion: send the intake page after payment, collect website/service-area details, deliver the audit, then quote implementation only after the action plan is clear.
