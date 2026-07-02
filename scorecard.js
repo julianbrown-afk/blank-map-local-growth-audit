@@ -94,7 +94,27 @@
       closeRate,
       monthlyValue,
       missingLabels,
+      decision: scorecardDecision(score),
       recommendation: scorecardRecommendation({ gaps, missingLabels, monthlyValue })
+    };
+  }
+
+  function scorecardDecision(score) {
+    if (score <= 39) {
+      return {
+        title: "Buy before more traffic",
+        body: "The current result shows enough visible friction to justify a fixed-scope audit before larger spend."
+      };
+    }
+    if (score <= 74) {
+      return {
+        title: "Rank the fixes",
+        body: "The current result has enough gaps to make prioritization useful before changing the site, ads, or follow-up process."
+      };
+    }
+    return {
+      title: "Validate the spend",
+      body: "The obvious gaps are lighter. Use the paid audit when outside validation would protect a bigger marketing or implementation decision."
     };
   }
 
@@ -137,6 +157,7 @@
       ? state.missingLabels.slice(0, 4).map((label, index) => `${index + 1}. ${label}`).join("\n")
       : "No urgent gap from this quick pass.";
     const leadBlock = buildLeadBlock(details);
+    const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
 
     return `Free Local Growth Scorecard result
 
@@ -144,6 +165,7 @@ ${leadBlock}Score: ${state.score}/100
 Priority: ${state.priority}
 Gaps found: ${state.gaps}
 Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo
+Result path: ${state.decision.title}
 
 Recommended next move
 ${state.recommendation.title}
@@ -162,7 +184,7 @@ This is planning math, not a revenue guarantee.
 
 Scorecard: ${offerUrl("scorecard.html")}
 Paid audit: ${offerUrl("")}
-Sample audit: ${offerUrl("sample-audit.html")}`;
+${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   }
 
   function updateScorecardActions(state) {
@@ -192,6 +214,8 @@ Sample audit: ${offerUrl("sample-audit.html")}`;
     setText("[data-free-score-output='recommendationTitle']", state.recommendation.title);
     setText("[data-free-score-output='recommendationBody']", state.recommendation.body);
     setText("[data-free-score-output='recommendationFocus']", state.recommendation.focus);
+    setText("[data-free-score-output='decisionTitle']", state.decision.title);
+    setText("[data-free-score-output='decisionBody']", state.decision.body);
     setText("[data-free-score-output='customerValue']", currency(state.customerValue));
     setText("[data-free-score-output='missedInquiries']", String(state.missedInquiries));
     setText("[data-free-score-output='closeRate']", `${state.closeRate}%`);
