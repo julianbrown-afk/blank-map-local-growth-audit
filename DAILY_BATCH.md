@@ -28,7 +28,7 @@ The public mailing address is intentionally blank. Do not send cold commercial e
 
 Use this batch for manual review, warm referrals, permitted community replies, and scorecard-first conversations. Every review angle below is a hypothesis to inspect, not a claim about the business.
 
-Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, community replies, and score-result replies. No post has been made from that file.
+Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, referral partner copy, community replies, and score-result replies. No post has been made from that file.
 
 ## Today's Review Queue
 
@@ -89,6 +89,17 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic, or local service owner who is getting traffic but wants more qualified inquiries, this is the cleanest first step before a bigger marketing spend.
 ```
 
+## Referral Partner Page
+
+Use only with warm connectors or partner conversations where the topic already fits:
+
+```text
+I put together a referral partner page for accountants, web providers, consultants, chamber contacts, and local connectors who know a Lexington service owner with a buyer-path problem.
+
+It starts with the free scorecard and only bridges to the paid audit when the result shows specific gaps:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
+```
+
 ## Manual Review Steps
 
 1. Open the prospect website.
@@ -112,4 +123,4 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Med spa mobile checks: completed read-only for Luxe Lounge, Belle Vie, Lexington Prime, and Beautiful You; no outreach sent
 - Roofing mobile checks: completed read-only for Big Blue, Big League, Reliable Residential, Barrier, and Mighty Dog; no outreach sent
 - Remaining research-only row: Tates Creek Dental has HTTP/source content but clean-browser mobile render returned `Not authorized`; do not use visual claims until a user-controlled browser confirms the public first screen
-- Next required action: use the prefilled scorecard URLs only for warm referrals, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address/PO box/CMRA is available
+- Next required action: use the prefilled scorecard URLs and referral partner page only for warm referrals, permitted community replies, partner conversations, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address/PO box/CMRA is available

@@ -38,6 +38,12 @@ Public resource directory with copy-ready referral text:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 ```
 
+Public referral partner page:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
+```
+
 Public audit intake:
 
 ```text
@@ -88,7 +94,7 @@ The best prospects are local service businesses that already have customer value
 11. Use the report text as the basis for a paid audit preview.
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
 13. For a lower-friction first touch, use the public conversion checklist or Google Business Profile checklist and their copy-ready starters, `Copy scorecard link` for the general scorecard, or the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
-14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, use the Google Business Profile checklist when local search, maps visibility, reviews, photos, or profile conversion is the topic, and use the public resource directory when one link should show all free choices or when you want to copy the built-in referral blurb.
+14. Use `Scorecard post`, `Warm referral`, `Referral partner`, or `Community reply` for public posts, warm referrals, partner introductions, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, use the Google Business Profile checklist when local search, maps visibility, reviews, photos, or profile conversion is the topic, use the public resource directory when one link should show all free choices, and use the referral partner page when an accountant, web provider, consultant, chamber contact, or local connector needs a scorecard-first handoff.
 15. If a prospect engages with the homepage self-check or scorecard, ask them to use `Email my score`, `Copy score summary`, or `Copy result link` so the next message can focus on their visible gaps.
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, a copied result link, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
@@ -122,6 +128,10 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-
 Use the resource directory when you need one public page for warm referrals, permitted community replies, a category chooser, checklist links, clean share links, or a copy-ready referral starter:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
+
+Use the referral partner page when a connector needs one clean page for scorecard-first warm introductions before the paid audit:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
 
 Use a track-specific scorecard for colder niche prospects. The dashboard generates these automatically in prospect intros, daily batches, and outreach CSV rows:
 
@@ -257,7 +267,7 @@ The current reviewed working queue is:
 REVIEWED_PIPELINE.csv
 ```
 
-The current scorecard-first post and reply queue is:
+The current scorecard-first post, referral partner, and reply queue is:
 
 ```text
 SCORECARD_POST_QUEUE.md

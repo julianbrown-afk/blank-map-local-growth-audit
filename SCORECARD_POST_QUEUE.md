@@ -30,6 +30,12 @@ Resource directory with copy-ready referral text:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 ```
 
+Referral partner page:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
+```
+
 Website conversion audit page:
 
 ```text
@@ -48,7 +54,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the audit method page, the website conversion audit page, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the audit method page, the website conversion audit page, the referral partner page, and the warm referral kit.
 
 Score result handoff:
 
@@ -149,6 +155,19 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 If you know a dentist, med spa, roofer, HVAC company, remodeler, clinic, or local service owner who wants the obvious gaps ranked before a bigger marketing spend, this is the clean first step.
 ```
 
+## Referral Partner Intro
+
+Use only with accountants, web providers, consultants, chamber contacts, local connectors, or other warm relationships where a scorecard-first handoff already fits.
+
+```text
+I put together a partner page you can use when a Lexington service owner needs a practical buyer-path check before spending more on ads, SEO, or a redesign.
+
+The first step is free: the scorecard checks visible call, booking, quote, review, tracking, and follow-up gaps. If the result shows enough friction, the fixed-scope Local Growth Audit turns it into ranked findings and a 30-day plan.
+
+Partner page:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
+```
+
 ## Relevant Community Reply
 
 Use only when someone has already asked about improving calls, bookings, quote requests, reviews, local service marketing, or website conversion.
@@ -213,4 +232,4 @@ The current internal reviewed queue is `REVIEWED_PIPELINE.csv`.
 - Research-only rows: 1
 - Prospects contacted: 0
 - Paid audits sold from this queue: 0
-- Next action before any prospect-specific contact: use only warm referrals, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
+- Next action before any prospect-specific contact: use only warm referrals, referral partner introductions, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
