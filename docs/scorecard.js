@@ -199,6 +199,17 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     }
   }
 
+  function writeClipboardText(text) {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      return Promise.resolve(false);
+    }
+
+    return Promise.race([
+      navigator.clipboard.writeText(text).then(() => true).catch(() => false),
+      new Promise((resolve) => setTimeout(() => resolve(false), 900))
+    ]);
+  }
+
   function updateFreeScorecard() {
     const items = $$("[data-free-score-item]");
     if (!items.length) return;
@@ -235,11 +246,7 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     const manual = $("[data-free-score-manual]");
     const summary = buildScoreSummary(scorecardState());
     try {
-      let copied = false;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(summary);
-        copied = true;
-      }
+      let copied = await writeClipboardText(summary);
 
       if (!copied) {
         const area = document.createElement("textarea");

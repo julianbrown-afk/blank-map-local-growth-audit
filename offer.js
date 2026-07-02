@@ -66,17 +66,24 @@
     return `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
   }
 
+  function writeClipboardText(text) {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      return Promise.resolve(false);
+    }
+
+    return Promise.race([
+      navigator.clipboard.writeText(text).then(() => true).catch(() => false),
+      new Promise((resolve) => setTimeout(() => resolve(false), 900))
+    ]);
+  }
+
   async function copyIntakeTemplate() {
     const status = $("[data-intake-copy-status]");
     const manual = $("[data-intake-manual]");
     const text = intakeText();
 
     try {
-      let copied = false;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text);
-        copied = true;
-      }
+      let copied = await writeClipboardText(text);
 
       if (!copied) {
         const area = document.createElement("textarea");
