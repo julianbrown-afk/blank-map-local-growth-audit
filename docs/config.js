@@ -7,7 +7,7 @@ window.MONEY_MAKER_CONFIG = {
   "serviceName": "Local Growth Audit",
   "auditPrice": 399,
   "implementationPrice": 1500,
-  "offerBaseUrl": "https://julianbrown-afk.github.io/blank-map-local-growth-audit/",
+  "offerBaseUrl": "https://pavilion-brochures-departmental-mesa.trycloudflare.com/",
   "paymentLink": "https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00",
   "bookingLink": "https://calendar.app.google/BNvrQFs12JA1Z4839",
   "guaranteeLine": "A clear 30-day action plan, built from observable fixes.",

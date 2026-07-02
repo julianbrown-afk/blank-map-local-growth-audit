@@ -380,8 +380,22 @@
   }
 
   function offerUrl(path = "") {
-    const configured = String(config.offerBaseUrl || "https://julianbrown-afk.github.io/blank-map-local-growth-audit/").trim();
-    const base = configured.endsWith("/") ? configured : `${configured}/`;
+    const configured = String(config.offerBaseUrl || "").trim();
+    const currentBase = new URL(".", window.location.href).toString();
+    let base = configured || currentBase;
+
+    try {
+      const currentUrl = new URL(currentBase);
+      const configuredUrl = new URL(base);
+      const isLocal = ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+      if (window.location.protocol.startsWith("http") && !isLocal && configuredUrl.hostname !== currentUrl.hostname) {
+        base = currentBase;
+      }
+    } catch (error) {
+      base = currentBase;
+    }
+
+    base = base.endsWith("/") ? base : `${base}/`;
     return new URL(path, base).toString();
   }
 
