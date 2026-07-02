@@ -3,6 +3,12 @@
 
   const baseConfig = window.MONEY_MAKER_CONFIG || {};
   const params = new URLSearchParams(window.location.search);
+
+  function positiveNumber(value, fallback) {
+    const number = Number(value);
+    return Number.isFinite(number) && number > 0 ? number : fallback;
+  }
+
   const config = {
     ...baseConfig,
     serviceName: params.get("service") || baseConfig.serviceName || "Local Growth Audit",
@@ -11,8 +17,8 @@
     contactEmail: params.get("email") || baseConfig.contactEmail || "you@example.com",
     paymentLink: params.get("pay") || baseConfig.paymentLink || "",
     bookingLink: params.get("booking") || baseConfig.bookingLink || "",
-    auditPrice: Number(params.get("audit") || baseConfig.auditPrice || 399),
-    implementationPrice: Number(params.get("sprint") || baseConfig.implementationPrice || 1500),
+    auditPrice: positiveNumber(params.get("audit"), positiveNumber(baseConfig.auditPrice, 399)),
+    implementationPrice: positiveNumber(params.get("sprint"), positiveNumber(baseConfig.implementationPrice, 1500)),
     guaranteeLine: baseConfig.guaranteeLine || "A clear 30-day action plan, built from observable fixes.",
     included: Array.isArray(baseConfig.included) ? baseConfig.included : [],
     proofPoints: Array.isArray(baseConfig.proofPoints) ? baseConfig.proofPoints : []
