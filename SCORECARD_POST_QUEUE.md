@@ -18,6 +18,12 @@ Conversion checklist:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
 ```
 
+Google Business Profile checklist:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
+```
+
 Scorecard directory with copy-ready referral text:
 
 ```text
@@ -140,6 +146,19 @@ I built a practical Lexington service-business checklist for that:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
 
 If two or more areas look weak, the free scorecard is the next step before deciding whether a paid audit is worth it.
+```
+
+## Google Profile Reply
+
+Use only when the conversation is about local search, maps visibility, reviews, photos, services, Q&A, calls, booking links, or profile conversion.
+
+```text
+One lower-risk first step is to check the visible Google Business Profile path before paying for more ads or a redesign.
+
+I built a practical Lexington service-business checklist for that:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
+
+It looks at categories, services, photos, reviews, Q&A, calls, booking links, website handoff, tracking, and follow-up. If two or more areas look weak, the free buyer-path scorecard is the next step before deciding whether a paid audit is worth it.
 ```
 
 ## Score Reply Template

@@ -26,6 +26,12 @@ Public conversion checklist with copy-ready sharing starters:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
 ```
 
+Public Google Business Profile checklist with copy-ready sharing starters:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
+```
+
 Public scorecard directory with copy-ready referral text:
 
 ```text
@@ -81,8 +87,8 @@ The best prospects are local service businesses that already have customer value
 10. Click `Update loaded lead` to save the score, estimated value, and visible gaps back to that pipeline row.
 11. Use the report text as the basis for a paid audit preview.
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
-13. For a lower-friction first touch, use the public conversion checklist and its copy-ready starters, `Copy scorecard link` for the general scorecard, or the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
-14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, and use the public scorecard directory when one link should show all category choices or when you want to copy the built-in referral blurb.
+13. For a lower-friction first touch, use the public conversion checklist or Google Business Profile checklist and their copy-ready starters, `Copy scorecard link` for the general scorecard, or the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
+14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed. Use the public conversion checklist when an educational first step fits the conversation, use the Google Business Profile checklist when local search, maps visibility, reviews, photos, or profile conversion is the topic, and use the public scorecard directory when one link should show all category choices or when you want to copy the built-in referral blurb.
 15. If a prospect engages with the homepage self-check or scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
@@ -108,6 +114,10 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 Use the conversion checklist when the conversation is about improving calls, bookings, quote requests, reviews, tracking, or follow-up before the person is ready to score the business:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-service-conversion-checklist.html
+
+Use the Google Business Profile checklist when the conversation is about local search trust, profile services, photos, reviews, Q&A, calls, booking links, website handoff, or profile follow-up before the person is ready to score the full buyer path:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
 
 Use the scorecard directory when you need one public page for warm referrals, permitted community replies, a category chooser with clean share links, or a copy-ready referral starter:
 
