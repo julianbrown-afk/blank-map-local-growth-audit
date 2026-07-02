@@ -161,7 +161,7 @@ Paid audit details: https://julianbrown-afk.github.io/blank-map-local-growth-aud
 
 Start with 100 researched prospects.
 
-The first 50 research candidates are in:
+The starter list now contains 100 researched candidates in:
 
 ```text
 PROSPECTS.md

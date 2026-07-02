@@ -17,6 +17,14 @@ These categories are good fits because a single new customer can be valuable eno
 - HVAC, plumbing, and home services
 - orthodontics
 - personal injury law firms
+- chiropractors
+- veterinary clinics
+- pest control
+- garage door companies
+- tree service and landscaping
+- restoration companies
+- physical therapy clinics
+- fence, window, and flooring companies
 - other high-ticket local services
 
 ## Candidate Prospects
@@ -73,6 +81,56 @@ These categories are good fits because a single new customer can be valuable eno
 | Ross Mann Law | Personal injury law | https://www.rossmannlaw.com/ | Review medical negligence positioning, consultation flow, and client review proof. |
 | Minner Vines Injury Lawyers | Personal injury law | https://www.mvmlaw.com/ | Review injury claim category path, consultation CTA, and trust proof. |
 | Hughes & Coleman Injury Lawyers | Personal injury law | https://www.hughesandcoleman.com/locations/kentucky/lexington/ | Review local office page path, free consultation CTA, and trust proof. |
+| Elswick Chiropractic & Associates | Chiropractor | https://www.elswickchiropractic.com/ | Review new-patient offer clarity, appointment path, review proof, and mobile call action. |
+| LifeStyle Chiropractic | Chiropractor | https://www.lschiro.com/ | Review new-patient decision path, consultation CTA, testimonials, and care-plan proof. |
+| Lynch Chiropractic Center | Chiropractor | https://chiropractorlexington.com/ | Review condition-page clarity, appointment request path, trust proof, and service segmentation. |
+| Complete Chiropractic Lexington | Chiropractor | https://completechirolex.com/ | Review patient-fit messaging, service menu clarity, appointment CTA, and proof structure. |
+| Lexington Pain & Wellness | Chiropractor | https://www.lexpainwellness.com/ | Review pain-relief offer clarity, doctor proof, testimonial path, and consultation action. |
+| Central Kentucky Chiropractic | Chiropractor | https://centralkychiropractic.com/ | Review pregnancy and pediatric path clarity, appointment action, and specialist proof. |
+| Hartland Park Animal Hospital | Veterinary clinic | https://hartlandparkanimalhospital.com/ | Review appointment request path, service menu clarity, trust proof, and mobile phone action. |
+| Kentucky Veterinary Practice Group | Veterinary clinic | https://kentuckyveterinarypracticegroup.com/ | Review multi-clinic routing, appointment clarity, wellness and dentistry service proof. |
+| Village Animal Hospital | Veterinary clinic | https://www.villageanimalhospital.net/ | Review service-page conversion, appointment request clarity, and pet-owner trust proof. |
+| Animal Care Clinic | Veterinary clinic | https://lexingtonveterinarian.com/ | Review appointment CTA, special-offer path, review proof, and local service clarity. |
+| Bluegrass Veterinary Specialists + Animal Emergency | Veterinary emergency clinic | https://www.bgvets.com/site/home | Review emergency-care path, specialty-service routing, 24/7 trust cues, and phone clarity. |
+| Brighton Animal Clinic | Veterinary clinic | https://www.brightonanimalcliniclexington.com/ | Review appointment request path, wellness and grooming service clarity, and proof structure. |
+| Commonwealth Animal Care | Veterinary clinic | https://commonwealthanimalcare.com/ | Review pet-owner trust messaging, appointment CTA, care-path clarity, and review proof. |
+| Fox Pest Control Lexington | Pest control | https://fox-pest.com/locations/kentucky/lexington/ | Review pest-specific service paths, recurring plan clarity, urgent-call action, and trust proof. |
+| IPM Pest and Termite | Pest control | https://www.myipm.com/ | Review termite and bed-bug service clarity, inspection request path, proof, and follow-up. |
+| ClearDefense Pest Control Lexington | Pest control | https://cleardefensepest.com/service-areas/lexington-pest-control/ | Review same-day pest path, guarantee messaging, quarterly plan clarity, and call action. |
+| Black Diamond Pest Control Lexington | Pest control | https://www.blackdiamondpestcontrol.com/locations/lexington-ky | Review bed bug and termite conversion paths, local proof, and service menu clarity. |
+| State Standard Pest Control | Pest control | https://www.pestky.com/ | Review termite and bed-bug proof, inspection CTA, local trust claims, and urgency path. |
+| Kentucky Pest Control | Pest control | https://kentuckypest.com/ | Review free retreatment proof, service-area clarity, plan conversion, and booking path. |
+| Overhead Door Company of Lexington | Garage door | https://www.overheaddoor.com/find-a-distributor/overhead-door-company-of-lexington | Review repair versus replacement path, commercial door clarity, and call and quote action. |
+| Precision Garage Door Lexington | Garage door | https://pdslexington.com/ | Review book-now flow, repair and installation segmentation, and trust proof. |
+| Amzac Garage Doors | Garage door | https://amzac.com/ | Review emergency service path, parts and repair clarity, and quote request flow. |
+| Raynor Garage Doors of Lexington | Garage door | https://www.lexingtondoorauthority.com/ | Review same-day repair messaging, installation path, brand trust proof, and phone clarity. |
+| Bicknell Garage Door | Garage door | https://www.bicknellgaragedoor.com/ | Review repair and install path, service-area clarity, mobile call action, and quote proof. |
+| Lexington Tree Service | Tree service | https://www.lexingtontreeservice.com/ | Review tree removal and trimming quote path, arborist proof, and emergency-call clarity. |
+| Dave Leonard Tree Specialists | Tree service | https://www.dlarborist.com/ | Review certified arborist proof, consultation path, service segmentation, and quote action. |
+| Central Kentucky Tree Service | Tree service | https://centralkytreeservice.com/ | Review emergency tree removal path, stump grinding clarity, trust proof, and phone action. |
+| A Professional Tree Service | Tree service | https://aptsinc.com/ | Review certified arborist positioning, pruning service clarity, and quote request path. |
+| Bartlett Tree Experts Lexington | Tree service | https://www.bartlett.com/locations/lexington-ky | Review diagnosis and treatment path, local office proof, and service request clarity. |
+| Lexington Lawn & Landscape | Landscaping | https://lexlawnky.com/ | Review design-build and maintenance paths, quote CTA, portfolio proof, and service clarity. |
+| Diamond Landscapes | Landscaping | https://diamondlandscapes.com/ | Review commercial and residential segmentation, appointment CTA, and portfolio proof. |
+| Terrain Landscape Co. | Landscaping | https://www.terrainky.com/ | Review design-build positioning, owner proof, project gallery path, and consultation action. |
+| United Landscape | Landscaping | https://unitedlandscape.net/ | Review design-build and maintenance clarity, quote flow, and project proof. |
+| Ramirez Landscaping & Lawn Care | Landscaping | https://www.ramirezlandscapeky.com/ | Review landscape design and irrigation path, free-estimate flow, and trust proof. |
+| Epic Lawn Care | Lawn care | https://epiclawncareky.com/ | Review instant quote path, recurring lawn plan clarity, review proof, and service segmentation. |
+| Lightspeed Restoration of Lexington | Restoration | https://lightspeedrestoration.com/lexington-ky/ | Review 24/7 emergency path, water and fire service clarity, and insurance proof. |
+| Independent Restoration Services | Restoration | https://irs-859.com/ | Review emergency estimate path, IICRC and insurance proof, and local review trust. |
+| Paul Davis Restoration Lexington | Restoration | https://lexington.pauldavis.com/ | Review emergency service path, restoration category clarity, and response-time proof. |
+| SERVPRO Lexington | Restoration | https://www.servpro.com/locations/ky/lexington-restoration | Review water and fire cleanup path, location routing, call action, and review proof. |
+| Roto-Rooter Water Damage Restoration | Restoration | https://www.rotorooter.com/lexington/water-damage-restoration/ | Review water damage emergency path, documentation proof, and 24/7 call clarity. |
+| Lexington Clinic Physical Therapy | Physical therapy | https://lexingtonclinic.com/services/physical-therapy | Review appointment scheduling path, service-condition clarity, and provider trust proof. |
+| Aptiva Health Physical Therapy | Physical therapy | https://www.aptivahealth.com/lexington-physical-therapy | Review condition-page clarity, appointment CTA, specialist proof, and local clinic path. |
+| Commonwealth Hand and Physical Therapy | Physical therapy | https://commonwealthhandtherapy.com/ | Review specialty hand therapy path, location routing, appointment action, and outcome proof. |
+| BenchMark Physical Therapy Masterson Station | Physical therapy | https://www.benchmarkpt.com/locations/lexington-masterson-station/ | Review clinic location page, appointment CTA, care-quality proof, and condition segmentation. |
+| Results Physiotherapy Hamburg | Physical therapy | https://www.resultspt.com/locations/lexington-hamburg | Review manual therapy positioning, appointment path, location trust, and service clarity. |
+| Athletico Lexington Downtown | Physical therapy | https://www.athletico.com/locations/lexington-ky-downtown/ | Review downtown clinic path, rehab and work-comp services, and request-appointment clarity. |
+| Herb Geddes Fence | Fence company | https://geddesfence.com/ | Review fence quote path, project type clarity, portfolio proof, and service-area messaging. |
+| Chafin Fence | Fence company | https://www.chafinfence.com/ | Review free-estimate flow, repair and install segmentation, and local proof. |
+| Window World of Lexington | Window replacement | https://www.windowworldlexington.com/ | Review free-estimate path, window and door offer clarity, and trust proof. |
+| Kevin's Carpets | Flooring | https://www.kevinscarpets.com/ | Review flooring estimate path, review proof, product category clarity, and installer trust. |
 
 ## Dashboard Entry Defaults
 
@@ -89,6 +147,19 @@ Use these defaults when adding a prospect unless the website clearly suggests be
 | Plumbing | 1500 | 4 |
 | Orthodontist | 5500 | 2 |
 | Personal injury law | 7500 | 2 |
+| Chiropractor | 850 | 6 |
+| Veterinary clinic | 500 | 8 |
+| Veterinary emergency clinic | 900 | 5 |
+| Pest control | 1200 | 4 |
+| Garage door | 1200 | 4 |
+| Tree service | 1800 | 3 |
+| Landscaping | 3500 | 2 |
+| Lawn care | 1200 | 4 |
+| Restoration | 5000 | 2 |
+| Physical therapy | 700 | 8 |
+| Fence company | 3500 | 2 |
+| Window replacement | 5500 | 2 |
+| Flooring | 4500 | 2 |
 
 ## Review Checklist
 
@@ -103,7 +174,7 @@ For each prospect, inspect:
 
 ## Sources
 
-The initial list was compiled from public search results and company websites, including:
+The 100-prospect list was compiled from public search results and company websites, including:
 
 - https://parkhillsfamilydentistry.com/
 - https://www.cooperfamilydental.com/
@@ -155,3 +226,53 @@ The initial list was compiled from public search results and company websites, i
 - https://www.rossmannlaw.com/
 - https://www.mvmlaw.com/
 - https://www.hughesandcoleman.com/locations/kentucky/lexington/
+- https://www.elswickchiropractic.com/
+- https://www.lschiro.com/
+- https://chiropractorlexington.com/
+- https://completechirolex.com/
+- https://www.lexpainwellness.com/
+- https://centralkychiropractic.com/
+- https://hartlandparkanimalhospital.com/
+- https://kentuckyveterinarypracticegroup.com/
+- https://www.villageanimalhospital.net/
+- https://lexingtonveterinarian.com/
+- https://www.bgvets.com/site/home
+- https://www.brightonanimalcliniclexington.com/
+- https://commonwealthanimalcare.com/
+- https://fox-pest.com/locations/kentucky/lexington/
+- https://www.myipm.com/
+- https://cleardefensepest.com/service-areas/lexington-pest-control/
+- https://www.blackdiamondpestcontrol.com/locations/lexington-ky
+- https://www.pestky.com/
+- https://kentuckypest.com/
+- https://www.overheaddoor.com/find-a-distributor/overhead-door-company-of-lexington
+- https://pdslexington.com/
+- https://amzac.com/
+- https://www.lexingtondoorauthority.com/
+- https://www.bicknellgaragedoor.com/
+- https://www.lexingtontreeservice.com/
+- https://www.dlarborist.com/
+- https://centralkytreeservice.com/
+- https://aptsinc.com/
+- https://www.bartlett.com/locations/lexington-ky
+- https://lexlawnky.com/
+- https://diamondlandscapes.com/
+- https://www.terrainky.com/
+- https://unitedlandscape.net/
+- https://www.ramirezlandscapeky.com/
+- https://epiclawncareky.com/
+- https://lightspeedrestoration.com/lexington-ky/
+- https://irs-859.com/
+- https://lexington.pauldavis.com/
+- https://www.servpro.com/locations/ky/lexington-restoration
+- https://www.rotorooter.com/lexington/water-damage-restoration/
+- https://lexingtonclinic.com/services/physical-therapy
+- https://www.aptivahealth.com/lexington-physical-therapy
+- https://commonwealthhandtherapy.com/
+- https://www.benchmarkpt.com/locations/lexington-masterson-station/
+- https://www.resultspt.com/locations/lexington-hamburg
+- https://www.athletico.com/locations/lexington-ky-downtown/
+- https://geddesfence.com/
+- https://www.chafinfence.com/
+- https://www.windowworldlexington.com/
+- https://www.kevinscarpets.com/

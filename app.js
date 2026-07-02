@@ -468,6 +468,456 @@
       avgCustomerValue: 7500,
       leadsNeeded: 2,
       reviewAngle: "Local office page path, free consultation CTA, trust proof"
+    },
+    {
+      businessName: "Elswick Chiropractic & Associates",
+      businessType: "Chiropractor",
+      website: "https://www.elswickchiropractic.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "New-patient offer clarity, appointment path, review proof, mobile call action"
+    },
+    {
+      businessName: "LifeStyle Chiropractic",
+      businessType: "Chiropractor",
+      website: "https://www.lschiro.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "New-patient decision path, consultation CTA, testimonials, care-plan proof"
+    },
+    {
+      businessName: "Lynch Chiropractic Center",
+      businessType: "Chiropractor",
+      website: "https://chiropractorlexington.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "Condition-page clarity, appointment request path, trust proof, service segmentation"
+    },
+    {
+      businessName: "Complete Chiropractic Lexington",
+      businessType: "Chiropractor",
+      website: "https://completechirolex.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "Patient-fit messaging, service menu clarity, appointment CTA, proof structure"
+    },
+    {
+      businessName: "Lexington Pain & Wellness",
+      businessType: "Chiropractor",
+      website: "https://www.lexpainwellness.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "Pain-relief offer clarity, doctor proof, testimonial path, consultation action"
+    },
+    {
+      businessName: "Central Kentucky Chiropractic",
+      businessType: "Chiropractor",
+      website: "https://centralkychiropractic.com/",
+      city: "Lexington",
+      avgCustomerValue: 850,
+      leadsNeeded: 6,
+      reviewAngle: "Pregnancy and pediatric path clarity, appointment action, specialist proof"
+    },
+    {
+      businessName: "Hartland Park Animal Hospital",
+      businessType: "Veterinary clinic",
+      website: "https://hartlandparkanimalhospital.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Appointment request path, service menu clarity, trust proof, mobile phone action"
+    },
+    {
+      businessName: "Kentucky Veterinary Practice Group",
+      businessType: "Veterinary clinic",
+      website: "https://kentuckyveterinarypracticegroup.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Multi-clinic routing, appointment clarity, wellness and dentistry service proof"
+    },
+    {
+      businessName: "Village Animal Hospital",
+      businessType: "Veterinary clinic",
+      website: "https://www.villageanimalhospital.net/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Service-page conversion, appointment request clarity, pet-owner trust proof"
+    },
+    {
+      businessName: "Animal Care Clinic",
+      businessType: "Veterinary clinic",
+      website: "https://lexingtonveterinarian.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Appointment CTA, special-offer path, review proof, local service clarity"
+    },
+    {
+      businessName: "Bluegrass Veterinary Specialists + Animal Emergency",
+      businessType: "Veterinary emergency clinic",
+      website: "https://www.bgvets.com/site/home",
+      city: "Lexington",
+      avgCustomerValue: 900,
+      leadsNeeded: 5,
+      reviewAngle: "Emergency-care path, specialty-service routing, 24/7 trust cues, phone clarity"
+    },
+    {
+      businessName: "Brighton Animal Clinic",
+      businessType: "Veterinary clinic",
+      website: "https://www.brightonanimalcliniclexington.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Appointment request path, wellness and grooming service clarity, proof structure"
+    },
+    {
+      businessName: "Commonwealth Animal Care",
+      businessType: "Veterinary clinic",
+      website: "https://commonwealthanimalcare.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 8,
+      reviewAngle: "Pet-owner trust messaging, appointment CTA, care-path clarity, review proof"
+    },
+    {
+      businessName: "Fox Pest Control Lexington",
+      businessType: "Pest control",
+      website: "https://fox-pest.com/locations/kentucky/lexington/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Pest-specific service paths, recurring plan clarity, urgent-call action, trust proof"
+    },
+    {
+      businessName: "IPM Pest and Termite",
+      businessType: "Pest control",
+      website: "https://www.myipm.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Termite and bed-bug service clarity, inspection request path, proof and follow-up"
+    },
+    {
+      businessName: "ClearDefense Pest Control Lexington",
+      businessType: "Pest control",
+      website: "https://cleardefensepest.com/service-areas/lexington-pest-control/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Same-day pest path, guarantee messaging, quarterly plan clarity, call action"
+    },
+    {
+      businessName: "Black Diamond Pest Control Lexington",
+      businessType: "Pest control",
+      website: "https://www.blackdiamondpestcontrol.com/locations/lexington-ky",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Bed bug and termite conversion paths, local proof, service menu clarity"
+    },
+    {
+      businessName: "State Standard Pest Control",
+      businessType: "Pest control",
+      website: "https://www.pestky.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Termite and bed-bug proof, inspection CTA, local trust claims, urgency path"
+    },
+    {
+      businessName: "Kentucky Pest Control",
+      businessType: "Pest control",
+      website: "https://kentuckypest.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Free retreatment proof, service-area clarity, plan conversion, booking path"
+    },
+    {
+      businessName: "Overhead Door Company of Lexington",
+      businessType: "Garage door",
+      website: "https://www.overheaddoor.com/find-a-distributor/overhead-door-company-of-lexington",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Repair versus replacement path, commercial door clarity, call and quote action"
+    },
+    {
+      businessName: "Precision Garage Door Lexington",
+      businessType: "Garage door",
+      website: "https://pdslexington.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Book-now flow, repair and installation segmentation, trust proof"
+    },
+    {
+      businessName: "Amzac Garage Doors",
+      businessType: "Garage door",
+      website: "https://amzac.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Emergency service path, parts and repair clarity, quote request flow"
+    },
+    {
+      businessName: "Raynor Garage Doors of Lexington",
+      businessType: "Garage door",
+      website: "https://www.lexingtondoorauthority.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Same-day repair messaging, installation path, brand trust proof, phone clarity"
+    },
+    {
+      businessName: "Bicknell Garage Door",
+      businessType: "Garage door",
+      website: "https://www.bicknellgaragedoor.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Repair and install path, service-area clarity, mobile call action, quote proof"
+    },
+    {
+      businessName: "Lexington Tree Service",
+      businessType: "Tree service",
+      website: "https://www.lexingtontreeservice.com/",
+      city: "Lexington",
+      avgCustomerValue: 1800,
+      leadsNeeded: 3,
+      reviewAngle: "Tree removal and trimming quote path, arborist proof, emergency-call clarity"
+    },
+    {
+      businessName: "Dave Leonard Tree Specialists",
+      businessType: "Tree service",
+      website: "https://www.dlarborist.com/",
+      city: "Lexington",
+      avgCustomerValue: 1800,
+      leadsNeeded: 3,
+      reviewAngle: "Certified arborist proof, consultation path, service segmentation, quote action"
+    },
+    {
+      businessName: "Central Kentucky Tree Service",
+      businessType: "Tree service",
+      website: "https://centralkytreeservice.com/",
+      city: "Lexington",
+      avgCustomerValue: 1800,
+      leadsNeeded: 3,
+      reviewAngle: "Emergency tree removal path, stump grinding clarity, trust proof, phone action"
+    },
+    {
+      businessName: "A Professional Tree Service",
+      businessType: "Tree service",
+      website: "https://aptsinc.com/",
+      city: "Lexington",
+      avgCustomerValue: 1800,
+      leadsNeeded: 3,
+      reviewAngle: "Certified arborist positioning, pruning service clarity, quote request path"
+    },
+    {
+      businessName: "Bartlett Tree Experts Lexington",
+      businessType: "Tree service",
+      website: "https://www.bartlett.com/locations/lexington-ky",
+      city: "Lexington",
+      avgCustomerValue: 1800,
+      leadsNeeded: 3,
+      reviewAngle: "Diagnosis and treatment path, local office proof, service request clarity"
+    },
+    {
+      businessName: "Lexington Lawn & Landscape",
+      businessType: "Landscaping",
+      website: "https://lexlawnky.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Design-build and maintenance paths, quote CTA, portfolio proof, service clarity"
+    },
+    {
+      businessName: "Diamond Landscapes",
+      businessType: "Landscaping",
+      website: "https://diamondlandscapes.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Commercial and residential segmentation, appointment CTA, portfolio proof"
+    },
+    {
+      businessName: "Terrain Landscape Co.",
+      businessType: "Landscaping",
+      website: "https://www.terrainky.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Design-build positioning, owner proof, project gallery path, consultation action"
+    },
+    {
+      businessName: "United Landscape",
+      businessType: "Landscaping",
+      website: "https://unitedlandscape.net/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Design-build and maintenance clarity, quote flow, project proof"
+    },
+    {
+      businessName: "Ramirez Landscaping & Lawn Care",
+      businessType: "Landscaping",
+      website: "https://www.ramirezlandscapeky.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Landscape design and irrigation path, free-estimate flow, trust proof"
+    },
+    {
+      businessName: "Epic Lawn Care",
+      businessType: "Lawn care",
+      website: "https://epiclawncareky.com/",
+      city: "Lexington",
+      avgCustomerValue: 1200,
+      leadsNeeded: 4,
+      reviewAngle: "Instant quote path, recurring lawn plan clarity, review proof, service segmentation"
+    },
+    {
+      businessName: "Lightspeed Restoration of Lexington",
+      businessType: "Restoration",
+      website: "https://lightspeedrestoration.com/lexington-ky/",
+      city: "Lexington",
+      avgCustomerValue: 5000,
+      leadsNeeded: 2,
+      reviewAngle: "24/7 emergency path, water and fire service clarity, insurance proof"
+    },
+    {
+      businessName: "Independent Restoration Services",
+      businessType: "Restoration",
+      website: "https://irs-859.com/",
+      city: "Lexington",
+      avgCustomerValue: 5000,
+      leadsNeeded: 2,
+      reviewAngle: "Emergency estimate path, IICRC and insurance proof, local review trust"
+    },
+    {
+      businessName: "Paul Davis Restoration Lexington",
+      businessType: "Restoration",
+      website: "https://lexington.pauldavis.com/",
+      city: "Lexington",
+      avgCustomerValue: 5000,
+      leadsNeeded: 2,
+      reviewAngle: "Emergency service path, restoration category clarity, response-time proof"
+    },
+    {
+      businessName: "SERVPRO Lexington",
+      businessType: "Restoration",
+      website: "https://www.servpro.com/locations/ky/lexington-restoration",
+      city: "Lexington",
+      avgCustomerValue: 5000,
+      leadsNeeded: 2,
+      reviewAngle: "Water and fire cleanup path, location routing, call action, review proof"
+    },
+    {
+      businessName: "Roto-Rooter Water Damage Restoration",
+      businessType: "Restoration",
+      website: "https://www.rotorooter.com/lexington/water-damage-restoration/",
+      city: "Lexington",
+      avgCustomerValue: 5000,
+      leadsNeeded: 2,
+      reviewAngle: "Water damage emergency path, documentation proof, 24/7 call clarity"
+    },
+    {
+      businessName: "Lexington Clinic Physical Therapy",
+      businessType: "Physical therapy",
+      website: "https://lexingtonclinic.com/services/physical-therapy",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Appointment scheduling path, service-condition clarity, provider trust proof"
+    },
+    {
+      businessName: "Aptiva Health Physical Therapy",
+      businessType: "Physical therapy",
+      website: "https://www.aptivahealth.com/lexington-physical-therapy",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Condition-page clarity, appointment CTA, specialist proof, local clinic path"
+    },
+    {
+      businessName: "Commonwealth Hand and Physical Therapy",
+      businessType: "Physical therapy",
+      website: "https://commonwealthhandtherapy.com/",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Specialty hand therapy path, location routing, appointment action, outcome proof"
+    },
+    {
+      businessName: "BenchMark Physical Therapy Masterson Station",
+      businessType: "Physical therapy",
+      website: "https://www.benchmarkpt.com/locations/lexington-masterson-station/",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Clinic location page, appointment CTA, care-quality proof, condition segmentation"
+    },
+    {
+      businessName: "Results Physiotherapy Hamburg",
+      businessType: "Physical therapy",
+      website: "https://www.resultspt.com/locations/lexington-hamburg",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Manual therapy positioning, appointment path, location trust, service clarity"
+    },
+    {
+      businessName: "Athletico Lexington Downtown",
+      businessType: "Physical therapy",
+      website: "https://www.athletico.com/locations/lexington-ky-downtown/",
+      city: "Lexington",
+      avgCustomerValue: 700,
+      leadsNeeded: 8,
+      reviewAngle: "Downtown clinic path, rehab and work-comp services, request-appointment clarity"
+    },
+    {
+      businessName: "Herb Geddes Fence",
+      businessType: "Fence company",
+      website: "https://geddesfence.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Fence quote path, project type clarity, portfolio proof, service-area messaging"
+    },
+    {
+      businessName: "Chafin Fence",
+      businessType: "Fence company",
+      website: "https://www.chafinfence.com/",
+      city: "Lexington",
+      avgCustomerValue: 3500,
+      leadsNeeded: 2,
+      reviewAngle: "Free-estimate flow, repair and install segmentation, local proof"
+    },
+    {
+      businessName: "Window World of Lexington",
+      businessType: "Window replacement",
+      website: "https://www.windowworldlexington.com/",
+      city: "Lexington",
+      avgCustomerValue: 5500,
+      leadsNeeded: 2,
+      reviewAngle: "Free-estimate path, window and door offer clarity, trust proof"
+    },
+    {
+      businessName: "Kevin's Carpets",
+      businessType: "Flooring",
+      website: "https://www.kevinscarpets.com/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Flooring estimate path, review proof, product category clarity, installer trust"
     }
   ];
 
@@ -934,6 +1384,69 @@ Use this line if they ask about results: the audit is planning work based on obs
         label: "Med spa track",
         path: "lexington-med-spa-growth-audit.html",
         focus: "treatment-page clarity, consultation booking, proof, and follow-up friction"
+      };
+    }
+    if (text.includes("chiro")) {
+      return {
+        label: "Chiropractor track",
+        path: "offer.html",
+        focus: "new-patient appointment clarity, condition-page proof, review trust, and follow-up friction"
+      };
+    }
+    if (text.includes("veterinary") || text.includes("animal") || text.includes("vet ")) {
+      return {
+        label: "Veterinary clinic track",
+        path: "offer.html",
+        focus: "appointment clarity, service-menu routing, pet-owner trust proof, and follow-up cues"
+      };
+    }
+    if (text.includes("pest") || text.includes("termite") || text.includes("bed bug")) {
+      return {
+        label: "Pest control track",
+        path: "offer.html",
+        focus: "urgent inspection requests, recurring plan clarity, pest-specific service pages, and trust proof"
+      };
+    }
+    if (text.includes("garage") || text.includes("overhead door")) {
+      return {
+        label: "Garage door track",
+        path: "offer.html",
+        focus: "repair booking, emergency call clarity, replacement quote paths, and review trust"
+      };
+    }
+    if (text.includes("tree") || text.includes("arborist")) {
+      return {
+        label: "Tree service track",
+        path: "offer.html",
+        focus: "tree removal quote paths, emergency calls, arborist proof, and service-area clarity"
+      };
+    }
+    if (text.includes("landscap") || text.includes("lawn")) {
+      return {
+        label: "Landscaping track",
+        path: "offer.html",
+        focus: "estimate requests, design-build proof, maintenance plan clarity, and project galleries"
+      };
+    }
+    if (text.includes("restoration") || text.includes("water damage") || text.includes("fire damage") || text.includes("mold")) {
+      return {
+        label: "Restoration track",
+        path: "offer.html",
+        focus: "24/7 emergency call clarity, insurance proof, service category routing, and response confidence"
+      };
+    }
+    if (text.includes("physical therapy") || text.includes("physiotherapy") || text.includes("hand therapy")) {
+      return {
+        label: "Physical therapy track",
+        path: "offer.html",
+        focus: "appointment request clarity, condition-page proof, location routing, and patient trust cues"
+      };
+    }
+    if (text.includes("fence") || text.includes("window") || text.includes("flooring") || text.includes("carpet")) {
+      return {
+        label: "Home improvement track",
+        path: "offer.html",
+        focus: "free-estimate flow, product/service segmentation, project proof, and quote follow-up"
       };
     }
     if (text.includes("roof")) {
