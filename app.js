@@ -15,7 +15,181 @@
     paymentLink: CONFIG.paymentLink,
     bookingLink: CONFIG.bookingLink
   });
-  const STATUS_OPTIONS = ["Lead", "Contacted", "Paid audit", "Implementation", "Won", "Lost"];
+  const STATUS_OPTIONS = ["Research only", "Lead", "Contacted", "Paid audit", "Implementation", "Won", "Lost"];
+
+  const STARTER_PROSPECTS = [
+    {
+      businessName: "Park Hills Family Dentistry",
+      businessType: "Dentist",
+      website: "https://parkhillsfamilydentistry.com/",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Booking path, new-patient flow, review presentation, mobile clarity"
+    },
+    {
+      businessName: "Cooper Family Dentistry",
+      businessType: "Dentist",
+      website: "https://www.cooperfamilydental.com/",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Review proof, service pages, call-to-action structure"
+    },
+    {
+      businessName: "Tates Creek Dental",
+      businessType: "Dentist",
+      website: "https://www.tatescreekdental.com/reviews",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Review request flow, new-patient action, review-to-booking path"
+    },
+    {
+      businessName: "AMS Dental",
+      businessType: "Dentist",
+      website: "https://amsdentalcare.com/",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Request appointment flow, patient proof, service clarity"
+    },
+    {
+      businessName: "Complete Dentistry for All Ages",
+      businessType: "Dentist",
+      website: "https://www.completedentistrylexington.com/",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Testimonial proof, appointment action, mobile first-screen clarity"
+    },
+    {
+      businessName: "Williams Family Dentistry",
+      businessType: "Dentist",
+      website: "https://jewilliamsdmd.com/",
+      city: "Lexington",
+      avgCustomerValue: 650,
+      leadsNeeded: 8,
+      reviewAngle: "Testimonial visibility, booking action, local search confidence signals"
+    },
+    {
+      businessName: "Luxe Lounge Medspa",
+      businessType: "Med spa",
+      website: "https://www.luxeloungemedspa.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Treatment pages, consultation CTA, social proof, booking friction"
+    },
+    {
+      businessName: "Belle Vie Aesthetic Medicine",
+      businessType: "Med spa",
+      website: "https://bellevietoday.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Treatment proof, booking action, service-area clarity"
+    },
+    {
+      businessName: "Lexington Prime Aesthetics & Wellness",
+      businessType: "Med spa",
+      website: "https://lexprimeaesthetics.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Testimonial proof, treatment-page conversion, booking flow"
+    },
+    {
+      businessName: "Beautiful You Medical Spa",
+      businessType: "Med spa",
+      website: "https://beautifulyoumedspa.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Review proof, specials capture, appointment CTA"
+    },
+    {
+      businessName: "Prive Medical Spa",
+      businessType: "Med spa",
+      website: "https://privemedicalspa.com/",
+      city: "Lexington",
+      avgCustomerValue: 500,
+      leadsNeeded: 10,
+      reviewAngle: "Premium positioning, consultation path, proof structure"
+    },
+    {
+      businessName: "Big Blue Roofing",
+      businessType: "Roofing",
+      website: "https://bigblueroofing.com/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Quote flow, trust proof, review presentation, urgency handling"
+    },
+    {
+      businessName: "Big League Roofers",
+      businessType: "Roofing",
+      website: "https://bigleagueroofers.com/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Quote CTA, insurance-claim messaging, proof structure"
+    },
+    {
+      businessName: "Reliable Residential Roofing",
+      businessType: "Roofing",
+      website: "https://www.reliableresidentialroofing.com/",
+      city: "Lexington",
+      avgCustomerValue: 4500,
+      leadsNeeded: 2,
+      reviewAngle: "Quote path, warranty/trust presentation, mobile CTA clarity"
+    },
+    {
+      businessName: "BACK Construction",
+      businessType: "Remodeling",
+      website: "https://backconstruction.com/",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Consultation path, project categories, proof, estimate flow"
+    },
+    {
+      businessName: "Right Angle Home Services",
+      businessType: "Remodeling",
+      website: "https://www.rightangleky.com/",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Service pages, testimonial proof, quote action"
+    },
+    {
+      businessName: "Handy Manny's",
+      businessType: "General contractor",
+      website: "https://handymannysky.com/",
+      city: "Lexington",
+      avgCustomerValue: 6000,
+      leadsNeeded: 2,
+      reviewAngle: "Free-estimate flow, service segmentation, mobile first-screen clarity"
+    },
+    {
+      businessName: "Moore Custom Remodeling",
+      businessType: "Remodeling",
+      website: "https://www.moorebuildersky.com/reviews",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Review proof, project gallery path, quote action"
+    },
+    {
+      businessName: "ASB Remodeling",
+      businessType: "Remodeling",
+      website: "https://asbuildersllc.com/reviews/",
+      city: "Lexington",
+      avgCustomerValue: 8000,
+      leadsNeeded: 1,
+      reviewAngle: "Review proof, service conversion, lead capture"
+    }
+  ];
 
   const ISSUE_LIBRARY = {
     noBooking: {
@@ -149,6 +323,37 @@
 
   function plainUrl(value) {
     return String(value || "").trim();
+  }
+
+  function prospectIdentity(prospect) {
+    return [
+      prospect.businessName,
+      prospect.website || prospect.city,
+      prospect.businessType
+    ].map((value) => String(value || "").trim().toLowerCase()).join("|");
+  }
+
+  function estimateStarterValue(prospect) {
+    const rawValue = toNumber(prospect.avgCustomerValue) * toNumber(prospect.leadsNeeded) * 0.35;
+    return Math.round(rawValue / 10) * 10;
+  }
+
+  function displayHost(value) {
+    try {
+      return new URL(value).hostname.replace(/^www\./, "");
+    } catch (error) {
+      return plainUrl(value);
+    }
+  }
+
+  function safeExternalUrl(value) {
+    const url = plainUrl(value);
+    return /^https?:\/\//i.test(url) ? url : "";
+  }
+
+  function formatScore(prospect) {
+    const score = toNumber(prospect.score, NaN);
+    return Number.isFinite(score) && score > 0 ? `${Math.round(score)}/100` : "Research";
   }
 
   function renderIssueControls() {
@@ -293,19 +498,32 @@
     }
 
     body.innerHTML = state.prospects.map((prospect) => {
-      const options = STATUS_OPTIONS.map((status) => {
-        const selected = status === prospect.status ? "selected" : "";
-        return `<option value="${status}" ${selected}>${status}</option>`;
+      const currentStatus = prospect.status || "Lead";
+      const statusOptions = STATUS_OPTIONS.includes(currentStatus) ? STATUS_OPTIONS : [currentStatus, ...STATUS_OPTIONS];
+      const options = statusOptions.map((status) => {
+        const selected = status === currentStatus ? "selected" : "";
+        return `<option value="${escapeHtml(status)}" ${selected}>${escapeHtml(status)}</option>`;
       }).join("");
+      const website = safeExternalUrl(prospect.website);
+      const websiteLine = website
+        ? `<br><a class="pipeline-link" href="${escapeHtml(website)}" target="_blank" rel="noreferrer">${escapeHtml(displayHost(website))}</a>`
+        : "";
+      const angleLine = prospect.reviewAngle
+        ? `<small class="pipeline-note">${escapeHtml(prospect.reviewAngle)}</small>`
+        : "";
+      const valueLabel = toNumber(prospect.value) > 0 ? `${currency(prospect.value)} est.` : "Estimate pending";
 
       return `
         <tr>
-          <td><strong>${prospect.businessName}</strong><br><span>${prospect.businessType}</span></td>
-          <td>${prospect.city}</td>
-          <td>${prospect.score}/100</td>
-          <td>${currency(prospect.value)}</td>
-          <td><select data-pipeline-status="${prospect.id}">${options}</select></td>
-          <td><button class="ghost-button" type="button" data-remove-prospect="${prospect.id}">Remove</button></td>
+          <td>
+            <strong>${escapeHtml(prospect.businessName || "Unnamed prospect")}</strong>
+            <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${angleLine}
+          </td>
+          <td>${escapeHtml(prospect.city || state.settings.marketCity)}</td>
+          <td>${formatScore(prospect)}</td>
+          <td>${valueLabel}</td>
+          <td><select data-pipeline-status="${escapeHtml(prospect.id)}">${options}</select></td>
+          <td><button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button></td>
         </tr>
       `;
     }).join("");
@@ -388,6 +606,7 @@
       businessName: state.prospect.businessName,
       businessType: state.prospect.businessType,
       city: state.prospect.city,
+      website: state.prospect.website,
       score: analysis.score,
       value: analysis.monthlyUpside,
       status: "Lead"
@@ -395,6 +614,42 @@
     saveState();
     render();
     showToast("Prospect added");
+  }
+
+  function slugify(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+
+  function loadSeedProspects() {
+    const existing = new Set(state.prospects.map(prospectIdentity));
+    const additions = STARTER_PROSPECTS
+      .filter((prospect) => !existing.has(prospectIdentity(prospect)))
+      .map((prospect) => ({
+        id: `starter-${slugify(prospect.businessName)}`,
+        businessName: prospect.businessName,
+        businessType: prospect.businessType,
+        city: prospect.city,
+        website: prospect.website,
+        reviewAngle: prospect.reviewAngle,
+        avgCustomerValue: prospect.avgCustomerValue,
+        leadsNeeded: prospect.leadsNeeded,
+        score: null,
+        value: estimateStarterValue(prospect),
+        status: "Research only"
+      }));
+
+    if (!additions.length) {
+      showToast("Starter list already loaded");
+      return;
+    }
+
+    state.prospects = [...additions, ...state.prospects];
+    saveState();
+    render();
+    showToast(`Loaded ${additions.length} starter prospects`);
   }
 
   function handleAction(action) {
@@ -412,6 +667,7 @@
     if (action === "download-config") downloadFile("config.js", buildConfigText(), "text/javascript");
     if (action === "copy-config") copyText(buildConfigText(), "Config copied");
     if (action === "add-prospect") addProspect();
+    if (action === "load-seed-prospects") loadSeedProspects();
     if (action === "clear-pipeline") {
       state.prospects = [];
       saveState();
