@@ -773,6 +773,108 @@ td select {
   box-shadow: var(--shadow);
 }
 
+.scorecard-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 24px;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.scorecard-copy {
+  border-radius: 8px;
+  padding: 24px;
+  color: #ffffff;
+  background:
+    linear-gradient(145deg, rgba(24, 32, 29, 0.92), rgba(19, 94, 75, 0.86)),
+    var(--green-dark);
+  box-shadow: var(--shadow-strong);
+}
+
+.scorecard-copy h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.scorecard-copy p:not(.eyebrow) {
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.scorecard-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.55fr);
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.scorecard-options {
+  display: grid;
+  gap: 10px;
+}
+
+.score-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 52px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--field);
+  font-weight: 750;
+}
+
+.score-option input {
+  width: 20px;
+  min-height: 20px;
+  margin: 1px 0 0;
+  accent-color: var(--green);
+}
+
+.score-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(240, 180, 41, 0.16), rgba(223, 234, 242, 0.48)),
+    #f8faf4;
+}
+
+.score-result span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.score-result strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 25px;
+  line-height: 1.12;
+}
+
+.score-result p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.score-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
 .buyer-note {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -800,6 +902,34 @@ td select {
   border-left: 4px solid var(--blue);
   padding: 12px 14px;
   background: #ffffff;
+}
+
+.faq-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.faq-list p {
+  margin: 10px 0 0;
+  color: var(--muted);
 }
 
 .closing-band {
@@ -873,6 +1003,8 @@ td select {
     .proof-list,
     .process-grid,
     .buyer-note,
+    .scorecard-section,
+    .scorecard-panel,
     .outcome-strip,
     .hero-facts {
     grid-template-columns: 1fr;
@@ -949,6 +1081,15 @@ td select {
 
   .buyer-note h2 {
     font-size: 24px;
+  }
+
+  .scorecard-copy h2 {
+    font-size: 25px;
+  }
+
+  .score-actions .primary-button,
+  .score-actions .secondary-link {
+    min-height: 44px;
   }
 
   .closing-band {

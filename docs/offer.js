@@ -45,6 +45,29 @@
     `).join("");
   }
 
+  function updateScorecard() {
+    const items = $$("[data-score-item]");
+    const checked = items.filter((item) => item.checked).length;
+    const gaps = Math.max(items.length - checked, 0);
+    const label = $("[data-score-label]");
+    const result = $("[data-score-result]");
+    const note = $("[data-score-note]");
+
+    if (!label || !result || !note) return;
+
+    label.textContent = `${gaps} ${gaps === 1 ? "gap" : "gaps"} found`;
+    if (gaps >= 3) {
+      result.textContent = "High audit priority";
+      note.textContent = "Start with an audit before committing to implementation work.";
+    } else if (gaps >= 1) {
+      result.textContent = "Useful audit candidate";
+      note.textContent = "A short audit can clarify which fixes are worth doing first.";
+    } else {
+      result.textContent = "Lower audit priority";
+      note.textContent = "You may still use an audit for validation, but urgent gaps are not obvious from this quick check.";
+    }
+  }
+
   function render() {
     document.title = config.serviceName;
     $$("[data-offer]").forEach((node) => {
@@ -66,6 +89,11 @@
       link.href = config.bookingLink || ctaHref();
       link.textContent = config.bookingLink ? "Book a call" : "Email to book";
     });
+
+    $$("[data-score-item]").forEach((item) => {
+      item.addEventListener("change", updateScorecard);
+    });
+    updateScorecard();
   }
 
   render();
