@@ -30,7 +30,13 @@ Resource directory with copy-ready referral text:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, and score-result replies.
+Website conversion audit page:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-website-conversion-audit.html
+```
+
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, audit-fit checks, and the website conversion audit page.
 
 Dentist scorecard:
 
