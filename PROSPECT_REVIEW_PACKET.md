@@ -384,7 +384,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no booking links were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Mobile first screen showed phone and `Schedule Now` sticky actions, plus promotion and gift-card paths. No first-screen proof was observed in the mobile viewport; slight horizontal overflow and chat competition were observed.
 
 Observable strengths:
 
@@ -406,10 +407,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: booking path, phone/text paths, service depth, testimonials, membership/promotion assets
-Left unchecked until confirmed: mobile first screen, proof placement, tracking, follow-up, form friction
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 33/100 internal scorecard estimate
+Checked as handled in source/mobile: booking path, phone/text paths, service depth, membership/promotion assets
+Visible mobile gaps to inspect: proof not visible in the first screen, slight horizontal overflow, chat and promotion/gift-card competition
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
@@ -442,7 +444,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no booking links were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Mobile first screen showed `BOOK NOW`, phone, membership, and shop paths. The accessibility panel appeared open in the automation session, so a clean-browser recheck is advised before using the observation externally. No first-screen proof was observed; slight horizontal overflow was observed.
 
 Observable strengths:
 
@@ -464,10 +467,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: book-now path, phone path, service depth, testimonials, membership/payment assets
-Left unchecked until confirmed: mobile first screen, CTA hierarchy, tracking, follow-up, service-page conversion depth
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 33/100 internal scorecard estimate; clean-browser recheck advised
+Checked as handled in source/mobile: book-now path, phone path, service depth, testimonials, membership/payment assets
+Visible mobile gaps to inspect: first-screen proof not observed, membership/shop paths compete with consultation path, accessibility panel state needs confirmation
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate after clean-browser confirmation
 ```
 
 Channel-safe first touch:
@@ -500,7 +504,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no booking links were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Mobile first screen showed phone, `BOOK AN APPOINTMENT`, gift-card, and contact-widget paths with no horizontal overflow. No first-screen proof was observed in the mobile viewport.
 
 Observable strengths:
 
@@ -522,10 +527,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: appointment path, gift-card path, treatment categories, before-and-after proof, review proof
-Left unchecked until confirmed: mobile CTA prominence, tracking, follow-up, proof placement
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 50/100 internal scorecard estimate
+Checked as handled in source/mobile: appointment path, treatment categories, gift-card path, before-and-after proof, review proof
+Visible mobile gaps to inspect: proof appears to sit below the first-screen appointment decision; gift-card/contact paths compete lightly with booking
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: medium-priority audit candidate for a permitted or warm scorecard-first conversation
 ```
 
 Channel-safe first touch:
@@ -558,7 +564,8 @@ Source review note:
 
 - Official source text was reviewed on 2026-07-02.
 - No forms were submitted, no booking links were clicked, and no outreach was sent.
-- Treat the review as source-level until a mobile visual check confirms the first screen.
+- Mobile visual check completed on 2026-07-02. No forms were submitted, no booking links were clicked, and no outreach was sent.
+- Mobile render showed major horizontal overflow, duplicated/cluttered navigation text, cookie banner competition, a visible booking link, and no first-screen proof.
 
 Observable strengths:
 
@@ -580,10 +587,11 @@ Review hypotheses to confirm:
 Preliminary scorecard estimate:
 
 ```text
-Estimated score: source-only, not scored
-Checked as handled in source: booking path, phone/address, broad treatment menu, specials, financial options, proof counters, reviews
-Left unchecked until confirmed: mobile CTA hierarchy, tracking, follow-up, proof placement, specials capture
-Likely scorecard band: useful audit candidate after mobile check
+Estimated score: 17/100 internal scorecard estimate
+Checked as handled in source/mobile: booking path, phone/address, broad treatment menu, specials, financial options, proof counters, reviews
+Visible mobile gaps to inspect: severe horizontal overflow, cluttered/duplicated nav, cookie banner friction, proof not visible in the first screen
+Left unchecked until confirmed by the business: tracking and follow-up
+Likely scorecard band: high-priority audit candidate if a permitted conversation opens
 ```
 
 Channel-safe first touch:

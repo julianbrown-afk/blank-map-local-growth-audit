@@ -109,4 +109,5 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Reviewed pipeline queue: `REVIEWED_PIPELINE.csv`
 - Scorecard post queue: `SCORECARD_POST_QUEUE.md`
 - Reviewed prospects: 15 total internal drafts, 0 contacted
-- Next required action: use the prefilled scorecard URLs for any permitted scorecard-first conversation, load or refresh the starter list in the dashboard, score the reviewed dentist, med spa, and roofing leads, then complete mobile visual checks for all source-only rows before contact
+- Med spa mobile checks: completed read-only for Luxe Lounge, Belle Vie, Lexington Prime, and Beautiful You; no outreach sent
+- Next required action: use the prefilled scorecard URLs for any permitted scorecard-first conversation, load or refresh the starter list in the dashboard, score the reviewed dentist and roofing leads, then complete mobile visual checks for remaining source-only rows before contact
