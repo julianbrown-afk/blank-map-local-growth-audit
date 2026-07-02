@@ -85,4 +85,6 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Paid audits sold from this batch: 0
 - First review draft: `FIRST_PROSPECT_REVIEW.md`
 - First mobile check: completed read-only, no outreach sent
-- Next required action: confirm the first prospect's review/profile state, then decide whether a warm referral, permitted community reply, or no-contact follow-up is appropriate
+- Review packet: `PROSPECT_REVIEW_PACKET.md`
+- Reviewed prospects: 4 total internal drafts, 0 contacted
+- Next required action: score Cooper Family Dentistry and AMS Dental in the dashboard, then recheck Tates Creek Dental visually before scoring
