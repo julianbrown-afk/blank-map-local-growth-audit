@@ -2809,6 +2809,69 @@ td select {
   display: none;
 }
 
+.intake-handoff {
+  padding-top: 0;
+}
+
+.intake-handoff-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: end;
+}
+
+.intake-handoff-head h2 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.08;
+}
+
+.intake-handoff-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.intake-handoff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.intake-handoff-grid article {
+  min-height: 192px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background:
+    linear-gradient(145deg, rgba(223, 234, 242, 0.58), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.intake-handoff-grid span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.intake-handoff-grid strong {
+  display: block;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.24;
+}
+
+.intake-handoff-grid p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
 .intake-note {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -3451,6 +3514,8 @@ td select {
     .scorecard-next-step,
     .after-payment-grid,
     .intake-grid,
+    .intake-handoff-head,
+    .intake-handoff-grid,
     .intake-strip,
     .intake-note,
     .assurance-band,
@@ -3626,6 +3691,18 @@ td select {
   .intake-note {
     align-items: flex-start;
     padding: 22px;
+  }
+
+  .intake-handoff-head {
+    gap: 12px;
+  }
+
+  .intake-handoff-head h2 {
+    font-size: 27px;
+  }
+
+  .intake-handoff-grid article {
+    min-height: 0;
   }
 
   .niche-proof-bar {
