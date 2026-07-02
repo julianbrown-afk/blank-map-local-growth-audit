@@ -24,6 +24,14 @@ Sample report:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 ```
 
+Niche offer pages:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
+```
+
 Source repo:
 
 ```text
@@ -49,7 +57,7 @@ http://localhost:4173/index.html
 1. Create a Stripe Payment Link for the audit price.
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
-4. Send prospects the generated offer link or deploy the folder to any static host.
+4. Send prospects the generated offer link, or use the closest niche offer page when it matches the prospect.
 5. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.

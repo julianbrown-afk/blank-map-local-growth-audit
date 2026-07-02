@@ -20,6 +20,7 @@
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const initialTitle = document.title;
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -69,7 +70,7 @@
   }
 
   function render() {
-    document.title = config.serviceName;
+    if (initialTitle === "Local Growth Audit") document.title = config.serviceName;
     $$("[data-offer]").forEach((node) => {
       const key = node.dataset.offer;
       if (key === "auditPrice") node.textContent = currency(config.auditPrice);

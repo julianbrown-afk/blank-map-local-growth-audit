@@ -905,6 +905,56 @@ td select {
   background: var(--coral);
 }
 
+.tracks-section {
+  border-top: 1px solid var(--line);
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.track-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 202px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--ink);
+  text-decoration: none;
+  background:
+    linear-gradient(160deg, rgba(19, 94, 75, 0.08), rgba(223, 234, 242, 0.5) 52%, rgba(240, 180, 41, 0.12)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.track-card:hover {
+  border-color: rgba(19, 94, 75, 0.34);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+.track-card span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.track-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 21px;
+  line-height: 1.14;
+}
+
+.track-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
 .offer-card-grid strong,
 .proof-list strong {
   display: block;
@@ -1169,6 +1219,132 @@ td select {
   margin-top: 20px;
 }
 
+.niche-body {
+  background:
+    linear-gradient(180deg, #fbfcf8, #eef5f1 40%, #ffffff 100%),
+    var(--paper);
+}
+
+.niche-hero {
+  min-height: 76vh;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(24, 32, 29, 0.84) 48%, rgba(24, 32, 29, 0.22)),
+    url("assets/audit-preview.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.niche-hero-inner {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 132px 0 54px;
+}
+
+.niche-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: 54px;
+  line-height: 1.03;
+}
+
+.niche-hero-copy {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 19px;
+}
+
+.niche-proof-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(1120px, calc(100% - 32px));
+  margin: -38px auto 0;
+  border: 1px solid rgba(217, 222, 212, 0.82);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.niche-proof-bar div {
+  min-height: 116px;
+  padding: 18px;
+}
+
+.niche-proof-bar div + div {
+  border-left: 1px solid var(--line);
+}
+
+.niche-proof-bar span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.niche-proof-bar strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.16;
+}
+
+.niche-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.niche-layout h2,
+.niche-checklist h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.niche-layout p {
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.niche-checklist {
+  display: grid;
+  gap: 12px;
+}
+
+.niche-checklist article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.niche-checklist span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.niche-checklist strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 19px;
+}
+
+.niche-checklist p {
+  margin: 8px 0 0;
+}
+
+.niche-close-note {
+  max-width: 760px;
+}
+
 .sample-body {
   background:
     linear-gradient(180deg, rgba(19, 94, 75, 0.08), rgba(223, 234, 242, 0.32) 36%, #fbfcf8),
@@ -1333,6 +1509,7 @@ td select {
   .offer-card-grid,
   .proof-list,
   .process-grid,
+  .track-grid,
   .outcome-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1370,12 +1547,15 @@ td select {
     .split-section,
     .proof-list,
     .process-grid,
+    .track-grid,
     .buyer-note,
     .sample-section,
     .scorecard-section,
     .scorecard-panel,
     .after-payment-grid,
     .assurance-band,
+    .niche-proof-bar,
+    .niche-layout,
     .outcome-strip,
     .hero-facts {
     grid-template-columns: 1fr;
@@ -1467,6 +1647,39 @@ td select {
   .hero-note {
     margin-top: 12px;
     font-size: 14px;
+  }
+
+  .niche-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background:
+      linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(24, 32, 29, 0.94)),
+      url("assets/audit-preview.png");
+    background-position: 70% center;
+    background-size: cover;
+  }
+
+  .niche-hero-inner {
+    padding-top: 112px;
+    padding-bottom: 28px;
+  }
+
+  .niche-hero h1 {
+    font-size: 37px;
+    line-height: 1.08;
+  }
+
+  .niche-hero-copy {
+    font-size: 17px;
+  }
+
+  .niche-proof-bar {
+    margin-top: -24px;
+  }
+
+  .niche-proof-bar div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .offer-section {

@@ -47,9 +47,23 @@ The best prospects are local service businesses that already have customer value
 4. Open one prospect website at a time and enter the review count, rating, average customer value, and visible gaps.
 5. Add or update qualified leads in the pipeline.
 6. Use the report text as the basis for a paid audit preview.
-7. Send the public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+7. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
 8. When a payment arrives, use the dashboard report as the first draft of the deliverable.
 9. Offer the implementation sprint only after the audit is delivered.
+
+## Public Offer Links
+
+Use the broad offer when the category is unclear:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+
+Use a niche page when it matches the prospect:
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-roofing-remodeling-growth-audit.html
 
 ## Compliance Boundary
 
