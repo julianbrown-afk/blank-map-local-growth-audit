@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julianbrown-afk.github.io/blank-map-local-growth-audit/sitemap.xml

@@ -6,6 +6,12 @@ Public offer:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ```
 
+Public sample report:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+```
+
 Payment:
 
 ```text
@@ -40,7 +46,7 @@ The best prospects are local service businesses that already have customer value
 3. Enter the business name, category, city, website, review count, rating, average customer value, and visible gaps.
 4. Add the lead to the pipeline.
 5. Use the report text as the basis for a paid audit preview.
-6. Send the public offer link only through compliant channels where you are allowed to contact the business.
+6. Send the public offer link and sample report link only through compliant channels where you are allowed to contact the business.
 7. When a payment arrives, use the dashboard report as the first draft of the deliverable.
 8. Offer the implementation sprint only after the audit is delivered.
 
@@ -62,6 +68,7 @@ Hi, I reviewed a few local service websites in Lexington and noticed common book
 I put together a fixed-scope Local Growth Audit for service businesses. It is $399 and produces a 30-day action plan.
 
 Details: https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+Sample: https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 ```
 
 ## Social Post
@@ -72,6 +79,7 @@ Local service businesses in Lexington: I built a short Local Growth Audit that c
 It is a fixed $399 audit with a 30-day action plan. No retainer required.
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+Sample report: https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 ```
 
 ## Fulfillment Checklist

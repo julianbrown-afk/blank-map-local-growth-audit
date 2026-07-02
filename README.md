@@ -18,6 +18,12 @@ Public offer page:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ```
 
+Sample report:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+```
+
 Source repo:
 
 ```text

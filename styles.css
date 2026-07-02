@@ -724,6 +724,59 @@ td select {
     #ffffff;
 }
 
+.sample-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(280px, 0.74fr);
+  gap: 24px;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.sample-section h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.sample-section p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.sample-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 178px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  color: var(--ink);
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgba(19, 94, 75, 0.1), rgba(216, 92, 58, 0.08), rgba(240, 180, 41, 0.18)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.sample-card span {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sample-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.sample-card p {
+  margin: 10px 0 0;
+}
+
 .offer-card-grid strong,
 .proof-list strong {
   display: block;
@@ -988,6 +1041,152 @@ td select {
   margin-top: 20px;
 }
 
+.sample-body {
+  background:
+    linear-gradient(180deg, rgba(19, 94, 75, 0.08), rgba(223, 234, 242, 0.32) 36%, #fbfcf8),
+    var(--paper);
+}
+
+.sample-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(217, 222, 212, 0.86);
+  background: rgba(251, 252, 248, 0.94);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 22px rgba(24, 32, 29, 0.05);
+}
+
+.sample-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 54px 0 64px;
+}
+
+.sample-hero {
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.sample-hero h1 {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.04;
+}
+
+.sample-hero p:not(.eyebrow) {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.sample-report {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+  background: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.sample-report-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.sample-report-head h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.14;
+}
+
+.sample-score,
+.sample-metrics div {
+  border-left: 4px solid var(--green);
+  padding: 10px 12px;
+  background: var(--field);
+}
+
+.sample-score span,
+.sample-metrics span,
+.sample-finding span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sample-score strong,
+.sample-metrics strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.sample-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sample-finding {
+  border-left: 4px solid var(--coral);
+  padding: 18px;
+  background: #fff8f4;
+}
+
+.sample-finding + .sample-finding {
+  margin-top: 12px;
+}
+
+.sample-finding h3,
+.sample-plan h3 {
+  margin: 6px 0 0;
+  font-size: 21px;
+  line-height: 1.18;
+}
+
+.sample-finding p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.sample-finding strong {
+  display: block;
+  margin-top: 10px;
+}
+
+.sample-plan {
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: #f8faf4;
+}
+
+.sample-plan ol {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding-left: 22px;
+}
+
+.sample-close {
+  width: auto;
+  margin-top: 24px;
+}
+
 #printView {
   display: none;
 }
@@ -1044,6 +1243,7 @@ td select {
     .proof-list,
     .process-grid,
     .buyer-note,
+    .sample-section,
     .scorecard-section,
     .scorecard-panel,
     .after-payment-grid,
@@ -1110,6 +1310,38 @@ td select {
 
   .offer-section {
     padding: 38px 0;
+  }
+
+  .sample-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 16px;
+  }
+
+  .sample-shell {
+    width: min(100% - 20px, 720px);
+    padding: 34px 0 48px;
+  }
+
+  .sample-hero h1 {
+    font-size: 36px;
+  }
+
+  .sample-report {
+    padding: 18px;
+  }
+
+  .sample-report-head,
+  .sample-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-report-head {
+    display: grid;
+  }
+
+  .sample-section h2 {
+    font-size: 24px;
   }
 
   .outcome-strip {
