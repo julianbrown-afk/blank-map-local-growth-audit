@@ -1766,6 +1766,92 @@ ${settings.contactEmail}`;
     `).join("");
   }
 
+  function renderMoneyMotion() {
+    const summary = $("[data-output='moneyMotionSummary']");
+    const status = $("[data-output='moneyMotionStatus']");
+    const stepsTarget = $("[data-output='moneyMotionSteps']");
+    if (!summary || !status || !stepsTarget) return;
+
+    const prospects = state.prospects;
+    const actionable = getActionableProspects();
+    const followUps = getFollowUpProspects();
+    const addressReady = Boolean(String(state.settings.mailingAddress || "").trim());
+    const paid = prospects.filter((prospect) => ["Paid audit", "Implementation", "Won"].includes(prospect.status || "")).length;
+    const activeValue = actionable.reduce((sum, prospect) => sum + toNumber(prospect.value), 0);
+    const nextBatchCount = Math.min(actionable.length, 10);
+
+    let headline = "Load the starter list";
+    let detail = "Start by loading the researched Lexington prospect queue, then work the highest-value visible buyer paths.";
+    let statusLabel = "Start";
+
+    if (paid > 0) {
+      headline = "Fulfill paid audit work";
+      detail = `${paid} paid-stage ${paid === 1 ? "prospect needs" : "prospects need"} intake, report delivery, or implementation scoping.`;
+      statusLabel = "Fulfill";
+    } else if (!prospects.length) {
+      headline = "Load prospects before selling";
+      detail = "The starter list creates the first queue without sending anything automatically.";
+      statusLabel = "Queue empty";
+    } else if (!addressReady) {
+      headline = "Use scorecard-first and warm channels";
+      detail = "Cold commercial email stays paused until a compliant public mailing address, PO box, or CMRA is added.";
+      statusLabel = "Compliance guard";
+    } else if (followUps.length) {
+      headline = "Follow up contacted prospects";
+      detail = `${followUps.length} contacted ${followUps.length === 1 ? "prospect is" : "prospects are"} ready for a short follow-up batch.`;
+      statusLabel = "Follow up";
+    } else if (actionable.length) {
+      headline = "Work the next prospect batch";
+      detail = `${nextBatchCount} of ${actionable.length} active ${actionable.length === 1 ? "prospect is" : "prospects are"} ready, with ${currency(activeValue)} estimated open value.`;
+      statusLabel = "Sell";
+    }
+
+    summary.textContent = detail;
+    status.innerHTML = `
+      <span>${escapeHtml(statusLabel)}</span>
+      <strong>${escapeHtml(headline)}</strong>
+    `;
+
+    const steps = [
+      {
+        label: "Queue",
+        title: prospects.length ? `${prospects.length} prospects loaded` : "Load the starter list",
+        body: prospects.length
+          ? `${actionable.length} active prospects remain after status filters.`
+          : "Bring in the researched prospect list before building a daily batch."
+      },
+      {
+        label: "Compliance",
+        title: addressReady ? "Commercial footer ready" : "Cold email paused",
+        body: addressReady
+          ? "Generated commercial email can include the public mailing footer in the dashboard copy."
+          : "Use scorecard posts, warm referrals, community replies, and manual research until a valid public mailing address is added."
+      },
+      {
+        label: "Batch",
+        title: actionable.length ? `${nextBatchCount} prospects in the next batch` : "No active batch yet",
+        body: actionable.length
+          ? "Copy the daily batch, inspect each website, and personalize only where contact is permitted."
+          : "Add leads or move prospects back into Research only, Lead, Contacted, or Followed up."
+      },
+      {
+        label: "Close",
+        title: followUps.length ? `${followUps.length} follow-up ${followUps.length === 1 ? "reply" : "replies"} to work` : "Move replies toward audit intake",
+        body: followUps.length
+          ? "Copy the follow-up batch and anchor the next message on the public offer, sample, or scorecard result."
+          : "When someone engages, use score lead reply, score lead call, then send intake after payment or booking."
+      }
+    ];
+
+    stepsTarget.innerHTML = steps.map((step) => `
+      <article>
+        <span>${escapeHtml(step.label)}</span>
+        <strong>${escapeHtml(step.title)}</strong>
+        <p>${escapeHtml(step.body)}</p>
+      </article>
+    `).join("");
+  }
+
   function renderPipelineSummary() {
     const container = $("[data-output='pipelineSummary']");
     if (!container) return;
@@ -1984,6 +2070,7 @@ ${settings.contactEmail}`;
     $("[data-output='warmReferralText']").textContent = buildWarmReferralNote();
     $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
+    renderMoneyMotion();
     renderPipelineSummary();
     renderPipelineFilters();
     renderPipeline();

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Local Audit Cashflow Kit</title>
     <meta name="description" content="A static operator dashboard for selling local growth audits.">
-    <link rel="stylesheet" href="styles.css?v=20260702t">
+    <link rel="stylesheet" href="styles.css?v=20260702motion">
     <script src="config.js?v=20260702t"></script>
-    <script defer src="app.js?v=20260702t"></script>
+    <script defer src="app.js?v=20260702motion"></script>
   </head>
   <body>
     <header class="topbar">
@@ -45,6 +45,25 @@
           <span>Next target</span>
           <strong data-output="nextTarget">Send 0 messages</strong>
         </article>
+      </section>
+
+      <section class="tool-panel money-motion-panel" aria-labelledby="moneyMotionTitle">
+        <div class="money-motion-head">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h2 id="moneyMotionTitle">Money motion</h2>
+            <p data-output="moneyMotionSummary">Load prospects, work the next compliant batch, and move replies into paid audit intake.</p>
+          </div>
+          <div class="money-motion-status" data-output="moneyMotionStatus" aria-live="polite"></div>
+        </div>
+        <div class="money-motion-grid" data-output="moneyMotionSteps" aria-live="polite"></div>
+        <div class="button-row money-motion-actions">
+          <button class="primary-button" type="button" data-action="load-seed-prospects">Load starter list</button>
+          <button class="ghost-button" type="button" data-action="copy-daily-batch">Copy daily batch</button>
+          <button class="ghost-button" type="button" data-action="copy-follow-up-batch">Copy follow-up batch</button>
+          <button class="ghost-button" type="button" data-action="copy-scorecard-post">Copy scorecard post</button>
+          <button class="ghost-button" type="button" data-action="copy-warm-referral">Copy warm referral</button>
+        </div>
       </section>
 
       <section class="workspace-grid" aria-label="Operator inputs">

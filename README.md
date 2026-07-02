@@ -2,7 +2,7 @@
 
 This is a static, dependency-free sales kit for selling paid local business growth audits. It gives you:
 
-- `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, scorecard-first acquisition copy, scorecard lead close copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
+- `index.html`: operator dashboard for pricing, today's money-motion queue, prospect audits, daily outreach batches, scorecard-first acquisition copy, scorecard lead close copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page with a self-check scorecard, value calculator, and links to Stripe Payment Links, booking, or email.
 - `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit, with a dynamic next-step recommendation and email/copy actions for sending the result.
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
@@ -96,14 +96,15 @@ http://localhost:4173/index.html
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
 4. Send prospects the generated offer link, or use the row-level `Copy offer` / `Open offer` actions when the pipeline has matched a niche page.
-5. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
-6. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the category-specific scorecard before showing the paid audit.
-7. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
-8. Ask interested prospects to use `Email my score` or `Copy score summary` on the scorecard page so the sales conversation starts from their actual gaps.
-9. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
-10. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
-11. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
-12. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+5. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
+6. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
+7. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the category-specific scorecard before showing the paid audit.
+8. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
+9. Ask interested prospects to use `Email my score` or `Copy score summary` on the scorecard page so the sales conversation starts from their actual gaps.
+10. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
+11. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
+12. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+13. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
 

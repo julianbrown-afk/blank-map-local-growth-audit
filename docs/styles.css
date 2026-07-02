@@ -263,6 +263,91 @@ a {
   line-height: 1.12;
 }
 
+.money-motion-panel {
+  margin-bottom: 16px;
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(19, 94, 75, 0.09), rgba(223, 234, 242, 0.58), rgba(240, 180, 41, 0.1)),
+    rgba(255, 255, 255, 0.94);
+}
+
+.money-motion-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.36fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.money-motion-head h2 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.12;
+}
+
+.money-motion-head p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+
+.money-motion-status {
+  min-height: 82px;
+  border: 1px solid rgba(19, 94, 75, 0.16);
+  border-radius: 8px;
+  padding: 13px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.money-motion-status span,
+.money-motion-grid span {
+  display: inline-flex;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.money-motion-status strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 20px;
+  line-height: 1.14;
+}
+
+.money-motion-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.money-motion-grid article {
+  min-height: 132px;
+  border: 1px solid rgba(217, 222, 212, 0.9);
+  border-radius: 8px;
+  padding: 13px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.money-motion-grid strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.18;
+}
+
+.money-motion-grid p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.money-motion-actions {
+  margin-top: 14px;
+}
+
 .workspace-grid {
   grid-template-columns: minmax(300px, 1.1fr) minmax(300px, 1.15fr) minmax(280px, 0.85fr);
   align-items: start;
@@ -3497,6 +3582,10 @@ td select {
     min-width: 0;
   }
 
+  .money-motion-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .comparison-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3546,6 +3635,8 @@ td select {
     .checkbox-grid,
     .score-strip,
     .calculator-readout,
+    .money-motion-head,
+    .money-motion-grid,
     .pipeline-summary,
     .pipeline-filters,
     .offer-card-grid,
@@ -3603,6 +3694,14 @@ td select {
 
   .metric {
     min-height: 92px;
+  }
+
+  .money-motion-panel {
+    padding: 16px;
+  }
+
+  .money-motion-grid article {
+    min-height: 0;
   }
 
   .problem-path-grid article {
