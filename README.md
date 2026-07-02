@@ -60,6 +60,12 @@ Referral partner page for accountants, web teams, consultants, local connectors,
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html
 ```
 
+Printable scorecard-first one-sheet for warm handoffs, local connectors, and leave-behind conversations:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-one-sheet.html
+```
+
 Track-specific scorecards use the same URL with a `track` query parameter, for example:
 
 ```text
@@ -143,7 +149,7 @@ http://localhost:4173/index.html
 7. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
 8. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
 9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for a category-specific prefilled scorecard before showing the paid audit.
-10. Use `Scorecard post`, `Warm referral`, `Referral partner`, and `Community reply` for public or permission-based channels where that format is appropriate. Use the conversion checklist or Google Business Profile checklist and their built-in copy starters when a lower-friction educational link fits better than the scorecard, use the public resource directory when you need one shareable page with all free links, and use the referral partner page when a connector needs a clean scorecard-first handoff.
+10. Use `Scorecard post`, `Warm referral`, `Referral partner`, `One-sheet`, and `Community reply` for public or permission-based channels where that format is appropriate. Use the conversion checklist or Google Business Profile checklist and their built-in copy starters when a lower-friction educational link fits better than the scorecard, use the public resource directory when you need one shareable page with all free links, use the referral partner page when a connector needs a clean scorecard-first handoff, and use the one-sheet when someone needs a printable or forwardable short version.
 11. Ask interested prospects to use the homepage self-check handoff or the scorecard's `Score handoff` section, then `Email my score`, `Copy score summary`, or `Copy result link`, so the sales conversation starts from their actual gaps.
 12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
 13. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
