@@ -43,6 +43,7 @@ Sell a fixed-scope `Local Growth Audit` for `$399`.
 The best prospects are local service businesses that already have customer value high enough to justify the audit:
 
 - dentists
+- orthodontists
 - med spas
 - remodelers
 - roofers
@@ -87,6 +88,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
 Use a niche page when it matches the prospect:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html
+
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-orthodontist-growth-audit.html
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-med-spa-growth-audit.html
 

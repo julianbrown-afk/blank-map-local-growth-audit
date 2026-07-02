@@ -819,9 +819,9 @@ Use this line if they ask about results: the audit is planning work based on obs
     }
     if (text.includes("orthodont")) {
       return {
-        label: "Dental/orthodontic track",
-        path: "lexington-dentist-growth-audit.html",
-        focus: "new-patient consultation flow, review trust, treatment-page clarity, and follow-up friction"
+        label: "Orthodontist track",
+        path: "lexington-orthodontist-growth-audit.html",
+        focus: "consultation requests, braces and Invisalign proof, review trust, and follow-up friction"
       };
     }
     if (text.includes("dent")) {
