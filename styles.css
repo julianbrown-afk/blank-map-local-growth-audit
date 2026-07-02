@@ -536,6 +536,46 @@ select:focus {
   line-height: 1.35;
 }
 
+.pipeline-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.1fr) minmax(160px, 0.52fr) minmax(190px, 0.72fr) auto;
+  gap: 10px;
+  align-items: end;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background:
+    linear-gradient(135deg, rgba(223, 234, 242, 0.55), rgba(255, 255, 255, 0)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.pipeline-filters label {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.pipeline-filters input,
+.pipeline-filters select {
+  min-width: 0;
+  margin: 0;
+}
+
+.pipeline-filters p {
+  min-width: 160px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .table-wrap {
   max-width: 100%;
   min-width: 0;
@@ -3235,6 +3275,14 @@ td select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .pipeline-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pipeline-filters p {
+    min-width: 0;
+  }
+
   .comparison-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3281,6 +3329,7 @@ td select {
     .score-strip,
     .calculator-readout,
     .pipeline-summary,
+    .pipeline-filters,
     .offer-card-grid,
     .split-section,
     .proof-list,

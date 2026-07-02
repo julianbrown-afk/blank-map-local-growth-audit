@@ -319,6 +319,21 @@
           </div>
         </div>
         <div class="pipeline-summary" data-output="pipelineSummary"></div>
+        <div class="pipeline-filters" aria-label="Pipeline filters">
+          <label>
+            Search
+            <input type="search" data-pipeline-filter="search" placeholder="Business, category, city, website">
+          </label>
+          <label>
+            Status
+            <select data-pipeline-filter="status"></select>
+          </label>
+          <label>
+            Offer track
+            <select data-pipeline-filter="track"></select>
+          </label>
+          <p data-output="pipelineFilterCount">Showing all prospects.</p>
+        </div>
         <div class="table-wrap">
           <table>
             <thead>

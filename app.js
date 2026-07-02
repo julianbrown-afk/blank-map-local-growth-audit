@@ -17,6 +17,12 @@
     bookingLink: CONFIG.bookingLink
   });
   const STATUS_OPTIONS = ["Research only", "Lead", "Contacted", "Followed up", "Paid audit", "Implementation", "Won", "Lost"];
+  const ACTIVE_STATUS_OPTIONS = new Set(["Research only", "Lead", "Contacted", "Followed up"]);
+  const PIPELINE_STATUS_FILTERS = [
+    { value: "active", label: "Active queue" },
+    { value: "all", label: "All statuses" },
+    ...STATUS_OPTIONS.map((status) => ({ value: status, label: status }))
+  ];
 
   const STARTER_PROSPECTS = [
     {
@@ -1006,6 +1012,11 @@
       closeRate: 8,
       implementationRate: 30
     },
+    pipelineFilters: {
+      search: "",
+      status: "active",
+      track: ""
+    },
     prospects: []
   };
 
@@ -1024,6 +1035,7 @@
         settings: shouldUseConfigSettings ? DEFAULT_STATE.settings : { ...DEFAULT_STATE.settings, ...(saved.settings || {}) },
         prospect: { ...DEFAULT_STATE.prospect, ...(saved.prospect || {}) },
         calculator: { ...DEFAULT_STATE.calculator, ...(saved.calculator || {}) },
+        pipelineFilters: { ...DEFAULT_STATE.pipelineFilters, ...(saved.pipelineFilters || {}) },
         prospects: Array.isArray(saved.prospects) ? saved.prospects : []
       };
     } catch (error) {
@@ -1654,9 +1666,8 @@ ${settings.contactEmail}`;
   }
 
   function getActionableProspects() {
-    const activeStatuses = new Set(["Research only", "Lead", "Contacted", "Followed up"]);
     return state.prospects
-      .filter((prospect) => activeStatuses.has(prospect.status || "Lead"))
+      .filter((prospect) => ACTIVE_STATUS_OPTIONS.has(prospect.status || "Lead"))
       .sort((a, b) => toNumber(b.value) - toNumber(a.value));
   }
 
@@ -1802,6 +1813,80 @@ ${settings.contactEmail}`;
     `;
   }
 
+  function getPipelineTracks() {
+    const tracks = new Map();
+    state.prospects.forEach((prospect) => {
+      const track = getProspectTrack(prospect);
+      if (!tracks.has(track.label)) tracks.set(track.label, track);
+    });
+    return Array.from(tracks.values()).sort((a, b) => a.label.localeCompare(b.label));
+  }
+
+  function prospectSearchText(prospect) {
+    return [
+      prospect.businessName,
+      prospect.businessType,
+      prospect.city,
+      prospect.website,
+      prospect.reviewAngle,
+      getProspectTrack(prospect).label
+    ].map((value) => String(value || "").toLowerCase()).join(" ");
+  }
+
+  function getFilteredProspects() {
+    const filters = { ...DEFAULT_STATE.pipelineFilters, ...(state.pipelineFilters || {}) };
+    const terms = String(filters.search || "")
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean);
+
+    return state.prospects.filter((prospect) => {
+      const status = prospect.status || "Lead";
+      if (filters.status === "active" && !ACTIVE_STATUS_OPTIONS.has(status)) return false;
+      if (filters.status && filters.status !== "active" && filters.status !== "all" && status !== filters.status) return false;
+      if (filters.track && getProspectTrack(prospect).label !== filters.track) return false;
+      if (terms.length && !terms.every((term) => prospectSearchText(prospect).includes(term))) return false;
+      return true;
+    });
+  }
+
+  function renderPipelineFilters() {
+    const filters = state.pipelineFilters || DEFAULT_STATE.pipelineFilters;
+    const searchInput = $("[data-pipeline-filter='search']");
+    const statusSelect = $("[data-pipeline-filter='status']");
+    const trackSelect = $("[data-pipeline-filter='track']");
+    const count = $("[data-output='pipelineFilterCount']");
+    if (!searchInput || !statusSelect || !trackSelect || !count) return;
+
+    const tracks = getPipelineTracks();
+    if (filters.track && !tracks.some((track) => track.label === filters.track)) {
+      filters.track = "";
+    }
+
+    searchInput.value = filters.search || "";
+    statusSelect.innerHTML = PIPELINE_STATUS_FILTERS.map((option) => {
+      const selected = option.value === filters.status ? "selected" : "";
+      return `<option value="${escapeHtml(option.value)}" ${selected}>${escapeHtml(option.label)}</option>`;
+    }).join("");
+    trackSelect.innerHTML = [
+      `<option value="">All tracks</option>`,
+      ...tracks.map((track) => {
+        const selected = track.label === filters.track ? "selected" : "";
+        return `<option value="${escapeHtml(track.label)}" ${selected}>${escapeHtml(track.label)}</option>`;
+      })
+    ].join("");
+
+    const filteredCount = getFilteredProspects().length;
+    if (!state.prospects.length) {
+      count.textContent = "Load prospects to use filters.";
+    } else if (filteredCount === state.prospects.length) {
+      count.textContent = `Showing all ${state.prospects.length} prospects.`;
+    } else {
+      count.textContent = `Showing ${filteredCount} of ${state.prospects.length} prospects.`;
+    }
+  }
+
   function renderPipeline() {
     const body = $("[data-output='pipelineRows']");
     if (!state.prospects.length) {
@@ -1809,7 +1894,13 @@ ${settings.contactEmail}`;
       return;
     }
 
-    body.innerHTML = state.prospects.map((prospect) => {
+    const prospects = getFilteredProspects();
+    if (!prospects.length) {
+      body.innerHTML = `<tr><td class="empty-row" colspan="6">No prospects match the current filters.</td></tr>`;
+      return;
+    }
+
+    body.innerHTML = prospects.map((prospect) => {
       const currentStatus = prospect.status || "Lead";
       const statusOptions = STATUS_OPTIONS.includes(currentStatus) ? STATUS_OPTIONS : [currentStatus, ...STATUS_OPTIONS];
       const options = statusOptions.map((status) => {
@@ -1894,6 +1985,7 @@ ${settings.contactEmail}`;
     $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
     renderPipelineSummary();
+    renderPipelineFilters();
     renderPipeline();
   }
 
@@ -2100,6 +2192,17 @@ ${settings.contactEmail}`;
     prospect.status = target.value;
     saveState();
     renderPipelineSummary();
+    renderPipelineFilters();
+    renderPipeline();
+  }
+
+  function updatePipelineFilter(target) {
+    const key = target.dataset.pipelineFilter;
+    if (!key) return;
+    state.pipelineFilters = { ...DEFAULT_STATE.pipelineFilters, ...(state.pipelineFilters || {}) };
+    state.pipelineFilters[key] = target.value;
+    saveState();
+    renderPipelineFilters();
     renderPipeline();
   }
 
@@ -2133,12 +2236,18 @@ ${settings.contactEmail}`;
       if (target.matches("[data-pipeline-status]")) {
         updatePipelineStatus(target);
       }
+      if (target.matches("[data-pipeline-filter]")) {
+        updatePipelineFilter(target);
+      }
     });
 
     document.addEventListener("change", (event) => {
       const target = event.target;
       if (target.matches("[data-pipeline-status]")) {
         updatePipelineStatus(target);
+      }
+      if (target.matches("[data-pipeline-filter]")) {
+        updatePipelineFilter(target);
       }
     });
 
