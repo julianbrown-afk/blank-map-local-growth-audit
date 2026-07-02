@@ -2716,6 +2716,77 @@ td select {
   display: none;
 }
 
+.scorecard-handoff {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 24px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.scorecard-handoff-copy h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.scorecard-handoff-copy p:not(.eyebrow) {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.scorecard-handoff-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.scorecard-handoff-steps article {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 6px 14px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.scorecard-handoff-steps span {
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  color: var(--green-dark);
+  background: rgba(19, 94, 75, 0.1);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.scorecard-handoff-steps strong {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.18;
+}
+
+.scorecard-handoff-steps p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.scorecard-handoff-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 .scorecard-next-step {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
@@ -3793,6 +3864,7 @@ td select {
     .delivery-scope-note,
     .free-scorecard-inner,
     .free-scorecard-tool,
+    .scorecard-handoff,
     .scorecard-next-step,
     .after-payment-grid,
     .intake-grid,
@@ -4275,6 +4347,31 @@ td select {
 
   .scorecard-next-step {
     gap: 18px;
+  }
+
+  .scorecard-handoff {
+    gap: 18px;
+  }
+
+  .scorecard-handoff-copy h2 {
+    font-size: 25px;
+  }
+
+  .scorecard-handoff-steps article {
+    grid-template-columns: 38px minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .scorecard-handoff-steps span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .scorecard-handoff-actions .primary-button,
+  .scorecard-handoff-actions .secondary-link {
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
   }
 
   .closing-band {

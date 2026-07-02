@@ -69,15 +69,16 @@ The best prospects are local service businesses that already have customer value
 12. In the pipeline, use `Copy intro`, `Copy offer`, or `Open offer` to work from the prospect's matched niche offer page.
 13. For a lower-friction first touch, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the prospect's matched category scorecard before the paid offer.
 14. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed.
-15. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
-16. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
-17. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-18. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
-19. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-20. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-21. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
-22. Use the dashboard report as the first draft of the deliverable.
-23. Offer the implementation sprint only after the audit is delivered.
+15. If a prospect engages with the scorecard, point them to the `Score handoff` section, then ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
+16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
+17. Use `Score lead reply`, `Score lead call`, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
+18. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+19. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+20. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+21. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+22. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+23. Use the dashboard report as the first draft of the deliverable.
+24. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 
