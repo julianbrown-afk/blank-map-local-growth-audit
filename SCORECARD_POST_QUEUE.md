@@ -36,13 +36,19 @@ Website conversion audit page:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-website-conversion-audit.html
 ```
 
+Audit method page:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-method.html
+```
+
 Warm referral kit:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, audit-fit checks, the website conversion audit page, and the warm referral kit.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, audit-fit checks, the audit method page, the website conversion audit page, and the warm referral kit.
 
 Dentist scorecard:
 
