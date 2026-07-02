@@ -83,4 +83,6 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - Outreach sent: no
 - Prospects contacted: 0
 - Paid audits sold from this batch: 0
-- Next required human action: manually review the first prospect before any direct outreach
+- First review draft: `FIRST_PROSPECT_REVIEW.md`
+- First mobile check: completed read-only, no outreach sent
+- Next required action: confirm the first prospect's review/profile state, then decide whether a warm referral, permitted community reply, or no-contact follow-up is appropriate
