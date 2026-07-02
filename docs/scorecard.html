@@ -30,7 +30,7 @@
     </script>
     <script src="config.js?v=20260702pages"></script>
     <script defer src="offer.js?v=20260702priceguard"></script>
-    <script defer src="scorecard.js?v=20260702prefill"></script>
+    <script defer src="scorecard.js?v=20260702neutral"></script>
   </head>
   <body class="offer-body free-scorecard-body">
     <header class="offer-nav">
@@ -69,13 +69,13 @@
           </div>
 
           <aside class="free-scorecard-result" aria-live="polite">
-            <span>Current score</span>
-            <strong data-free-score-output="score">17/100</strong>
-            <p data-free-score-output="priority">High-priority audit</p>
-            <small data-free-score-output="note">Several buyer-path basics are missing. Start with a focused audit before paying for more traffic or a larger redesign.</small>
+            <span data-free-score-output="scoreLabel">Score after answers</span>
+            <strong data-free-score-output="score">Start here</strong>
+            <p data-free-score-output="priority">Check what is already handled</p>
+            <small data-free-score-output="note">Select the six checks below. The score, top gaps, and next step update after you answer.</small>
             <div class="free-scorecard-value">
               <span>Rough opportunity</span>
-              <strong data-free-score-output="monthlyValue">$683/mo</strong>
+              <strong data-free-score-output="monthlyValue">Estimate after scoring</strong>
             </div>
           </aside>
         </div>
@@ -120,8 +120,8 @@
         </div>
         <div class="scorecard-buyer-path">
           <span>Useful result path</span>
-          <strong data-free-score-output="decisionTitle">Buy before more traffic</strong>
-          <p data-free-score-output="decisionBody">The current result shows enough visible friction to justify a fixed-scope audit before larger spend.</p>
+          <strong data-free-score-output="decisionTitle">Start with the visible buyer path</strong>
+          <p data-free-score-output="decisionBody">Answer the six checks first, then use the result to decide whether a paid audit has a clear job to do.</p>
         </div>
       </section>
 
@@ -134,7 +134,7 @@
           </div>
           <div class="free-scorecard-options">
             <label>
-              <input type="checkbox" data-free-score-item data-score-option="primaryAction" data-free-score-label="Mobile visitors do not get one obvious call, booking, or quote action" checked>
+              <input type="checkbox" data-free-score-item data-score-option="primaryAction" data-free-score-label="Mobile visitors do not get one obvious call, booking, or quote action">
               <span>Mobile visitors get one obvious call, booking, or quote action.</span>
             </label>
             <label>
@@ -186,22 +186,24 @@
         </div>
 
         <aside class="free-scorecard-summary" id="scorecard-result" aria-live="polite">
-          <span data-free-score-output="gaps">5 gaps</span>
-          <h2 data-free-score-output="priority">High-priority audit</h2>
-          <p data-free-score-output="note">Several buyer-path basics are missing. Start with a focused audit before paying for more traffic or a larger redesign.</p>
+          <span data-free-score-output="gaps">Not scored yet</span>
+          <h2 data-free-score-output="priority">Answer the six checks first</h2>
+          <p data-free-score-output="note">Select what is already handled. Anything left unchecked becomes a visible gap to review.</p>
           <div class="summary-value">
             <span>Estimated recoverable opportunity</span>
-            <strong data-free-score-output="monthlyValue">$683/mo</strong>
+            <strong data-free-score-output="monthlyValue">Estimate after scoring</strong>
           </div>
           <div class="scorecard-recommendation">
             <span data-free-score-output="recommendationKicker">Recommended next move</span>
-            <strong data-free-score-output="recommendationTitle">Buy the audit before spending on more traffic</strong>
-            <p data-free-score-output="recommendationBody">The scorecard found enough buyer-path gaps to justify a fixed-scope review before a larger redesign, ad campaign, or retainer.</p>
-            <small data-free-score-output="recommendationFocus">Audit focus: mobile call, booking, or quote clarity.</small>
+            <strong data-free-score-output="recommendationTitle">Score the visible buyer path</strong>
+            <p data-free-score-output="recommendationBody">Use the result to decide whether the paid audit should rank fixes before larger marketing spend.</p>
+            <small data-free-score-output="recommendationFocus">Start by checking the six visible buyer-path basics.</small>
           </div>
           <div>
             <strong class="summary-label">Top gaps</strong>
-            <ul data-free-score-output="missingList"></ul>
+            <ul data-free-score-output="missingList">
+              <li>Answer the scorecard to see top gaps.</li>
+            </ul>
           </div>
           <div class="scorecard-contact-panel">
             <strong>Send enough detail to get useful next steps</strong>

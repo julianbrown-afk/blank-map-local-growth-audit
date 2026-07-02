@@ -6,6 +6,7 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   let copyTimer = 0;
+  let scorecardTouched = false;
 
   const TRACK_DATA = {
     dentist: {
@@ -527,7 +528,29 @@
       : "";
   }
 
-  function scorecardState() {
+  function unscoredState(base) {
+    return {
+      ...base,
+      isScored: false,
+      score: null,
+      gaps: null,
+      priority: "Answer the six checks first",
+      note: "Select what is already handled. Anything left unchecked becomes a visible gap to review.",
+      missingLabels: [],
+      decision: {
+        title: "Start with the visible buyer path",
+        body: "Answer the six checks first, then use the result to decide whether a paid audit has a clear job to do."
+      },
+      recommendation: {
+        kicker: "Recommended next move",
+        title: "Score the visible buyer path",
+        body: "Use the result to decide whether the paid audit should rank fixes before larger marketing spend.",
+        focus: "Start by checking the six visible buyer-path basics."
+      }
+    };
+  }
+
+  function scorecardState(options = {}) {
     const items = $$("[data-free-score-item]");
     const checked = items.filter((item) => item.checked);
     const missing = items.filter((item) => !item.checked);
@@ -539,6 +562,11 @@
     const closeRate = toNumber($("[data-free-score-input='closeRate']")?.value, 35);
     const monthlyValue = Math.round(customerValue * missedInquiries * (closeRate / 100));
     const missingLabels = missing.map((item) => item.dataset.freeScoreLabel || item.value || item.closest("label")?.innerText || "Buyer-path gap");
+    const base = { customerValue, missedInquiries, closeRate, monthlyValue };
+
+    if (options.neutral && !scorecardTouched) {
+      return unscoredState(base);
+    }
 
     let priority = "Lower immediate priority";
     let note = "Your visible buyer path looks comparatively sound. Use the audit if you want outside validation before bigger work.";
@@ -551,6 +579,7 @@
     }
 
     return {
+      isScored: true,
       score,
       gaps,
       priority,
@@ -619,6 +648,33 @@
   }
 
   function buildScoreSummary(state, details = leadDetails()) {
+    if (!state.isScored) {
+      const leadBlock = buildLeadBlock(details);
+      const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+      const trackBlock = activeTrack
+        ? `Track: ${activeTrack.label}\nFocus: ${activeTrack.buyerPath}\n\n`
+        : "";
+
+      return `Free Local Growth Scorecard
+
+${leadBlock}${trackBlock}Score: Not scored yet
+Result path: Start with the visible buyer path
+
+Next step
+Answer the six visible buyer-path checks first. The scorecard will then show the top gaps, planning math, and whether a paid audit has a clear job to do.
+
+Planning inputs
+Average booked customer value: ${currency(state.customerValue)}
+Missed qualified inquiries per month: ${state.missedInquiries}
+Likely close rate on recovered inquiries: ${state.closeRate}%
+
+This is planning math, not a revenue guarantee.
+
+Scorecard: ${offerUrl(scorecardPath())}
+Paid audit: ${offerUrl(paidAuditPath())}
+${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
+    }
+
     const topGaps = state.missingLabels.length
       ? state.missingLabels.slice(0, 4).map((label, index) => `${index + 1}. ${label}`).join("\n")
       : "No urgent gap from this quick pass.";
@@ -662,7 +718,10 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     const emailLink = $("[data-free-score-email]");
     if (emailLink) {
       const subjectLead = details.businessName ? `${details.businessName}: ` : "";
-      const subject = encodeURIComponent(`${subjectLead}Local Growth Scorecard result: ${state.score}/100`);
+      const subjectText = state.isScored
+        ? `${subjectLead}Local Growth Scorecard result: ${state.score}/100`
+        : `${subjectLead}Local Growth Scorecard question`;
+      const subject = encodeURIComponent(subjectText);
       const body = encodeURIComponent(`${summary}\n\nI would like to understand what to fix first.`);
       emailLink.href = `mailto:${config.contactEmail || "JulianBrown@blankmapgroup.com"}?subject=${subject}&body=${body}`;
     }
@@ -683,13 +742,14 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
     const items = $$("[data-free-score-item]");
     if (!items.length) return;
 
-    const state = scorecardState();
+    const state = scorecardState({ neutral: true });
 
-    setText("[data-free-score-output='score']", `${state.score}/100`);
-    setText("[data-free-score-output='gaps']", `${state.gaps} ${state.gaps === 1 ? "gap" : "gaps"}`);
+    setText("[data-free-score-output='scoreLabel']", state.isScored ? "Current score" : "Score after answers");
+    setText("[data-free-score-output='score']", state.isScored ? `${state.score}/100` : "Start here");
+    setText("[data-free-score-output='gaps']", state.isScored ? `${state.gaps} ${state.gaps === 1 ? "gap" : "gaps"}` : "Not scored yet");
     setText("[data-free-score-output='priority']", state.priority);
     setText("[data-free-score-output='note']", state.note);
-    setText("[data-free-score-output='monthlyValue']", `${currency(state.monthlyValue)}/mo`);
+    setText("[data-free-score-output='monthlyValue']", state.isScored ? `${currency(state.monthlyValue)}/mo` : "Estimate after scoring");
     setText("[data-free-score-output='recommendationKicker']", state.recommendation.kicker);
     setText("[data-free-score-output='recommendationTitle']", state.recommendation.title);
     setText("[data-free-score-output='recommendationBody']", state.recommendation.body);
@@ -702,7 +762,9 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
 
     const missingList = $("[data-free-score-output='missingList']");
     if (missingList) {
-      missingList.innerHTML = state.missingLabels.length
+      missingList.innerHTML = !state.isScored
+        ? "<li>Answer the scorecard to see top gaps.</li>"
+        : state.missingLabels.length
         ? state.missingLabels.slice(0, 4).map((label) => `<li>${escapeHtml(label)}</li>`).join("")
         : "<li>No urgent gap from this quick pass.</li>";
     }
@@ -713,7 +775,7 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
   async function copyScoreSummary() {
     const status = $("[data-free-score-copy-status]");
     const manual = $("[data-free-score-manual]");
-    const summary = buildScoreSummary(scorecardState());
+    const summary = buildScoreSummary(scorecardState({ neutral: true }));
     try {
       let copied = await writeClipboardText(summary);
 
@@ -754,7 +816,10 @@ ${bookingLine}Sample audit: ${offerUrl("sample-audit.html")}`;
 
   function bindFreeScorecard() {
     $$("[data-free-score-item]").forEach((item) => {
-      item.addEventListener("change", updateFreeScorecard);
+      item.addEventListener("change", () => {
+        scorecardTouched = true;
+        updateFreeScorecard();
+      });
     });
     $$("[data-free-score-input]").forEach((item) => {
       item.addEventListener("input", updateFreeScorecard);
