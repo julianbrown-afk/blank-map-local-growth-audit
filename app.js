@@ -105,7 +105,15 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Testimonial proof, appointment action, mobile first-screen clarity"
+      reviewAngle: "Testimonial proof, appointment action, mobile first-screen clarity",
+      reviewStatus: "Source-only draft; automation render returned blank",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Recheck visually in a normal browser before scoring.",
+      status: "Research only",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.completedentistrylexington.com/"
+      ]
     },
     {
       businessName: "Williams Family Dentistry",
@@ -114,7 +122,15 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Testimonial visibility, booking action, local search confidence signals"
+      reviewAngle: "Testimonial visibility, booking action, local search confidence signals",
+      reviewStatus: "Source and mobile check completed; no outreach sent",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score appointment prominence, proof placement, and follow-up assumptions before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://jewilliamsdmd.com/"
+      ]
     },
     {
       businessName: "Luxe Lounge Medspa",

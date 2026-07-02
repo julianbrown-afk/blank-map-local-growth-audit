@@ -93,5 +93,5 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - First mobile check: completed read-only, no outreach sent
 - Review packet: `PROSPECT_REVIEW_PACKET.md`
 - Reviewed pipeline queue: `REVIEWED_PIPELINE.csv`
-- Reviewed prospects: 4 total internal drafts, 0 contacted
-- Next required action: load or refresh the starter list in the dashboard, score Cooper Family Dentistry and AMS Dental, then recheck Tates Creek Dental visually before scoring
+- Reviewed prospects: 6 total internal drafts, 0 contacted
+- Next required action: load or refresh the starter list in the dashboard, score Cooper Family Dentistry, AMS Dental, and Williams Family Dentistry, then recheck Tates Creek Dental and Complete Dentistry for All Ages visually before scoring
