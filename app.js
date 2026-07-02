@@ -552,6 +552,42 @@
     return `Hi ${prospect.businessName || "there"} team,\n\nQuick follow-up on the ${settings.serviceName} page I sent over. The ${track.label.toLowerCase()} is here if you want to review it:\n${offerUrl}\n\nThe audit is fixed-scope at ${currency(settings.auditPrice)} and is meant to give you a clear 30-day plan before any bigger implementation work is discussed.\n\nIf this is useful, the page has the buy and booking options. If not, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
   }
 
+  function buildIntakeEmail(prospect = state.prospect) {
+    const settings = state.settings;
+    const businessName = prospect.businessName || "your business";
+    const website = prospect.website || "[website]";
+    const serviceArea = prospect.city || settings.marketCity || "[service area]";
+    const category = prospect.businessType || "local service business";
+    const intakeUrl = getOfferUrl("audit-intake.html");
+    const bookingLine = settings.bookingLink
+      ? `Call booking link: ${settings.bookingLink}`
+      : "Call booking link: [add booking link if needed]";
+
+    return `Subject: ${settings.serviceName} intake for ${businessName}
+
+Hi ${businessName} team,
+
+Thanks for purchasing or booking the ${settings.serviceName}. To start the audit, please reply with the details below. No website passwords or account logins are needed for the first review.
+
+1. Business name: ${businessName}
+2. Website: ${website}
+3. Service area: ${serviceArea}
+4. Business category: ${category}
+5. Highest-value service, offer, treatment, job type, or appointment:
+6. Current best contact path: phone, form, booking page, or quote request:
+7. Competitors or priority notes:
+8. Payment name or email used at checkout:
+
+Intake page: ${intakeUrl}
+${bookingLine}
+
+Once I have those details, I will review the visible buyer path and prepare the prioritized 30-day action plan.
+
+${settings.ownerName}
+${settings.businessName}
+${settings.contactEmail}`;
+  }
+
   function csvCell(value) {
     const text = String(value ?? "");
     return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
@@ -783,6 +819,7 @@
             <div class="pipeline-actions">
               <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
               <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
+              <button class="ghost-button" type="button" data-copy-prospect-intake="${escapeHtml(prospect.id)}">Copy intake</button>
               <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy link</button>
               <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open</button>
               <button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button>
@@ -818,6 +855,7 @@
     $("[data-output='reportText']").textContent = buildReport();
     $("[data-output='emailText']").textContent = buildEmail();
     $("[data-output='dmText']").textContent = buildDm();
+    $("[data-output='intakeText']").textContent = buildIntakeEmail();
     renderFindings(analysis.findings);
     renderPipelineSummary();
     renderPipeline();
@@ -950,6 +988,7 @@
     }
     if (action === "copy-email") copyText(buildEmail(), "Email copied");
     if (action === "copy-dm") copyText(buildDm(), "DM copied");
+    if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
     if (action === "open-offer") window.open(getOfferUrl(), "_blank", "noopener,noreferrer");
     if (action === "download-config") downloadFile("config.js", buildConfigText(), "text/javascript");
@@ -1087,6 +1126,12 @@
       if (copyFollowUpButton) {
         const prospect = state.prospects.find((item) => item.id === copyFollowUpButton.dataset.copyProspectFollowUp);
         if (prospect) copyText(buildProspectFollowUp(prospect), "Follow-up copied");
+      }
+
+      const copyIntakeButton = event.target.closest("[data-copy-prospect-intake]");
+      if (copyIntakeButton) {
+        const prospect = state.prospects.find((item) => item.id === copyIntakeButton.dataset.copyProspectIntake);
+        if (prospect) copyText(buildIntakeEmail(prospect), "Intake email copied");
       }
 
       const copyOfferButton = event.target.closest("[data-copy-prospect-offer]");

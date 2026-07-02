@@ -37,6 +37,26 @@
     return `mailto:${config.contactEmail}?subject=${subject}`;
   }
 
+  function intakeMailto() {
+    const subject = encodeURIComponent(`${config.serviceName} intake`);
+    const body = encodeURIComponent([
+      `Hi ${config.businessName},`,
+      "",
+      "I purchased or booked the audit and want to start intake.",
+      "",
+      "Business name:",
+      "Website:",
+      "Service area:",
+      "Highest-value service or offer:",
+      "Current booking/contact path:",
+      "Competitors or priority notes:",
+      "",
+      "Payment name or email used at checkout:",
+      ""
+    ].join("\n"));
+    return `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+  }
+
   function renderCards(target, items) {
     target.innerHTML = items.map((item, index) => `
       <article>
@@ -89,6 +109,10 @@
     $$("[data-offer-link='booking']").forEach((link) => {
       link.href = config.bookingLink || ctaHref();
       link.textContent = config.bookingLink ? "Book a call" : "Email to book";
+    });
+
+    $$("[data-offer-link='intake-email']").forEach((link) => {
+      link.href = intakeMailto();
     });
 
     $$("[data-score-item]").forEach((item) => {

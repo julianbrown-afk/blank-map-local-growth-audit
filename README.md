@@ -4,6 +4,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 
 - `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page that can link to Stripe Payment Links, a booking page, or email.
+- `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
 - `assets/audit-preview.png`: product visual used by the offer page.
@@ -22,6 +23,12 @@ Sample report:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+```
+
+Audit intake:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/audit-intake.html
 ```
 
 Niche offer pages:
@@ -58,7 +65,8 @@ http://localhost:4173/index.html
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
 4. Send prospects the generated offer link, or use the closest niche offer page when it matches the prospect.
-5. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+5. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+6. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
 
@@ -74,3 +82,4 @@ The public config intentionally does not expose the private business address. Th
 - Implementation sprint: `$1,500`
 - Target: local service businesses with weak booking flow, review gaps, thin Google Business Profile content, or no lead tracking.
 - Daily motion: 10 to 15 researched prospects, personalized email, then one follow-up with the generated audit preview.
+- Fulfillment motion: send the intake page after payment, collect website/service-area details, deliver the audit, then quote implementation only after the action plan is clear.

@@ -1261,6 +1261,13 @@ td select {
   color: var(--muted);
 }
 
+.after-payment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
 .faq-section {
   border-bottom: 1px solid var(--line);
 }
@@ -1302,6 +1309,160 @@ td select {
 
 .closing-actions {
   margin-top: 20px;
+}
+
+.intake-body {
+  background:
+    linear-gradient(180deg, #fbfcf8, #edf4f1 42%, #ffffff 100%),
+    var(--paper);
+}
+
+.intake-hero {
+  min-height: 76vh;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(19, 94, 75, 0.84) 48%, rgba(24, 32, 29, 0.24)),
+    url("assets/audit-preview.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.intake-hero-inner {
+  width: min(980px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 132px 0 58px;
+}
+
+.intake-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.03;
+}
+
+.intake-hero h1 span {
+  display: inline;
+}
+
+.intake-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(1120px, calc(100% - 32px));
+  margin: -42px auto 0;
+  border: 1px solid rgba(217, 222, 212, 0.82);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.intake-strip div {
+  min-height: 142px;
+  padding: 20px;
+}
+
+.intake-strip div + div {
+  border-left: 1px solid var(--line);
+}
+
+.intake-strip span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.intake-strip strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 19px;
+}
+
+.intake-strip p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.intake-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) repeat(2, minmax(0, 0.95fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.intake-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.primary-intake-card {
+  background:
+    linear-gradient(145deg, rgba(19, 94, 75, 0.1), rgba(240, 180, 41, 0.16)),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.intake-card h2,
+.intake-note h2 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.14;
+}
+
+.intake-checklist,
+.intake-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+.intake-checklist {
+  padding-left: 22px;
+}
+
+.intake-list {
+  padding: 0;
+  list-style: none;
+}
+
+.intake-list li {
+  border-left: 4px solid var(--blue);
+  padding: 10px 12px;
+  background: var(--field);
+}
+
+.intake-card .primary-button {
+  margin-top: 20px;
+}
+
+.intake-note {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 56px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  background:
+    linear-gradient(135deg, rgba(223, 234, 242, 0.72), rgba(255, 248, 244, 0.94)),
+    #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.intake-note p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 12px 0 0;
+  color: var(--muted);
 }
 
 .niche-body {
@@ -1639,6 +1800,9 @@ td select {
     .scorecard-section,
     .scorecard-panel,
     .after-payment-grid,
+    .intake-grid,
+    .intake-strip,
+    .intake-note,
     .assurance-band,
     .niche-proof-bar,
     .niche-layout,
@@ -1757,6 +1921,40 @@ td select {
 
   .niche-hero-copy {
     font-size: 17px;
+  }
+
+  .intake-hero {
+    min-height: 0;
+    align-items: flex-start;
+    background:
+      linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(19, 94, 75, 0.93)),
+      url("assets/audit-preview.png");
+    background-position: 70% center;
+    background-size: cover;
+  }
+
+  .intake-hero-inner {
+    padding-top: 112px;
+    padding-bottom: 28px;
+  }
+
+  .intake-hero h1 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .intake-strip {
+    margin-top: -24px;
+  }
+
+  .intake-strip div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .intake-note {
+    align-items: flex-start;
+    padding: 22px;
   }
 
   .niche-proof-bar {
