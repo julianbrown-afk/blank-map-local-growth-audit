@@ -2496,8 +2496,35 @@ td select {
   background: var(--field);
 }
 
-.intake-card .primary-button {
+.intake-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 20px;
+}
+
+.intake-copy-status {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: var(--green-dark);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.intake-manual-copy {
+  min-height: 210px;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--ink);
+  background: #ffffff;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.intake-manual-copy[hidden] {
+  display: none;
 }
 
 .intake-note {

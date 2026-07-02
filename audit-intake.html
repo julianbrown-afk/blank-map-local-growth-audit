@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/audit-intake.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702q">
+    <link rel="stylesheet" href="styles.css?v=20260702ai">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -27,8 +27,8 @@
         }
       }
     </script>
-    <script src="config.js?v=20260702q"></script>
-    <script defer src="offer.js?v=20260702q"></script>
+    <script src="config.js?v=20260702ai"></script>
+    <script defer src="offer.js?v=20260702ai"></script>
   </head>
   <body class="offer-body intake-body">
     <header class="offer-nav">
@@ -99,7 +99,12 @@
             <li>Current best contact path: phone, form, booking page, or quote request.</li>
             <li>Payment name or email used at checkout so the order can be matched.</li>
           </ol>
-          <a class="primary-button" data-offer-link="intake-email" href="mailto:JulianBrown@blankmapgroup.com">Email intake details</a>
+          <div class="intake-actions">
+            <a class="primary-button" data-offer-link="intake-email" href="mailto:JulianBrown@blankmapgroup.com">Email intake details</a>
+            <button class="ghost-button" type="button" data-intake-copy>Copy intake template</button>
+          </div>
+          <p class="intake-copy-status" data-intake-copy-status aria-live="polite"></p>
+          <textarea class="intake-manual-copy" data-intake-manual readonly hidden aria-label="Intake template text"></textarea>
         </article>
 
         <article class="intake-card">

@@ -21,6 +21,7 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const initialTitle = document.title;
+  let intakeCopyTimer = 0;
 
   function currency(value) {
     return new Intl.NumberFormat("en-US", {
@@ -37,9 +38,8 @@
     return `mailto:${config.contactEmail}?subject=${subject}`;
   }
 
-  function intakeMailto() {
-    const subject = encodeURIComponent(`${config.serviceName} intake`);
-    const body = encodeURIComponent([
+  function intakeText() {
+    return [
       `Hi ${config.businessName},`,
       "",
       "I purchased or booked the audit and want to start intake.",
@@ -49,12 +49,68 @@
       "Service area:",
       "Highest-value service or offer:",
       "Current booking/contact path:",
+      "Goal for this audit:",
       "Competitors or priority notes:",
+      "Known booking, review, tracking, or follow-up bottlenecks:",
       "",
       "Payment name or email used at checkout:",
+      "",
+      "I understand the audit starts from public pages and the buyer path. I am not including passwords or account logins in this message.",
       ""
-    ].join("\n"));
+    ].join("\n");
+  }
+
+  function intakeMailto() {
+    const subject = encodeURIComponent(`${config.serviceName} intake`);
+    const body = encodeURIComponent(intakeText());
     return `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+  }
+
+  async function copyIntakeTemplate() {
+    const status = $("[data-intake-copy-status]");
+    const manual = $("[data-intake-manual]");
+    const text = intakeText();
+
+    try {
+      let copied = false;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+
+      if (!copied) {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-999px";
+        document.body.appendChild(area);
+        area.focus();
+        area.select();
+        copied = document.execCommand("copy");
+        area.remove();
+      }
+
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Intake template copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The intake template is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(intakeCopyTimer);
+    intakeCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
   }
 
   function renderCards(target, items) {
@@ -145,6 +201,10 @@
 
     $$("[data-offer-link='intake-email']").forEach((link) => {
       link.href = intakeMailto();
+    });
+
+    $$("[data-intake-copy]").forEach((button) => {
+      button.addEventListener("click", copyIntakeTemplate);
     });
 
     $$("[data-score-item]").forEach((item) => {
