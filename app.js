@@ -803,7 +803,9 @@ Use this line if they ask about results: the audit is planning work based on obs
 
   function getProspectTrack(prospect = {}) {
     const text = `${prospect.businessType || ""} ${prospect.businessName || ""}`.toLowerCase();
-    const hasHvac = text.includes("hvac") || text.includes("heating") || text.includes("air conditioning") || text.includes("electric");
+    const hasPlumbing = text.includes("plumb");
+    const hasElectrical = text.includes("electric");
+    const hasHvac = text.includes("hvac") || text.includes("heating") || text.includes("air conditioning") || text.includes("cooling");
     if (text.includes("law") || text.includes("attorney") || text.includes("injury") || text.includes("legal")) {
       return {
         label: "Personal injury law track",
@@ -811,14 +813,21 @@ Use this line if they ask about results: the audit is planning work based on obs
         focus: "consultation clarity, trust proof, practice-area pages, and intake follow-up friction"
       };
     }
-    if (text.includes("plumb") && !hasHvac) {
+    if (hasPlumbing && !hasHvac && !hasElectrical) {
       return {
         label: "Plumbing track",
         path: "lexington-plumbing-growth-audit.html",
         focus: "emergency-call clarity, repair booking, trust proof, service-page conversion, and follow-up gaps"
       };
     }
-    if (hasHvac || text.includes("plumb")) {
+    if (hasHvac && !hasPlumbing && !hasElectrical) {
+      return {
+        label: "HVAC track",
+        path: "lexington-hvac-growth-audit.html",
+        focus: "repair booking, replacement quote clarity, maintenance offers, trust proof, and follow-up gaps"
+      };
+    }
+    if (hasHvac || hasPlumbing || hasElectrical) {
       return {
         label: "HVAC/plumbing track",
         path: "lexington-hvac-plumbing-growth-audit.html",
