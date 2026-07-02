@@ -688,7 +688,7 @@ td select {
   align-items: flex-end;
   background:
     linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(24, 32, 29, 0.82) 42%, rgba(24, 32, 29, 0.18) 82%),
-    url("assets/audit-preview.png");
+    url("assets/audit-preview-v2.jpg");
   background-position: center;
   background-size: cover;
   color: #ffffff;
@@ -1318,7 +1318,7 @@ td select {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(19, 94, 75, 0.9) 44%, rgba(24, 32, 29, 0.28)),
-    url("assets/audit-preview.png");
+    url("assets/audit-preview-v2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -1706,7 +1706,7 @@ td select {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(19, 94, 75, 0.84) 48%, rgba(24, 32, 29, 0.24)),
-    url("assets/audit-preview.png");
+    url("assets/audit-preview-v2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -1860,7 +1860,7 @@ td select {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(24, 32, 29, 0.98), rgba(24, 32, 29, 0.84) 48%, rgba(24, 32, 29, 0.22)),
-    url("assets/audit-preview.png");
+    url("assets/audit-preview-v2.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -2242,7 +2242,7 @@ td select {
     align-items: flex-start;
     background:
       linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(24, 32, 29, 0.94)),
-      url("assets/audit-preview.png");
+      url("assets/audit-preview-v2.jpg");
     background-position: 70% center;
     background-size: cover;
   }
@@ -2301,7 +2301,7 @@ td select {
     align-items: flex-start;
     background:
       linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(24, 32, 29, 0.94)),
-      url("assets/audit-preview.png");
+      url("assets/audit-preview-v2.jpg");
     background-position: 70% center;
     background-size: cover;
   }
@@ -2325,7 +2325,7 @@ td select {
     align-items: flex-start;
     background:
       linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(19, 94, 75, 0.93)),
-      url("assets/audit-preview.png");
+      url("assets/audit-preview-v2.jpg");
     background-position: 70% center;
     background-size: cover;
   }
@@ -2442,7 +2442,7 @@ td select {
     align-items: flex-start;
     background:
       linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(19, 94, 75, 0.94)),
-      url("assets/audit-preview.png");
+      url("assets/audit-preview-v2.jpg");
     background-position: 70% center;
     background-size: cover;
   }

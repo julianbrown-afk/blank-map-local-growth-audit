@@ -8,7 +8,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
-- `assets/audit-preview.png`: product visual used by the offer page.
+- `assets/audit-preview-v2.jpg`: product visual used by the offer page.
 
 No revenue is guaranteed. The app is designed to make a real offer easy to sell, deliver, and track.
 
