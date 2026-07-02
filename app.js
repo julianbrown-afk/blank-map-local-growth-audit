@@ -454,6 +454,62 @@
     return `Hi ${prospect.businessName}, I noticed ${issue} while checking ${prospect.businessType} options in ${prospect.city}. I sell a short ${settings.serviceName} for ${currency(settings.auditPrice)} with a 30-day action plan. Should I send the details?`;
   }
 
+  function buildScorecardPost() {
+    const settings = state.settings;
+    const scorecardUrl = getPublicUrl("scorecard.html");
+    const offerUrl = getPublicUrl();
+
+    return `${settings.marketCity} local service owners: I made a free scorecard for checking the buyer-path basics that often get missed before people spend more on ads or redesigns.
+
+It looks at mobile call-to-action clarity, Google profile basics, review trust, tracking, service-page clarity, and follow-up gaps.
+
+Free scorecard:
+${scorecardUrl}
+
+If the scorecard surfaces enough gaps, the paid ${settings.serviceName} turns that into a prioritized 30-day action plan for ${currency(settings.auditPrice)}.
+
+Paid audit details:
+${offerUrl}
+
+This is planning math, not a revenue guarantee.`;
+  }
+
+  function buildWarmReferralNote() {
+    const settings = state.settings;
+    const scorecardUrl = getPublicUrl("scorecard.html");
+    const offerUrl = getPublicUrl();
+
+    return `Quick ask: do you know any ${settings.marketCity} service business owners who rely on calls, bookings, appointments, or quote requests?
+
+I built a free Local Growth Scorecard they can use to check whether their website, Google profile, reviews, tracking, and follow-up path have obvious buyer leaks:
+${scorecardUrl}
+
+If it shows enough gaps, I also offer a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)}:
+${offerUrl}
+
+No retainer pitch. The audit produces a prioritized 30-day action plan and an optional implementation quote.`;
+  }
+
+  function buildCommunityReply() {
+    const settings = state.settings;
+    const scorecardUrl = getPublicUrl("scorecard.html");
+
+    return `A practical first step is to check the buyer path before buying more traffic.
+
+I made a free scorecard for ${settings.marketCity} service businesses that checks:
+- mobile call or booking clarity
+- Google Business Profile basics
+- review trust
+- call/form/booking tracking
+- follow-up for unbooked inquiries
+- high-value service page clarity
+
+You can run it here:
+${scorecardUrl}
+
+It will not guarantee revenue, but it can show whether a focused audit is worth doing before a bigger marketing spend.`;
+  }
+
   function getProspectTrack(prospect = {}) {
     const text = `${prospect.businessType || ""} ${prospect.businessName || ""}`.toLowerCase();
     if (text.includes("dent")) {
@@ -517,6 +573,11 @@
       if (plainUrl(value)) url.searchParams.set(key, value);
     });
     return url.toString();
+  }
+
+  function getPublicUrl(path = "offer.html") {
+    const publicPath = path === "offer.html" ? "" : path;
+    return new URL(publicPath, getOfferBaseUrl()).toString();
   }
 
   function getProspectOfferUrl(prospect) {
@@ -861,6 +922,9 @@ ${settings.contactEmail}`;
     $("[data-output='emailText']").textContent = buildEmail();
     $("[data-output='dmText']").textContent = buildDm();
     $("[data-output='intakeText']").textContent = buildIntakeEmail();
+    $("[data-output='scorecardPostText']").textContent = buildScorecardPost();
+    $("[data-output='warmReferralText']").textContent = buildWarmReferralNote();
+    $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
     renderPipelineSummary();
     renderPipeline();
@@ -994,6 +1058,9 @@ ${settings.contactEmail}`;
     if (action === "copy-email") copyText(buildEmail(), "Email copied");
     if (action === "copy-dm") copyText(buildDm(), "DM copied");
     if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
+    if (action === "copy-scorecard-post") copyText(buildScorecardPost(), "Scorecard post copied");
+    if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
+    if (action === "copy-community-reply") copyText(buildCommunityReply(), "Community reply copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
     if (action === "copy-scorecard-link") copyText(getOfferUrl("scorecard.html"), "Scorecard link copied");
     if (action === "open-offer") window.open(getOfferUrl(), "_blank", "noopener,noreferrer");

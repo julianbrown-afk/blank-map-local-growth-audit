@@ -63,14 +63,15 @@ The best prospects are local service businesses that already have customer value
 8. Use the report text as the basis for a paid audit preview.
 9. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
 10. For a lower-friction first touch, use `Copy scorecard link` and send the public free scorecard before the paid offer.
-11. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
-12. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-13. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
-14. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-15. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-16. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
-17. Use the dashboard report as the first draft of the deliverable.
-18. Offer the implementation sprint only after the audit is delivered.
+11. Use `Scorecard post`, `Warm referral`, or `Community reply` for public posts, warm referrals, and relevant community discussions where posting is allowed.
+12. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
+13. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+14. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+15. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+16. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+17. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+18. Use the dashboard report as the first draft of the deliverable.
+19. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 
@@ -118,12 +119,12 @@ Sample: https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-au
 ## Social Post
 
 ```text
-Local service businesses in Lexington: I built a short Local Growth Audit that checks booking flow, review friction, Google profile basics, website clarity, and follow-up gaps.
+Local service businesses in Lexington: I built a free scorecard that checks booking flow, review friction, Google profile basics, website clarity, tracking, and follow-up gaps.
 
-It is a fixed $399 audit with a 30-day action plan. No retainer required.
+It is a quick way to see whether a paid Local Growth Audit has a clear job to do before spending on more traffic or a bigger redesign.
 
-https://julianbrown-afk.github.io/blank-map-local-growth-audit/
-Sample report: https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+Free scorecard: https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
+Paid audit details: https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ```
 
 ## Fulfillment Checklist
