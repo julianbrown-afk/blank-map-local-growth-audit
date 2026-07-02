@@ -40,6 +40,27 @@
     return new URL(path, base).toString();
   }
 
+  function leadDetails() {
+    const details = {};
+    $$("[data-free-lead]").forEach((input) => {
+      details[input.dataset.freeLead] = String(input.value || "").trim();
+    });
+    return details;
+  }
+
+  function buildLeadBlock(details) {
+    const lines = [
+      ["Business name", details.businessName],
+      ["Website", details.website],
+      ["Business type", details.businessType],
+      ["Visitor email", details.contactEmail]
+    ].filter(([, value]) => value);
+
+    return lines.length
+      ? `Business details\n${lines.map(([label, value]) => `${label}: ${value}`).join("\n")}\n\n`
+      : "";
+  }
+
   function scorecardState() {
     const items = $$("[data-free-score-item]");
     const checked = items.filter((item) => item.checked);
@@ -76,14 +97,15 @@
     };
   }
 
-  function buildScoreSummary(state) {
+  function buildScoreSummary(state, details = leadDetails()) {
     const topGaps = state.missingLabels.length
       ? state.missingLabels.slice(0, 4).map((label, index) => `${index + 1}. ${label}`).join("\n")
       : "No urgent gap from this quick pass.";
+    const leadBlock = buildLeadBlock(details);
 
     return `Free Local Growth Scorecard result
 
-Score: ${state.score}/100
+${leadBlock}Score: ${state.score}/100
 Priority: ${state.priority}
 Gaps found: ${state.gaps}
 Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo
@@ -104,10 +126,12 @@ Sample audit: ${offerUrl("sample-audit.html")}`;
   }
 
   function updateScorecardActions(state) {
-    const summary = buildScoreSummary(state);
+    const details = leadDetails();
+    const summary = buildScoreSummary(state, details);
     const emailLink = $("[data-free-score-email]");
     if (emailLink) {
-      const subject = encodeURIComponent(`Local Growth Scorecard result: ${state.score}/100`);
+      const subjectLead = details.businessName ? `${details.businessName}: ` : "";
+      const subject = encodeURIComponent(`${subjectLead}Local Growth Scorecard result: ${state.score}/100`);
       const body = encodeURIComponent(`${summary}\n\nI would like to understand what to fix first.`);
       emailLink.href = `mailto:${config.contactEmail || "JulianBrown@blankmapgroup.com"}?subject=${subject}&body=${body}`;
     }
@@ -189,6 +213,9 @@ Sample audit: ${offerUrl("sample-audit.html")}`;
       item.addEventListener("change", updateFreeScorecard);
     });
     $$("[data-free-score-input]").forEach((item) => {
+      item.addEventListener("input", updateFreeScorecard);
+    });
+    $$("[data-free-lead]").forEach((item) => {
       item.addEventListener("input", updateFreeScorecard);
     });
     $$("[data-free-score-copy]").forEach((item) => {

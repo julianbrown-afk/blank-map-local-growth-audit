@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702q">
+    <link rel="stylesheet" href="styles.css?v=20260702s">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -28,9 +28,9 @@
         }
       }
     </script>
-    <script src="config.js?v=20260702q"></script>
-    <script defer src="offer.js?v=20260702q"></script>
-    <script defer src="scorecard.js?v=20260702q"></script>
+    <script src="config.js?v=20260702s"></script>
+    <script defer src="offer.js?v=20260702s"></script>
+    <script defer src="scorecard.js?v=20260702s"></script>
   </head>
   <body class="offer-body free-scorecard-body">
     <header class="offer-nav">
@@ -146,13 +146,33 @@
             <strong class="summary-label">Top gaps</strong>
             <ul data-free-score-output="missingList"></ul>
           </div>
+          <div class="scorecard-contact-panel">
+            <strong>Send enough detail to get useful next steps</strong>
+            <p>Optional. These details stay here unless you choose email or copy.</p>
+            <label>
+              Business name
+              <input type="text" autocomplete="organization" data-free-lead="businessName" placeholder="Business name">
+            </label>
+            <label>
+              Website
+              <input type="url" inputmode="url" autocomplete="url" data-free-lead="website" placeholder="https://example.com">
+            </label>
+            <label>
+              Your email
+              <input type="email" inputmode="email" autocomplete="email" data-free-lead="contactEmail" placeholder="you@example.com">
+            </label>
+            <label>
+              Business type
+              <input type="text" autocomplete="organization-title" data-free-lead="businessType" placeholder="Dentist, med spa, HVAC, law firm">
+            </label>
+          </div>
           <div class="hero-actions closing-actions">
             <a class="primary-button large" data-offer-link="cta" href="#">Buy audit</a>
             <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
             <a class="secondary-link dark" href="offer.html">See paid audit</a>
           </div>
           <div class="scorecard-result-actions">
-            <a class="ghost-button" data-free-score-email href="mailto:JulianBrown@blankmapgroup.com">Email my score</a>
+            <a class="ghost-button" data-free-score-email href="mailto:JulianBrown@blankmapgroup.com">Email score and details</a>
             <button class="ghost-button" type="button" data-free-score-copy>Copy score summary</button>
           </div>
           <p class="scorecard-copy-status" data-free-score-copy-status aria-live="polite"></p>
