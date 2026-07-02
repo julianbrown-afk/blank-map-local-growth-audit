@@ -63,13 +63,14 @@ The best prospects are local service businesses that already have customer value
 8. Use the report text as the basis for a paid audit preview.
 9. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
 10. For a lower-friction first touch, use `Copy scorecard link` and send the public free scorecard before the paid offer.
-11. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-12. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
-13. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-14. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-15. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
-16. Use the dashboard report as the first draft of the deliverable.
-17. Offer the implementation sprint only after the audit is delivered.
+11. If a prospect engages with the scorecard, ask them to use `Email my score` or `Copy score summary` so the next message can focus on their visible gaps.
+12. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+13. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+14. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+15. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+16. When a payment arrives or a buyer books, use `Copy intake email` or the row-level `Copy intake` action to request the business details.
+17. Use the dashboard report as the first draft of the deliverable.
+18. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 

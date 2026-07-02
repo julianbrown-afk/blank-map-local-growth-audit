@@ -1521,6 +1521,39 @@ td select {
   background: #ffffff;
 }
 
+.scorecard-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(217, 222, 212, 0.86);
+}
+
+.scorecard-copy-status {
+  min-height: 20px;
+  margin: 8px 0 0;
+  color: var(--green-dark);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.scorecard-manual-copy {
+  min-height: 180px;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--ink);
+  background: #ffffff;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.scorecard-manual-copy[hidden] {
+  display: none;
+}
+
 .scorecard-next-step {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
