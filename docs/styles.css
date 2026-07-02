@@ -2212,6 +2212,39 @@ td select {
   margin: 8px 0 0;
 }
 
+.niche-decision-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr);
+  gap: 20px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.niche-decision-band h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+.niche-decision-band p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.niche-decision-actions {
+  display: grid;
+  gap: 10px;
+  justify-items: stretch;
+}
+
+.niche-decision-actions .primary-button,
+.niche-decision-actions .secondary-link {
+  width: 100%;
+}
+
 .niche-close-note {
   max-width: 760px;
 }
@@ -2516,6 +2549,7 @@ td select {
     .assurance-band,
     .niche-proof-bar,
     .niche-layout,
+    .niche-decision-band,
     .outcome-strip,
     .hero-facts {
     grid-template-columns: 1fr;
@@ -2683,6 +2717,10 @@ td select {
   .niche-proof-bar div + div {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .niche-decision-band h2 {
+    font-size: 25px;
   }
 
   .offer-section {
