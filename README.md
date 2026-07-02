@@ -14,13 +14,7 @@ No revenue is guaranteed. The app is designed to make a real offer easy to sell,
 
 ## Live site
 
-Current verified public link while GitHub Pages is stuck in deployment queue:
-
-```text
-https://pavilion-brochures-departmental-mesa.trycloudflare.com/
-```
-
-Use the matching paths on that host for the scorecard, sample report, intake page, and niche offer pages until GitHub Pages reports a successful deployment again. The GitHub Pages URLs below are the intended permanent URLs, but the current Pages deployment is serving an older build.
+The permanent GitHub Pages URL is the active public link. If GitHub Pages is temporarily unavailable, use the current Cloudflare tunnel noted in the latest run status as a fallback only.
 
 Public offer page:
 

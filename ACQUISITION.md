@@ -1,12 +1,6 @@
 # Client Acquisition Workflow
 
-Current verified public link while GitHub Pages is stuck in deployment queue:
-
-```text
-https://pavilion-brochures-departmental-mesa.trycloudflare.com/
-```
-
-Use that host for scorecard-first links, sample report links, intake links, and niche offer links until GitHub Pages reports a successful deployment again. The configured operator dashboard link generator now points to this verified tunnel.
+Use the permanent GitHub Pages URLs for scorecard-first links, sample report links, intake links, and niche offer links. If GitHub Pages is temporarily unavailable, use the current Cloudflare tunnel noted in the latest run status as a fallback only.
 
 Public offer:
 
