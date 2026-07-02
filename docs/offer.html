@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702l">
+    <link rel="stylesheet" href="styles.css?v=20260702m">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -38,8 +38,8 @@
         }
       }
     </script>
-    <script src="config.js?v=20260702l"></script>
-    <script defer src="offer.js?v=20260702l"></script>
+    <script src="config.js?v=20260702m"></script>
+    <script defer src="offer.js?v=20260702m"></script>
   </head>
   <body class="offer-body">
     <header class="offer-nav">
@@ -244,6 +244,46 @@
               <a class="primary-button" data-offer-link="cta" href="#">Buy audit</a>
               <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer-section value-math-section">
+        <div class="section-head">
+          <p class="eyebrow">Value math</p>
+          <h2>Put a rough number on the leak</h2>
+          <p>
+            Use conservative numbers. If the buyer path is losing even a few qualified inquiries,
+            the audit has a clear job: identify which fixes are worth doing first.
+          </p>
+        </div>
+        <div class="value-math-panel" aria-live="polite">
+          <div class="value-controls">
+            <label class="value-control">
+              <span>Average booked customer value</span>
+              <input type="number" min="100" max="5000" step="50" value="650" inputmode="decimal" data-value-input="customerValue">
+              <strong data-value-output="customerValue">$650</strong>
+            </label>
+            <label class="value-control">
+              <span>Missed qualified inquiries per month</span>
+              <input type="number" min="1" max="20" step="1" value="3" inputmode="numeric" data-value-input="missedInquiries">
+              <strong data-value-output="missedInquiries">3</strong>
+            </label>
+            <label class="value-control">
+              <span>Likely close rate on recovered inquiries</span>
+              <input type="number" min="5" max="80" step="5" value="35" inputmode="numeric" data-value-input="closeRate">
+              <strong data-value-output="closeRate">35%</strong>
+            </label>
+          </div>
+          <div class="value-result">
+            <span>Estimated recoverable opportunity</span>
+            <strong data-value-output="monthlyValue">$683/mo</strong>
+            <p data-value-output="paybackNote">At $399, this is about 1.7x the audit price in one month if the recovered path converts as estimated.</p>
+            <div class="hero-actions value-actions">
+              <a class="primary-button" data-offer-link="cta" href="#">Buy audit</a>
+              <a class="secondary-link dark" data-offer-link="booking" href="#">Book a call</a>
+            </div>
+            <small>This is planning math, not a revenue guarantee.</small>
           </div>
         </div>
       </section>

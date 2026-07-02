@@ -1191,6 +1191,113 @@ td select {
   margin-top: 18px;
 }
 
+.value-math-section {
+  border-top: 1px solid var(--line);
+}
+
+.value-math-section .section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: end;
+}
+
+.value-math-section .section-head p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.value-math-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background:
+    linear-gradient(140deg, rgba(223, 234, 242, 0.62), rgba(255, 255, 255, 0) 56%),
+    #ffffff;
+  box-shadow: var(--shadow-strong);
+}
+
+.value-controls {
+  display: grid;
+  gap: 12px;
+}
+
+.value-control {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 0.9fr) minmax(72px, auto);
+  gap: 14px;
+  align-items: center;
+  min-height: 64px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.value-control span {
+  min-width: 0;
+}
+
+.value-control input {
+  margin: 0;
+}
+
+.value-control strong {
+  justify-self: end;
+  color: var(--green-dark);
+  font-size: 18px;
+}
+
+.value-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 22px;
+  color: #ffffff;
+  background:
+    linear-gradient(145deg, rgba(24, 32, 29, 0.94), rgba(19, 94, 75, 0.9)),
+    var(--green-dark);
+}
+
+.value-result span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.value-result strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.value-result p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.value-result small {
+  display: block;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 750;
+}
+
+.value-actions {
+  margin-top: 18px;
+}
+
+.value-actions .secondary-link.dark {
+  color: #ffffff;
+}
+
 .buyer-note {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
@@ -1799,6 +1906,9 @@ td select {
     .sample-section,
     .scorecard-section,
     .scorecard-panel,
+    .value-math-section .section-head,
+    .value-math-panel,
+    .value-control,
     .after-payment-grid,
     .intake-grid,
     .intake-strip,
@@ -2022,6 +2132,22 @@ td select {
   .score-actions .primary-button,
   .score-actions .secondary-link {
     min-height: 44px;
+  }
+
+  .value-math-section .section-head {
+    align-items: start;
+  }
+
+  .value-control {
+    gap: 8px;
+  }
+
+  .value-control strong {
+    justify-self: start;
+  }
+
+  .value-result strong {
+    font-size: 30px;
   }
 
   .closing-band {

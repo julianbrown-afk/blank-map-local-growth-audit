@@ -89,6 +89,38 @@
     }
   }
 
+  function updateValueMath() {
+    const inputs = {
+      customerValue: $("[data-value-input='customerValue']"),
+      missedInquiries: $("[data-value-input='missedInquiries']"),
+      closeRate: $("[data-value-input='closeRate']")
+    };
+    if (!inputs.customerValue || !inputs.missedInquiries || !inputs.closeRate) return;
+
+    const customerValue = Number(inputs.customerValue.value) || 0;
+    const missedInquiries = Number(inputs.missedInquiries.value) || 0;
+    const closeRate = Number(inputs.closeRate.value) || 0;
+    const monthlyValue = Math.round(customerValue * missedInquiries * (closeRate / 100));
+    const auditPrice = Math.max(Number(config.auditPrice) || 399, 1);
+    const payback = monthlyValue / auditPrice;
+
+    const outputCustomerValue = $("[data-value-output='customerValue']");
+    const outputMissedInquiries = $("[data-value-output='missedInquiries']");
+    const outputCloseRate = $("[data-value-output='closeRate']");
+    const outputMonthlyValue = $("[data-value-output='monthlyValue']");
+    const outputPaybackNote = $("[data-value-output='paybackNote']");
+
+    if (outputCustomerValue) outputCustomerValue.textContent = currency(customerValue);
+    if (outputMissedInquiries) outputMissedInquiries.textContent = String(missedInquiries);
+    if (outputCloseRate) outputCloseRate.textContent = `${closeRate}%`;
+    if (outputMonthlyValue) outputMonthlyValue.textContent = `${currency(monthlyValue)}/mo`;
+    if (outputPaybackNote) {
+      outputPaybackNote.textContent = payback >= 1
+        ? `At ${currency(auditPrice)}, this is about ${payback.toFixed(1)}x the audit price in one month if the recovered path converts as estimated.`
+        : `At ${currency(auditPrice)}, this shows why the audit should focus only on fixes with a realistic path to payback.`;
+    }
+  }
+
   function render() {
     if (initialTitle === "Local Growth Audit") document.title = config.serviceName;
     $$("[data-offer]").forEach((node) => {
@@ -119,6 +151,11 @@
       item.addEventListener("change", updateScorecard);
     });
     updateScorecard();
+
+    $$("[data-value-input]").forEach((item) => {
+      item.addEventListener("input", updateValueMath);
+    });
+    updateValueMath();
   }
 
   render();
