@@ -648,6 +648,14 @@ td select {
   margin-top: 26px;
 }
 
+.hero-note {
+  max-width: 560px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  font-weight: 750;
+}
+
 .hero-facts {
   grid-template-columns: repeat(3, minmax(0, 170px));
   margin-top: 36px;
@@ -716,6 +724,42 @@ td select {
 .buyer-note li {
   margin: 0;
   color: var(--muted);
+}
+
+.assurance-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+  margin: 46px 0 0;
+  padding: 28px max(16px, calc((100% - 1120px) / 2));
+  color: #ffffff;
+  background:
+    linear-gradient(90deg, rgba(19, 94, 75, 0.98), rgba(24, 32, 29, 0.96));
+}
+
+.assurance-band span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.assurance-band strong {
+  display: block;
+  max-width: 520px;
+  font-size: 24px;
+  line-height: 1.16;
+}
+
+.assurance-band p {
+  max-width: 620px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
 }
 
 .section-head {
@@ -795,6 +839,70 @@ td select {
 
 .sample-card p {
   margin: 10px 0 0;
+}
+
+.sample-report-preview {
+  justify-content: flex-start;
+}
+
+.mini-report {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  border: 1px solid rgba(217, 222, 212, 0.92);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.mini-report-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mini-report-head span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.mini-report-head strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin: 0;
+  color: var(--green-dark);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.mini-report ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mini-report li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.mini-report li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--coral);
 }
 
 .offer-card-grid strong,
@@ -1267,6 +1375,7 @@ td select {
     .scorecard-section,
     .scorecard-panel,
     .after-payment-grid,
+    .assurance-band,
     .outcome-strip,
     .hero-facts {
     grid-template-columns: 1fr;
@@ -1302,7 +1411,8 @@ td select {
   }
 
   .offer-hero {
-    min-height: 82vh;
+    min-height: 0;
+    align-items: flex-start;
     background:
       linear-gradient(180deg, rgba(24, 32, 29, 0.99), rgba(24, 32, 29, 0.94)),
       url("assets/audit-preview.png");
@@ -1314,9 +1424,29 @@ td select {
     background: rgba(24, 32, 29, 0.42);
   }
 
+  .hero-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .hero-facts div {
+    min-height: 74px;
+    padding: 8px;
+  }
+
+  .hero-facts dt {
+    font-size: 10px;
+  }
+
+  .hero-facts dd {
+    font-size: 14px;
+    line-height: 1.15;
+  }
+
   .hero-inner {
-    padding-top: 130px;
-    padding-bottom: 36px;
+    padding-top: 112px;
+    padding-bottom: 24px;
   }
 
   .hero-inner h1 {
@@ -1325,7 +1455,18 @@ td select {
   }
 
   .hero-copy {
+    margin-top: 14px;
     font-size: 17px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-note {
+    margin-top: 12px;
+    font-size: 14px;
   }
 
   .offer-section {
