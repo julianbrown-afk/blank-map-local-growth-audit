@@ -50,9 +50,11 @@ The best prospects are local service businesses that already have customer value
 7. Add or update qualified leads in the pipeline.
 8. Use the report text as the basis for a paid audit preview.
 9. In the pipeline, use `Copy intro`, `Copy link`, or `Open` to work from the prospect's matched niche offer page.
-10. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
-11. When a payment arrives, use the dashboard report as the first draft of the deliverable.
-12. Offer the implementation sprint only after the audit is delivered.
+10. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
+11. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
+12. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+13. When a payment arrives, use the dashboard report as the first draft of the deliverable.
+14. Offer the implementation sprint only after the audit is delivered.
 
 ## Public Offer Links
 

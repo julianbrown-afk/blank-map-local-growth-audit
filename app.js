@@ -16,7 +16,7 @@
     paymentLink: CONFIG.paymentLink,
     bookingLink: CONFIG.bookingLink
   });
-  const STATUS_OPTIONS = ["Research only", "Lead", "Contacted", "Paid audit", "Implementation", "Won", "Lost"];
+  const STATUS_OPTIONS = ["Research only", "Lead", "Contacted", "Followed up", "Paid audit", "Implementation", "Won", "Lost"];
 
   const STARTER_PROSPECTS = [
     {
@@ -540,6 +540,18 @@
     return `Hi ${prospect.businessName || "there"} team,\n\nI found your business while reviewing ${businessType} options around ${city}. I sell a fixed-scope ${settings.serviceName} for ${currency(settings.auditPrice)} that turns the visible buyer path into a prioritized 30-day action plan.\n\nThe most relevant page for your category is here:\n${offerUrl}\n\nIt covers ${track.focus}, includes a sample report, and gives the option to buy the audit or book a call.${reviewAngle}\n\nIf useful, the page has the next step. If this is not relevant, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
   }
 
+  function buildProspectFollowUp(prospect) {
+    const settings = state.settings;
+    const track = getProspectTrack(prospect);
+    const offerUrl = getProspectOfferUrl(prospect);
+    const mailingAddress = String(settings.mailingAddress || "").trim();
+    const complianceLine = mailingAddress
+      ? mailingAddress
+      : "[Add a valid physical mailing address before sending as commercial email.]";
+
+    return `Hi ${prospect.businessName || "there"} team,\n\nQuick follow-up on the ${settings.serviceName} page I sent over. The ${track.label.toLowerCase()} is here if you want to review it:\n${offerUrl}\n\nThe audit is fixed-scope at ${currency(settings.auditPrice)} and is meant to give you a clear 30-day plan before any bigger implementation work is discussed.\n\nIf this is useful, the page has the buy and booking options. If not, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
+  }
+
   function csvCell(value) {
     const text = String(value ?? "");
     return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
@@ -557,6 +569,7 @@
       "estimated_monthly_value",
       "review_angle",
       "intro_copy",
+      "follow_up_copy",
       "compliance_note"
     ];
     const mailingAddress = String(state.settings.mailingAddress || "").trim();
@@ -576,6 +589,7 @@
         toNumber(prospect.value) > 0 ? Math.round(toNumber(prospect.value)) : "",
         prospect.reviewAngle || "",
         buildProspectIntro(prospect),
+        buildProspectFollowUp(prospect),
         complianceNote
       ].map(csvCell).join(",");
     });
@@ -583,9 +597,15 @@
   }
 
   function getActionableProspects() {
-    const activeStatuses = new Set(["Research only", "Lead", "Contacted"]);
+    const activeStatuses = new Set(["Research only", "Lead", "Contacted", "Followed up"]);
     return state.prospects
       .filter((prospect) => activeStatuses.has(prospect.status || "Lead"))
+      .sort((a, b) => toNumber(b.value) - toNumber(a.value));
+  }
+
+  function getFollowUpProspects() {
+    return state.prospects
+      .filter((prospect) => prospect.status === "Contacted")
       .sort((a, b) => toNumber(b.value) - toNumber(a.value));
   }
 
@@ -629,6 +649,43 @@
     return lines.join("\n");
   }
 
+  function buildFollowUpBatchText(limit = 10) {
+    const prospects = getFollowUpProspects().slice(0, limit);
+    const mailingAddress = String(state.settings.mailingAddress || "").trim();
+    const complianceNote = mailingAddress
+      ? "Commercial email footer has a physical mailing address."
+      : "Do not send as cold commercial email until a valid physical mailing address is added.";
+
+    if (!prospects.length) {
+      return "No prospects are currently marked Contacted. Change a prospect status to Contacted before building a follow-up batch.";
+    }
+
+    const lines = [
+      `${state.settings.serviceName} follow-up batch`,
+      `Prepared for ${state.settings.businessName}`,
+      `Prospects: ${prospects.length}`,
+      `Compliance: ${complianceNote}`,
+      ""
+    ];
+
+    prospects.forEach((prospect, index) => {
+      const track = getProspectTrack(prospect);
+      lines.push(
+        `${index + 1}. ${prospect.businessName || "Unnamed prospect"} (${prospect.businessType || "Local business"} - ${prospect.city || state.settings.marketCity})`,
+        `Estimated monthly value: ${toNumber(prospect.value) > 0 ? currency(prospect.value) : "Estimate pending"}`,
+        `Offer track: ${track.label}`,
+        `Offer URL: ${getProspectOfferUrl(prospect)}`,
+        "",
+        buildProspectFollowUp(prospect),
+        "",
+        "---",
+        ""
+      );
+    });
+
+    return lines.join("\n");
+  }
+
   function renderFindings(findings) {
     const list = $("[data-output='findings']");
     list.innerHTML = findings.map((finding) => `
@@ -647,6 +704,7 @@
     const actionable = getActionableProspects();
     const estimatedValue = actionable.reduce((sum, prospect) => sum + toNumber(prospect.value), 0);
     const contacted = prospects.filter((prospect) => prospect.status === "Contacted").length;
+    const followedUp = prospects.filter((prospect) => prospect.status === "Followed up").length;
     const paid = prospects.filter((prospect) => prospect.status === "Paid audit" || prospect.status === "Implementation" || prospect.status === "Won").length;
     const tracks = new Set(prospects.map((prospect) => getProspectTrack(prospect).label));
 
@@ -670,7 +728,7 @@
       <div>
         <span>Actionable</span>
         <strong>${actionable.length}</strong>
-        <p>Research, lead, and contacted statuses</p>
+        <p>Research, lead, contacted, and followed-up statuses</p>
       </div>
       <div>
         <span>Open value</span>
@@ -679,8 +737,8 @@
       </div>
       <div>
         <span>Progress</span>
-        <strong>${contacted}/${paid}</strong>
-        <p>Contacted / paid or implementation</p>
+        <strong>${contacted}/${followedUp}/${paid}</strong>
+        <p>Contacted / followed up / paid</p>
       </div>
     `;
   }
@@ -724,6 +782,7 @@
           <td>
             <div class="pipeline-actions">
               <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
+              <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
               <button class="ghost-button" type="button" data-copy-prospect-offer="${escapeHtml(prospect.id)}">Copy link</button>
               <button class="ghost-button" type="button" data-open-prospect-offer="${escapeHtml(prospect.id)}">Open</button>
               <button class="ghost-button" type="button" data-remove-prospect="${escapeHtml(prospect.id)}">Remove</button>
@@ -905,6 +964,14 @@
         copyText(buildDailyBatchText(10), "Daily batch copied");
       }
     }
+    if (action === "copy-follow-up-batch") {
+      const followUps = getFollowUpProspects();
+      if (!followUps.length) {
+        showToast("No contacted prospects");
+      } else {
+        copyText(buildFollowUpBatchText(10), "Follow-up batch copied");
+      }
+    }
     if (action === "download-outreach-csv") {
       if (!state.prospects.length) {
         showToast("Load or add prospects first");
@@ -945,6 +1012,16 @@
       .replaceAll("'", "&#039;");
   }
 
+  function updatePipelineStatus(target) {
+    const id = target.dataset.pipelineStatus;
+    const prospect = state.prospects.find((item) => item.id === id);
+    if (!prospect) return;
+    prospect.status = target.value;
+    saveState();
+    renderPipelineSummary();
+    renderPipeline();
+  }
+
   function bindEvents() {
     document.addEventListener("input", (event) => {
       const target = event.target;
@@ -973,11 +1050,14 @@
         render();
       }
       if (target.matches("[data-pipeline-status]")) {
-        const id = target.dataset.pipelineStatus;
-        const prospect = state.prospects.find((item) => item.id === id);
-        if (prospect) prospect.status = target.value;
-        saveState();
-        renderPipeline();
+        updatePipelineStatus(target);
+      }
+    });
+
+    document.addEventListener("change", (event) => {
+      const target = event.target;
+      if (target.matches("[data-pipeline-status]")) {
+        updatePipelineStatus(target);
       }
     });
 
@@ -1001,6 +1081,12 @@
       if (copyIntroButton) {
         const prospect = state.prospects.find((item) => item.id === copyIntroButton.dataset.copyProspectIntro);
         if (prospect) copyText(buildProspectIntro(prospect), "Intro copied");
+      }
+
+      const copyFollowUpButton = event.target.closest("[data-copy-prospect-follow-up]");
+      if (copyFollowUpButton) {
+        const prospect = state.prospects.find((item) => item.id === copyFollowUpButton.dataset.copyProspectFollowUp);
+        if (prospect) copyText(buildProspectFollowUp(prospect), "Follow-up copied");
       }
 
       const copyOfferButton = event.target.closest("[data-copy-prospect-offer]");
