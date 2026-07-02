@@ -1302,6 +1302,11 @@ td select {
   line-height: 1.55;
 }
 
+.checklist-share-panel {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .checklist-section-head {
   display: grid;
   grid-template-columns: minmax(0, 0.74fr) minmax(0, 1fr);
@@ -4738,6 +4743,7 @@ td select {
     .intake-note,
     .audit-receipt-band,
     .checklist-intro,
+    .checklist-share-panel,
     .checklist-section-head,
     .checklist-grid,
     .checklist-score-bridge,
@@ -4997,6 +5003,11 @@ td select {
 
   .checklist-intro strong {
     font-size: 21px;
+  }
+
+  .checklist-share-panel {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .checklist-section-head h2,
