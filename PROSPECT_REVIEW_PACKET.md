@@ -218,4 +218,4 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist
 
 ## Next Batch Action
 
-Score Cooper Family Dentistry and AMS Dental in the dashboard as reviewed leads. Recheck Tates Creek Dental visually in a normal browser before scoring. Do not send direct outreach from these drafts.
+Use `REVIEWED_PIPELINE.csv` as the current reviewed queue. Load or refresh the starter list in the dashboard so reviewed status and next-action notes appear on the matching rows. Score Cooper Family Dentistry and AMS Dental as reviewed leads, then recheck Tates Creek Dental visually in a normal browser before scoring. Do not send direct outreach from these drafts.

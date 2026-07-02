@@ -57,9 +57,9 @@ The best prospects are local service businesses that already have customer value
 
 ## Daily Workflow
 
-1. Start with `PROSPECTS.md` and `prospects.csv`, or find 10 local businesses in one category and city.
+1. Start with `REVIEWED_PIPELINE.csv` for the current reviewed queue, then fall back to `PROSPECTS.md` and `prospects.csv` when expanding the batch.
 2. Open the operator dashboard at `http://127.0.0.1:4173/index.html`.
-3. Click `Load starter list` to preload the researched Lexington prospects into the pipeline.
+3. Click `Load starter list` to preload the researched Lexington prospects and refresh reviewed status notes into the pipeline.
 4. Check the `Money motion` panel to confirm the next action for the current queue and compliance state.
 5. Click `Copy daily batch` to generate the top 10 active prospects with their websites, matched offer pages, review angles, and intro copy.
 6. Use the pipeline search, status, and offer-track filters to focus the visible table on the daily segment you are working.
@@ -200,6 +200,12 @@ The starter list now contains 100 researched candidates in:
 ```text
 PROSPECTS.md
 prospects.csv
+```
+
+The current reviewed working queue is:
+
+```text
+REVIEWED_PIPELINE.csv
 ```
 
 At `$399` per audit:

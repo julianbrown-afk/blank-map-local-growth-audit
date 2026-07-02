@@ -8,6 +8,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.
+- `REVIEWED_PIPELINE.csv`: current reviewed lead queue with status, source notes, scorecard estimates, and next safe actions.
 - `assets/audit-preview-v2.jpg`: product visual used by the offer page.
 
 No revenue is guaranteed. The app is designed to make a real offer easy to sell, deliver, and track.
@@ -97,17 +98,18 @@ http://localhost:4173/index.html
 1. Create a Stripe Payment Link for the audit price.
 2. Open `index.html`, paste the Stripe link, add your email, business name, and mailing address.
 3. Click `Download config` and replace this folder's `config.js` with that downloaded file before deploying.
-4. Use a row-level `Review` button to load a prospect into the audit form, score visible gaps, then click `Update loaded lead` to save the score and estimated value back to that row.
-5. Send prospects the generated offer link, or use the row-level `Copy offer` / `Open offer` actions when the pipeline has matched a niche page.
-6. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
-7. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
-8. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the category-specific scorecard before showing the paid audit.
-9. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
-10. Ask interested prospects to use the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
-11. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
-12. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
-13. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
-14. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
+4. Start from `REVIEWED_PIPELINE.csv` for the current reviewed queue, then use the dashboard's `Load starter list` button to pull the same reviewed notes into the local pipeline.
+5. Use a row-level `Review` button to load a prospect into the audit form, score visible gaps, then click `Update loaded lead` to save the score and estimated value back to that row.
+6. Send prospects the generated offer link, or use the row-level `Copy offer` / `Open offer` actions when the pipeline has matched a niche page.
+7. Use the `Money motion` panel at the top of the dashboard to see the next daily action based on pipeline status and compliance state.
+8. Use the pipeline search, status, and offer-track filters to focus each daily batch on a specific prospect segment.
+9. For colder prospects, use `Copy scorecard link` for the general scorecard, or use the row-level `Copy scorecard` / `Open scorecard` actions for the category-specific scorecard before showing the paid audit.
+10. Use `Scorecard post`, `Warm referral`, and `Community reply` for public or permission-based channels where that format is appropriate.
+11. Ask interested prospects to use the scorecard's `Score handoff` section, then `Email my score` or `Copy score summary`, so the sales conversation starts from their actual gaps.
+12. When a scorecard lead replies, use `Score lead reply` or `Score lead call` to move the conversation toward the paid audit without making revenue promises.
+13. Point skeptical buyers to the self-check scorecard and value calculator on the offer page so they can see whether the audit has a clear job to do.
+14. After payment or booking, use `Copy intake email` or the row-level `Copy intake` action to collect the business details needed to start the audit.
+15. Use the dashboard to generate one paid report per prospect and add each lead to the pipeline.
 
 Stripe's current Payment Links documentation says payment links can be shared online and embedded as buy buttons, so this static approach does not need a backend for checkout.
 

@@ -32,7 +32,16 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Booking path, new-patient flow, review presentation, mobile clarity"
+      reviewAngle: "Booking path, new-patient flow, review presentation, mobile clarity",
+      reviewStatus: "Full internal draft ready; no outreach sent",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Confirm Google profile and review-widget state, then choose a permitted channel.",
+      status: "Lead",
+      sourceLinks: [
+        "FIRST_PROSPECT_REVIEW.md",
+        "https://parkhillsfamilydentistry.com/",
+        "https://parkhillsfamilydentistry.com/contact/"
+      ]
     },
     {
       businessName: "Cooper Family Dentistry",
@@ -41,7 +50,16 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Review proof, service pages, call-to-action structure"
+      reviewAngle: "Review proof, service pages, call-to-action structure",
+      reviewStatus: "Source and mobile check completed; no outreach sent",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score in the dashboard before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.cooperfamilydental.com/",
+        "https://www.cooperfamilydental.com/about"
+      ]
     },
     {
       businessName: "Tates Creek Dental",
@@ -50,7 +68,17 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Review request flow, new-patient action, review-to-booking path"
+      reviewAngle: "Review request flow, new-patient action, review-to-booking path",
+      reviewStatus: "Source-only draft; automation render returned blank",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Recheck visually in a normal browser before scoring.",
+      status: "Research only",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://www.tatescreekdental.com/",
+        "https://www.tatescreekdental.com/reviews",
+        "https://www.tatescreekdental.com/new-patients"
+      ]
     },
     {
       businessName: "AMS Dental",
@@ -59,7 +87,16 @@
       city: "Lexington",
       avgCustomerValue: 650,
       leadsNeeded: 8,
-      reviewAngle: "Request appointment flow, patient proof, service clarity"
+      reviewAngle: "Request appointment flow, patient proof, service clarity",
+      reviewStatus: "Source and mobile check completed; no outreach sent",
+      reviewedOn: "2026-07-02",
+      safeNextAction: "Score the mobile first screen and location path before any contact.",
+      status: "Lead",
+      sourceLinks: [
+        "PROSPECT_REVIEW_PACKET.md",
+        "https://amsdentalcare.com/",
+        "https://amsdentalcare.com/testimonials/"
+      ]
     },
     {
       businessName: "Complete Dentistry for All Ages",
@@ -1637,6 +1674,10 @@ ${settings.contactEmail}`;
       "scorecard_url",
       "status",
       "estimated_monthly_value",
+      "review_status",
+      "reviewed_on",
+      "safe_next_action",
+      "source_links",
       "review_angle",
       "intro_copy",
       "follow_up_copy",
@@ -1658,6 +1699,10 @@ ${settings.contactEmail}`;
         getProspectScorecardUrl(prospect),
         prospect.status || "Lead",
         toNumber(prospect.value) > 0 ? Math.round(toNumber(prospect.value)) : "",
+        prospect.reviewStatus || "",
+        prospect.reviewedOn || "",
+        prospect.safeNextAction || "",
+        Array.isArray(prospect.sourceLinks) ? prospect.sourceLinks.join(" | ") : "",
         prospect.reviewAngle || "",
         buildProspectIntro(prospect),
         buildProspectFollowUp(prospect),
@@ -1709,6 +1754,8 @@ ${settings.contactEmail}`;
         `Offer track: ${track.label}`,
         `Offer URL: ${getProspectOfferUrl(prospect)}`,
         `Scorecard URL: ${getProspectScorecardUrl(prospect)}`,
+        prospect.reviewStatus ? `Review status: ${prospect.reviewStatus}${prospect.reviewedOn ? ` (${prospect.reviewedOn})` : ""}` : "",
+        prospect.safeNextAction ? `Next safe action: ${prospect.safeNextAction}` : "",
         `Review angle: ${prospect.reviewAngle || "Inspect website, local proof, booking path, and follow-up cues."}`,
         "",
         buildProspectIntro(prospect),
@@ -1917,6 +1964,8 @@ ${settings.contactEmail}`;
       prospect.city,
       prospect.website,
       prospect.reviewAngle,
+      prospect.reviewStatus,
+      prospect.safeNextAction,
       getProspectTrack(prospect).label
     ].map((value) => String(value || "").toLowerCase()).join(" ");
   }
@@ -2002,6 +2051,12 @@ ${settings.contactEmail}`;
       const angleLine = prospect.reviewAngle
         ? `<small class="pipeline-note">${escapeHtml(prospect.reviewAngle)}</small>`
         : "";
+      const reviewStatusLine = prospect.reviewStatus
+        ? `<small class="pipeline-note">Review: ${escapeHtml(prospect.reviewStatus)}${prospect.reviewedOn ? ` (${escapeHtml(prospect.reviewedOn)})` : ""}</small>`
+        : "";
+      const nextActionLine = prospect.safeNextAction
+        ? `<small class="pipeline-note">Next: ${escapeHtml(prospect.safeNextAction)}</small>`
+        : "";
       const track = getProspectTrack(prospect);
       const offerUrl = getProspectOfferUrl(prospect);
       const scorecardUrl = getProspectScorecardUrl(prospect);
@@ -2018,7 +2073,7 @@ ${settings.contactEmail}`;
         <tr${rowClass}>
           <td>
             <strong>${escapeHtml(prospect.businessName || "Unnamed prospect")}</strong>
-            <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${trackLine}${angleLine}
+            <br><span>${escapeHtml(prospect.businessType || "Local business")}</span>${websiteLine}${trackLine}${angleLine}${reviewStatusLine}${nextActionLine}
           </td>
           <td>${escapeHtml(prospect.city || state.settings.marketCity)}</td>
           <td>${formatScore(prospect)}</td>
@@ -2254,33 +2309,96 @@ ${settings.contactEmail}`;
       .replace(/^-|-$/g, "");
   }
 
-  function loadSeedProspects() {
-    const existing = new Set(state.prospects.map(prospectIdentity));
-    const additions = STARTER_PROSPECTS
-      .filter((prospect) => !existing.has(prospectIdentity(prospect)))
-      .map((prospect) => ({
-        id: `starter-${slugify(prospect.businessName)}`,
-        businessName: prospect.businessName,
-        businessType: prospect.businessType,
-        city: prospect.city,
-        website: prospect.website,
-        reviewAngle: prospect.reviewAngle,
-        avgCustomerValue: prospect.avgCustomerValue,
-        leadsNeeded: prospect.leadsNeeded,
-        score: null,
-        value: estimateStarterValue(prospect),
-        status: "Research only"
-      }));
+  function normalizeStarterProspect(prospect) {
+    const score = toNumber(prospect.score, NaN);
+    const value = toNumber(prospect.value, NaN);
+    return {
+      id: `starter-${slugify(prospect.businessName)}`,
+      businessName: prospect.businessName,
+      businessType: prospect.businessType,
+      city: prospect.city,
+      website: prospect.website,
+      reviewAngle: prospect.reviewAngle,
+      reviewStatus: prospect.reviewStatus || "",
+      reviewedOn: prospect.reviewedOn || "",
+      safeNextAction: prospect.safeNextAction || "",
+      sourceLinks: Array.isArray(prospect.sourceLinks) ? [...prospect.sourceLinks] : [],
+      rating: prospect.rating ?? "",
+      reviewCount: prospect.reviewCount ?? "",
+      avgCustomerValue: prospect.avgCustomerValue,
+      leadsNeeded: prospect.leadsNeeded,
+      issues: Array.isArray(prospect.issues) ? [...prospect.issues] : [],
+      score: Number.isFinite(score) ? score : null,
+      value: Number.isFinite(value) && value > 0 ? Math.round(value) : estimateStarterValue(prospect),
+      status: prospect.status || "Research only"
+    };
+  }
 
-    if (!additions.length) {
-      showToast("Starter list already loaded");
+  function refreshStarterProspect(existing, seed) {
+    let changed = false;
+    const assignIfChanged = (key, value) => {
+      if (value === undefined || value === null || value === "") return;
+      if (existing[key] !== value) {
+        existing[key] = value;
+        changed = true;
+      }
+    };
+
+    assignIfChanged("reviewAngle", seed.reviewAngle);
+    assignIfChanged("reviewStatus", seed.reviewStatus);
+    assignIfChanged("reviewedOn", seed.reviewedOn);
+    assignIfChanged("safeNextAction", seed.safeNextAction);
+
+    if (Array.isArray(seed.sourceLinks) && seed.sourceLinks.length) {
+      const currentLinks = Array.isArray(existing.sourceLinks) ? existing.sourceLinks : [];
+      if (currentLinks.join("|") !== seed.sourceLinks.join("|")) {
+        existing.sourceLinks = [...seed.sourceLinks];
+        changed = true;
+      }
+    }
+
+    if ((!existing.status || existing.status === "Research only") && seed.status && seed.status !== existing.status) {
+      existing.status = seed.status;
+      changed = true;
+    }
+
+    if ((!Array.isArray(existing.issues) || !existing.issues.length) && seed.issues.length) {
+      existing.issues = [...seed.issues];
+      changed = true;
+    }
+
+    if (!(toNumber(existing.value) > 0) && toNumber(seed.value) > 0) {
+      existing.value = seed.value;
+      changed = true;
+    }
+
+    return changed;
+  }
+
+  function loadSeedProspects() {
+    const existing = new Map(state.prospects.map((prospect) => [prospectIdentity(prospect), prospect]));
+    const additions = [];
+    let refreshed = 0;
+
+    STARTER_PROSPECTS.forEach((prospect) => {
+      const seed = normalizeStarterProspect(prospect);
+      const match = existing.get(prospectIdentity(seed));
+      if (match) {
+        if (refreshStarterProspect(match, seed)) refreshed += 1;
+        return;
+      }
+      additions.push(seed);
+    });
+
+    if (!additions.length && !refreshed) {
+      showToast("Starter list already current");
       return;
     }
 
     state.prospects = [...additions, ...state.prospects];
     saveState();
     render();
-    showToast(`Loaded ${additions.length} starter prospects`);
+    showToast(`Loaded ${additions.length} starter prospects; refreshed ${refreshed}`);
   }
 
   function handleAction(action) {

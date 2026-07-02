@@ -30,6 +30,12 @@ Use this batch for manual review, warm referrals, permitted community replies, a
 
 ## Today's Review Queue
 
+Machine-readable reviewed queue:
+
+```text
+REVIEWED_PIPELINE.csv
+```
+
 | Priority | Business | Category | Website | Scorecard | Offer | Review focus |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Park Hills Family Dentistry | Dentist | https://parkhillsfamilydentistry.com/ | https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html?track=dentist | https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-dentist-growth-audit.html | Booking path, new-patient flow, review presentation, mobile clarity |
@@ -86,5 +92,6 @@ If you know a dentist, med spa, roofer, remodeler, HVAC company, plumber, clinic
 - First review draft: `FIRST_PROSPECT_REVIEW.md`
 - First mobile check: completed read-only, no outreach sent
 - Review packet: `PROSPECT_REVIEW_PACKET.md`
+- Reviewed pipeline queue: `REVIEWED_PIPELINE.csv`
 - Reviewed prospects: 4 total internal drafts, 0 contacted
-- Next required action: score Cooper Family Dentistry and AMS Dental in the dashboard, then recheck Tates Creek Dental visually before scoring
+- Next required action: load or refresh the starter list in the dashboard, score Cooper Family Dentistry and AMS Dental, then recheck Tates Creek Dental visually before scoring
