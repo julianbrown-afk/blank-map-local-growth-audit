@@ -93,7 +93,42 @@
       missedInquiries,
       closeRate,
       monthlyValue,
-      missingLabels
+      missingLabels,
+      recommendation: scorecardRecommendation({ gaps, missingLabels, monthlyValue })
+    };
+  }
+
+  function scorecardRecommendation(state) {
+    const firstGap = state.missingLabels[0] || "outside validation of the visible buyer path";
+    if (state.gaps >= 4) {
+      return {
+        kicker: "Recommended next move",
+        title: "Buy the audit before spending on more traffic",
+        body: "The scorecard found enough buyer-path gaps to justify a fixed-scope review before a larger redesign, ad campaign, or retainer.",
+        focus: `Audit focus: ${firstGap}.`
+      };
+    }
+    if (state.gaps >= 2) {
+      return {
+        kicker: "Recommended next move",
+        title: "Use the audit to rank the fixes",
+        body: "There are enough gaps to make prioritization useful. The audit should clarify which fix comes first, what to track, and what can wait.",
+        focus: `First review focus: ${firstGap}.`
+      };
+    }
+    if (state.gaps === 1) {
+      return {
+        kicker: "Recommended next move",
+        title: "Fix the visible gap or use the audit for validation",
+        body: "One gap may be simple enough to address internally. Use the paid audit if you want an outside review before committing budget.",
+        focus: `Visible gap: ${firstGap}.`
+      };
+    }
+    return {
+      kicker: "Recommended next move",
+      title: "Keep the score and validate before bigger work",
+      body: "No urgent gap showed up in this quick pass. The audit is still useful if you want a second set of eyes before a bigger marketing spend.",
+      focus: "Audit focus: confirm the highest-value service path, tracking, and follow-up process."
     };
   }
 
@@ -109,6 +144,11 @@ ${leadBlock}Score: ${state.score}/100
 Priority: ${state.priority}
 Gaps found: ${state.gaps}
 Estimated recoverable opportunity: ${currency(state.monthlyValue)}/mo
+
+Recommended next move
+${state.recommendation.title}
+${state.recommendation.body}
+${state.recommendation.focus}
 
 Planning inputs
 Average booked customer value: ${currency(state.customerValue)}
@@ -148,6 +188,10 @@ Sample audit: ${offerUrl("sample-audit.html")}`;
     setText("[data-free-score-output='priority']", state.priority);
     setText("[data-free-score-output='note']", state.note);
     setText("[data-free-score-output='monthlyValue']", `${currency(state.monthlyValue)}/mo`);
+    setText("[data-free-score-output='recommendationKicker']", state.recommendation.kicker);
+    setText("[data-free-score-output='recommendationTitle']", state.recommendation.title);
+    setText("[data-free-score-output='recommendationBody']", state.recommendation.body);
+    setText("[data-free-score-output='recommendationFocus']", state.recommendation.focus);
     setText("[data-free-score-output='customerValue']", currency(state.customerValue));
     setText("[data-free-score-output='missedInquiries']", String(state.missedInquiries));
     setText("[data-free-score-output='closeRate']", `${state.closeRate}%`);

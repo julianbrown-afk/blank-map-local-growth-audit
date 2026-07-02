@@ -4,7 +4,7 @@ This is a static, dependency-free sales kit for selling paid local business grow
 
 - `index.html`: operator dashboard for pricing, prospect audits, daily outreach batches, scorecard-first acquisition copy, scorecard lead close copy, follow-up copy, niche offer links, outreach CSV export, pipeline tracking, report export, and config export.
 - `offer.html`: buyer-facing offer page with a self-check scorecard, value calculator, and links to Stripe Payment Links, booking, or email.
-- `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit, with email/copy actions for sending the result.
+- `scorecard.html`: free buyer-facing scorecard that can be shared before asking someone to buy the audit, with a dynamic next-step recommendation and email/copy actions for sending the result.
 - `audit-intake.html`: buyer-facing intake page for collecting the details needed after payment or booking.
 - `docs/`: GitHub Pages deployment folder. The public root serves the buyer-facing offer, not the operator dashboard.
 - `config.js`: public offer settings for deployed pages.

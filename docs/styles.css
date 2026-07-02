@@ -1665,6 +1665,46 @@ td select {
   background: var(--green-dark);
 }
 
+.scorecard-recommendation {
+  margin-top: 14px;
+  border: 1px solid rgba(19, 94, 75, 0.18);
+  border-radius: 8px;
+  padding: 15px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(223, 234, 242, 0.58)),
+    #ffffff;
+}
+
+.scorecard-recommendation span {
+  display: inline-flex;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.scorecard-recommendation strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--green-dark);
+  font-size: 20px;
+  line-height: 1.12;
+}
+
+.scorecard-recommendation p {
+  margin: 9px 0 0;
+}
+
+.scorecard-recommendation small {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid rgba(217, 222, 212, 0.86);
+  padding-top: 10px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
+}
+
 .summary-label {
   display: block;
   margin-top: 18px;
