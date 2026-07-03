@@ -304,7 +304,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 Sample:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
 
-If they review the sample first and ask for the short purchase handoff, use `Copy order brief` on the sample page before sending the checkout link.
+If they review the sample first and ask for the short purchase handoff, use `Copy order brief` on the sample page before sending the checkout link. If they have a scope question after seeing the sample, use the sample page's `Email a question` action instead of pushing immediate checkout.
 
 If they need one forwardable offer summary instead of a score result, use `Copy buyer packet` on the homepage.
 ```
