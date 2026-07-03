@@ -78,7 +78,26 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
+The public directory now includes copy buttons for the founder launch post, broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
+
+Founder launch post:
+
+```text
+Lexington friends and service-business owners: I launched a free buyer-path scorecard for local businesses that rely on calls, bookings, appointments, or quote requests.
+
+It checks mobile action clarity, Google profile basics, review trust, service-page clarity, tracking, and follow-up gaps before people contact you.
+
+Free scorecard:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
+
+Sample paid-audit report:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+
+If the scorecard shows enough visible gaps, the fixed-scope Local Growth Audit turns the result into ranked findings, tracking notes, and a 30-day action plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+
+This is planning input, not a revenue guarantee.
+```
 
 Score result handoff:
 

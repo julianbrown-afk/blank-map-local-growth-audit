@@ -1342,6 +1342,34 @@ ${offerUrl}
 This is planning math, not a revenue guarantee.`;
   }
 
+  function buildFounderLaunchPost() {
+    const settings = state.settings;
+    const scorecardUrl = getPublicUrl("scorecard.html");
+    const sampleUrl = getPublicUrl("sample-audit.html");
+    const offerUrl = getPublicUrl();
+
+    return `${settings.marketCity} friends and service-business owners: I launched a free buyer-path scorecard for local businesses that rely on calls, bookings, appointments, or quote requests.
+
+It checks the practical pieces buyers see before they contact you:
+- mobile call or booking clarity
+- Google profile basics
+- review trust
+- service-page clarity
+- tracking for calls, forms, and booking clicks
+- follow-up for unbooked inquiries
+
+Free scorecard:
+${scorecardUrl}
+
+I also put together a sample report so you can see the style of the paid ${settings.serviceName} before buying anything:
+${sampleUrl}
+
+If the scorecard shows enough visible gaps, the fixed-scope audit is ${currency(settings.auditPrice)} and turns the result into ranked findings, tracking notes, and a 30-day action plan:
+${offerUrl}
+
+This is planning input, not a revenue guarantee.`;
+  }
+
   function buildWarmReferralNote() {
     const settings = state.settings;
     const scorecardUrl = getPublicUrl("scorecard.html");
@@ -2373,6 +2401,7 @@ ${settings.contactEmail}`;
     $("[data-output='dmText']").textContent = buildDm();
     $("[data-output='intakeText']").textContent = buildIntakeEmail();
     $("[data-output='scorecardPostText']").textContent = buildScorecardPost();
+    $("[data-output='founderLaunchPostText']").textContent = buildFounderLaunchPost();
     $("[data-output='scoreLeadReplyText']").textContent = buildScoreLeadReply();
     $("[data-output='scoreLeadCallText']").textContent = buildScoreLeadCallOutline();
     $("[data-output='decisionPathText']").textContent = buildDecisionPathHandoff();
@@ -2586,6 +2615,7 @@ ${settings.contactEmail}`;
     if (action === "copy-dm") copyText(buildDm(), "DM copied");
     if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
     if (action === "copy-scorecard-post") copyText(buildScorecardPost(), "Scorecard post copied");
+    if (action === "copy-founder-launch-post") copyText(buildFounderLaunchPost(), "Founder launch post copied");
     if (action === "copy-score-lead-reply") copyText(buildScoreLeadReply(), "Score lead reply copied");
     if (action === "copy-score-lead-call") copyText(buildScoreLeadCallOutline(), "Score lead call copied");
     if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
