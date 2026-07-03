@@ -1760,6 +1760,38 @@ Use this line if they ask about results: the audit is planning work based on obs
     return `Hi ${prospect.businessName || "there"} team,\n\nQuick follow-up on the ${settings.serviceName} page I sent over. The ${track.label.toLowerCase()} is here if you want to review it:\n${offerUrl}\n\nThe audit is fixed-scope at ${currency(settings.auditPrice)} and is meant to give you a clear 30-day plan before any bigger implementation work is discussed.\n\nIf this is useful, the page has the buy and booking options. If not, reply \"no\" and I will not contact you again.\n\n${settings.ownerName}\n${settings.businessName}\n${settings.contactEmail}\n${complianceLine}`;
   }
 
+  function buildProspectWarmHandoff(prospect) {
+    const settings = state.settings;
+    const track = getProspectTrack(prospect);
+    const offerUrl = getProspectOfferUrl(prospect);
+    const scorecardUrl = getProspectScorecardUrl(prospect);
+    const businessName = prospect.businessName || "this business";
+    const businessType = prospect.businessType || "local service business";
+    const city = prospect.city || settings.marketCity;
+    const website = safeExternalUrl(prospect.website) || "not listed";
+    const reviewAngle = prospect.reviewAngle || "booking, review, website, tracking, and follow-up gaps";
+    const safeNextAction = prospect.safeNextAction || "Use only in warm or permitted scorecard-first channels.";
+
+    return `Warm handoff for ${businessName}
+
+Use this only when you already know the owner, a connector can make a relevant intro, or the conversation is already about calls, bookings, quote requests, reviews, tracking, or follow-up. Do not send it as cold commercial email.
+
+Possible intro:
+I thought of ${businessName} because this free ${track.label.toLowerCase()} scorecard checks visible buyer-path friction before anyone buys an audit:
+${scorecardUrl}
+
+It looks at ${track.focus}. If the score shows enough friction, the fixed-scope ${settings.serviceName} turns the visible gaps into ranked findings and a 30-day plan for ${currency(settings.auditPrice)}:
+${offerUrl}
+
+Context to verify before sharing:
+- Business type: ${businessType} in ${city}
+- Website: ${website}
+- Review angle: ${reviewAngle}
+- Safe next action: ${safeNextAction}
+
+No referral fee, revenue guarantee, or private business information is promised here.`;
+  }
+
   function buildIntakeEmail(prospect = state.prospect) {
     const settings = state.settings;
     const businessName = prospect.businessName || "your business";
@@ -2220,6 +2252,7 @@ ${settings.contactEmail}`;
           <td>
             <div class="pipeline-actions">
               <button class="primary-button" type="button" data-load-prospect-review="${escapeHtml(prospect.id)}">Review</button>
+              <button class="ghost-button" type="button" data-copy-prospect-warm-handoff="${escapeHtml(prospect.id)}">Copy warm handoff</button>
               <button class="ghost-button" type="button" data-copy-prospect-intro="${escapeHtml(prospect.id)}">Copy intro</button>
               <button class="ghost-button" type="button" data-copy-prospect-follow-up="${escapeHtml(prospect.id)}">Copy follow-up</button>
               <button class="ghost-button" type="button" data-copy-score-lead-reply="${escapeHtml(prospect.id)}">Copy score reply</button>
@@ -2719,6 +2752,12 @@ ${settings.contactEmail}`;
       if (copyIntroButton) {
         const prospect = state.prospects.find((item) => item.id === copyIntroButton.dataset.copyProspectIntro);
         if (prospect) copyText(buildProspectIntro(prospect), "Intro copied");
+      }
+
+      const copyWarmHandoffButton = event.target.closest("[data-copy-prospect-warm-handoff]");
+      if (copyWarmHandoffButton) {
+        const prospect = state.prospects.find((item) => item.id === copyWarmHandoffButton.dataset.copyProspectWarmHandoff);
+        if (prospect) copyText(buildProspectWarmHandoff(prospect), "Warm handoff copied");
       }
 
       const copyFollowUpButton = event.target.closest("[data-copy-prospect-follow-up]");

@@ -316,4 +316,4 @@ The current internal reviewed queue is `REVIEWED_PIPELINE.csv`.
 - Research-only rows: 1
 - Prospects contacted: 0
 - Paid audits sold from this queue: 0
-- Next action before any prospect-specific contact: use only warm referrals, referral partner introductions, one-sheet handoffs, decision-quiz handoffs, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
+- Next action before any prospect-specific contact: use only warm referrals, referral partner introductions, row-level `Copy warm handoff`, one-sheet handoffs, decision-quiz handoffs, permitted community replies, or owner conversations where the topic already fits; keep cold commercial email paused until a public mailing address, PO box, or CMRA is available.
