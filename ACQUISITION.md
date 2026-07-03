@@ -125,7 +125,7 @@ The best prospects are local service businesses that already have customer value
 18. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
 19. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
 20. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
-21. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business.
+21. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business. If someone reviews the sample first, use `Copy order brief` on the sample page to turn proof interest into a checkout-ready handoff.
 22. When a payment arrives or a buyer books, use the scorecard's result-preserving intake link, `Copy intake email`, or the row-level `Copy intake` action to request the business details.
 23. Use the dashboard report as the first draft of the deliverable.
 24. Offer the implementation sprint only after the audit is delivered.

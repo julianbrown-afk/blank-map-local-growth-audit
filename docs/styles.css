@@ -3707,7 +3707,7 @@ td select {
   min-width: 0;
 }
 
-.purchase-bar-copy span {
+.purchase-bar-copy > span {
   display: inline-flex;
   margin-bottom: 4px;
   color: var(--coral);
@@ -3738,7 +3738,8 @@ td select {
 }
 
 .purchase-bar-actions .primary-button,
-.purchase-bar-actions .secondary-link {
+.purchase-bar-actions .secondary-link,
+.purchase-bar-actions .ghost-button {
   min-height: 44px;
   white-space: normal;
   text-align: center;
@@ -4983,8 +4984,43 @@ td select {
 }
 
 .sample-decision-actions .primary-button,
-.sample-decision-actions .secondary-link {
+.sample-decision-actions .secondary-link,
+.sample-decision-actions .ghost-button {
   width: 100%;
+}
+
+.sample-decision-actions .ghost-button {
+  min-height: 48px;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.sample-copy-status {
+  min-height: 20px;
+  margin: 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.sample-manual-copy {
+  width: 100%;
+  min-height: 132px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  background: rgba(24, 32, 29, 0.48);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.sample-manual-copy[hidden] {
+  display: none;
 }
 
 .sample-scope {
@@ -5484,7 +5520,7 @@ td select {
   }
 
   .offer-body.has-purchase-bar.purchase-bar-visible {
-    padding-bottom: 154px;
+    padding-bottom: 186px;
   }
 
   .purchase-bar {
@@ -5516,11 +5552,16 @@ td select {
   }
 
   .purchase-bar-actions .primary-button,
-  .purchase-bar-actions .secondary-link {
+  .purchase-bar-actions .secondary-link,
+  .purchase-bar-actions .ghost-button {
     width: 100%;
     min-height: 42px;
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  .purchase-bar-actions .secondary-link.dark {
+    grid-column: 1 / -1;
   }
 
   .offer-hero {

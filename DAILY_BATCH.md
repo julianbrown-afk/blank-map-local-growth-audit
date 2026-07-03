@@ -30,6 +30,8 @@ Use this batch for manual review, warm referrals, permitted community replies, a
 
 Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral copy, referral partner copy, warm-intro-builder handoffs, one-sheet handoffs, decision-quiz handoffs, value-calculator handoffs, community replies, and score-result replies. No post has been made from that file.
 
+When a warm owner asks to see proof before paying, send the sample report and use its `Copy order brief` action if they want the short checkout-ready summary.
+
 ## Today's Review Queue
 
 Machine-readable reviewed queue:

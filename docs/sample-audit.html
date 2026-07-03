@@ -12,9 +12,11 @@
     <meta property="og:url" content="https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css?v=20260702polish">
+    <link rel="stylesheet" href="styles.css?v=20260702samplebrief">
+    <script src="config.js?v=20260702pages"></script>
+    <script defer src="offer.js?v=20260702samplebrief"></script>
   </head>
-  <body class="sample-body">
+  <body class="offer-body sample-body has-purchase-bar">
     <header class="sample-nav">
       <a class="brand" href="index.html" aria-label="Back to offer">
         <span class="brand-mark">LA</span>
@@ -23,7 +25,7 @@
           <small>Blank Map Group LLC</small>
         </span>
       </a>
-      <a class="primary-button" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
+      <a class="primary-button" data-offer-link="cta" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
     </header>
 
     <main class="sample-shell">
@@ -65,8 +67,11 @@
           </p>
         </div>
         <div class="sample-decision-actions">
-          <a class="primary-button large" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
+          <a class="primary-button large" data-offer-link="cta" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
+          <button class="ghost-button" type="button" data-sample-copy>Copy order brief</button>
           <a class="secondary-link dark" href="scorecard.html">Run free scorecard</a>
+          <p class="sample-copy-status" data-sample-copy-status aria-live="polite"></p>
+          <textarea class="sample-manual-copy" data-sample-manual readonly hidden aria-label="Sample order brief text"></textarea>
         </div>
       </section>
 
@@ -207,11 +212,25 @@
         <h2>Get the paid audit for your business</h2>
         <p>Buy the audit, then send your website, service area, and any current booking or tracking details.</p>
         <div class="hero-actions closing-actions">
-          <a class="primary-button large" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
-          <a class="secondary-link dark" href="https://calendar.app.google/BNvrQFs12JA1Z4839">Book a call</a>
+          <a class="primary-button large" data-offer-link="cta" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
+          <button class="ghost-button" type="button" data-sample-copy>Copy order brief</button>
+          <a class="secondary-link dark" data-offer-link="booking" href="https://calendar.app.google/BNvrQFs12JA1Z4839">Book a call</a>
           <a class="secondary-link dark" href="scorecard.html">Run free scorecard</a>
         </div>
       </section>
     </main>
+
+    <aside class="purchase-bar" aria-label="Sample audit purchase actions">
+      <div class="purchase-bar-copy">
+        <span>Sample reviewed</span>
+        <strong><span data-offer="auditPrice">$399</span> fixed-scope Local Growth Audit</strong>
+        <p>Buy the same style of outside-in review, copy the order brief, or book a fit call.</p>
+      </div>
+      <div class="purchase-bar-actions">
+        <a class="primary-button" data-offer-link="cta" href="https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00">Buy audit $399</a>
+        <button class="ghost-button" type="button" data-sample-copy>Copy brief</button>
+        <a class="secondary-link dark" data-offer-link="booking" href="https://calendar.app.google/BNvrQFs12JA1Z4839">Book a call</a>
+      </div>
+    </aside>
   </body>
 </html>

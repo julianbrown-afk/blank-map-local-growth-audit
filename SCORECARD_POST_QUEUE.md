@@ -295,6 +295,8 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 
 Sample:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+
+If they review the sample first and ask for the short purchase handoff, use `Copy order brief` on the sample page before sending the checkout link.
 ```
 
 ## Current Reviewed Queue

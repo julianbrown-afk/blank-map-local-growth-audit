@@ -30,6 +30,7 @@
   let intakeCopyTimer = 0;
   let referralCopyTimer = 0;
   let referralBuilderCopyTimer = 0;
+  let sampleCopyTimer = 0;
   let scoreCopyTimer = 0;
   let decisionCopyTimer = 0;
   let valueCopyTimer = 0;
@@ -397,6 +398,59 @@ No pressure to buy first. The free result or sample should make the next step ob
 
     clearTimeout(referralBuilderCopyTimer);
     referralBuilderCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
+  function sampleOrderBrief() {
+    const bookingLine = config.bookingLink ? `Book a call: ${config.bookingLink}\n` : "";
+    return `Local Growth Audit sample-to-order brief
+
+I reviewed the sample report and want the same style of outside-in audit for my business.
+
+What I am buying
+${config.serviceName} for ${currency(config.auditPrice)}
+
+What the audit should clarify
+1. Where the public buyer path loses trust or momentum.
+2. Which call, booking, quote, review, tracking, or follow-up gap should be fixed first.
+3. What should be measured over the next 30 days.
+4. Whether implementation work is worth quoting after the audit.
+
+Next links
+Buy audit: ${ctaHref()}
+Audit intake after payment: ${publicUrl("audit-intake.html")}
+${bookingLine}Sample report: ${publicUrl("sample-audit.html")}
+Free scorecard: ${publicUrl("scorecard.html")}
+
+This is planning input, not a revenue guarantee. The audit starts from public pages and the visible buyer path; no passwords are needed for the first report.`;
+  }
+
+  async function copySampleOrderBrief() {
+    const status = $("[data-sample-copy-status]");
+    const manual = $("[data-sample-manual]");
+    const text = sampleOrderBrief();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Order brief copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The order brief is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(sampleCopyTimer);
+    sampleCopyTimer = setTimeout(() => {
       if (status) status.textContent = "";
     }, 3600);
   }
@@ -912,6 +966,10 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
       button.addEventListener("click", copyReferralBuilderText);
     });
     updateReferralBuilder();
+
+    $$("[data-sample-copy]").forEach((button) => {
+      button.addEventListener("click", copySampleOrderBrief);
+    });
 
     $$("[data-score-item]").forEach((item) => {
       item.addEventListener("change", () => {
