@@ -111,6 +111,8 @@ Paid audit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ```
 
+Homepage email action: use `Email a question` when a warm owner is interested but needs a scope answer before buying or booking. It opens a prefilled message to the public contact email and does not require sending private account access.
+
 Homepage decision path:
 
 ```text

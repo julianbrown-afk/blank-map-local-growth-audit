@@ -52,6 +52,20 @@
     return `mailto:${config.contactEmail}?subject=${subject}`;
   }
 
+  function questionMailto() {
+    const subject = encodeURIComponent(`${config.serviceName} question`);
+    const body = encodeURIComponent(`Hi,
+
+I have a question about the ${config.serviceName} for my business.
+
+Business name:
+Website:
+Question:
+
+I understand the audit starts from public pages and visible buyer-path context. I am not sending passwords or account access here.`);
+    return `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+  }
+
   function scorecardResultContext() {
     const handled = params.get("handled") || params.get("checks") || "";
     const missing = params.get("gaps") || params.get("missing") || "";
@@ -1032,6 +1046,11 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
     $$("[data-offer-link='booking']").forEach((link) => {
       link.href = config.bookingLink || ctaHref();
       link.textContent = config.bookingLink ? "Book a call" : "Email to book";
+    });
+
+    $$("[data-offer-link='email']").forEach((link) => {
+      link.href = questionMailto();
+      link.textContent = "Email a question";
     });
 
     $$("[data-offer-link='intake-email']").forEach((link) => {
