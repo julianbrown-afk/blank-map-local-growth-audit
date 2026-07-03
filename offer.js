@@ -34,6 +34,7 @@
   let scoreCopyTimer = 0;
   let decisionCopyTimer = 0;
   let valueCopyTimer = 0;
+  let buyerPacketCopyTimer = 0;
   let homepageScoreTouched = false;
 
   function currency(value) {
@@ -201,7 +202,12 @@
     if (!bar) return;
 
     const threshold = Math.min(560, Math.round(window.innerHeight * 0.68));
-    document.body.classList.toggle("purchase-bar-visible", window.scrollY > threshold);
+    const suppressForFocusedActions = $$(".buyer-packet-band").some((section) => {
+      const rect = section.getBoundingClientRect();
+      return rect.top < window.innerHeight - 80 && rect.bottom > 120;
+    });
+
+    document.body.classList.toggle("purchase-bar-visible", window.scrollY > threshold && !suppressForFocusedActions);
   }
 
   function setupPurchaseBar() {
@@ -451,6 +457,80 @@ This is planning input, not a revenue guarantee. The audit starts from public pa
 
     clearTimeout(sampleCopyTimer);
     sampleCopyTimer = setTimeout(() => {
+      if (status) status.textContent = "";
+    }, 3600);
+  }
+
+  function buyerPacketText() {
+    const included = (config.included || [])
+      .slice(0, 5)
+      .map((item, index) => `${index + 1}. ${item}`)
+      .join("\n");
+    const proof = (config.proofPoints || [])
+      .slice(0, 4)
+      .map((item, index) => `${index + 1}. ${item}`)
+      .join("\n");
+    const bookingLine = config.bookingLink ? `Book a fit call: ${config.bookingLink}\n` : "";
+
+    return `Local Growth Audit buyer packet
+
+Business
+${config.businessName}
+Contact: ${config.contactEmail}
+
+Offer
+${config.serviceName} for ${currency(config.auditPrice)}
+${config.guaranteeLine}
+
+What is included
+${included || "1. Website conversion review\n2. Local trust and booking-path notes\n3. 30-day action plan"}
+
+Why this is the first paid step
+${proof || "1. Plain-language findings\n2. Prioritized quick wins\n3. No long-term contract required"}
+
+Useful links
+Main offer: ${publicUrl("index.html")}
+Sample report: ${publicUrl("sample-audit.html")}
+Free scorecard: ${publicUrl("scorecard.html")}
+Value calculator: ${publicUrl("lexington-local-growth-audit-value-calculator.html")}
+Decision quiz: ${publicUrl("lexington-local-growth-audit-decision-quiz.html")}
+Buy audit: ${ctaHref()}
+${bookingLine}Start intake after payment: ${publicUrl("audit-intake.html")}
+
+How to use this
+1. Review the sample report first if proof is needed before paying.
+2. Run the free scorecard if the buyer-path gap is still unclear.
+3. Buy the fixed-scope audit when the business wants a prioritized 30-day action plan.
+4. Book a fit call when timing, scope, or fit needs a quick conversation first.
+
+This is fixed-scope planning input, not a revenue guarantee. The first report starts from public pages and the visible buyer path; no passwords are needed.`;
+  }
+
+  async function copyBuyerPacket() {
+    const status = $("[data-buyer-packet-status]");
+    const manual = $("[data-buyer-packet-manual]");
+    const text = buyerPacketText();
+
+    try {
+      const copied = await copyTextWithFallback(text);
+      if (!copied) throw new Error("Copy failed.");
+      if (status) status.textContent = "Buyer packet copied.";
+      if (manual) {
+        manual.hidden = true;
+        manual.value = "";
+      }
+    } catch (error) {
+      if (status) status.textContent = "Copy blocked. The buyer packet is open below.";
+      if (manual) {
+        manual.value = text;
+        manual.hidden = false;
+        manual.focus();
+        manual.select();
+      }
+    }
+
+    clearTimeout(buyerPacketCopyTimer);
+    buyerPacketCopyTimer = setTimeout(() => {
       if (status) status.textContent = "";
     }, 3600);
   }
@@ -969,6 +1049,10 @@ Sample audit: ${publicUrl("sample-audit.html")}`;
 
     $$("[data-sample-copy]").forEach((button) => {
       button.addEventListener("click", copySampleOrderBrief);
+    });
+
+    $$("[data-buyer-packet-copy]").forEach((button) => {
+      button.addEventListener("click", copyBuyerPacket);
     });
 
     $$("[data-score-item]").forEach((item) => {

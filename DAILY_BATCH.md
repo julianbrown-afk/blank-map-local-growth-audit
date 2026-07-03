@@ -32,6 +32,8 @@ Use `SCORECARD_POST_QUEUE.md` for scorecard-first public posts, warm referral co
 
 When a warm owner asks to see proof before paying, send the sample report and use its `Copy order brief` action if they want the short checkout-ready summary.
 
+When a warm owner, connector, or manager asks for one forwardable summary, open the homepage and use `Copy buyer packet` before sending a checkout or booking link.
+
 ## Today's Review Queue
 
 Machine-readable reviewed queue:
