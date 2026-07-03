@@ -123,7 +123,7 @@ The best prospects are local service businesses that already have customer value
 16. Use the score handoff as the bridge from free self-check to paid audit: score first, share the summary, then buy or book the fixed-scope review.
 17. Use `Score lead reply`, `Score lead call`, a copied audit brief, a copied result link, or the row-level `Copy score reply` action to turn a scorecard response into a paid-audit decision.
 18. After a prospect is marked `Contacted`, use `Copy follow-up batch` or the row-level `Copy follow-up` action for a low-pressure second touch.
-19. When a buyer asks why the audit is worth buying, point them to the public scorecard and value calculator rather than making unsupported revenue promises.
+19. When a buyer asks why the audit is worth buying, point them to the public scorecard, homepage value math, or value calculator; ask for the copied summary when they want to size the leak, and avoid unsupported revenue promises.
 20. Move prospects to `Followed up`, `Paid audit`, `Implementation`, `Won`, or `Lost` as the work progresses.
 21. Send the most relevant public offer link and sample report link only through compliant channels where you are allowed to contact the business. If someone reviews the sample first, use `Copy order brief` on the sample page to turn proof interest into a checkout-ready handoff.
 22. When a payment arrives or a buyer books, use the scorecard's result-preserving intake link, `Copy intake email`, or the row-level `Copy intake` action to request the business details.
@@ -177,7 +177,7 @@ Use the decision quiz when a warm owner needs help choosing the lowest-friction 
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-decision-quiz.html
 
-Use the value calculator when a warm owner wants simple planning math before buying:
+Use the homepage value math or the dedicated value calculator when a warm owner wants simple planning math before buying. Ask them to use `Copy summary` if they want a forwardable estimate without turning it into a revenue promise:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-value-calculator.html
 

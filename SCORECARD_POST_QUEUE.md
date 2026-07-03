@@ -237,7 +237,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-g
 
 ## Value Calculator Handoff
 
-Use when a warm owner understands there may be a buyer-path leak but wants simple planning math before paying for the audit.
+Use when a warm owner understands there may be a buyer-path leak but wants simple planning math before paying for the audit. The homepage value math and the dedicated calculator both include `Copy summary` so the estimate can be forwarded without making a revenue promise.
 
 ```text
 If the gap is visible but you are not sure whether a $399 audit is worth buying, use this value calculator first.
