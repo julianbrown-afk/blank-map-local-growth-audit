@@ -78,7 +78,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for the founder launch post, broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
+The public directory now includes copy buttons for the founder launch post, launch replies, broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
 
 Founder launch post:
 
@@ -97,6 +97,23 @@ If the scorecard shows enough visible gaps, the fixed-scope Local Growth Audit t
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 
 This is planning input, not a revenue guarantee.
+```
+
+Launch reply:
+
+```text
+Thanks for taking a look. The lowest-pressure first step is the free buyer-path scorecard:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html
+
+It checks the visible call, booking, quote, review, tracking, service-page, and follow-up basics before anyone buys an audit.
+
+If you want to see the paid report style first, the sample is here:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+
+If the scorecard shows enough friction, the fixed-scope Local Growth Audit is $399 and turns the result into ranked findings, tracking notes, and a 30-day action plan:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/
+
+No passwords are needed for the first report. This is planning input, not a revenue guarantee.
 ```
 
 Score result handoff:

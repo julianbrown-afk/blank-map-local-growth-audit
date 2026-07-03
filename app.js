@@ -1370,6 +1370,26 @@ ${offerUrl}
 This is planning input, not a revenue guarantee.`;
   }
 
+  function buildFounderLaunchReply() {
+    const settings = state.settings;
+    const scorecardUrl = getPublicUrl("scorecard.html");
+    const sampleUrl = getPublicUrl("sample-audit.html");
+    const offerUrl = getPublicUrl();
+
+    return `Thanks for taking a look. The lowest-pressure first step is the free buyer-path scorecard:
+${scorecardUrl}
+
+It checks the visible call, booking, quote, review, tracking, service-page, and follow-up basics before anyone buys an audit.
+
+If you want to see the paid report style first, the sample is here:
+${sampleUrl}
+
+If the scorecard shows enough friction, the fixed-scope ${settings.serviceName} is ${currency(settings.auditPrice)} and turns the result into ranked findings, tracking notes, and a 30-day action plan:
+${offerUrl}
+
+No passwords are needed for the first report. This is planning input, not a revenue guarantee.`;
+  }
+
   function buildWarmReferralNote() {
     const settings = state.settings;
     const scorecardUrl = getPublicUrl("scorecard.html");
@@ -2402,6 +2422,7 @@ ${settings.contactEmail}`;
     $("[data-output='intakeText']").textContent = buildIntakeEmail();
     $("[data-output='scorecardPostText']").textContent = buildScorecardPost();
     $("[data-output='founderLaunchPostText']").textContent = buildFounderLaunchPost();
+    $("[data-output='founderLaunchReplyText']").textContent = buildFounderLaunchReply();
     $("[data-output='scoreLeadReplyText']").textContent = buildScoreLeadReply();
     $("[data-output='scoreLeadCallText']").textContent = buildScoreLeadCallOutline();
     $("[data-output='decisionPathText']").textContent = buildDecisionPathHandoff();
@@ -2616,6 +2637,7 @@ ${settings.contactEmail}`;
     if (action === "copy-intake-email") copyText(buildIntakeEmail(), "Intake email copied");
     if (action === "copy-scorecard-post") copyText(buildScorecardPost(), "Scorecard post copied");
     if (action === "copy-founder-launch-post") copyText(buildFounderLaunchPost(), "Founder launch post copied");
+    if (action === "copy-founder-launch-reply") copyText(buildFounderLaunchReply(), "Founder launch reply copied");
     if (action === "copy-score-lead-reply") copyText(buildScoreLeadReply(), "Score lead reply copied");
     if (action === "copy-score-lead-call") copyText(buildScoreLeadCallOutline(), "Score lead call copied");
     if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
