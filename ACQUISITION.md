@@ -137,6 +137,8 @@ Use the broad offer when the category is unclear:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 
+The public offer page now starts with a buyer decision path: buy the audit, run the free scorecard, inspect the sample report, or book a fit call. Use it when a warm owner needs one page that lets them choose the right next step without a hard sell.
+
 Use the free scorecard for colder prospects:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/scorecard.html

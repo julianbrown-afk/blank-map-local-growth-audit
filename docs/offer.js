@@ -202,7 +202,7 @@
     if (!bar) return;
 
     const threshold = Math.min(560, Math.round(window.innerHeight * 0.68));
-    const suppressForFocusedActions = $$(".buyer-packet-band").some((section) => {
+    const suppressForFocusedActions = $$(".buyer-packet-band, .decision-path-band").some((section) => {
       const rect = section.getBoundingClientRect();
       return rect.top < window.innerHeight - 80 && rect.bottom > 120;
     });
