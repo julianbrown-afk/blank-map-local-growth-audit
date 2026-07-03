@@ -78,7 +78,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
+The public directory now includes copy buttons for broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
 
 Score result handoff:
 

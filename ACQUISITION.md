@@ -32,7 +32,7 @@ Public Google Business Profile checklist with copy-ready sharing starters:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
 ```
 
-Public resource directory with copy-ready referral text:
+Public resource directory with copy-ready referral and buyer-packet text:
 
 ```text
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
@@ -149,7 +149,7 @@ Use the Google Business Profile checklist when the conversation is about local s
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-google-business-profile-checklist.html
 
-Use the resource directory when you need one public page for warm referrals, permitted community replies, a category chooser, checklist links, clean share links, or a copy-ready referral starter:
+Use the resource directory when you need one public page for warm referrals, permitted community replies, a category chooser, checklist links, clean share links, a copy-ready referral starter, or a buyer-packet handoff:
 
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-growth-scorecards.html
 
