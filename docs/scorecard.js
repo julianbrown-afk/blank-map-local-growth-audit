@@ -606,7 +606,12 @@
         title: "Score the visible buyer path",
         body: "Use the result to decide whether the paid audit should rank fixes before larger marketing spend.",
         focus: "Start by checking the six visible buyer-path basics."
-      }
+      },
+      checkout: scorecardCheckoutBrief({
+        ...base,
+        isScored: false,
+        missingLabels: []
+      })
     };
   }
 
@@ -650,7 +655,13 @@
       monthlyValue,
       missingLabels,
       decision: scorecardDecision(score),
-      recommendation: scorecardRecommendation({ gaps, missingLabels, monthlyValue })
+      recommendation: scorecardRecommendation({ gaps, missingLabels, monthlyValue }),
+      checkout: scorecardCheckoutBrief({
+        isScored: true,
+        gaps,
+        monthlyValue,
+        missingLabels
+      })
     };
   }
 
@@ -704,6 +715,58 @@
       title: "Keep the score and validate before bigger work",
       body: "No urgent gap showed up in this quick pass. The audit is still useful if you want a second set of eyes before a bigger marketing spend.",
       focus: "Audit focus: confirm the highest-value service path, tracking, and follow-up process."
+    };
+  }
+
+  function scorecardCheckoutBrief(state) {
+    const auditPrice = Math.max(Number(config.auditPrice) || 399, 1);
+    const firstGap = state.missingLabels?.[0] || activeTrack?.buyerPath || "visible buyer-path friction";
+    const opportunity = state.isScored ? `${currency(state.monthlyValue)}/mo` : "After scoring";
+    const payback = state.isScored && state.monthlyValue > 0 ? state.monthlyValue / auditPrice : 0;
+    const paybackLine = payback >= 1
+      ? `That is about ${payback.toFixed(1)}x the audit price in one month if the recovered path converts as estimated.`
+      : "Use the audit only when the score shows a practical fix path, not as a revenue guarantee.";
+
+    if (!state.isScored) {
+      return {
+        kicker: "Checkout brief",
+        title: "Score first, then choose the paid audit if the gap is clear.",
+        body: "The audit uses the score, top gaps, and planning math as the starting context for a 48-hour review.",
+        opportunity,
+        focus: "Visible buyer path",
+        assurance: "No passwords, ad accounts, or analytics access are needed for the first report."
+      };
+    }
+
+    if (state.gaps >= 4) {
+      return {
+        kicker: "Checkout-ready",
+        title: "This score has enough friction to justify the fixed-scope audit.",
+        body: `Buy before spending on more traffic or a redesign. ${paybackLine}`,
+        opportunity,
+        focus: firstGap,
+        assurance: "The report starts from public pages, visible trust cues, booking paths, tracking cues, and follow-up gaps."
+      };
+    }
+
+    if (state.gaps >= 2) {
+      return {
+        kicker: "Good audit candidate",
+        title: "Use the audit to rank what gets fixed first.",
+        body: `The score shows multiple fix paths, so the main value is prioritization. ${paybackLine}`,
+        opportunity,
+        focus: firstGap,
+        assurance: "The audit delivers ranked findings, tracking notes, and a 30-day action plan without a retainer."
+      };
+    }
+
+    return {
+      kicker: "Validation path",
+      title: "Use the audit when outside validation would protect a bigger decision.",
+      body: "The score is not urgent, but a paid review can still validate tracking, proof placement, and the highest-value service path before larger spend.",
+      opportunity,
+      focus: firstGap,
+      assurance: "This is planning input from observable fixes, not a promise of revenue."
     };
   }
 
@@ -879,6 +942,12 @@ This is planning input, not a revenue guarantee.`;
     setText("[data-free-score-output='recommendationTitle']", state.recommendation.title);
     setText("[data-free-score-output='recommendationBody']", state.recommendation.body);
     setText("[data-free-score-output='recommendationFocus']", state.recommendation.focus);
+    setText("[data-free-score-output='checkoutKicker']", state.checkout.kicker);
+    setText("[data-free-score-output='checkoutTitle']", state.checkout.title);
+    setText("[data-free-score-output='checkoutBody']", state.checkout.body);
+    setText("[data-free-score-output='checkoutOpportunity']", state.checkout.opportunity);
+    setText("[data-free-score-output='checkoutFocus']", state.checkout.focus);
+    setText("[data-free-score-output='checkoutAssurance']", state.checkout.assurance);
     setText("[data-free-score-output='decisionTitle']", state.decision.title);
     setText("[data-free-score-output='decisionBody']", state.decision.body);
     setText("[data-free-score-output='customerValue']", currency(state.customerValue));
