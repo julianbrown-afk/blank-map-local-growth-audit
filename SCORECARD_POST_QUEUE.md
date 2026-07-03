@@ -111,6 +111,12 @@ Paid audit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 ```
 
+Homepage decision path:
+
+```text
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/#decision-path
+```
+
 ## Broad Lexington Post
 
 ```text

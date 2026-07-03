@@ -1358,6 +1358,22 @@ ${offerUrl}
 No retainer pitch. The audit produces a prioritized 30-day action plan and an optional implementation quote.`;
   }
 
+  function buildDecisionPathHandoff() {
+    const settings = state.settings;
+    const decisionPathUrl = getPublicUrl("#decision-path");
+
+    return `If you are not sure whether the ${settings.serviceName} is the right next step, start here:
+${decisionPathUrl}
+
+That page lets a ${settings.marketCity} service owner choose the lowest-friction path:
+- buy the fixed ${currency(settings.auditPrice)} audit
+- run the free buyer-path scorecard
+- inspect the sample report
+- book a fit call
+
+It is meant to help decide what to do next without a hard sell or a revenue guarantee.`;
+  }
+
   function buildCommunityReply() {
     const settings = state.settings;
     const scorecardUrl = getPublicUrl("scorecard.html");
@@ -2304,6 +2320,7 @@ ${settings.contactEmail}`;
     $("[data-output='scorecardPostText']").textContent = buildScorecardPost();
     $("[data-output='scoreLeadReplyText']").textContent = buildScoreLeadReply();
     $("[data-output='scoreLeadCallText']").textContent = buildScoreLeadCallOutline();
+    $("[data-output='decisionPathText']").textContent = buildDecisionPathHandoff();
     $("[data-output='warmReferralText']").textContent = buildWarmReferralNote();
     $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
@@ -2516,8 +2533,10 @@ ${settings.contactEmail}`;
     if (action === "copy-score-lead-reply") copyText(buildScoreLeadReply(), "Score lead reply copied");
     if (action === "copy-score-lead-call") copyText(buildScoreLeadCallOutline(), "Score lead call copied");
     if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
+    if (action === "copy-decision-path-handoff") copyText(buildDecisionPathHandoff(), "Decision path handoff copied");
     if (action === "copy-community-reply") copyText(buildCommunityReply(), "Community reply copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
+    if (action === "copy-decision-path-link") copyText(getPublicUrl("#decision-path"), "Decision path link copied");
     if (action === "copy-scorecard-link") copyText(getOfferUrl("scorecard.html"), "Scorecard link copied");
     if (action === "copy-value-calculator-link") copyText(getOfferUrl("lexington-local-growth-audit-value-calculator.html"), "Value calculator link copied");
     if (action === "copy-intro-builder-link") copyText(getOfferUrl("lexington-local-growth-audit-referral-partners.html#intro-builder"), "Intro builder link copied");
