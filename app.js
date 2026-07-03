@@ -1358,6 +1358,28 @@ ${offerUrl}
 No retainer pitch. The audit produces a prioritized 30-day action plan and an optional implementation quote.`;
   }
 
+  function buildReferralPartnerIntro() {
+    const settings = state.settings;
+    const partnerUrl = getPublicUrl("lexington-local-growth-audit-referral-partners.html");
+    const builderUrl = getPublicUrl("lexington-local-growth-audit-referral-partners.html#intro-builder");
+    const directoryUrl = getPublicUrl("lexington-growth-scorecards.html");
+
+    return `I put together a no-pressure referral page you can use when a ${settings.marketCity} service owner needs a practical buyer-path check before spending more on ads, SEO, or a redesign.
+
+The first step is free: the scorecard checks visible call, booking, quote, review, tracking, and follow-up gaps. If the result shows enough friction, the fixed-scope ${settings.serviceName} turns it into ranked findings and a 30-day plan for ${currency(settings.auditPrice)}.
+
+Partner page:
+${partnerUrl}
+
+Warm intro builder:
+${builderUrl}
+
+Resource directory:
+${directoryUrl}
+
+Use it only when the owner relationship or conversation already fits. No referral fee or revenue guarantee is promised from this page.`;
+  }
+
   function buildDecisionPathHandoff() {
     const settings = state.settings;
     const decisionPathUrl = getPublicUrl("#decision-path");
@@ -2321,6 +2343,7 @@ ${settings.contactEmail}`;
     $("[data-output='scoreLeadReplyText']").textContent = buildScoreLeadReply();
     $("[data-output='scoreLeadCallText']").textContent = buildScoreLeadCallOutline();
     $("[data-output='decisionPathText']").textContent = buildDecisionPathHandoff();
+    $("[data-output='partnerIntroText']").textContent = buildReferralPartnerIntro();
     $("[data-output='warmReferralText']").textContent = buildWarmReferralNote();
     $("[data-output='communityReplyText']").textContent = buildCommunityReply();
     renderFindings(analysis.findings);
@@ -2533,6 +2556,7 @@ ${settings.contactEmail}`;
     if (action === "copy-score-lead-reply") copyText(buildScoreLeadReply(), "Score lead reply copied");
     if (action === "copy-score-lead-call") copyText(buildScoreLeadCallOutline(), "Score lead call copied");
     if (action === "copy-warm-referral") copyText(buildWarmReferralNote(), "Warm referral copied");
+    if (action === "copy-partner-intro") copyText(buildReferralPartnerIntro(), "Partner intro copied");
     if (action === "copy-decision-path-handoff") copyText(buildDecisionPathHandoff(), "Decision path handoff copied");
     if (action === "copy-community-reply") copyText(buildCommunityReply(), "Community reply copied");
     if (action === "copy-offer-link") copyText(getOfferUrl(), "Offer link copied");
