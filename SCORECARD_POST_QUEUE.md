@@ -78,7 +78,7 @@ Warm referral kit:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-kit.html
 ```
 
-The public directory now includes copy buttons for the founder launch post, launch replies, broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
+The public directory now includes copy buttons for the founder launch post, launch replies, interested buyer replies, broad posts, dentist posts, med spa posts, roofing posts, relevant community replies, checklist replies, Google profile replies, score-result replies, score-result handoff asks, audit-fit checks, the decision quiz, the value calculator, the audit method page, the website conversion audit page, the referral partner page, the printable one-sheet, the buyer packet, and the warm referral kit. The referral partner page now also includes a warm intro builder for partner handoffs where the connector knows the owner, category, concern, or best first link.
 
 Founder launch post:
 
@@ -114,6 +114,26 @@ If the scorecard shows enough friction, the fixed-scope Local Growth Audit is $3
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/
 
 No passwords are needed for the first report. This is planning input, not a revenue guarantee.
+```
+
+Interested buyer reply:
+
+```text
+Thanks, the fixed-scope Local Growth Audit is $399.
+
+Best next step if you are ready:
+https://buy.stripe.com/eVqeVf5M7dtJbVP0HS5wI00
+
+If you want to check fit before paying, book a short call here:
+https://calendar.app.google/BNvrQFs12JA1Z4839
+
+Sample report:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/sample-audit.html
+
+After checkout, send the business details through the intake page so the audit can start:
+https://julianbrown-afk.github.io/blank-map-local-growth-audit/audit-intake.html
+
+The first report starts from public pages and visible buyer-path context. No passwords, ad accounts, analytics access, or website admin access are needed. The audit gives ranked findings, tracking notes, and a 30-day action plan; it is planning input, not a revenue guarantee.
 ```
 
 Score result handoff:
