@@ -197,7 +197,7 @@ https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-g
 Use only when a warm connector or relevant conversation has enough context to personalize the intro without making unsupported claims.
 
 ```text
-If you already know the owner, business category, or main buyer-path concern, use the warm intro builder on the partner page. It creates one scorecard-first message and lets you choose whether the first link should be the free scorecard, value calculator, decision quiz, or sample report.
+If you already know the owner, business category, or main buyer-path concern, use the warm intro builder on the partner page. It creates one warm intro message and lets you choose whether the first link should be the free scorecard, value calculator, decision quiz, buyer packet, or sample report.
 
 Warm intro builder:
 https://julianbrown-afk.github.io/blank-map-local-growth-audit/lexington-local-growth-audit-referral-partners.html#intro-builder

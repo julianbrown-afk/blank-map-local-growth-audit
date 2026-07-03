@@ -329,6 +329,13 @@
         href: publicUrl("lexington-local-growth-audit-decision-quiz.html"),
         setup: "A useful first step is to route the next move before buying anything."
       },
+      packet: {
+        label: "Buyer packet first",
+        title: "Buyer packet intro",
+        linkLabel: "Forwardable buyer packet",
+        href: publicUrl("#buyer-packet"),
+        setup: "A useful first step is to send one practical offer summary with price, proof, checkout, booking, and intake links in one place."
+      },
       sample: {
         label: "Proof first",
         title: "Sample-report intro",
